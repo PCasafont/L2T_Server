@@ -34,8 +34,6 @@ import java.util.HashSet;
 public class KnownListUpdateTaskManager {
 	private static Logger log = LoggerFactory.getLogger(KnownListUpdateTaskManager.class.getName());
 
-
-
 	private static final int FULL_UPDATE_TIMER = 100;
 	public static boolean updatePass = true;
 

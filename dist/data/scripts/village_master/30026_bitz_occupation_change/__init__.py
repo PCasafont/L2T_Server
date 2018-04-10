@@ -10,7 +10,6 @@ from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 qn = "30026_bitz_occupation_change"
 GRAND_MASTER_BITZ = 30026
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -52,7 +51,6 @@ class Quest(JQuest):
             st.exitQuest(1)
             htmltext = "30026-10.htm"
         return htmltext
-
 
 QUEST = Quest(30026, qn, "village_master")
 

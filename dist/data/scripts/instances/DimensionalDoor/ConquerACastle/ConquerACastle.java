@@ -41,7 +41,6 @@ import java.util.List;
 public class ConquerACastle extends L2AttackableAIScript {
 	private static Logger log = LoggerFactory.getLogger(ConquerACastle.class.getName());
 
-
 	private static final String qn = "ConquerACastle";
 
 	//Config

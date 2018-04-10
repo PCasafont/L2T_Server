@@ -9,7 +9,6 @@ ADENA = 57
 BLADE_STAKATO_FANG = 5881
 CHANCE = 9
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -63,7 +62,6 @@ class Quest(JQuest):
                 st.giveItems(BLADE_STAKATO_FANG, 1)
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(368, qn, "Trespassing Into The Sacred Area")
 

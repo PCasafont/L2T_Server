@@ -45,7 +45,6 @@ import java.util.*;
 public class SqlToXml {
 	private static Logger log = LoggerFactory.getLogger(SqlToXml.class.getName());
 
-
 	public static void races() {
 		Connection con = null;
 		

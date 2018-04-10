@@ -34,8 +34,6 @@ import java.util.List;
 public class SiegeGuardManager {
 	private static Logger log = LoggerFactory.getLogger(SiegeGuardManager.class.getName());
 
-
-
 	// =========================================================
 	// Data Field
 	private Castle castle;

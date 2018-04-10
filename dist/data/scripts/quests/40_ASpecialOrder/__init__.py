@@ -15,7 +15,6 @@ OrangeNimbleFish, OrangeUglyFish, OrangeFatFish, FishChest = 6450, 6451, 6452, 1
 GoldenCobol, ThornCobol, GreatCobol, SeedJar = 5079, 5082, 5084, 12765
 WondrousCubic = 10632
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -112,7 +111,6 @@ class Quest(JQuest):
             elif cond == 7:
                 htmltext = "30511-06.htm"
         return htmltext
-
 
 QUEST = Quest(40, qn, "A Special Order")
 

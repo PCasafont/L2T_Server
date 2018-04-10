@@ -13,7 +13,6 @@ CHANCE_OF_DROP = 20
 # ITEMS
 TREASURE_CHEST = 5873
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -69,7 +68,6 @@ class Quest(JQuest):
             st.giveItems(TREASURE_CHEST, 1)
             st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(365, qn, "Devil's Legacy")
 

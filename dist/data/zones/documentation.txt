@@ -11,7 +11,6 @@ O . . . .
 
 O = Node (vertice)
 
-
 NPoly Zones:
 ------------
 
@@ -24,7 +23,6 @@ Require 3 or more nodes (vertices), in order to make a Polygon or another geomet
 O - - - O
 
 O = Node (vertice)
-
 
 Cylinder Zones:
 ---------------

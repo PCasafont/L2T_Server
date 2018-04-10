@@ -43,7 +43,6 @@ import java.util.concurrent.TimeUnit;
 public class TenkaiAuctionManager {
 	private static Logger log = LoggerFactory.getLogger(TenkaiAuctionManager.class.getName());
 
-
 	private static final long ADDED_DURATION = 3600000L;
 	
 	/**

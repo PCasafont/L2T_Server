@@ -16,7 +16,6 @@ BILL_OF_IASON_HEINE = 4310
 CHANCE = 15
 CHANCE2 = 50
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -121,7 +120,6 @@ class Quest(JQuest):
         if random <= CHANCE2:
             st.giveItems(USELESS_BONE_PIECES, st.getRandom(8) + 1)
         return
-
 
 QUEST = Quest(345, qn, "Method To Raise The Dead")
 

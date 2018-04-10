@@ -52,7 +52,6 @@ public class ClanTable {
 	private static Logger log = LoggerFactory.getLogger(ClanTable.class.getName());
 
 
-	
 	/**
 	 * Sorts by member count - descending
 	 */

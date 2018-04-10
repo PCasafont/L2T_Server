@@ -45,7 +45,6 @@ import org.slf4j.LoggerFactory;
 public class Orfen extends L2AttackableAIScript {
 	private static Logger log = LoggerFactory.getLogger(Orfen.class.getName());
 
-
 	//Quest
 	private static final boolean debug = false;
 	private static final String qn = "Orfen";

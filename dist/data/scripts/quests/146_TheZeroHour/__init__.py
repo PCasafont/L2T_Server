@@ -10,7 +10,6 @@ KAHMAN = 31554
 # Items
 FANG = 14859
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -42,7 +41,6 @@ class Quest(JQuest):
             else:
                 htmltext = "31554-00.htm"
         return htmltext
-
 
 QUEST = Quest(146, qn, "The Zero Hour")
 

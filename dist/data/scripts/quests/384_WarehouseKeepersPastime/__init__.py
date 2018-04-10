@@ -74,7 +74,6 @@ Rewards_100_Lose = {
     135: 100  # Samurai Longsword
 }
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -246,7 +245,6 @@ class Quest(JQuest):
                 st.giveItems(Medal, 1)
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(384, qn, "Warehouse Keeper�s Pastime")
 

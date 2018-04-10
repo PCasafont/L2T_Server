@@ -15,7 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-
 /**
  * Format: (ch) S
  *

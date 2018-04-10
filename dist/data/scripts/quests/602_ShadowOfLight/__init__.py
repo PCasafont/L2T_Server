@@ -20,7 +20,6 @@ REWARDS = [[6699, 40000, 120000, 20000, 0, 19], [6698, 60000, 110000, 15000, 20,
 # MOBS
 MOBS = [21299, 21304]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -90,7 +89,6 @@ class Quest(JQuest):
                         st.playSound("ItemSound.quest_itemget")
                     st.giveItems(EYE_OF_DARKNESS, int(numItems))
         return
-
 
 QUEST = Quest(602, qn, "Shadow Of Light")
 

@@ -83,7 +83,6 @@ FORMULAS = {
     MIMIRS_ELIXIR: [PURE_SILVER, 1, TRUE_GOLD, 1],
 }
 
-
 def render_urn(st, page):
     stone, ingredient, catalyst = st.getInt("mixing"), st.getInt("ingredient"), st.getInt("catalyst")
     if page == "Start":
@@ -124,7 +123,6 @@ def render_urn(st, page):
         if not amt: html += "<tr><td>You don't have any material that could be used with this Urn. Read the Mixing Manual.</td></tr>"
         html += "</table><center><a action=\"bypass -h Quest 373_SupplierOfReagents urn\">Back</a></center></body></html>"
     return html
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -321,7 +319,6 @@ class Quest(JQuest):
                     st.playSound("ItemSound.quest_itemget")
                     break
         return
-
 
 # Quest class and state definition
 QUEST = Quest(QUEST_NUMBER, str(QUEST_NUMBER) + "_" + QUEST_NAME, QUEST_DESCRIPTION)

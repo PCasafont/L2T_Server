@@ -54,8 +54,6 @@ import java.util.concurrent.Future;
 public class L2Party {
 	private static Logger log = LoggerFactory.getLogger(L2Party.class.getName());
 
-
-
 	//private static final double[] BONUS_EXP_SP = {1, 1.30, 1.39, 1.50, 1.54, 1.58, 1.63, 1.67, 1.71};
 	// TODO: Soul: I do believe are correct doubles. It must be:
 	// 0%, 10%, 20%, 30%, 40%, 50%, 100%, 110%, 120%

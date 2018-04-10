@@ -30,7 +30,6 @@ import org.slf4j.LoggerFactory;
 public class CastleUpdater implements Runnable {
 	private static Logger log = LoggerFactory.getLogger(CastleUpdater.class.getName());
 
-
 	private L2Clan clan;
 	private int runCount = 0;
 

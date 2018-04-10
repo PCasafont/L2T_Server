@@ -12,7 +12,6 @@ DAISY = 31315
 ABERCROMBIE = 31555
 BOX = 7245
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -65,7 +64,6 @@ class Quest(JQuest):
             elif npcId == ABERCROMBIE and cond == 2 and st.getQuestItemsCount(BOX):
                 htmltext = "31555-01.htm"
         return htmltext
-
 
 QUEST = Quest(18, qn, "Meeting With The Golden Ram")
 

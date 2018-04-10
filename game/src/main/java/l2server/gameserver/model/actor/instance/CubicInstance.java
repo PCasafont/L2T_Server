@@ -45,7 +45,6 @@ import java.util.concurrent.Future;
 public class CubicInstance {
 	private static Logger log = LoggerFactory.getLogger(CubicInstance.class.getName());
 
-
 	// Type of Cubics
 	public static final int STORM_CUBIC = 1;
 	public static final int VAMPIRIC_CUBIC = 2;

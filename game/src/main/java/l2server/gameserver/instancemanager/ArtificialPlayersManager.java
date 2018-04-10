@@ -54,7 +54,6 @@ import java.util.stream.Collectors;
 public class ArtificialPlayersManager {
 	private static Logger log = LoggerFactory.getLogger(ArtificialPlayersManager.class.getName());
 
-
 	List<ApInstance> players = new ArrayList<>();
 
 	ScheduledFuture<?> pvpCheck = null;

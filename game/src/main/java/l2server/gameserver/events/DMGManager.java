@@ -26,8 +26,6 @@ import java.util.Map.Entry;
 public class DMGManager {
 	private static Logger log = LoggerFactory.getLogger(DMGManager.class.getName());
 
-
-
 	// Config
 	private static final String eventname = "Damage Manager";
 

@@ -9,7 +9,6 @@ qn = "998_FallenAngelSelect"
 
 NATOOLS = 30894
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -41,7 +40,6 @@ class Quest(JQuest):
         if id == State.STARTED:
             htmltext = "30894-01.htm"
         return htmltext
-
 
 QUEST = Quest(998, qn, "Fallen Angel - Select")
 

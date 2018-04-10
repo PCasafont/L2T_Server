@@ -44,8 +44,6 @@ import java.util.StringTokenizer;
 public class Announcements {
 	private static Logger log = LoggerFactory.getLogger(Announcements.class.getName());
 
-
-
 	private List<String> announcements = new ArrayList<>();
 	private List<List<Object>> eventAnnouncements = new ArrayList<>();
 

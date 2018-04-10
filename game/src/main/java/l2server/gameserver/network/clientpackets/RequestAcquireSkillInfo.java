@@ -36,7 +36,6 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket {
 	private static Logger log = LoggerFactory.getLogger(RequestAcquireSkillInfo.class.getName());
 
 
-	
 	private int id;
 	private int level;
 	private int skillType;

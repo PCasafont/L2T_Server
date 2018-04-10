@@ -27,7 +27,6 @@ public class ObjectPosition {
 	private static Logger log = LoggerFactory.getLogger(ObjectPosition.class.getName());
 
 
-	
 	// =========================================================
 	// Data Field
 	private WorldObject activeObject;

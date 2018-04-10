@@ -24,8 +24,6 @@ import org.slf4j.LoggerFactory;
 public class LuckyChests extends EventInstance {
 	private static Logger log = LoggerFactory.getLogger(LuckyChests.class.getName());
 
-
-
 	private boolean chestsSpawned = false;
 	private L2Spawn[] chestSpawns = new L2Spawn[200];
 

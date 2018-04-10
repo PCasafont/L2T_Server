@@ -23,14 +23,12 @@ Totem = 7242
 Wisdom_Stone = 7081
 Totem2 = 7243
 
-
 def AutoChat(npc, text):
     chars = npc.getKnownList().getKnownPlayers().values().toArray()
     if chars != None:
         for pc in chars:
             sm = NpcSay(npc.getObjectId(), 0, npc.getNpcId(), text)
             pc.sendPacket(sm)
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -163,7 +161,6 @@ class Quest(JQuest):
                     if Red_Totem:
                         st.takeItems(Totem, -1)
             return
-
 
 QUEST = Quest(615, qn, "Magical Power of Fire - Part 1")
 

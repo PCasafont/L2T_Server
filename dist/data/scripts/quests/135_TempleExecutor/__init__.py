@@ -24,7 +24,6 @@ BADGE = 10334
 # MONSTERs
 NPC = [20781, 21104, 21105, 21106, 21107]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -143,7 +142,6 @@ class Quest(JQuest):
                 else:
                     st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(135, qn, "Temple Executor")
 

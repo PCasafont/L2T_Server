@@ -34,7 +34,6 @@ import org.slf4j.LoggerFactory;
 public class SkillTeleport extends Skill {
 	private static Logger log = LoggerFactory.getLogger(SkillTeleport.class.getName());
 
-
 	private final String recallType;
 	private final Location loc;
 

@@ -34,8 +34,6 @@ import org.slf4j.LoggerFactory;
 public class RequestUnEquipItem extends L2GameClientPacket {
 	private static Logger log = LoggerFactory.getLogger(RequestUnEquipItem.class.getName());
 
-
-
 	// cd
 	private int slot;
 

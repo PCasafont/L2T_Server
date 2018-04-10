@@ -23,7 +23,6 @@ Metal = 10363
 BrokenMetal = 10364
 NicolasMap = 10365
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -163,7 +162,6 @@ class Quest(JQuest):
             player.setLastQuestNpcObject(npc.getObjectId())
             q2.notifyEvent("32367-01.htm", npc, player)
         return None
-
 
 QUEST = Quest(185, qn, "Nikola's Cooperation - Consideration")
 

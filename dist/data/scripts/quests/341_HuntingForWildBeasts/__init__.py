@@ -8,7 +8,6 @@ BEAR_SKIN = 4259
 ADENA = 57
 CHANCE = 400000
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -58,7 +57,6 @@ class Quest(JQuest):
         if cond == 1:
             st.dropQuestItems(BEAR_SKIN, 1, 20, CHANCE, 1)
         return
-
 
 QUEST = Quest(341, qn, "Hunting For Wild Beasts")
 

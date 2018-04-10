@@ -35,7 +35,6 @@ import java.util.Map;
 public class AdminCommandAccessRights {
 	private static Logger log = LoggerFactory.getLogger(AdminCommandAccessRights.class.getName());
 
-
 	/**
 	 * The logger<br>
 	 */

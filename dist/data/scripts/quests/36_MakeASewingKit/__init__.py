@@ -9,7 +9,6 @@ ARTISANS_FRAME = 1891
 ORIHARUKON = 1893
 SEWING_KIT = 7078
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -69,7 +68,6 @@ class Quest(JQuest):
             else:
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(36, qn, "Make A Sewing Kit")
 

@@ -16987,7 +16987,6 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 
-
 	</npc>
 	<npc id="23557" name="Fury Kerberos Liger" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
@@ -16996,7 +16995,6 @@
 		 pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-
 
 	</npc>
 	<npc id="23558" name="Fury Kerberos Nero" level="100" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"

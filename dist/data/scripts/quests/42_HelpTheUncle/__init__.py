@@ -19,7 +19,6 @@ MONSTER_EYE_GAZER = 20266
 MAX_COUNT = 30
 MIN_LEVEL = 25
 
-
 class Quest(JQuest):
     def onEvent(self, event, st):
         htmltext = event
@@ -110,7 +109,6 @@ class Quest(JQuest):
                 st.playSound("ItemSound.quest_itemget")
             st.giveItems(MAP_PIECE, int(numItems))
         return
-
 
 QUEST = Quest(42, qn, "Help The Uncle!")
 

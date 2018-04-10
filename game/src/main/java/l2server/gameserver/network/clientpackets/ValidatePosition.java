@@ -32,8 +32,6 @@ import org.slf4j.LoggerFactory;
 public class ValidatePosition extends L2GameClientPacket {
 	private static Logger log = LoggerFactory.getLogger(ValidatePosition.class.getName());
 
-
-
 	/**
 	 * urgent messages, execute immediately
 	 */

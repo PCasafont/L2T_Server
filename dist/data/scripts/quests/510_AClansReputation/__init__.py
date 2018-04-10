@@ -14,7 +14,6 @@ Claw = 8767
 # Reward
 CLAN_POINTS_REWARD = 100  # Rep Points Per Tyrannosaurus Item - need to be confirmed
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -84,7 +83,6 @@ class Quest(JQuest):
                 st.giveItems(Claw, 1)
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 # Quest class and state definition
 QUEST = Quest(510, qn, "A Clan's Reputation")

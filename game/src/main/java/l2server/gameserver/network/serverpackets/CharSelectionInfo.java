@@ -45,7 +45,6 @@ import java.util.List;
 public class CharSelectionInfo extends L2GameServerPacket {
 	private static Logger log = LoggerFactory.getLogger(CharSelectionInfo.class.getName());
 
-
 	// d SdSddddddddddffddddddddddddddddddddddddddddddddddddddddddddddffd
 	
 	private String loginName;

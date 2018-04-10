@@ -36,8 +36,6 @@ import java.util.List;
 public class FortSiegeManager {
 	private static Logger log = LoggerFactory.getLogger(FortSiegeManager.class.getName());
 
-
-
 	public static FortSiegeManager getInstance() {
 		return SingletonHolder.instance;
 	}

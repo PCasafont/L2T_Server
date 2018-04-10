@@ -20,7 +20,6 @@ BLOOD = 10353
 # MONSTERs
 NPC = [20079, 20080, 20081, 20082, 20084, 20086, 20087, 20088, 20089, 20090, 27338]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -121,7 +120,6 @@ class Quest(JQuest):
             else:
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(142, qn, "Fallen Angel - Request of Dawn")
 

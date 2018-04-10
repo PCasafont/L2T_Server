@@ -28,8 +28,6 @@ import java.security.interfaces.RSAPublicKey;
 public class ScrambledKeyPair {
 	private static Logger log = LoggerFactory.getLogger(ScrambledKeyPair.class.getName());
 
-
-
 	public KeyPair pair;
 	public byte[] scrambledModulus;
 

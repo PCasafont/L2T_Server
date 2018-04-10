@@ -45,8 +45,6 @@ import java.util.Map;
 public class CrystalCaverns extends Quest {
 	private static Logger log = LoggerFactory.getLogger(CrystalCaverns.class.getName());
 
-
-
 	private static class CrystalGolem {
 		public Item foodItem = null;
 		public boolean isAtDestination = false;

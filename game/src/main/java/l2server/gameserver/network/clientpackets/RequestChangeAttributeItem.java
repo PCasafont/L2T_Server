@@ -31,7 +31,6 @@ public class RequestChangeAttributeItem extends L2GameClientPacket {
 	private static Logger log = LoggerFactory.getLogger(RequestChangeAttributeItem.class.getName());
 
 
-	
 	private int attributeOID, itemOID, newAttributeID;
 	
 	@Override

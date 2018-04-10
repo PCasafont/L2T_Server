@@ -25,7 +25,6 @@ import org.slf4j.LoggerFactory;
 public class L2AccessLevel {
 	private static Logger log = LoggerFactory.getLogger(L2AccessLevel.class.getName());
 
-
 	/**
 	 * The access level<br>
 	 */

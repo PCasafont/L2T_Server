@@ -34,8 +34,6 @@ import java.util.List;
 public class ForumsBBSManager extends BaseBBSManager {
 	private static Logger log = LoggerFactory.getLogger(ForumsBBSManager.class.getName());
 
-
-
 	private final List<Forum> table;
 	private int lastid = 1;
 

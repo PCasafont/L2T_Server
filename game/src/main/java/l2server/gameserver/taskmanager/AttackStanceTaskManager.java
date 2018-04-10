@@ -43,8 +43,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class AttackStanceTaskManager {
 	private static Logger log = LoggerFactory.getLogger(AttackStanceTaskManager.class.getName());
 
-
-
 	protected Map<Creature, Long> attackStanceTasks = new ConcurrentHashMap<>();
 
 	private AttackStanceTaskManager() {

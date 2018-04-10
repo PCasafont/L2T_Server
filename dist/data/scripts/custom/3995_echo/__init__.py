@@ -25,7 +25,6 @@ LIST = {
 
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -52,7 +51,6 @@ class Quest(JQuest):
 
     def onTalk(Self, npc, player):
         return "1.htm"
-
 
 QUEST = Quest(-1, qn, QuestDesc)
 

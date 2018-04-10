@@ -25,7 +25,6 @@ Flower = 8290
 Heart = 8291
 Necklace = 8292
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -334,7 +333,6 @@ class Quest(JQuest):
             elif cond == 15:
                 htmltext = "32045-03.htm"
         return htmltext
-
 
 QUEST = Quest(120, qn, "Pavel's Research")
 

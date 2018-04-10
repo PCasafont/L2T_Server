@@ -15,7 +15,6 @@ CHEST = 10346
 # MONSTERs
 NPC = [20784, 20785, 21639, 21640]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -96,7 +95,6 @@ class Quest(JQuest):
                 st.setState(State.STARTED)
         npc.showChatWindow(player)
         return
-
 
 QUEST = Quest(139, qn, "Shadow Fox - 1")
 

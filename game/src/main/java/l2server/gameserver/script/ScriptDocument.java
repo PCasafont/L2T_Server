@@ -33,7 +33,6 @@ import java.io.InputStream;
 public class ScriptDocument {
 	private static Logger log = LoggerFactory.getLogger(ScriptDocument.class.getName());
 
-
 	private Document document;
 	private String name;
 

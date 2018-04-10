@@ -41,7 +41,6 @@ import java.util.concurrent.Future;
 public class SepulcherNpcInstance extends Npc {
 	private static Logger log = LoggerFactory.getLogger(SepulcherNpcInstance.class.getName());
 
-
 	protected Future<?> closeTask = null;
 	protected Future<?> spawnNextMysteriousBoxTask = null;
 	protected Future<?> spawnMonsterTask = null;

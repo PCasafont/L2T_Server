@@ -30,7 +30,6 @@ SuspiciousTotem = 7156
 GemstoneKey = 7157
 TotemDoll = 7158
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -237,7 +236,6 @@ class Quest(JQuest):
             st.giveItems(TotemDoll, 1)
             st.set("step", "2")
         return
-
 
 QUEST = Quest(25, qn, "Hiding Behind The Truth")
 

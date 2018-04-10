@@ -63,7 +63,6 @@ MESSAGES = {SUCCUBUS_OF_SEDUCTION: ["Do you wanna be loved?", "Do you need love?
             GRIMA: ["hey hum hum!", "boom! boom!", "...", "Ki ab kya karein hum"],
             }
 
-
 def check_ingredients(st, required):
     if st.getQuestItemsCount(AMBER_SCALE) != required: return 0
     if st.getQuestItemsCount(WIND_SOULSTONE) != required: return 0
@@ -75,11 +74,9 @@ def check_ingredients(st, required):
     if st.getQuestItemsCount(BUGBEAR_BLOOD) != required: return 0
     return 1
 
-
 def autochat(npc, text):
     if npc: npc.broadcastPacket(NpcSay(npc.getObjectId(), 0, npc.getNpcId(), text))
     return
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -368,7 +365,6 @@ class Quest(JQuest):
                 except:
                     pass
         return
-
 
 QUEST = Quest(334, qn, "The Wishing Potion")
 

@@ -14,7 +14,6 @@ SUPPORT_CERIFICATE = 14866
 DESTROYED_MACHINE_PIECE = 14869
 ENCHANTED_GOLEM_FRAGMENT = 14870
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -106,7 +105,6 @@ class Quest(JQuest):
                         st.set("cond", "4")
                         st.playSound("ItemSound.quest_middle")
         return
-
 
 QUEST = Quest(239, qn, "Won't You Join Us?")
 

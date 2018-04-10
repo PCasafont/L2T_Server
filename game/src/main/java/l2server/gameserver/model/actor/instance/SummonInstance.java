@@ -37,7 +37,6 @@ import java.util.concurrent.Future;
 public class SummonInstance extends Summon {
 	private static Logger log = LoggerFactory.getLogger(SummonInstance.class.getName());
 
-
 	private float expPenalty = 0; // exp decrease multiplier (i.e. 0.3 (= 30%) for shadow)
 	private int itemConsumeId;
 	private int itemConsumeCount;

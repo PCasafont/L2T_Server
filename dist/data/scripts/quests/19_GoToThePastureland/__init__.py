@@ -11,7 +11,6 @@ TUNATUN = 31537
 # ITEMS
 BEAST_MEAT = 7547
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -58,7 +57,6 @@ class Quest(JQuest):
         elif id == State.STARTED:
             htmltext = "31537-0.htm"
         return htmltext
-
 
 QUEST = Quest(19, qn, "Go To The Pastureland")
 

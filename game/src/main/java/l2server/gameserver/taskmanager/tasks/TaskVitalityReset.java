@@ -32,8 +32,6 @@ import java.sql.PreparedStatement;
 public class TaskVitalityReset extends Task {
 	private static Logger log = LoggerFactory.getLogger(TaskVitalityReset.class.getName());
 
-
-
 	private static final String NAME = "vitalty reset";
 
 	/**

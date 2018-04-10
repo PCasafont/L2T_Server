@@ -28,8 +28,6 @@ import java.util.Map;
 public class BypassHandler {
 	private static Logger log = LoggerFactory.getLogger(BypassHandler.class.getName());
 
-
-
 	private Map<Integer, IBypassHandler> datatable;
 
 	public static BypassHandler getInstance() {

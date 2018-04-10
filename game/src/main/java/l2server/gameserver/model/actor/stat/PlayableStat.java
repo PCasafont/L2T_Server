@@ -29,8 +29,6 @@ import org.slf4j.LoggerFactory;
 public class PlayableStat extends CharStat {
 	private static Logger log = LoggerFactory.getLogger(PlayableStat.class.getName());
 
-
-
 	private static final long MAX_SP = 50000000000L;
 
 	public PlayableStat(Playable activeChar) {

@@ -5,7 +5,6 @@ from l2server.gameserver.network.serverpackets import RadarControl
 
 qn = "1002_Nottingale"
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -45,7 +44,6 @@ class Quest(JQuest):
         player.setLastQuestNpcObject(npc.getObjectId())
         npc.showChatWindow(player)
         return None
-
 
 QUEST = Quest(-1, qn, "custom")
 QUEST.addStartNpc(32627)

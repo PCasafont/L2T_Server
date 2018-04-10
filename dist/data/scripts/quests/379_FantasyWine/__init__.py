@@ -21,7 +21,6 @@ MOB = {
     ENKU_SHAMAN: [STONE, 100]
 }
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -98,7 +97,6 @@ class Quest(JQuest):
                     st.playSound("ItemSound.quest_middle")
                     st.set("cond", "2")
         return
-
 
 QUEST = Quest(379, qn, "Fantasy Wine")
 

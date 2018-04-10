@@ -15,7 +15,6 @@ Papiku = 32564
 # items
 Letter = 13810
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -68,7 +67,6 @@ class Quest(JQuest):
         elif id == State.STARTED and npcId == Keucereus and cond == 2:
             htmltext = "32548-01.htm"
         return htmltext
-
 
 QUEST = Quest(10267, qn, "Journey to Gracia")
 

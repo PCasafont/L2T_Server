@@ -47,7 +47,6 @@ import java.util.Collection;
 public class Shutdown extends Thread {
 	private static Logger log = LoggerFactory.getLogger(Shutdown.class.getName());
 
-
 	public static final int SIGTERM = 0;
 	public static final int GM_SHUTDOWN = 1;
 	public static final int GM_RESTART = 2;

@@ -7,7 +7,6 @@ qn = "8010_ArenaEvent"
 NPCID = 93001
 initialhtml = "1.htm"
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -54,7 +53,6 @@ class Quest(JQuest):
 
     def onTalk(self, npc, player):
         return initialhtml
-
 
 QUEST = Quest(-1, qn, "custom")
 CREATED = State('Start', QUEST)

@@ -39,8 +39,6 @@ import java.util.*;
 public class GeoPathFinding extends PathFinding {
 	private static Logger log = LoggerFactory.getLogger(GeoPathFinding.class.getName());
 
-
-
 	private static Map<Short, ByteBuffer> pathNodes = new HashMap<>();
 	private static Map<Short, IntBuffer> pathNodesIndex = new HashMap<>();
 

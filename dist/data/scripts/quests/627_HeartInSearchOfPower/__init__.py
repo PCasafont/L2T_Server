@@ -18,7 +18,6 @@ DROP_CHANCE = 90
 ADENA = 57
 MOLD_HARDENER, ENRIA, ASOFE, THONS = 4041, 4042, 4043, 4044
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -105,7 +104,6 @@ class Quest(JQuest):
                             st.playSound("ItemSound.quest_itemget")
                         st.giveItems(BEAD_OF_OBEDIENCE, int(numItems))
         return
-
 
 QUEST = Quest(627, qn, "Heart In Search Of Power")
 

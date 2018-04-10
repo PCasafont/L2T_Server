@@ -31,8 +31,6 @@ import java.util.regex.PatternSyntaxException;
 public class PetNameTable {
 	private static Logger log = LoggerFactory.getLogger(PetNameTable.class.getName());
 
-
-
 	private PetNameTable() {
 	}
 

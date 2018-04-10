@@ -24,7 +24,6 @@ import javax.script.ScriptContext;
 public class Expression {
 	private static Logger log = LoggerFactory.getLogger(Expression.class.getName());
 
-
 	private final ScriptContext context;
 	@SuppressWarnings("unused")
 	private final String lang;

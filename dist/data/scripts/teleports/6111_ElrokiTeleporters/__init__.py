@@ -4,7 +4,6 @@ from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "6111_ElrokiTeleporters"
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -18,7 +17,6 @@ class Quest(JQuest):
         if npcId == 32112:
             player.teleToLocation(7557, -5513, -3221)
         return
-
 
 QUEST = Quest(-1, qn, "Teleports")
 

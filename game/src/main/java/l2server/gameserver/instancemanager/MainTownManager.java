@@ -39,7 +39,6 @@ import java.util.*;
 public class MainTownManager {
 	private static Logger log = LoggerFactory.getLogger(MainTownManager.class.getName());
 
-
 	public class MainTownInfo {
 		private final int townId;
 		private final String name;

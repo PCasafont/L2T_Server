@@ -21,7 +21,6 @@ REWARDS_DYNA = {
     "6": [10115, 287],  # Recipe: Sealed Dynasty Sigil (60%)
 }
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -103,7 +102,6 @@ class Quest(JQuest):
                             st.playSound("ItemSound.quest_itemget")
                         st.giveItems(BONES_OF_A_PLAINS_DINOSAUR, int(numItems))
         return
-
 
 QUEST = Quest(643, qn, "Rise and Fall of the Elroki Tribe")
 

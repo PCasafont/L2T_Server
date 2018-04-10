@@ -8,7 +8,6 @@ from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 qn = "30154_asterios_occupation_change"
 HIERARCH_ASTERIOS = 30154
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -80,7 +79,6 @@ class Quest(JQuest):
             st.exitQuest(False)
             st.exitQuest(1)
             return "30154-11.htm"
-
 
 QUEST = Quest(30154, qn, "village_master")
 

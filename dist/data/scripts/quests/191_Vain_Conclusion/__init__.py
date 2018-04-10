@@ -16,7 +16,6 @@ Shegfield = 30068
 # Items
 Metal = 10371
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -92,7 +91,6 @@ class Quest(JQuest):
             st.setState(State.STARTED)
         npc.showChatWindow(player)
         return None
-
 
 QUEST = Quest(191, qn, "Vain Conclusion")
 

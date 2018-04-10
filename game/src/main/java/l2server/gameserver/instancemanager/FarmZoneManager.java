@@ -40,7 +40,6 @@ import java.util.*;
 public class FarmZoneManager {
 	private static Logger log = LoggerFactory.getLogger(FarmZoneManager.class.getName());
 
-
 	public class FarmZone {
 		private String name;
 		private Set<NpcTemplate> mobs = new HashSet<>();

@@ -31,7 +31,6 @@ DROPLIST = {
 # itemId:[max,cond]
 DROPCONFIG = {ECTOPLASM: [35, "4"], GLASS_JAGUAR_CRYSTAL: [5, "8"]}
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -140,7 +139,6 @@ class Quest(JQuest):
                     st.playSound("ItemSound.quest_itemget")
                 st.giveItems(itemId, qty)
         return
-
 
 QUEST = Quest(136, qn, "More Than Meets The Eye")
 

@@ -41,7 +41,6 @@ QUESTVARSITEMS = {
     "ClassAbility80-": [10288, 10289, 10290, 10291, 10292, 10293, 10294]
 }
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -169,7 +168,6 @@ class Quest(JQuest):
             st.set("cond", "0")
             st.setState(State.STARTED)
             return "8005-01.htm"
-
 
 QUEST = Quest(-1, qn, "custom")
 

@@ -21,14 +21,12 @@ MOBS = range(21553, 21557) + [21561]
 # ITEMS
 CROSS, SKULL, LETTER, JEWEL1, JEWEL2, SEALED_BOX, BOX = range(7141, 7148)
 
-
 def AutoChat(npc, text):
     chars = npc.getKnownList().getKnownPlayers().values().toArray()
     if chars != None:
         for pc in chars:
             sm = NpcSay(npc.getObjectId(), 0, npc.getNpcId(), text)
             pc.sendPacket(sm)
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -294,7 +292,6 @@ class Quest(JQuest):
                     st.playSound("ItemSound.quest_itemget")
                     st.set("cond", "5")
         return
-
 
 QUEST = Quest(22, qn, "Tragedy In Von Hellmann Forest")
 

@@ -33,7 +33,6 @@ import java.sql.ResultSet;
 public class Mail extends ItemContainer {
 	private static Logger log = LoggerFactory.getLogger(Mail.class.getName());
 
-
 	private final int ownerId;
 	private int messageId;
 

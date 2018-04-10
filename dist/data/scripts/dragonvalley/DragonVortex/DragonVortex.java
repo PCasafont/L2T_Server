@@ -16,7 +16,6 @@ import org.slf4j.LoggerFactory;
 public class DragonVortex extends Quest {
 	private static Logger log = LoggerFactory.getLogger(DragonVortex.class.getName());
 
-
 	private static final boolean Debug = false;
 
 	private static Npc raid = null;

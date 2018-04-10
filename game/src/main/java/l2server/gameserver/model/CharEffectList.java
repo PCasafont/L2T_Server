@@ -43,7 +43,6 @@ import java.util.stream.Collectors;
 public class CharEffectList {
 	private static Logger log = LoggerFactory.getLogger(CharEffectList.class.getName());
 
-
 	private static final Abnormal[] EMPTY_EFFECTS = new Abnormal[0];
 
 	private AtomicBoolean queueLock = new AtomicBoolean(true);

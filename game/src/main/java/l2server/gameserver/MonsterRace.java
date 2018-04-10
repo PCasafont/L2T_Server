@@ -28,8 +28,6 @@ import java.lang.reflect.Constructor;
 public class MonsterRace {
 	private static Logger log = LoggerFactory.getLogger(MonsterRace.class.getName());
 
-
-
 	private Npc[] monsters;
 	private Constructor<?> constructor;
 	private int[][] speeds;

@@ -26,7 +26,6 @@ import org.slf4j.LoggerFactory;
 public class NpcUtil {
 	private static Logger log = LoggerFactory.getLogger(NpcUtil.class.getName());
 
-
 	public static Npc addSpawn(int npcId,
 	                           int x,
 	                           int y,

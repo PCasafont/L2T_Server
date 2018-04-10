@@ -31,8 +31,6 @@ import org.slf4j.LoggerFactory;
 public class TaskOlympiadSave extends Task {
 	private static Logger log = LoggerFactory.getLogger(TaskOlympiadSave.class.getName());
 
-
-
 	public static final String NAME = "olympiad_save";
 
 	/**

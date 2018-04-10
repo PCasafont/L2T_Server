@@ -34,14 +34,12 @@ DD_SEEKER = 20202  # shamhai's
 FOOD = 4038
 ARMOR = 3912
 
-
 # helper functions section
 def check_level(st):
     if st.getPlayer().getLevel() < 35:
         st.exitQuest(True)
         return "420_low_level.htm"
     return "Start.htm"
-
 
 def check_stone(st, progress):
     if st.getQuestItemsCount(FRY_STN) == 1:
@@ -62,7 +60,6 @@ def check_stone(st, progress):
     else:
         return "420_cronos_7.htm"
 
-
 def check_elements(st, progress):
     coal = st.getQuestItemsCount(1870)
     char = st.getQuestItemsCount(1871)
@@ -81,7 +78,6 @@ def check_elements(st, progress):
             return "420_maria_4.htm"
         else:
             return "420_maria_1.htm"
-
 
 def craft_stone(st, progress):
     if progress in [1, 8]:
@@ -105,7 +101,6 @@ def craft_stone(st, progress):
         st.giveItems(FRY_STN_DLX, 1)
         st.playSound("ItemSound.quest_itemget")
         return "420_maria_5.htm"
-
 
 def check_eggs(st, npc, progress):
     whom = int(st.get("dragon"))
@@ -191,7 +186,6 @@ def check_eggs(st, npc, progress):
             st.playSound("ItemSound.quest_itemget")
             return "420_" + npc + "_4.htm"
     return "check_eggs sux"
-
 
 # Main Quest Code
 class Quest(JQuest):
@@ -568,7 +562,6 @@ class Quest(JQuest):
                 st.takeItems(FRY_STN_DLX, 1)
                 st.set("progress", "7")
                 return "you lost fairy stone deluxe!"
-
 
 # Quest class and state definition
 QUEST = Quest(420, qn, "Little Wings")

@@ -34,7 +34,6 @@ public class ExFriendDetailInfo extends L2GameServerPacket {
 	private static Logger log = LoggerFactory.getLogger(ExFriendDetailInfo.class.getName());
 
 
-	
 	private Player player;
 	int friendObjId;
 	private String name;

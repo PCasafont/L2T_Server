@@ -18,7 +18,6 @@ GRENDEL = 21304
 # Chance
 DROP_CHANCE = 100
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -148,7 +147,6 @@ class Quest(JQuest):
                         st.playSound("ItemSound.quest_itemget")
                     st.giveItems(EVIL_SPIRIT, int(numItems))
         return
-
 
 QUEST = Quest(603, qn, "Daimon the White-Eyed - Part 1")
 

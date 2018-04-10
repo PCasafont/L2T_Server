@@ -32,8 +32,6 @@ import java.sql.PreparedStatement;
 public class TaskRecom extends Task {
 	private static Logger log = LoggerFactory.getLogger(TaskRecom.class.getName());
 
-
-
 	private static final String NAME = "recommendations";
 
 	/**

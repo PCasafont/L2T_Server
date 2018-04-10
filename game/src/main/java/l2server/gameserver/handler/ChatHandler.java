@@ -30,8 +30,6 @@ import java.util.Map;
 public class ChatHandler {
 	private static Logger log = LoggerFactory.getLogger(ChatHandler.class.getName());
 
-
-
 	private Map<Integer, IChatHandler> datatable = new HashMap<>();
 
 	public static ChatHandler getInstance() {

@@ -17,13 +17,11 @@ BLUE_SOUL_CRYSTAL2_ID, BLUE_SOUL_CRYSTAL3_ID, BLUE_SOUL_CRYSTAL4_ID, BLUE_SOUL_C
 BLUE_SOUL_CRYSTAL6_ID, BLUE_SOUL_CRYSTAL7_ID, BLUE_SOUL_CRYSTAL8_ID, BLUE_SOUL_CRYSTAL9_ID, \
 BLUE_SOUL_CRYSTAL10_ID, RED_SOUL_CRYSTALX_ID, GREEN_SOUL_CRYSTALX_ID, BLUE_SOUL_CRYSTALX_ID = range(4629, 4665)
 
-
 def check(st):
     for i in range(4629, 4665):
         if st.getQuestItemsCount(i) > 0:
             return True
     return False
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -63,7 +61,6 @@ class Quest(JQuest):
                 GREEN_SOUL_CRYSTAL0_ID) == st.getQuestItemsCount(BLUE_SOUL_CRYSTAL0_ID) == 0:
             htmltext = npcId + "-21.htm"
         return htmltext
-
 
 QUEST = Quest(350, qn, "Enhance Your Weapon")
 

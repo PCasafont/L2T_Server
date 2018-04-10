@@ -14,7 +14,6 @@ Lekon = 32557
 # items
 Mark = 13856
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -89,7 +88,6 @@ class Quest(JQuest):
             else:
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(10273, qn, "Good Day To Fly")
 

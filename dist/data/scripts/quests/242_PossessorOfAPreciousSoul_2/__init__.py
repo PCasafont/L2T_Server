@@ -30,7 +30,6 @@ CHANCE_FOR_HAIR = 20
 # MOB
 RESTRAINER_OF_GLORY = 27317
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -210,7 +209,6 @@ class Quest(JQuest):
             if st.getQuestItemsCount(ORB_OF_BINDING) == 5:
                 st.unset("awaitsDrops")
         return
-
 
 QUEST = Quest(242, qn, "Possessor Of A Precious Soul - 2")
 

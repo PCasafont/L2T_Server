@@ -36,7 +36,6 @@ public class RequestMentorCancel extends L2GameClientPacket {
 	private static Logger log = LoggerFactory.getLogger(RequestMentorCancel.class.getName());
 
 
-	
 	private String name;
 	boolean isMentor;
 	

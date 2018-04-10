@@ -15,7 +15,6 @@ BROOCH = 7262  # Antique Brooch
 ADENA = 57  # Adena
 AMOUNT = 150292  # Amount
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -71,7 +70,6 @@ class Quest(JQuest):
             elif cond == 2:
                 htmltext = "32009-3.htm"
         return htmltext
-
 
 QUEST = Quest(119, qn, "Last Imperial Prince")
 

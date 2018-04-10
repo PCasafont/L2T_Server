@@ -13,7 +13,6 @@ CHANCE = 50
 # REWARDS
 REWARDS = [[57, 30000], [1867, 50], [1872, 50]]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -72,7 +71,6 @@ class Quest(JQuest):
             else:
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(300, qn, "Hunting Leto Lizardman")
 

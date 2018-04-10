@@ -30,8 +30,6 @@ import java.io.File;
 public class TaskScript extends Task {
 	private static Logger log = LoggerFactory.getLogger(TaskScript.class.getName());
 
-
-
 	public static final String NAME = "script";
 
 	/**

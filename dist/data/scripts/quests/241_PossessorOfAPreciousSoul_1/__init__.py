@@ -36,7 +36,6 @@ MALRUK_SUCCUBUS_CLAW_CHANCE = 10
 # MOB
 BARAHAM = 27113
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -287,7 +286,6 @@ class Quest(JQuest):
                         st.set("cond", "15")
                         st.playSound("ItemSound.quest_middle")
         return
-
 
 QUEST = Quest(241, qn, "Possessor Of A Precious Soul - 1")
 

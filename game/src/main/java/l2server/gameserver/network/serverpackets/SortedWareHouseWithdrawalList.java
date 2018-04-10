@@ -39,7 +39,6 @@ import java.util.List;
 public class SortedWareHouseWithdrawalList extends L2ItemListPacket {
 	private static Logger log = LoggerFactory.getLogger(SortedWareHouseWithdrawalList.class.getName());
 
-
 	public static final int PRIVATE = 1;
 	public static final int CLAN = 2;
 	public static final int CASTLE = 3; //not sure

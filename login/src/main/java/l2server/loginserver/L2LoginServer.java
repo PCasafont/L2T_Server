@@ -37,7 +37,6 @@ import java.sql.SQLException;
 public class L2LoginServer {
 	private static Logger log = LoggerFactory.getLogger(L2LoginServer.class.getName());
 
-
 	public static final int PROTOCOL_REV = 0x0106;
 	
 	private static L2LoginServer instance;

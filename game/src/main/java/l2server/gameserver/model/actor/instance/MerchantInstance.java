@@ -35,7 +35,6 @@ import org.slf4j.LoggerFactory;
 public class MerchantInstance extends NpcInstance {
 	private static Logger log = LoggerFactory.getLogger(MerchantInstance.class.getName());
 
-
 	private MerchantPriceConfig mpc;
 	
 	public MerchantInstance(int objectId, NpcTemplate template) {

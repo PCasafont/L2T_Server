@@ -28,8 +28,6 @@ import java.util.concurrent.ScheduledFuture;
 public class Ranked1v1 {
 	private static Logger log = LoggerFactory.getLogger(Ranked1v1.class.getName());
 
-
-
 	public static enum State {
 		INACTIVE,
 		REGISTER,

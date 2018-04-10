@@ -31,7 +31,6 @@ import java.sql.SQLException;
 public class L2ClanMember {
 	private static Logger log = LoggerFactory.getLogger(L2ClanMember.class.getName());
 
-
 	private L2Clan clan;
 	private int objectId;
 	private String name;

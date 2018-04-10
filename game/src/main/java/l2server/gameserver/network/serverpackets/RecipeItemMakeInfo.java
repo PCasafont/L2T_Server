@@ -31,7 +31,6 @@ public class RecipeItemMakeInfo extends L2GameServerPacket {
 	private static Logger log = LoggerFactory.getLogger(RecipeItemMakeInfo.class.getName());
 
 
-	
 	private int id;
 	private Player activeChar;
 	private boolean success;

@@ -16,7 +16,6 @@ MOLD_GLUE, MOLD_LUBRICANT, MOLD_HARDENER, ENRIA, ASOFE, THONS = 4039, 4040, 4041
 REWARDS = {"1": [MOLD_GLUE, 15], "2": [ASOFE, 15], "3": [THONS, 15], "4": [MOLD_LUBRICANT, 10], "5": [ENRIA, 10],
            "6": [MOLD_HARDENER, 5]}
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -84,7 +83,6 @@ class Quest(JQuest):
                             st.playSound("ItemSound.quest_itemget")
                         st.giveItems(TOP_QUALITY_MEAT, int(numItems))
         return
-
 
 QUEST = Quest(631, qn, "Delicious Top Choice Meat")
 

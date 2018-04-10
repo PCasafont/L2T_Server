@@ -16,7 +16,6 @@ DREAM_FRAGMENT_ID = 8514
 
 CHANCE = 68
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -71,7 +70,6 @@ class Quest(JQuest):
                     st.giveItems(DREAM_FRAGMENT_ID, 1)
                     st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(650, qn, "A Broken Dream")
 

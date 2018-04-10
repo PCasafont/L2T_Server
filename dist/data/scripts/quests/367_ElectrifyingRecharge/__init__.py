@@ -10,7 +10,6 @@ LORAIN = 30673
 # MOBS
 CATHEROK = 21035
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -88,7 +87,6 @@ class Quest(JQuest):
                         st.set("cond", "2")
                     break
         return
-
 
 QUEST = Quest(367, qn, "Electrifying Recharge")
 

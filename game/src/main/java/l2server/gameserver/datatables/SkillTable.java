@@ -37,7 +37,6 @@ import java.util.Set;
 public class SkillTable {
 	private static Logger log = LoggerFactory.getLogger(SkillTable.class.getName());
 
-
 	private final TLongObjectHashMap<Skill> skills = new TLongObjectHashMap<>();
 	private final TIntIntHashMap skillMaxLevel = new TIntIntHashMap();
 	private final Set<Integer> enchantable = new HashSet<>();

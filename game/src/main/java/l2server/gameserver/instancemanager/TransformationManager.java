@@ -29,8 +29,6 @@ import java.util.Map;
 public class TransformationManager {
 	private static Logger log = LoggerFactory.getLogger(TransformationManager.class.getName());
 
-
-
 	public static TransformationManager getInstance() {
 		return SingletonHolder.instance;
 	}

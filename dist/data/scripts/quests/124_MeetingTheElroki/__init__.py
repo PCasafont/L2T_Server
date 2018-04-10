@@ -14,7 +14,6 @@ MANTARASA = 32118
 # Items
 M_EGG = 8778
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -102,7 +101,6 @@ class Quest(JQuest):
         elif npcId == MANTARASA and cond == 5:
             htmltext = "32118-01.htm"
         return htmltext
-
 
 QUEST = Quest(124, qn, "Meeting The Elroki")
 

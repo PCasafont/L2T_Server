@@ -27,7 +27,6 @@ DEINONYCHUS = [16067, 22203, 22204, 22205, 22220, 22225, 22743, 22745]
 # DROP
 DROP_CHANCE = 30
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -184,7 +183,6 @@ class Quest(JQuest):
                 st.set("cond", "4")
                 st.playSound("ItemSound.quest_middle")
         return
-
 
 QUEST = Quest(125, qn, "The Name of Evil - 1")
 

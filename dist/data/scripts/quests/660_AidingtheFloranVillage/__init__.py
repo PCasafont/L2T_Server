@@ -27,7 +27,6 @@ ADENA = 57
 SCROLL_ENCANT_ARMOR = 956
 SCROLL_ENCHANT_WEAPON = 955
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -173,7 +172,6 @@ class Quest(JQuest):
                 st.giveItems(DELU_LIZARDMAN_SCALE, 1)
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(660, qn, "Aiding the Floran Village")
 

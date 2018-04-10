@@ -34,7 +34,6 @@ GREEN_COLORED_LURE_HG = 6521
 BABY_DUCK_RODE = 6529
 FISHING_SHOT_NG = 6535
 
-
 def drop(partyMember, array):
     item, max, item2, condition = array
     st = partyMember.getQuestState(qn)
@@ -51,7 +50,6 @@ def drop(partyMember, array):
     else:
         st.playSound("ItemSound.quest_itemget")
     return
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -129,7 +127,6 @@ class Quest(JQuest):
             if (partyMember and npcId != M_LIZARDMAN):
                 drop(partyMember, DROPLIST[npcId])
         return
-
 
 QUEST = Quest(39, qn, "Red Eyed Invaders")
 

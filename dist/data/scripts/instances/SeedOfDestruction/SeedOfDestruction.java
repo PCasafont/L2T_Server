@@ -35,8 +35,6 @@ import java.util.Map;
 public class SeedOfDestruction extends Quest {
 	private static Logger log = LoggerFactory.getLogger(SeedOfDestruction.class.getName());
 
-
-
 	private class SODWorld extends InstanceWorld {
 		public Map<Npc, Boolean> npcList = new HashMap<Npc, Boolean>();
 		public int killedDevice = 0;

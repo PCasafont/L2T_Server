@@ -34,8 +34,6 @@ import java.util.Map;
 public class ScenePlayerDataTable {
 	private static Logger log = LoggerFactory.getLogger(ScenePlayerDataTable.class.getName());
 
-
-
 	private Map<Integer, Integer> sceneDataTable;
 
 	@Reload("scenes")

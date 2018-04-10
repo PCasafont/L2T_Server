@@ -22,7 +22,6 @@ FROG_KING_BEAD = 13820
 CANDY_POUCH = 13821
 NATIVES_GLOVE = 13819
 
-
 def transformPlayer(npc, player, transid):
     if player.isTransformed() == True:
         player.untransform()
@@ -34,13 +33,11 @@ def transformPlayer(npc, player, transid):
     npc.doCast(SkillTable.getInstance().getInfo(transid, 1))
     return
 
-
 def checkPlayer(player, transid):
     effect = player.getFirstEffect(transid)
     if effect:
         return True
     return False
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -199,7 +196,6 @@ class Quest(JQuest):
             if cond == 12:
                 htmltext = "31001-01.htm"
         return htmltext
-
 
 QUEST = Quest(194, qn, "Seven Sign Contract Of Mammon")
 

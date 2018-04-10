@@ -37,7 +37,6 @@ import java.util.Map;
 public class EnchantCostsTable {
 	private static Logger log = LoggerFactory.getLogger(EnchantCostsTable.class.getName());
 
-
 	public static final int NORMAL_ENCHANT_COST_MULTIPLIER = 1;
 	public static final int SAFE_ENCHANT_COST_MULTIPLIER = 5;
 	public static final int IMMORTAL_ENCHANT_COST_MULTIPLIER = 25;

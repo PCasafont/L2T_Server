@@ -46,7 +46,6 @@ import java.util.*;
 public class ZoneManager {
 	private static Logger log = LoggerFactory.getLogger(ZoneManager.class.getName());
 
-
 	//private final HashMap<Integer, ZoneType> zones = new HashMap<Integer, ZoneType>();
 	private final Map<Class<? extends ZoneType>, Map<Integer, ? extends ZoneType>> classZones = new HashMap<>();
 	private int lastDynamicId = 300000;

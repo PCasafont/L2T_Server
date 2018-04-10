@@ -15,7 +15,6 @@ EVIL_ALTAR_5 = 31516
 # ITEMS
 CRYSTAL_OF_SEAL = 7167
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -98,7 +97,6 @@ class Quest(JQuest):
                 st.playSound("ItemSound.quest_finish")
                 htmltext = "31517-3.htm"
         return htmltext
-
 
 QUEST = Quest(16, qn, "The Coming Darkness")
 

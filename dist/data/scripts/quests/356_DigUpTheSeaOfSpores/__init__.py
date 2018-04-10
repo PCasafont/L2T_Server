@@ -15,7 +15,6 @@ ROTTING_TREE = 20558
 CARNIVORE_SPORE = 5865
 HERBIBOROUS_SPORE = 5866
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -93,7 +92,6 @@ class Quest(JQuest):
             else:
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(356, qn, "Dig Up The Sea Of Spores")
 

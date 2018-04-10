@@ -30,7 +30,6 @@ import java.util.List;
 public class ClanHallAuctionManager {
 	private static Logger log = LoggerFactory.getLogger(ClanHallAuctionManager.class.getName());
 
-
 	private List<Auction> auctions = new ArrayList<>();
 
 	private static final String[] ITEM_INIT_DATA = {"(22, 0, 'NPC', 'NPC Clan', 'ClanHall', 22, 0, 'Moonstone Hall', 1, 20000000, 0, 1164841200000)",

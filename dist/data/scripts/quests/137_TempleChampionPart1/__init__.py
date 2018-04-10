@@ -15,7 +15,6 @@ FRAGMENT = 10340
 # MONSTERs
 NPC = [20083, 20144, 20199, 20200, 20201, 20202]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -98,7 +97,6 @@ class Quest(JQuest):
                 else:
                     st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(137, qn, "Temple Champion - 1")
 

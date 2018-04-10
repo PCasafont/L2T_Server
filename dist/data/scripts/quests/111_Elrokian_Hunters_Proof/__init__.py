@@ -20,7 +20,6 @@ MOBS2 = [22200, 22201, 22202, 22219]
 MOBS3 = [22208, 22209, 22210, 22221]
 MOBS4 = [22203, 22204, 22205, 22220]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -139,7 +138,6 @@ class Quest(JQuest):
                 st.set("cond", "11")
                 st.playSound("ItemSound.quest_middle")
         return
-
 
 QUEST = Quest(111, qn, "Elrokian Hunter's Proof")
 

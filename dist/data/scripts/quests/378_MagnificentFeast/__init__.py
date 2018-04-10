@@ -25,7 +25,6 @@ REWARDS = {
     36: [848, 1, 2200],
 }
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -126,7 +125,6 @@ class Quest(JQuest):
             else:
                 htmltext = "30594-9.htm"
         return htmltext
-
 
 QUEST = Quest(378, qn, "Magnificent Feast")
 

@@ -32,8 +32,6 @@ import java.util.Calendar;
 public class Couple {
 	private static Logger log = LoggerFactory.getLogger(Couple.class.getName());
 
-
-
 	// =========================================================
 	// Data Field
 	private int Id = 0;

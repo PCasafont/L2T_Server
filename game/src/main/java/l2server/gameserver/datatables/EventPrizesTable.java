@@ -40,7 +40,6 @@ import java.util.Map;
 public class EventPrizesTable {
 	private static Logger log = LoggerFactory.getLogger(EventPrizesTable.class.getName());
 
-
 	private final Map<String, List<EventPrize>> prizes = new HashMap<>();
 
 	private EventPrizesTable() {

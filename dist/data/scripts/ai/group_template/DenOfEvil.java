@@ -40,7 +40,6 @@ import org.slf4j.LoggerFactory;
 public class DenOfEvil extends L2AttackableAIScript {
 	private static Logger log = LoggerFactory.getLogger(DenOfEvil.class.getName());
 
-
 	// private static final int _buffer_id = 32656;
 
 	private static final int[] _eye_ids = {18812, 18813, 18814};

@@ -28,8 +28,6 @@ import org.slf4j.LoggerFactory;
 public class GuardKnownList extends AttackableKnownList {
 	private static Logger log = LoggerFactory.getLogger(GuardKnownList.class.getName());
 
-
-
 	public GuardKnownList(GuardInstance activeChar) {
 		super(activeChar);
 	}

@@ -35,7 +35,6 @@ MANAKIA, TORAI = 30515, 30557
 # Mobs & Drop
 DROPLIST = {20620: [CB_TOOTH, "awaitTooth"], 20621: [DW_LIGHT, "awaitLight"]}
 
-
 def render_shop():
     html = "<html><body><font color=\"LEVEL\">Robe Armor Fabrics:</font><table border=0 width=300>"
     for i in SHOP_LIST.keys():
@@ -48,7 +47,6 @@ def render_shop():
             SHOP_LIST[i][2] * ADENA_X) + " adena</font></a></td></tr></table></td></tr>"
     html += "</table></body></html>"
     return html
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -158,7 +156,6 @@ class Quest(JQuest):
         return
 
         # Quest class and state definition
-
 
 QUEST = Quest(QUEST_NUMBER, str(QUEST_NUMBER) + "_" + QUEST_NAME, QUEST_DESCRIPTION)
 

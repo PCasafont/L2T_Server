@@ -31,7 +31,6 @@ import java.util.concurrent.ScheduledFuture;
 public class DamageManager {
 	private static Logger log = LoggerFactory.getLogger(DamageManager.class.getName());
 
-
 	private static Map<Integer, DamageInfo> dmgIinfo = new HashMap<>();
 	protected static ScheduledFuture<?> saveTask;
 

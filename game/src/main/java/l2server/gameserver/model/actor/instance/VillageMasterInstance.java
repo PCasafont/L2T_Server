@@ -55,7 +55,6 @@ import java.util.List;
 public class VillageMasterInstance extends NpcInstance {
 	private static Logger log = LoggerFactory.getLogger(VillageMasterInstance.class.getName());
 
-
 	//
 	
 	public VillageMasterInstance(int objectId, NpcTemplate template) {

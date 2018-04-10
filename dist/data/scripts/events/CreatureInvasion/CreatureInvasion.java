@@ -49,7 +49,6 @@ import java.util.Map;
 public class CreatureInvasion extends Quest {
 	private static Logger log = LoggerFactory.getLogger(CreatureInvasion.class.getName());
 
-
 	private static final boolean debug = false;
 	private static final String qn = "CreatureInvasion";
 

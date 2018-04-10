@@ -16,7 +16,6 @@ COMPLETE_SKELETON_ID = 1358
 ANATOMY_DIAGRAM_ID = 1349
 ADENA_ID = 57
 
-
 def pieces(st):
     return st.getQuestItemsCount(ZOMBIE_HEAD1_ID) + \
            st.getQuestItemsCount(SPINE1_ID) + \
@@ -27,7 +26,6 @@ def pieces(st):
            st.getQuestItemsCount(RIB_BONE1_ID) + \
            st.getQuestItemsCount(THIGH_BONE1_ID) + \
            st.getQuestItemsCount(COMPLETE_SKELETON_ID)
-
 
 def payback(st):
     count = pieces(st)
@@ -53,7 +51,6 @@ def payback(st):
         st.takeItems(THIGH_BONE1_ID, -1)
         st.takeItems(COMPLETE_SKELETON_ID, -1)
     return amount
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -243,7 +240,6 @@ class Quest(JQuest):
                 else:
                     st.giveItems(ZOMBIE_LIVER1_ID, 1)
         return
-
 
 QUEST = Quest(325, qn, "Grim Collector")
 

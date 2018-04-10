@@ -13,7 +13,6 @@ Nikola = 30621
 Lorain = 30673
 Juris = 30113
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -91,7 +90,6 @@ class Quest(JQuest):
             st.setState(State.STARTED)
         npc.showChatWindow(player)
         return None
-
 
 QUEST = Quest(190, qn, "Lost Dream")
 

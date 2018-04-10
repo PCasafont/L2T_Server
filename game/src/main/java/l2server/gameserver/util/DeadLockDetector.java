@@ -28,8 +28,6 @@ import java.lang.management.*;
 public class DeadLockDetector extends Thread {
 	private static Logger log = LoggerFactory.getLogger(DeadLockDetector.class.getName());
 
-
-
 	private static final int sleepTime = Config.DEADLOCK_CHECK_INTERVAL * 1000;
 
 	private final ThreadMXBean tmx;

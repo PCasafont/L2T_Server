@@ -24,7 +24,6 @@ MANAKIA = 30515
 # Mobs & Drop
 DROPLIST = {20624: [CH_SKULL, "awaitSkull"], 20629: [K_HORN, "awaitHorn"]}
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -106,7 +105,6 @@ class Quest(JQuest):
         return
 
         # Quest class and state definition
-
 
 QUEST = Quest(QUEST_NUMBER, str(QUEST_NUMBER) + "_" + QUEST_NAME, QUEST_DESCRIPTION)
 

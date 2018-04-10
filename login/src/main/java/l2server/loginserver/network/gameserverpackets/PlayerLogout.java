@@ -27,8 +27,6 @@ import org.slf4j.LoggerFactory;
 public class PlayerLogout extends BaseRecievePacket {
 	private static org.slf4j.Logger log = LoggerFactory.getLogger(PlayerLogout.class.getName());
 
-
-
 	public PlayerLogout(byte[] decrypt, GameServerThread server) {
 		super(decrypt);
 		String account = readS();

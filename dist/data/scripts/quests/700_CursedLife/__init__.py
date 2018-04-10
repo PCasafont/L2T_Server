@@ -23,7 +23,6 @@ DROPLIST = {
     95: SWALLOWED_SKULL
 }
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -87,7 +86,6 @@ class Quest(JQuest):
                 st.giveItems(SWALLOWED_BONES, 1)
             st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(700, qn, "Cursed Life")
 

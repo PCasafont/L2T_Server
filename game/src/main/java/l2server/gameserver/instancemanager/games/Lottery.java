@@ -35,7 +35,6 @@ import java.util.Calendar;
 public class Lottery {
 	private static Logger log = LoggerFactory.getLogger(Lottery.class.getName());
 
-
 	public static final long SECOND = 1000;
 	public static final long MINUTE = 60000;
 	

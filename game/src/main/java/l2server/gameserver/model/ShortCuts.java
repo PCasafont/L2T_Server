@@ -38,7 +38,6 @@ import java.util.TreeMap;
 public class ShortCuts {
 	private static Logger log = LoggerFactory.getLogger(ShortCuts.class.getName());
 
-
 	private Player owner;
 	private Map<Integer, Map<Integer, Map<Integer, L2ShortCut>>> shortCuts = new TreeMap<>();
 

@@ -36,8 +36,6 @@ import java.util.Map;
 public class TeleportLocationTable {
 	private static Logger log = LoggerFactory.getLogger(TeleportLocationTable.class.getName());
 
-
-
 	private Map<Integer, L2TeleportLocation> teleports;
 
 	public static TeleportLocationTable getInstance() {

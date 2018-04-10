@@ -2697,7 +2697,6 @@
 	-->
 	<config name="ChatAdmin" var="L2JMOD_CHAT_ADMIN" default="False" />
 
-
 	<!--
 		-
 		Debug enable/disable voice command
@@ -2942,7 +2941,6 @@
 
 	<!-- Random interval. Range 1-192 -->
 	<config name="RandomOfKelbimSpawn" var="KELBIM_RANDOM_SPAWN" default="72" />
-
 
 	<!--
 		-

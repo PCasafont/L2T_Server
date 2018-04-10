@@ -45,7 +45,6 @@ TRANSFORMITEMS = {
     6: 10291  # Healers
 }
 
-
 def getClassIndex(player):
     if player.getClassId() in WARRIORCLASSES:
         return 0
@@ -63,7 +62,6 @@ def getClassIndex(player):
         return 6
     return -1
 
-
 def getCertified(player, itemId, var):
     st = player.getQuestState(qn)
     qvar = st.getGlobalQuestVar(var)
@@ -75,7 +73,6 @@ def getCertified(player, itemId, var):
     smsg.addItemName(item)
     player.sendPacket(smsg)
     return
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -204,7 +201,6 @@ class Quest(JQuest):
             st.set("cond", "0")
             st.setState(State.STARTED)
             return "9002-01.htm"
-
 
 QUEST = Quest(-1, qn, "village_master")
 

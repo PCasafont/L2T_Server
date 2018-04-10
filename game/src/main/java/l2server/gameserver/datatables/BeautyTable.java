@@ -35,7 +35,6 @@ import java.util.Map;
 public class BeautyTable {
 	private static Logger log = LoggerFactory.getLogger(BeautyTable.class.getName());
 
-
 	public class BeautyTemplate {
 		private int id;
 		private Map<Integer, BeautyInfo> hairStyles = new HashMap<>();

@@ -64,7 +64,6 @@ Contributing authors: Gigiikun
 public class FinalEmperialTomb extends Quest {
 	private static Logger log = LoggerFactory.getLogger(FinalEmperialTomb.class.getName());
 
-
 	private class FETWorld extends InstanceWorld {
 		public Lock lock = new ReentrantLock();
 		public List<Npc> npcList = new ArrayList<Npc>();

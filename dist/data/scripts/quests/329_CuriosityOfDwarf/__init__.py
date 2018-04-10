@@ -8,7 +8,6 @@ GOLEM_HEARTSTONE = 1346
 BROKEN_HEARTSTONE = 1365
 ADENA = 57
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -74,7 +73,6 @@ class Quest(JQuest):
                 st.giveItems(BROKEN_HEARTSTONE, 1)
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(329, qn, "Curiosity Of Dwarf")
 

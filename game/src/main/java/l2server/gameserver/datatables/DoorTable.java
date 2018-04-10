@@ -38,7 +38,6 @@ import java.util.*;
 public class DoorTable {
 	private static Logger log = LoggerFactory.getLogger(DoorTable.class.getName());
 
-
 	private static final Map<Integer, Set<Integer>> groups = new HashMap<>();
 
 	private final Map<Integer, DoorInstance> doors = new HashMap<>();

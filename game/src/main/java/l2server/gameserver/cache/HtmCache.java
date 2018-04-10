@@ -36,7 +36,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class HtmCache {
 	private static Logger log = LoggerFactory.getLogger(HtmCache.class.getName());
 
-
 	private final Map<Integer, String> cache;
 
 	private int loadedFiles;

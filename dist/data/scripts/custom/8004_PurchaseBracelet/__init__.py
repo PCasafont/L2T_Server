@@ -6,7 +6,6 @@ qn = "8004_PurchaseBracelet"
 Angel_Bracelet = 10320
 Devil_Bracelet = 10326
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -42,7 +41,6 @@ class Quest(JQuest):
             st = self.newQuestState(player)
         htmltext = "30098.htm"
         return htmltext
-
 
 QUEST = Quest(-1, qn, "custom")
 

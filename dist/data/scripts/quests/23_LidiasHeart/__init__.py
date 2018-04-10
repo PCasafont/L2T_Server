@@ -22,7 +22,6 @@ LidiaDiary = 7064
 SilverSpear = 7150
 Adena = 57
 
-
 # ~~~~~~~~~~~~~~~~~~~~~~~
 
 class Quest(JQuest):
@@ -163,7 +162,6 @@ class Quest(JQuest):
             elif cond == 10:
                 htmltext = "31386-03.htm"
         return htmltext
-
 
 QUEST = Quest(23, qn, "Lidia's Heart")
 

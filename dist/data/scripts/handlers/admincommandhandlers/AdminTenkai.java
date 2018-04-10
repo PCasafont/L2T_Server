@@ -54,7 +54,6 @@ import java.util.StringTokenizer;
 public class AdminTenkai implements IAdminCommandHandler {
 	private static Logger log = LoggerFactory.getLogger(AdminTenkai.class.getName());
 
-
 	private static List<SpawnInfo> deletedSpawns = new ArrayList<SpawnInfo>();
 	private static List<Integer> mobIds = new ArrayList<Integer>();
 

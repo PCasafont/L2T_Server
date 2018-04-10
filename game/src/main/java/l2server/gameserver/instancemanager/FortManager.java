@@ -37,7 +37,6 @@ import java.util.List;
 public class FortManager implements InstanceListManager {
 	private static Logger log = LoggerFactory.getLogger(FortManager.class.getName());
 
-
 	private List<Fort> forts = new ArrayList<>();
 
 	public static FortManager getInstance() {

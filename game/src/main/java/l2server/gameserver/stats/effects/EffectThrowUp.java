@@ -34,7 +34,6 @@ import org.slf4j.LoggerFactory;
 public class EffectThrowUp extends L2Effect {
 	private static Logger log = LoggerFactory.getLogger(EffectThrowUp.class.getName());
 
-
 	private int x, y, z;
 
 	public EffectThrowUp(Env env, EffectTemplate template) {

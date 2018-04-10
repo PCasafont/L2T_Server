@@ -21,7 +21,6 @@ import java.util.Calendar;
 public class CloneInvasion {
 	private static Logger log = LoggerFactory.getLogger(CloneInvasion.class.getName());
 
-
 	public static CloneInvasion instance = null;
 
 	private StartTask task;

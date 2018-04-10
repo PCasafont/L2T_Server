@@ -26,7 +26,6 @@ ORVEN = 30857
 # Mobs
 MOBS = range(21006, 21009)
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -92,7 +91,6 @@ class Quest(JQuest):
                     st.playSound("ItemSound.quest_itemget")
                 st.giveItems(REMAINS, int(numItems))
         return
-
 
 # Quest class and state definition
 QUEST = Quest(QUEST_NUMBER, str(QUEST_NUMBER) + "_" + QUEST_NAME, QUEST_DESCRIPTION)

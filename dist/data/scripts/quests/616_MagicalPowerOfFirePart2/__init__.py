@@ -21,14 +21,12 @@ Nastron = 25306
 Totem2 = 7243
 Fire_Heart = 7244
 
-
 def AutoChat(npc, text):
     chars = npc.getKnownList().getKnownPlayers().values().toArray()
     if chars != None:
         for pc in chars:
             sm = NpcSay(npc.getObjectId(), 0, npc.getNpcId(), text)
             pc.sendPacket(sm)
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -166,7 +164,6 @@ class Quest(JQuest):
                 st.unset("id")
                 st.exitQuest(1)
         return
-
 
 QUEST = Quest(616, qn, "Magical Power of Fire - Part 2")
 

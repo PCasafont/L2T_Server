@@ -58,7 +58,6 @@ KAMAELmobs = {  # Chances are custom for now, any retail reports are welcome.
     22250: 160, 22252: 160
 }
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -121,7 +120,6 @@ class Quest(JQuest):
             st.giveItems(SWEET_FLUID, drop * int(Config.RATE_QUEST_DROP))
             st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(426, qn, "Quest for Fishing Shot")
 

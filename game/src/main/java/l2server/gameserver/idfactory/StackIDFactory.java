@@ -35,7 +35,6 @@ public class StackIDFactory extends IdFactory {
 	private static Logger log = LoggerFactory.getLogger(StackIDFactory.class.getName());
 
 
-	
 	private int curOID;
 	private int tempOID;
 	

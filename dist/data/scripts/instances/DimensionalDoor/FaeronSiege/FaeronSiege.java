@@ -48,7 +48,6 @@ import java.util.List;
 public class FaeronSiege extends Quest {
 	private static Logger log = LoggerFactory.getLogger(FaeronSiege.class.getName());
 
-
 	private static final boolean debug = false;
 	private static final String qn = "FaeronSiege";
 

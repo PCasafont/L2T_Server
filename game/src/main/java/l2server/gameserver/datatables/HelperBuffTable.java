@@ -37,7 +37,6 @@ import java.util.List;
 public class HelperBuffTable {
 	private static Logger log = LoggerFactory.getLogger(HelperBuffTable.class.getName());
 
-
 	/**
 	 * The table containing all Buff of the Newbie Helper
 	 */

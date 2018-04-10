@@ -49,7 +49,6 @@ import java.util.Map.Entry;
 public class CustomCommunityBoard {
 	private static Logger log = LoggerFactory.getLogger(CustomCommunityBoard.class.getName());
 
-
 	private static String newsInfo = "";
 
 	// Other

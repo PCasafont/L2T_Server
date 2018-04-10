@@ -12,7 +12,6 @@ LIENRIKS_ID = 20786
 LIENRIKS_LAD_ID = 20787
 WEDDING_ECHO_CRYSTAL_ID = 7062
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -70,7 +69,6 @@ class Quest(JQuest):
                     st.playSound("ItemSound.quest_itemget")
                 st.giveItems(SILVER_CRYSTAL_ID, int(numItems))
         return
-
 
 QUEST = Quest(431, qn, "Wedding March")
 

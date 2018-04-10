@@ -50,7 +50,6 @@ import static l2server.gameserver.ai.CtrlIntention.*;
 public class AttackableAI extends CreatureAI implements Runnable {
 	private static Logger log = LoggerFactory.getLogger(AttackableAI.class.getName());
 
-
 	//
 	private static final int RANDOM_WALK_RATE = 30; // confirmed
 	// private static final int MAX_DRIFT_RANGE = 300;

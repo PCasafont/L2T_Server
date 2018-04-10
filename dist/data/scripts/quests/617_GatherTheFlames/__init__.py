@@ -25,7 +25,6 @@ REWARDS2 = [6882, 6884, 6886, 6888, 6892, 6894, 6896, 6898, 6900, 7581]
 # Change this value to 1 if you wish 100% recipes, default 60%
 ALT_RP100 = 0
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -121,7 +120,6 @@ class Quest(JQuest):
             else:
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(617, qn, "Gather The Flames")
 

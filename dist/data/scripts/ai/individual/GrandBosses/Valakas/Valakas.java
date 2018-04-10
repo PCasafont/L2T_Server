@@ -59,7 +59,6 @@ import java.util.concurrent.TimeUnit;
 public class Valakas extends L2AttackableAIScript {
 	private static Logger log = LoggerFactory.getLogger(Valakas.class.getName());
 
-
 	//Quest
 	private static final boolean debug = false;
 	private static final String qn = "Valakas";

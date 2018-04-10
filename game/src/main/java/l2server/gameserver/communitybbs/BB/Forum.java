@@ -32,7 +32,6 @@ import java.util.Map;
 public class Forum {
 	private static Logger log = LoggerFactory.getLogger(Forum.class.getName());
 
-
 	//type
 	public static final int ROOT = 0;
 	public static final int NORMAL = 1;

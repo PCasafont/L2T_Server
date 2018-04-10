@@ -68,7 +68,6 @@ public class GMEventManager {
 	private static Logger log = LoggerFactory.getLogger(GMEventManager.class.getName());
 
 
-	
 	private static final int bufferNpcId = 8508;
 	private static final int dummyArenaSignNpcId = 50013;
 	private static final int rewardCoinId = 37559;

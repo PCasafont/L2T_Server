@@ -56,7 +56,6 @@ import static l2server.gameserver.ai.CtrlIntention.*;
 public class CreatureAI extends AbstractAI {
 	private static Logger log = LoggerFactory.getLogger(CreatureAI.class.getName());
 
-
 	public static class IntentionCommand {
 		protected final CtrlIntention crtlIntention;
 		protected final Object arg0, arg1;

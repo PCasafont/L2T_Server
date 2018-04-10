@@ -32,8 +32,6 @@ import java.util.List;
 public class Post {
 	private static Logger log = LoggerFactory.getLogger(Post.class.getName());
 
-
-
 	public static class CPost {
 		public int postId;
 		public String postOwner;

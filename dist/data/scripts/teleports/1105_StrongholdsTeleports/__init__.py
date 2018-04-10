@@ -5,7 +5,6 @@ from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "1105_StrongholdsTeleports"
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -22,7 +21,6 @@ class Quest(JQuest):
         if htmltext == None:
             npc.showChatWindow(player)
         return htmltext
-
 
 QUEST = Quest(-1, qn, "Teleports")
 

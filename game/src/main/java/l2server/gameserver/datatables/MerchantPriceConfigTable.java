@@ -36,8 +36,6 @@ import java.util.Map;
 public class MerchantPriceConfigTable implements InstanceListManager {
 	private static Logger log = LoggerFactory.getLogger(MerchantPriceConfigTable.class.getName());
 
-
-
 	public static MerchantPriceConfigTable getInstance() {
 		return SingletonHolder.instance;
 	}

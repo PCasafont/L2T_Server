@@ -37,7 +37,6 @@ import java.awt.event.MouseEvent;
 public class PlayerTablePane extends JPanel {
 	private static Logger log = LoggerFactory.getLogger(PlayerTablePane.class.getName());
 
-
 	private static final long serialVersionUID = 1L;
 	
 	public class ButtonListeners implements ActionListener {

@@ -28,7 +28,6 @@ DROPLIST = {
     YOUNG_ARANEID: [TALON_OF_YOUNG_ARANEID, 67]
 }
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -91,7 +90,6 @@ class Quest(JQuest):
                 st.giveItems(item, 1)
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(661, qn, "Making the Harvest Grounds Safe")
 

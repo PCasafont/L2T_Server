@@ -31,7 +31,6 @@ DROPLIST = {
     21090: [6, BLOOD_FIRE]  # Bloody Guardian
 }
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -136,7 +135,6 @@ class Quest(JQuest):
                 st.playSound("ItemSound.quest_itemget")
                 st.set("cond", str(cond + 1))
         return
-
 
 # Quest class and state definition
 QUEST = Quest(QUEST_NUMBER, qn, QUEST_DESCRIPTION)

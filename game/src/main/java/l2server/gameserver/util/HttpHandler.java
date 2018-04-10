@@ -34,7 +34,6 @@ import java.net.URL;
 public class HttpHandler {
 	private static Logger log = LoggerFactory.getLogger(HttpHandler.class.getName());
 
-
 	private static final String USER_AGENT =
 			"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36";
 

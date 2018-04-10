@@ -35,7 +35,6 @@ import org.slf4j.LoggerFactory;
 public class SkillSiegeFlag extends Skill {
 	private static Logger log = LoggerFactory.getLogger(SkillSiegeFlag.class.getName());
 
-
 	private final boolean isAdvanced;
 	private final boolean isOutpost;
 

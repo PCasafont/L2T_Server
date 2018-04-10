@@ -25,7 +25,6 @@ REWARDS = {
 MOBS = [22703, 22704, 22705, 22706]
 GHOST_COMMANDER = 22707
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -98,7 +97,6 @@ class Quest(JQuest):
                         st.playSound("ItemSound.quest_itemget")
                     st.giveItems(CURSED_BURIAL, int(numItems))
         return
-
 
 QUEST = Quest(645, qn, "Ghosts of Batur")
 

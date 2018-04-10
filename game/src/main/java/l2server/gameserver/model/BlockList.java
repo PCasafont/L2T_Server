@@ -53,8 +53,6 @@ import java.util.Map;
 public class BlockList {
 	private static Logger log = LoggerFactory.getLogger(BlockList.class.getName());
 
-
-
 	private static Map<Integer, List<Integer>> offlineList = new HashMap<>();
 
 	private final Player owner;

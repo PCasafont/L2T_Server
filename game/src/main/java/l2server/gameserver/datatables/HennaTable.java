@@ -32,7 +32,6 @@ import java.util.Map;
 public class HennaTable {
 	private static Logger log = LoggerFactory.getLogger(HennaTable.class.getName());
 
-
 	private Map<Integer, HennaTemplate> henna = new HashMap<>();
 
 	public static HennaTable getInstance() {

@@ -39,8 +39,6 @@ import java.util.*;
 public class ClanHall {
 	private static Logger log = LoggerFactory.getLogger(ClanHall.class.getName());
 
-
-
 	private int clanHallId;
 	private List<DoorInstance> doors;
 	private String name;

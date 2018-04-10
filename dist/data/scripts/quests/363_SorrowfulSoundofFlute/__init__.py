@@ -5,7 +5,6 @@ from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "363_SorrowfulSoundofFlute"
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -60,7 +59,6 @@ class Quest(JQuest):
         elif npcId == 30956 and st.getInt("cond") == 4:
             htmltext = "30956_4.htm"
         return htmltext
-
 
 QUEST = Quest(363, qn, "Sorrowful Sounds of Flute")
 

@@ -39,7 +39,6 @@ import java.util.Map;
 public class EnsoulDataTable {
 	private static Logger log = LoggerFactory.getLogger(EnsoulDataTable.class.getName());
 
-
 	public static EnsoulDataTable getInstance() {
 		return SingletonHolder.instance;
 	}

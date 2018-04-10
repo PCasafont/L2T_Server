@@ -26,7 +26,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class EventsMatchMaker {
 	private static Logger log = LoggerFactory.getLogger(EventsMatchMaker.class.getName());
 
-
 	public static EventsMatchMaker instance = null;
 
 	private MatchMakingTask pvpTask;

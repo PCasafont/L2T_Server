@@ -13,7 +13,6 @@ Shadith_Head = 7235
 Valor_Totem = 7219
 Ketra_Alliance_Three = 7213
 
-
 def giveReward(st, npc):
     if st.getState() == State.STARTED:
         npcId = npc.getNpcId()
@@ -24,7 +23,6 @@ def giveReward(st, npc):
                     if st.getPlayer().getAllianceWithVarkaKetra() == 3 and st.getQuestItemsCount(Ketra_Alliance_Three):
                         st.giveItems(Shadith_Head, 1)
                         st.set("cond", "2")
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -90,7 +88,6 @@ class Quest(JQuest):
             if pst:
                 giveReward(pst, npc)
         return
-
 
 QUEST = Quest(607, qn, "Prove Your Courage!")
 

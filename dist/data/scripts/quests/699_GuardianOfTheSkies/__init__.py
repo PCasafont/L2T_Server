@@ -19,7 +19,6 @@ MOBS = [22614, 22615, 25623, 25633]
 # SETTINGS
 DROP_CHANCE = 80
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -76,7 +75,6 @@ class Quest(JQuest):
                 st.giveItems(GOLDEN_FEATHER, 1)
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(699, qn, "Guardian of the Skies")
 

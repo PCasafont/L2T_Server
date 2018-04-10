@@ -21,7 +21,6 @@ SCRIPTURES = 8069
 # Drop Chance
 DROP_CHANCE = 30
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -112,7 +111,6 @@ class Quest(JQuest):
             st.giveItems(SCRIPTURES, int(numItems))
             st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(639, qn, "Guardians of the Holy Grail")
 

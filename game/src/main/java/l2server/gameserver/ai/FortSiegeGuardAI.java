@@ -40,7 +40,6 @@ import static l2server.gameserver.ai.CtrlIntention.*;
 public class FortSiegeGuardAI extends CreatureAI implements Runnable {
 	private static Logger log = LoggerFactory.getLogger(FortSiegeGuardAI.class.getName());
 
-
 	private static final int MAX_ATTACK_TIMEOUT = 300; // int ticks, i.e. 30 seconds
 
 	/**

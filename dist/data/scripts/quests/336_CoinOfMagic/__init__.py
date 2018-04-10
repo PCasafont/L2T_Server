@@ -125,7 +125,6 @@ from l2server import Config
 from l2server.gameserver.model.quest import State
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
-
 def promote(st):
     grade = st.getInt("grade")
     if grade == 1:
@@ -149,7 +148,6 @@ def promote(st):
             cond = COND[grade] - 1
         st.set("cond", str(cond))
     return html
-
 
 # main code
 class Quest(JQuest):
@@ -403,7 +401,6 @@ class Quest(JQuest):
         return
 
         # Quest class and state definition
-
 
 QUEST = Quest(QUEST_NUMBER, str(QUEST_NUMBER) + "_" + QUEST_NAME, QUEST_DESCRIPTION)
 

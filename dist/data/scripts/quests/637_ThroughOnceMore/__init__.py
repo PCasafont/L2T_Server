@@ -13,7 +13,6 @@ FLAURON = 32010
 # Items
 VISITOR_MARK, FADEDMARK, NECROHEART, MARK = 8064, 8065, 8066, 8067
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -82,7 +81,6 @@ class Quest(JQuest):
                             st.playSound("ItemSound.quest_itemget")
                         st.giveItems(NECROHEART, int(numItems))
         return
-
 
 QUEST = Quest(637, qn, "Through the Gate Once More")
 

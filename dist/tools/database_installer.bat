@@ -649,7 +649,6 @@ pause
 cd %workdir%
 goto newbie_helper
 
-
 :newbie_helper
 call :colors 17
 set stage=10

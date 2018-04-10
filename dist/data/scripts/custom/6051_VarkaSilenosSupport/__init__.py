@@ -30,7 +30,6 @@ BUFF = {
     "8": [4357, 1, 6],  # Haste: Requires 6 Nepenthese Seeds
 }
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -130,7 +129,6 @@ class Quest(JQuest):
             else:
                 htmltext = "31383-3.htm"
         return htmltext
-
 
 QUEST = Quest(-1, qn, "custom")
 

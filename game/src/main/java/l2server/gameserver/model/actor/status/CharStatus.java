@@ -35,8 +35,6 @@ import java.util.concurrent.Future;
 public class CharStatus {
 	private static Logger log = LoggerFactory.getLogger(CharStatus.class.getName());
 
-
-
 	private Creature activeChar;
 
 	private double currentHp = 0; //Current HP of the Creature

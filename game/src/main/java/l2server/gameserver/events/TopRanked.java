@@ -22,7 +22,6 @@ import java.util.Calendar;
 public class TopRanked {
 	private static Logger log = LoggerFactory.getLogger(TopRanked.class.getName());
 
-
 	private StartTask task;
 
 	public int getRankedPoints(int id) {

@@ -20,7 +20,6 @@ LUIS = 30386
 IRIS = 30034
 ROHMER = 30344
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -122,7 +121,6 @@ class Quest(JQuest):
             else:
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(38, qn, "Dragon Fangs")
 

@@ -17,7 +17,6 @@ TOTEM = 8068
 # Drop chance
 DROP_CHANCE = 30
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -81,7 +80,6 @@ class Quest(JQuest):
                     st.playSound("ItemSound.quest_itemget")
                     st.giveItems(TOTEM, int(numItems))
         return
-
 
 QUEST = Quest(638, qn, "Seekers of the Holy Grail")
 

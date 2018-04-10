@@ -40,7 +40,6 @@ import java.sql.ResultSet;
 public class SecondaryPasswordAuth {
 	private static Logger log = LoggerFactory.getLogger(SecondaryPasswordAuth.class.getName());
 
-
 	private final L2GameClient activeClient;
 	
 	private String password;

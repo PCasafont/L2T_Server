@@ -32,7 +32,6 @@ import java.util.Map;
 public class ComboSkillTable {
 	private static Logger log = LoggerFactory.getLogger(ComboSkillTable.class.getName());
 
-
 	public class Combo {
 		public Combo(int i) {
 			id = i;

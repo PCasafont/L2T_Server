@@ -26,8 +26,6 @@ import org.slf4j.LoggerFactory;
 public class PlayerTracert extends BaseRecievePacket {
 	private static org.slf4j.Logger log = LoggerFactory.getLogger(PlayerTracert.class.getName());
 
-
-
 	public PlayerTracert(byte[] decrypt) {
 		super(decrypt);
 		String account = readS();

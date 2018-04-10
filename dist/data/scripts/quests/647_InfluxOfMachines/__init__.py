@@ -14,7 +14,6 @@ ALT_RP_100 = 0
 BROKEN_GOLEM_FRAGMENT = 15521
 RECIPES = [6887, 6881, 6897, 7580, 6883, 6899, 6891, 6885, 6893, 6895]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -83,7 +82,6 @@ class Quest(JQuest):
                             st.playSound("ItemSound.quest_itemget")
                         st.giveItems(BROKEN_GOLEM_FRAGMENT, int(numItems))
         return
-
 
 QUEST = Quest(647, qn, "Influx of Machines")
 

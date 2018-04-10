@@ -16,7 +16,6 @@ VACUALITE_ORE, VACUALITE, FLOATING_STONE = range(7265, 7268)
 # CHANCE
 CHANCE_FOR_QUEST_ITEMS = 50
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -99,7 +98,6 @@ class Quest(JQuest):
                     st.playSound("ItemSound.quest_itemget")
                 st.giveItems(VACUALITE_ORE, int(numItems))
         return
-
 
 QUEST = Quest(618, qn, "Into the Flame")
 

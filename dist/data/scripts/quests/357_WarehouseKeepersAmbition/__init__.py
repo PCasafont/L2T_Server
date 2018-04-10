@@ -15,7 +15,6 @@ SILVA = 30686
 # ITEMS
 JADE_CRYSTAL = 5867
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -73,7 +72,6 @@ class Quest(JQuest):
             st.giveItems(JADE_CRYSTAL, 1)
             st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(357, qn, "Warehouse Keepers Ambition")
 

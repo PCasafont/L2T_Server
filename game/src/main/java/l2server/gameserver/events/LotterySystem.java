@@ -51,7 +51,6 @@ import java.util.concurrent.ScheduledFuture;
 public class LotterySystem {
 	private static Logger log = LoggerFactory.getLogger(LotterySystem.class.getName());
 
-
 	private static Map<Integer, List<Integer>> allNumbers = new HashMap<>();
 	private static final String LOAD_LOTTERY = "SELECT `ownerId`, `numbers` FROM `lottery_data`";
 	private static final String SAVE_LOTTERY = "INSERT INTO lottery_data(ownerId, numbers) VALUES (?, ?) ON DUPLICATE KEY UPDATE numbers=?";

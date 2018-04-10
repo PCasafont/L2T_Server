@@ -21,8 +21,6 @@ import java.util.Vector;
 public class PvpZone {
 	private static Logger log = LoggerFactory.getLogger(PvpZone.class.getName());
 
-
-
 	public static enum State {
 		INACTIVE,
 		REGISTER,

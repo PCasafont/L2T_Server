@@ -34,7 +34,6 @@ import java.util.List;
 public class PetInventoryUpdate extends L2ItemListPacket {
 	private static Logger log = LoggerFactory.getLogger(PetInventoryUpdate.class.getName());
 
-
 	
 	private List<ItemInfo> items;
 	

@@ -57,8 +57,6 @@ import java.util.Calendar;
 public class EnterWorld extends L2GameClientPacket {
 	private static Logger log = LoggerFactory.getLogger(EnterWorld.class.getName());
 
-
-
 	private int[][] tracert = new int[5][4];
 
 	public TaskPriority getPriority() {

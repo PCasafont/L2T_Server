@@ -11,7 +11,6 @@ VULCAN = 31539
 # QUEST ITEM
 PACKAGE = 7263
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -61,7 +60,6 @@ class Quest(JQuest):
         elif npcId == VULCAN and cond == 1 and id == State.STARTED:
             htmltext = "31539-0.htm"
         return htmltext
-
 
 QUEST = Quest(13, qn, "Parcel Delivery")
 

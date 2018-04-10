@@ -15,7 +15,6 @@ NPC = [30037, 30066, 30070, 30109, 30115, 30120, 30174, 30175, 30176, 30187, 301
 # itemId for shadow weapon coupons, it's not used more than once but increases readability
 D_COUPON, C_COUPON = [8869, 8870]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -40,7 +39,6 @@ class Quest(JQuest):
             htmltext = "exchange-no.htm"
         st.exitQuest(1)
         return htmltext
-
 
 QUEST = Quest(-1, qn, "Custom")
 

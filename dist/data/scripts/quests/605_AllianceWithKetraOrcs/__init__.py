@@ -98,7 +98,6 @@ Three = {
     5: [Ketra_Alliance_Four, 200, Varka_Badge_Captain]
 }
 
-
 def decreaseAlliance(st):
     if st.getPlayer().isAlliedWithKetra():
         cond = st.getInt("cond")
@@ -141,7 +140,6 @@ def decreaseAlliance(st):
             st.takeItems(Ketra_Alliance_Five, -1)
             st.giveItems(Ketra_Alliance_Four, 1)
 
-
 def giveReward(st, item, chance, MAX, drop):
     if st.getQuestItemsCount(item) > 0:
         count = st.getQuestItemsCount(drop)
@@ -159,7 +157,6 @@ def giveReward(st, item, chance, MAX, drop):
                 else:
                     st.playSound("ItemSound.quest_itemget")
                 st.giveItems(drop, numItems)
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -384,7 +381,6 @@ class Quest(JQuest):
                         else:
                             decreaseAlliance(st)
         return
-
 
 QUEST = Quest(605, qn, "Alliance With Ketra Orcs")
 

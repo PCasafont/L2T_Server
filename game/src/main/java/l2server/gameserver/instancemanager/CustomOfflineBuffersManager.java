@@ -56,7 +56,6 @@ import java.util.Map.Entry;
 public class CustomOfflineBuffersManager {
 	private static Logger log = LoggerFactory.getLogger(CustomOfflineBuffersManager.class.getName());
 
-
 	private static final String TRUNCATE = "DELETE FROM offline_buffers";
 	private static final String STORE_BUFFERS = "INSERT INTO offline_buffers (`charId`, `description`, `buffs`, `coinId`) VALUES (?, ?, ?, ?)";
 	private static final String RESTORE_BUFFERS = "SELECT * FROM offline_buffers";

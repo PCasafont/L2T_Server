@@ -46,7 +46,6 @@ import java.util.concurrent.ScheduledFuture;
 public class CustomWorldAltars {
 	private static Logger log = LoggerFactory.getLogger(CustomWorldAltars.class.getName());
 
-
 	private static List<Integer> bosssIds = new ArrayList<>();
 	private static List<AltarsSpawns> spawnInfo = new ArrayList<>();
 	private static List<WorldAltarsInfo> altarsList = new ArrayList<>();

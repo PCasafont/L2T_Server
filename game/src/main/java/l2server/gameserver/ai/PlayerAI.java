@@ -31,8 +31,6 @@ import static l2server.gameserver.ai.CtrlIntention.*;
 public class PlayerAI extends PlayableAI {
 	private static Logger log = LoggerFactory.getLogger(PlayerAI.class.getName());
 
-
-
 	private boolean thinking; // to prevent recursive thinking
 
 	IntentionCommand nextIntention = null;

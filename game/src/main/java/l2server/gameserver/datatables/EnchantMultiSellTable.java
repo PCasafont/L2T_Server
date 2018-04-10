@@ -35,7 +35,6 @@ import java.util.Map;
 public class EnchantMultiSellTable {
 	private static Logger log = LoggerFactory.getLogger(EnchantMultiSellTable.class.getName());
 
-
 	public static class EnchantMultiSellCategory {
 		public int Id;
 		public Map<Integer, EnchantMultiSellEntry> Entries = new HashMap<>();

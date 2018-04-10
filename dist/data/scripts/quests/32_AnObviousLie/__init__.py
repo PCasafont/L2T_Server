@@ -27,7 +27,6 @@ RACCOON_EAR = 7680
 CAT_EAR = 6843
 RABBIT_EAR = 7683
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -151,7 +150,6 @@ class Quest(JQuest):
                 else:
                     st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(32, qn, "An Obvious Lie")
 

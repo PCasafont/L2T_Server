@@ -36,8 +36,6 @@ import java.util.ArrayList;
 public class CoupleManager {
 	private static Logger log = LoggerFactory.getLogger(CoupleManager.class.getName());
 
-
-
 	private CoupleManager() {
 	}
 

@@ -12,7 +12,6 @@ FLAURON = 32010
 # Items
 MARK = 8064
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -58,7 +57,6 @@ class Quest(JQuest):
                     htmltext = "32010-03.htm"
                     st.exitQuest(1)
         return htmltext
-
 
 QUEST = Quest(636, qn, "The Truth Beyond the Gate")
 

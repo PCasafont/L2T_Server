@@ -45,7 +45,6 @@ import org.slf4j.LoggerFactory;
 public class Helios extends L2AttackableAIScript {
 	private static Logger log = LoggerFactory.getLogger(Helios.class.getName());
 
-
 	//Quest
 	private static final boolean debug = false;
 	private static final String qn = "Helios";

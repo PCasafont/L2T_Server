@@ -27,7 +27,6 @@ import java.util.StringTokenizer;
 public class MobSummonInstance extends SummonInstance {
 	private static Logger log = LoggerFactory.getLogger(MobSummonInstance.class.getName());
 
-
 	private boolean previousFollowStatus = true;
 	
 	private Item controlItem;

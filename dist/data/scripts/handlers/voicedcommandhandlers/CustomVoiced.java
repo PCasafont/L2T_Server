@@ -42,7 +42,6 @@ import java.util.StringTokenizer;
 public class CustomVoiced implements IVoicedCommandHandler {
 	private static Logger log = LoggerFactory.getLogger(CustomVoiced.class.getName());
 
-
 	private static final String[] VOICED_COMMANDS = {"itemid", // shows item ID of an item
 			"event", // shows information about the event
 			"noexp", // ignores XP/SP gain when hunting

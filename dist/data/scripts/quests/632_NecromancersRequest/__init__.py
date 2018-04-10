@@ -21,7 +21,6 @@ ADENA_AMOUNT = 120000
 VAMPIRES = [21568, 21573, 21582, 21585, 21586, 21587, 21588, 21589, 21590, 21591, 21592, 21593, 21594, 21595]
 UNDEADS = [21547, 21548, 21549, 21551, 21552, 21555, 21556, 21562, 21571, 21576, 21577, 21579]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -103,7 +102,6 @@ class Quest(JQuest):
                 if st.getQuestItemsCount(V_HEART) == 200:
                     htmltext = "31522-2.htm"
         return htmltext
-
 
 QUEST = Quest(632, qn, "Necromancer's Request")
 

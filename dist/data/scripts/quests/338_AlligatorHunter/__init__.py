@@ -9,7 +9,6 @@ ALLIGATOR = 20135
 ALLIGATOR_PELTS = 4337
 CHANCE = 90
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -63,7 +62,6 @@ class Quest(JQuest):
             st.giveItems(ALLIGATOR_PELTS, 1)
             st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(338, qn, "Alligator Hunter")
 

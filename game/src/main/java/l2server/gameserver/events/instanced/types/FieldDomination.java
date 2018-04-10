@@ -25,8 +25,6 @@ import java.util.List;
 public class FieldDomination extends EventInstance {
 	private static Logger log = LoggerFactory.getLogger(FieldDomination.class.getName());
 
-
-
 	private boolean FDflagsSpawned = false;
 	private L2Spawn[] FDFlagSpawns = new L2Spawn[5];
 

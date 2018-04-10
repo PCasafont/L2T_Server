@@ -27,8 +27,6 @@ import java.util.Calendar;
 public class GraciaSeedsManager {
 	private static Logger log = LoggerFactory.getLogger(GraciaSeedsManager.class.getName());
 
-
-
 	public static String qn = "EnergySeeds";
 
 	private static final byte SOITYPE = 2;

@@ -37,7 +37,6 @@ import java.sql.PreparedStatement;
 public class RequestServerLogin extends L2LoginClientPacket {
 	private static Logger log = LoggerFactory.getLogger(RequestServerLogin.class.getName());
 
-
 	private int skey1;
 	private int skey2;
 	private int serverId;

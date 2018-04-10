@@ -53,7 +53,6 @@ FORTUNE = [ \
     "Momentarily delay an important decision.", \
     "A remedy is on its way for a serious illness."]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -69,7 +68,6 @@ class Quest(JQuest):
             htmltext = BODY + FORTUNE[st.getRandom(45)] + END
         st.exitQuest(1)
         return htmltext
-
 
 QUEST = Quest(-1, qn, "Custom")
 

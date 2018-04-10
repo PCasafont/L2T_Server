@@ -56,7 +56,6 @@ MOBS = {
     20576: HERB_OF_OEL_MAHUM
 }
 
-
 def leader(player):
     leaderst = None
     clan = player.getClan()
@@ -66,14 +65,12 @@ def leader(player):
             leaderst = leader.getQuestState(qn)
     return leaderst
 
-
 def isEffected(player, skillId):
     bool = 0
     effect = player.getFirstEffect(skillId)
     if effect:
         bool = 1
     return bool
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -347,7 +344,6 @@ class Quest(JQuest):
                 print "leader died, quest failed"
                 return "Leader died, quest failed"
         return
-
 
 QUEST = Quest(501, qn, "Proof of Clan Alliance")
 

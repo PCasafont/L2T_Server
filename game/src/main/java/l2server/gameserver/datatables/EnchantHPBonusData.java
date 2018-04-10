@@ -40,8 +40,6 @@ import java.util.StringTokenizer;
 public class EnchantHPBonusData {
 	private static Logger log = LoggerFactory.getLogger(EnchantHPBonusData.class.getName());
 
-
-
 	private final Map<Integer, Integer[]> armorHPBonus = new HashMap<>();
 	private static final float fullArmorModifier = 1.5f;
 

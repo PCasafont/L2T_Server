@@ -19,14 +19,12 @@ MEAT = 7210
 # Rewards dye +2str-2con/+2str-2dex/+2con-2str/+2con-2dex/+2dex-2str/+2dex-2con
 REWARDS = range(4589, 4595)
 
-
 def AutoChat(npc, text):
     chars = npc.getKnownList().getKnownPlayers().values().toArray()
     if chars != None:
         for pc in chars:
             sm = NpcSay(npc.getObjectId(), 0, npc.getNpcId(), text)
             pc.sendPacket(sm)
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -150,7 +148,6 @@ class Quest(JQuest):
                     st.set("cond", "3")
                     st.playSound("ItemSound.quest_middle")
         return
-
 
 QUEST = Quest(625, qn, "The Finest Ingredients - Part 2")
 

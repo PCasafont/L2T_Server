@@ -23,7 +23,6 @@ Letter2 = 8080
 Tablet = 8081
 Report = 8082
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -229,7 +228,6 @@ class Quest(JQuest):
             elif cond == 9:
                 htmltext = "32022-03.htm"
         return htmltext
-
 
 QUEST = Quest(115, qn, "The Other Side Of Truth")
 

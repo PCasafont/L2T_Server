@@ -17,7 +17,6 @@ CROOP_INTRO = 13813
 JACOB_NECK = 13814
 CROOP_LETTER = 13815
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -110,7 +109,6 @@ class Quest(JQuest):
             if cond == 7:
                 htmltext = "30191-01.htm"
         return htmltext
-
 
 QUEST = Quest(192, qn, "Seven Sign Series of Doubt")
 

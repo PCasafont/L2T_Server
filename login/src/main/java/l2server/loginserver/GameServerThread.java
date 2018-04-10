@@ -49,7 +49,6 @@ import java.util.Set;
 public class GameServerThread extends Thread {
 	private static Logger log = LoggerFactory.getLogger(GameServerThread.class.getName());
 
-
 	private final Socket connection;
 	private InputStream in;
 	private OutputStream out;

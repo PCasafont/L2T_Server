@@ -37,7 +37,6 @@ import java.util.Map;
 public class PledgeSkillTree {
 	private static Logger log = LoggerFactory.getLogger(PledgeSkillTree.class.getName());
 
-
 	private Map<Long, L2PledgeSkillLearn> skillTree = new HashMap<>();
 
 	public PledgeSkillTree() {

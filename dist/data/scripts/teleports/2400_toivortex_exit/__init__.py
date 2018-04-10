@@ -5,7 +5,6 @@ from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 qn = "2400_toivortex_exit"
 NPC = [29055]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -28,7 +27,6 @@ class Quest(JQuest):
         player.teleToLocation(x, y, z)
         st.exitQuest(1)
         return
-
 
 QUEST = Quest(-1, qn, "Teleports")
 

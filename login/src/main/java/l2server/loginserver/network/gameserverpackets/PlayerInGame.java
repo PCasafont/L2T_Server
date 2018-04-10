@@ -28,8 +28,6 @@ import org.slf4j.LoggerFactory;
 public class PlayerInGame extends BaseRecievePacket {
 	private static Logger log = LoggerFactory.getLogger(PlayerInGame.class.getName());
 
-
-
 	public PlayerInGame(byte[] decrypt, GameServerThread server) {
 		super(decrypt);
 		int size = readH();

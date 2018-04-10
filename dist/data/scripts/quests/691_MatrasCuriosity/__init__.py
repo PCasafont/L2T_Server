@@ -17,7 +17,6 @@ Lab4 = 22368
 RED_STONE = 10372
 DYNASTIC_ESSENCE_II = 10413
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -72,7 +71,6 @@ class Quest(JQuest):
                     else:
                         st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(691, qn, "Matras Curiosity!")
 

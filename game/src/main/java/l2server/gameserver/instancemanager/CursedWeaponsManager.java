@@ -47,8 +47,6 @@ import java.util.Set;
 public class CursedWeaponsManager {
 	private static Logger log = LoggerFactory.getLogger(CursedWeaponsManager.class.getName());
 
-
-
 	public static CursedWeaponsManager getInstance() {
 		return SingletonHolder.instance;
 	}

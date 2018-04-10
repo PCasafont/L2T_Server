@@ -20,7 +20,6 @@ MAILLE_LIZARDMAN = 20919
 MAX_COUNT = 30
 MIN_LEVEL = 24
 
-
 class Quest(JQuest):
     def onEvent(self, event, st):
         htmltext = event
@@ -106,7 +105,6 @@ class Quest(JQuest):
                 st.playSound("ItemSound.quest_itemget")
             st.giveItems(GEMSTONE_FRAGMENT, int(numItems))
         return
-
 
 QUEST = Quest(44, qn, "Help The Son!")
 

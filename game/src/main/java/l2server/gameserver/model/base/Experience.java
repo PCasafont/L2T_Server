@@ -32,7 +32,6 @@ import java.util.StringTokenizer;
 public class Experience {
 	private static Logger log = LoggerFactory.getLogger(Experience.class.getName());
 
-
 	private static long LEVEL[];
 	
 	static {

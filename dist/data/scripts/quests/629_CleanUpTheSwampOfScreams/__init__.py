@@ -25,7 +25,6 @@ CHANCE = {
     21517: 560
 }
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -94,7 +93,6 @@ class Quest(JQuest):
                 else:
                     st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(629, qn, "Clean Up the Swamp of Screams")
 

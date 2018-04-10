@@ -37,8 +37,6 @@ import java.util.Map;
 public class ExtraDropTable {
 	private static Logger log = LoggerFactory.getLogger(ExtraDropTable.class.getName());
 
-
-
 	private Map<Integer, ArrayList<L2DropCategory>> extraGroups = new HashMap<>();
 
 	public static ExtraDropTable getInstance() {

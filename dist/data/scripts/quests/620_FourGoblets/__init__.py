@@ -29,7 +29,6 @@ SEALED_BOX = 7255
 ANTIQUE_BROOCH = 7262
 RCP_REWARDS = [6881, 6883, 6885, 6887, 6891, 6893, 6895, 6897, 6899, 7580]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -579,7 +578,6 @@ class Quest(JQuest):
             st.giveItems(int(event), 1)
             htmltext = "31454-17.htm"
         return htmltext
-
 
 QUEST = Quest(620, qn, "Four Goblets")
 

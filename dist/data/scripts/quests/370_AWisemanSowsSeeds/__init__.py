@@ -13,7 +13,6 @@ MOBS = [20082, 20084, 20086, 20089, 20090]
 # ITEMS
 CHAPTER_OF_FIRE, CHAPTER_OF_WATER, CHAPTER_OF_WIND, CHAPTER_OF_EARTH = range(5917, 5921)
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -83,7 +82,6 @@ class Quest(JQuest):
             st.playSound("ItemSound.quest_middle")
             st.unset("awaitsPartyDrop")
         return
-
 
 QUEST = Quest(370, qn, "A Wiseman Sows Seeds")
 

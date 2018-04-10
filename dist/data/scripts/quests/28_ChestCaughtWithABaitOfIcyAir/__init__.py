@@ -15,7 +15,6 @@ BigYellowTreasureChest = 6503
 KikisLetter = 7626
 ElvenRing = 881
 
-
 # ~~~
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -87,7 +86,6 @@ class Quest(JQuest):
             if cond == 2:
                 htmltext = "31442-01.htm"
         return htmltext
-
 
 QUEST = Quest(28, qn, "Chest Caught With A Bait Of Icy Air")
 

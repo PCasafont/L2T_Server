@@ -35,7 +35,6 @@ Chance = {
 Horn = 7186
 Mane = 7233
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -114,7 +113,6 @@ class Quest(JQuest):
                     st.takeItems(Mane, -1)
                     st.exitQuest(1)
         return
-
 
 QUEST = Quest(606, qn, "War With Varka Silenos")
 

@@ -39,8 +39,6 @@ import java.util.Map;
 public class ArmorSetsTable {
 	private static Logger log = LoggerFactory.getLogger(ArmorSetsTable.class.getName());
 
-
-
 	private Map<Integer, L2ArmorSet> armorSets = new HashMap<>();
 
 	public static ArmorSetsTable getInstance() {

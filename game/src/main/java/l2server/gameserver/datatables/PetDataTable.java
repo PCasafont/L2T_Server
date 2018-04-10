@@ -33,8 +33,6 @@ import java.util.Map;
 public class PetDataTable {
 	private static Logger log = LoggerFactory.getLogger(PetDataTable.class.getName());
 
-
-
 	private static Map<Integer, L2PetData> petTable = new HashMap<>();
 
 	public static PetDataTable getInstance() {

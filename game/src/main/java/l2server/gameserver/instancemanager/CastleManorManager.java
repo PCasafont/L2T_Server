@@ -51,8 +51,6 @@ import java.util.stream.Collectors;
 public class CastleManorManager {
 	private static Logger log = LoggerFactory.getLogger(CastleManorManager.class.getName());
 
-
-
 	public static final int PERIOD_CURRENT = 0;
 	public static final int PERIOD_NEXT = 1;
 

@@ -11,7 +11,6 @@ LIANE = 32222
 KEKROPUS = 32138
 EINDBURGH = 32469
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -63,7 +62,6 @@ class Quest(JQuest):
             if cond == 2:
                 htmltext = "32469-01.htm"
         return htmltext
-
 
 QUEST = Quest(61, qn, "Law Enforcement")
 

@@ -4,7 +4,6 @@ from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "362_BardsMandolin"
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -59,7 +58,6 @@ class Quest(JQuest):
         elif npcId == 30957 and cond == 5:
             htmltext = "30957_4.htm"
         return htmltext
-
 
 QUEST = Quest(362, qn, "Bards Mandolin")
 

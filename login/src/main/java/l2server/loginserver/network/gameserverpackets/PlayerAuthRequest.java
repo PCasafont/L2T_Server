@@ -31,7 +31,6 @@ import org.slf4j.LoggerFactory;
 public class PlayerAuthRequest extends BaseRecievePacket {
 	private static Logger log = LoggerFactory.getLogger(PlayerAuthRequest.class.getName());
 
-
 	public PlayerAuthRequest(byte[] decrypt, GameServerThread server) {
 		super(decrypt);
 		String account = readS();

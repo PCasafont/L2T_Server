@@ -34,7 +34,6 @@ import java.util.zip.ZipFile;
 public class JarClassLoader extends ClassLoader {
 	private static Logger log = LoggerFactory.getLogger(JarClassLoader.class.getName());
 
-
 	HashSet<String> jars = new HashSet<>();
 
 	public void addJarFile(String filename) {

@@ -13,7 +13,6 @@ ESPEN = 30890
 REWARDS = {1338: [2, 150], 3452: [1, 140], 1337: [1, 130], 3455: [1, 120], 4409: [1, 220], 4408: [1, 220],
            4418: [1, 220], 4419: [1, 220], 956: [1, 15], 952: [1, 8], 2451: [1, 2], 2450: [1, 2]}
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -87,7 +86,6 @@ class Quest(JQuest):
         elif npcId == PIRATES_CHEST and st.getInt("cond") == 2 and id == State.STARTED:
             htmltext = "31148-01.htm"
         return htmltext
-
 
 QUEST = Quest(383, qn, "Searching For Treasure")
 

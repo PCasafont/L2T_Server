@@ -13,7 +13,6 @@ Tayr_Head = 7241
 Wisdom_Feather = 7230
 Varka_Alliance_Four = 7224
 
-
 def giveReward(st, npc):
     if st.getState() == State.STARTED:
         npcId = npc.getNpcId()
@@ -24,7 +23,6 @@ def giveReward(st, npc):
                     if st.getPlayer().getAllianceWithVarkaKetra() == -4 and st.getQuestItemsCount(Varka_Alliance_Four):
                         st.giveItems(Tayr_Head, 1)
                         st.set("cond", "2")
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -90,7 +88,6 @@ class Quest(JQuest):
             if pst:
                 giveReward(pst, npc)
         return
-
 
 QUEST = Quest(614, qn, "Slay The Enemy Commander!")
 

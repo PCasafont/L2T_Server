@@ -43,7 +43,6 @@ import java.util.*;
 public class GrandBossManager {
 	private static org.slf4j.Logger log = LoggerFactory.getLogger(GrandBossManager.class.getName());
 
-
 	/**
 	 * DELETE FROM grandboss_list
 	 */

@@ -13,7 +13,6 @@ CHANCE = 10
 CHANCE2 = 15
 CHANCE_barrel = 0
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -100,7 +99,6 @@ class Quest(JQuest):
             st.playSound("ItemSound.quest_itemget")
             st.set("cond", "2")
         return
-
 
 QUEST = Quest(351, qn, "Black Swan")
 

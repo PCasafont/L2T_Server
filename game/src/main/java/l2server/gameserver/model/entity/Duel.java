@@ -32,8 +32,6 @@ import java.util.Calendar;
 public class Duel {
 	private static Logger log = LoggerFactory.getLogger(Duel.class.getName());
 
-
-
 	public static final int DUELSTATE_NODUEL = 0;
 	public static final int DUELSTATE_DUELLING = 1;
 	public static final int DUELSTATE_DEAD = 2;

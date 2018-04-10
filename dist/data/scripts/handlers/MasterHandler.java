@@ -34,7 +34,6 @@ import org.slf4j.LoggerFactory;
 public class MasterHandler {
 	private static Logger log = LoggerFactory.getLogger(MasterHandler.class.getName());
 
-
 	private static void loadActionHandlers() {
 		ActionHandler.getInstance().registerActionHandler(new L2ArtefactInstanceAction());
 		ActionHandler.getInstance().registerActionHandler(new L2DecoyAction());

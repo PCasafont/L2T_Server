@@ -48,7 +48,6 @@ GD_METTY = 30072
 # Rewards
 WOLF_COLLAR = 2375
 
-
 # helper functions section
 def getCount_proof(st):
     race = st.getPlayer().getRace().ordinal()
@@ -59,7 +58,6 @@ def getCount_proof(st):
     if race == 4: proofs = st.getQuestItemsCount(SPIDER_LEG5)
     if race == 5: proofs = st.getQuestItemsCount(SPIDER_LEG6)
     return proofs
-
 
 def check_questions(st):
     question = 1
@@ -82,7 +80,6 @@ def check_questions(st):
         st.playSound("ItemSound.quest_finish")
         htmltext = "Completed.htm"
     return htmltext
-
 
 # Main Quest Code
 class Quest(JQuest):
@@ -257,7 +254,6 @@ class Quest(JQuest):
                         st.playSound("ItemSound.quest_itemget")
                     st.giveItems(item, int(numItems))
         return
-
 
 # Quest class and state definition
 QUEST = Quest(419, qn, "Wolf Collar")

@@ -28,8 +28,6 @@ import java.util.List;
 public class DestroyTheGolem extends EventInstance {
 	private static Logger log = LoggerFactory.getLogger(DestroyTheGolem.class.getName());
 
-
-
 	private boolean golemsSpawned = false;
 
 	public DestroyTheGolem(int id, EventConfig config) {

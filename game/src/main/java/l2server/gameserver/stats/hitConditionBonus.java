@@ -31,8 +31,6 @@ import java.io.File;
 public class hitConditionBonus {
 	private static Logger log = LoggerFactory.getLogger(hitConditionBonus.class.getName());
 
-
-
 	private static int frontBonus = 0;
 	private static int sideBonus = 0;
 	private static int backBonus = 0;

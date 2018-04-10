@@ -43,11 +43,9 @@ HAMRUT_LEG, REMAINS_OF_SACRIFICED, TOTEM_OF_LAND_DRAGON, FIRST_FRAGMENT_OF_ABYSS
 SECOND_FRAGMENT_OF_ABYSS_JEWEL, THIRD_FRAGMENT_OF_ABYSS_JEWEL, MARA_FANG, MUSFEL_FANG, \
 MARK_OF_WATCHMAN, PORTAL_STONE, HERALD_OF_SLAYER = range(3852, 3866) + [3890]
 
-
 def checkCond(st):
     if st.getInt("orven") == 1 and st.getInt("kendra") == 1 and st.getInt("chakiris") == 1 and st.getInt("kaiena") == 1:
         st.set("all", "1")
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -356,7 +354,6 @@ class Quest(JQuest):
             self.cancelQuestTimer("Jewel2_Timer1", npc, None)
             self.cancelQuestTimer("Jewel2_Timer2", npc, None)
         return
-
 
 QUEST = Quest(337, qn, "Audience With The Land Dragon")
 

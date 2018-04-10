@@ -16,7 +16,6 @@ WIND_FISHING_LURE = 7610
 # MOB
 SINGING_WIND = 21026
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -82,7 +81,6 @@ class Quest(JQuest):
                         st.playSound("ItemSound.quest_itemget")
                     st.giveItems(ESSENCE_OF_WIND, int(numItems))
         return
-
 
 QUEST = Quest(50, qn, "Lanosco's Special Bait")
 

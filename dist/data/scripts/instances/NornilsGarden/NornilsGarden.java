@@ -50,7 +50,6 @@ import org.slf4j.LoggerFactory;
 public class NornilsGarden extends Quest {
 	private static Logger log = LoggerFactory.getLogger(NornilsGarden.class.getName());
 
-
 	private class NornilsWorld extends InstanceWorld {
 		public Npc first_npc = null;
 		public boolean spawned_1 = false;

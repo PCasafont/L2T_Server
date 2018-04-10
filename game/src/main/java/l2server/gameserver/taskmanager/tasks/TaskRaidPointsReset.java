@@ -32,7 +32,6 @@ import java.util.Map;
 public class TaskRaidPointsReset extends Task {
 	private static Logger log = LoggerFactory.getLogger(TaskRaidPointsReset.class.getName());
 
-
 	public static final String NAME = "raid_points_reset";
 
 	@Override

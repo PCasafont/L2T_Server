@@ -10,7 +10,6 @@ DWARF_GATEKEEPER_TOKEN = 1659
 WHIRPY = 30540
 TAMIL = 30576
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -38,7 +37,6 @@ class Quest(JQuest):
             else:
                 st.exitQuest(1)
                 return "30540-01.htm"
-
 
 QUEST = Quest(-1, qn, "Teleports")
 

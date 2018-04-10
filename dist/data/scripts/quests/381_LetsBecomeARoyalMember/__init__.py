@@ -18,7 +18,6 @@ ANCIENT_GARGOYLE, VEGUS = 21018, 27316
 GARGOYLE_CHANCE = 5 * Config.RATE_QUEST_DROP
 VEGUS_CHANCE = 100 * Config.RATE_QUEST_DROP
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -110,7 +109,6 @@ class Quest(JQuest):
                 else:
                     st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(QuestNumber, str(QuestNumber) + "_" + QuestName, QuestDescription)
 

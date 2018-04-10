@@ -18,7 +18,6 @@ DINOSAURS = [22196, 22197, 22198, 22199, 22200, 22201, 22202, 22203, 22204, 2220
              22225, 18344]
 REWARDS = [8690, 8692, 8694, 8696, 8698, 8700, 8702, 8704, 8706, 8708, 8710]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -104,7 +103,6 @@ class Quest(JQuest):
                             st.playSound("ItemSound.quest_itemget")
                         st.giveItems(itemId, int(numItems))
         return
-
 
 QUEST = Quest(642, qn, "A Powerful Primeval creature")
 

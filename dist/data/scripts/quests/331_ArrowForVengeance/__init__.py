@@ -9,7 +9,6 @@ MEDUSA_VENOM = 1453
 WYRMS_TOOTH = 1454
 ADENA = 57
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -71,7 +70,6 @@ class Quest(JQuest):
                 st.giveItems(WYRMS_TOOTH, 1)
             st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(331, qn, "Arrow For Vengeance")
 

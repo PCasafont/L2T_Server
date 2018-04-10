@@ -30,7 +30,6 @@ CLASSES = {
 # Messages
 default = "No Quest"
 
-
 def change(st, player, newclass, item):
     st.takeItems(item, 1)
     st.playSound("ItemSound.quest_fanfare_2")
@@ -38,7 +37,6 @@ def change(st, player, newclass, item):
     player.setBaseClass(newclass)
     player.broadcastUserInfo()
     return
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -103,7 +101,6 @@ class Quest(JQuest):
                 htmltext += "-33.htm"  # other races
         st.exitQuest(1)
         return htmltext
-
 
 QUEST = Quest(99998, qn, "village_master")
 

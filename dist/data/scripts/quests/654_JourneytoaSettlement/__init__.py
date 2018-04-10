@@ -17,7 +17,6 @@ ITEM = 8072  # Antelope Skin
 # REWARD
 SCROLL = 8073  # Frintezza's Magic Force Field Removal Scroll
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -77,7 +76,6 @@ class Quest(JQuest):
             st.giveItems(ITEM, 1)
             st.playSound("ItemSound.quest_middle")
         return
-
 
 QUEST = Quest(654, qn, "Journey to a Settlement")
 

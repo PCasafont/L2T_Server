@@ -16,7 +16,6 @@ GRAVE_ROBBERS = [22678, 22679, 22680, 22681, 22682]
 SERVITORS = [22683, 22684, 22685, 22686]
 MINE_SPIRITS = [22687, 22688, 22689, 22690]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -105,7 +104,6 @@ class Quest(JQuest):
                 st.giveItems(MINERAL_FRAGMENT, int(numItems))
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(312, qn, "Take Advantage of The Crisis!")
 

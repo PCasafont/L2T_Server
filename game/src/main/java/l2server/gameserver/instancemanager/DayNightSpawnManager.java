@@ -32,8 +32,6 @@ import java.util.Map;
 public class DayNightSpawnManager {
 	private static Logger log = LoggerFactory.getLogger(DayNightSpawnManager.class.getName());
 
-
-
 	private Map<L2Spawn, RaidBossInstance> bosses = new HashMap<>();
 
 	public static DayNightSpawnManager getInstance() {

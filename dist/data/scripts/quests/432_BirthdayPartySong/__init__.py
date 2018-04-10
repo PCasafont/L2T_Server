@@ -11,7 +11,6 @@ RED_CRYSTALS_ID = 7541
 ROUGH_HEWN_ROCK_GOLEMS_ID = 21103
 BIRTHDAY_ECHO_CRYSTAL_ID = 7061
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -67,7 +66,6 @@ class Quest(JQuest):
                 st.playSound("ItemSound.quest_itemget")
             st.giveItems(RED_CRYSTALS_ID, int(numItems))
         return
-
 
 QUEST = Quest(432, qn, "Birthday Party Song")
 

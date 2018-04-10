@@ -28,7 +28,6 @@ DROPLIST = {
     20495: [TUREK_MEDALLION, 13]
 }
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -173,7 +172,6 @@ class Quest(JQuest):
             else:
                 st.giveItems(JADE_NECKLACE_BEAD, 1)
         return
-
 
 QUEST = Quest(327, qn, "Reclaim The Land")
 

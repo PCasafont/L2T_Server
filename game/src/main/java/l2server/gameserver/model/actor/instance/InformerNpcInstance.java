@@ -19,7 +19,6 @@ import java.sql.ResultSet;
 public class InformerNpcInstance extends NpcInstance {
 	private static Logger log = LoggerFactory.getLogger(InformerNpcInstance.class.getName());
 
-
 	public InformerNpcInstance(int objectId, NpcTemplate template) {
 		super(objectId, template);
 	}

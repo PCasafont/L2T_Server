@@ -33,7 +33,6 @@ Chance = 60
 NoaFS = [5, 13796, 1]
 FSTC = [5, 13841, 1]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -112,7 +111,6 @@ class Quest(JQuest):
                     st.giveItems(NuclIncSoul, 1)
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(692, qn, "How To Oppose Evil")
 

@@ -9,7 +9,6 @@ qn = "688_DefeatTheElrokianRaiders"
 DROP_CHANCE = 50
 DINOSAUR_FANG_NECKLACE = 8785
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -81,7 +80,6 @@ class Quest(JQuest):
                             st.playSound("ItemSound.quest_itemget")
                         st.giveItems(DINOSAUR_FANG_NECKLACE, int(numItems))
         return
-
 
 QUEST = Quest(688, qn, "Defeat the Elrokian Raiders")
 

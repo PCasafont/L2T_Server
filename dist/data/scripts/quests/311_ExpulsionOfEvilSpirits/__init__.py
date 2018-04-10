@@ -17,7 +17,6 @@ DROP_CHANCE = 20
 
 MOBS = [22691, 22692, 22693, 22694, 22695, 22696, 22697, 22698, 22699, 22700, 22701, 22702]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -128,7 +127,6 @@ class Quest(JQuest):
                     st.giveItems(RAGNA_ORCS_AMULET, int(numItems))
                     st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(311, qn, "Expulsion of Evil Spirits")
 

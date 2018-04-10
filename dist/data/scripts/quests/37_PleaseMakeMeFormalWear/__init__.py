@@ -13,7 +13,6 @@ SIGNET_RING = 7164
 ICE_WINE = 7160
 BOX_OF_COOKIES = 7159
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -99,7 +98,6 @@ class Quest(JQuest):
             elif npcId == 31520 and st.getQuestItemsCount(DRESS_SHOES_BOX):
                 htmltext = "31520-6.htm"
         return htmltext
-
 
 QUEST = Quest(37, qn, "Please Make Me Formal Wear")
 

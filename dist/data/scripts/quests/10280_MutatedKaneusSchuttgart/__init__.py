@@ -17,7 +17,6 @@ KEL_BILETTE = 18573
 TISSUE_VS = 13838
 TISSUE_KB = 13839
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -99,7 +98,6 @@ class Quest(JQuest):
                 st.giveItems(TISSUE_KB, 1)
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(10280, qn, "Mutated Kaneus - Schuttgart")
 

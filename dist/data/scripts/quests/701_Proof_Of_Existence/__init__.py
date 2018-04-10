@@ -19,7 +19,6 @@ MOBS = [22606, 22607, 22608, 22609]
 # SETTINGS
 DROP_CHANCE = 80
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -76,7 +75,6 @@ class Quest(JQuest):
                 st.giveItems(DEADMANS_REMAINS, 1)
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(701, qn, "Proof of Existence")
 

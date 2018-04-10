@@ -12,7 +12,6 @@ KLEMIS = 32734
 # ITEMS
 SOA_ORDERS = 15512
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -60,7 +59,6 @@ class Quest(JQuest):
                 elif npcId == KLEMIS:
                     htmltext = "32734-01.htm"
         return htmltext
-
 
 QUEST = Quest(10282, qn, "To the Seed of Annihilation")
 

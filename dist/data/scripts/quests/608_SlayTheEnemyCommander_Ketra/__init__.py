@@ -13,7 +13,6 @@ Mos_Head = 7236
 Wisdom_Totem = 7220
 Ketra_Alliance_Four = 7214
 
-
 def giveReward(st, npc):
     if st.getState() == State.STARTED:
         npcId = npc.getNpcId()
@@ -24,7 +23,6 @@ def giveReward(st, npc):
                     if st.getPlayer().getAllianceWithVarkaKetra() == 4 and st.getQuestItemsCount(Ketra_Alliance_Four):
                         st.giveItems(Mos_Head, 1)
                         st.set("cond", "2")
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -90,7 +88,6 @@ class Quest(JQuest):
             if pst:
                 giveReward(pst, npc)
         return
-
 
 QUEST = Quest(608, qn, "Slay The Enemy Commander!")
 

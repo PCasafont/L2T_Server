@@ -15,7 +15,6 @@ BLUE_TREASURE_BOX = 6500
 STRANGE_BLUESPRINT = 7625
 BLACK_PEARL_RING = 880
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -73,7 +72,6 @@ class Quest(JQuest):
             htmltext = Quest.getAlreadyCompletedMsg(player)
 
         return htmltext
-
 
 QUEST = Quest(27, qn, "Chest Caught With A Bait Of Wind")
 

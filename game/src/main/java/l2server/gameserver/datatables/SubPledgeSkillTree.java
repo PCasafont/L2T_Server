@@ -35,7 +35,6 @@ import java.util.Iterator;
 public class SubPledgeSkillTree {
 	private static Logger log = LoggerFactory.getLogger(SubPledgeSkillTree.class.getName());
 
-
 	private TLongObjectHashMap<SubUnitSkill> skilltree = new TLongObjectHashMap<>();
 
 	public SubPledgeSkillTree() {

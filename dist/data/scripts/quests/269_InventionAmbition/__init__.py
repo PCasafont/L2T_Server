@@ -7,7 +7,6 @@ from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "269_InventionAmbition"
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -60,7 +59,6 @@ class Quest(JQuest):
             st.giveItems(10866, 1)
             st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(269, qn, "Invention Ambition")
 

@@ -43,7 +43,6 @@ import java.util.Map;
 public class MultiSell {
 	private static Logger log = LoggerFactory.getLogger(MultiSell.class.getName());
 
-
 	public static final int PAGE_SIZE = 40;
 
 	public static final int PC_BANG_POINTS = -100;

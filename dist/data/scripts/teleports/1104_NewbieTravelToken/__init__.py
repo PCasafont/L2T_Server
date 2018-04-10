@@ -14,7 +14,6 @@ DATA = {
     32135: [-119712, 44519, 368]  # SI
 }
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -46,7 +45,6 @@ class Quest(JQuest):
         else:
             htmltext = str(npcId) + ".htm"
         return htmltext
-
 
 QUEST = Quest(-1, qn, "Teleports")
 

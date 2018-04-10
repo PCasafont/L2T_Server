@@ -31,7 +31,6 @@ import org.slf4j.LoggerFactory;
 public class EffectEnemyCharge extends L2Effect {
 	private static Logger log = LoggerFactory.getLogger(EffectEnemyCharge.class.getName());
 
-
 	private int x, y, z;
 	
 	public EffectEnemyCharge(Env env, EffectTemplate template) {

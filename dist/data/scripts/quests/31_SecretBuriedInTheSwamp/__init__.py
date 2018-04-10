@@ -11,7 +11,6 @@ FORGOTTEN_MONUMENT_1, FORGOTTEN_MONUMENT_2, FORGOTTEN_MONUMENT_3, FORGOTTEN_MONU
 # ITEMS
 KRORINS_JOURNAL = 7252
 
-
 # MESSAGES
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -104,7 +103,6 @@ class Quest(JQuest):
                 elif cond > 6:
                     htmltext = "31664-2.htm"
         return htmltext
-
 
 QUEST = Quest(31, qn, "Secret Buried In The Swamp")
 

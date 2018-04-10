@@ -39,7 +39,6 @@ import java.util.Calendar;
 public class Server {
 	private static Logger log = LoggerFactory.getLogger(Server.class.getName());
 
-
 	private final Core<L2GameClient> selectorThread;
 	private final L2GamePacketHandler gamePacketHandler;
 	private final DeadLockDetector deadDetectThread;

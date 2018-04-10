@@ -5,7 +5,6 @@ import l2server.ServerMode
 import l2server.util.concurrent.ThreadPool
 import org.slf4j.LoggerFactory
 
-
 /**
  * @author Pere
  */

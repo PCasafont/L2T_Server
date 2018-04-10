@@ -31,7 +31,6 @@ import java.util.concurrent.Future;
 public class ControllableAirShipInstance extends AirShipInstance {
 	private static Logger log = LoggerFactory.getLogger(ControllableAirShipInstance.class.getName());
 
-
 	private static final int HELM = 13556;
 	private static final int LOW_FUEL = 40;
 	

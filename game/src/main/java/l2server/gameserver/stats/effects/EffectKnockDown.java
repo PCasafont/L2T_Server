@@ -38,7 +38,6 @@ import org.slf4j.LoggerFactory;
 public class EffectKnockDown extends L2Effect {
 	private static Logger log = LoggerFactory.getLogger(EffectKnockDown.class.getName());
 
-
 	private int x, y, z;
 
 	public EffectKnockDown(Env env, EffectTemplate template) {

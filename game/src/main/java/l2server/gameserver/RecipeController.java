@@ -41,8 +41,6 @@ import java.util.*;
 public class RecipeController {
 	private static Logger log = LoggerFactory.getLogger(RecipeController.class.getName());
 
-
-
 	private Map<Integer, L2RecipeList> lists = new HashMap<>();
 	private static final Map<Integer, RecipeItemMaker> activeMakers = new HashMap<>();
 	private static final String RECIPES_FILE = "recipes.xml";

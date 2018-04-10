@@ -43,7 +43,6 @@ import org.slf4j.LoggerFactory;
 public class GuardInstance extends Attackable {
 	private static Logger log = LoggerFactory.getLogger(GuardInstance.class.getName());
 
-
 	private static final int RETURN_INTERVAL = 60000;
 	
 	public class ReturnTask implements Runnable {

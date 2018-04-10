@@ -42,8 +42,6 @@ import java.util.StringTokenizer;
 public class MapRegionTable {
 	private static Logger log = LoggerFactory.getLogger(MapRegionTable.class.getName());
 
-
-
 	private final int[][] regions = new int[16][18];
 
 	public enum TeleportWhereType {

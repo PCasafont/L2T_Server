@@ -8,7 +8,6 @@ qn = "121_PavelTheGiants"
 NEWYEAR = 31961
 YUMI = 32041
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -50,7 +49,6 @@ class Quest(JQuest):
             else:
                 htmltext = "31961-2.htm"
         return htmltext
-
 
 QUEST = Quest(121, qn, "Pavel The Giants")
 

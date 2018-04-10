@@ -19,7 +19,6 @@ NPC = [30026, 30031, 30037, 30066, 30070, 30109, 30115, 30120, 30154, 30174, \
        32193, 32196, 32199, 32202, 32205, 32206, 32209, 32210, 32213, 32214, \
        32217, 32218, 32221, 32222, 32225, 32226, 32229, 32230, 32233, 32234, 40005]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -45,7 +44,6 @@ class Quest(JQuest):
             st.set("cond", "0")
             st.setState(State.STARTED)
             return "9001-01.htm"
-
 
 QUEST = Quest(-1, qn, "village_master")
 

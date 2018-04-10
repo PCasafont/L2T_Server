@@ -9,7 +9,6 @@ MONSTER_EYE_LENS = 1366
 BASILISK_GIZZARD = 1348
 ADENA = 57
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -100,7 +99,6 @@ class Quest(JQuest):
                 st.giveItems(BASILISK_GIZZARD, 1)
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(328, qn, "Sense For Business")
 

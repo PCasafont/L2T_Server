@@ -35,7 +35,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class EventsManager {
 	private static Logger log = LoggerFactory.getLogger(EventsManager.class.getName());
 
-
 	public static EventsManager instance = null;
 	
 	private HashMap<Integer, EventLocation> locations = new HashMap<>();

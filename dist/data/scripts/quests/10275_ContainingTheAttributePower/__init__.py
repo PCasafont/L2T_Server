@@ -24,7 +24,6 @@ YangSword = 13881
 SoulPieceWater = 13861
 SoulPieceAir = 13862
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -165,7 +164,6 @@ class Quest(JQuest):
                 else:
                     st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(10275, qn, "Containing the Attribute Power")
 

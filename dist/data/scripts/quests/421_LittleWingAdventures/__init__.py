@@ -20,7 +20,6 @@ FT_LEAF = 4325
 CRONOS = 30610
 MIMYU = 30747
 
-
 # kinda bugged, missing refresh, works only when player relog so far
 def EvolvePet(player, item, striderControlItem):
     con = DatabasePool.getInstance().getConnection()
@@ -41,7 +40,6 @@ def EvolvePet(player, item, striderControlItem):
     player.sendPacket(sm2)
     player.sendPacket(ItemList(player, False))
     return
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -257,7 +255,6 @@ class Quest(JQuest):
         return
 
         # Quest class and state definition
-
 
 QUEST = Quest(421, qn, "Little Wing's Big Adventures")
 

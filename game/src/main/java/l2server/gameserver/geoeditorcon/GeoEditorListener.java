@@ -28,7 +28,6 @@ import java.net.Socket;
 public class GeoEditorListener extends Thread {
 	private static Logger log = LoggerFactory.getLogger(GeoEditorListener.class.getName());
 
-
 	private static GeoEditorListener instance;
 	private static final int PORT = 9011;
 

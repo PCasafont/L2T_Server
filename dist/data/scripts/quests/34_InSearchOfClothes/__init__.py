@@ -10,7 +10,6 @@ THREAD = 1868
 SPIDERSILK = 1493
 MYSTERIOUS_CLOTH = 7076
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -97,7 +96,6 @@ class Quest(JQuest):
             else:
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(34, qn, "In Search of Clothes")
 

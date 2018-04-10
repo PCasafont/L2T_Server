@@ -34,7 +34,6 @@ import java.util.concurrent.atomic.AtomicLong;
 public class L2TradeList {
 	private static Logger log = LoggerFactory.getLogger(L2TradeList.class.getName());
 
-
 	private final Map<Integer, L2TradeItem> items = new LinkedHashMap<>();
 	private final int listId;
 

@@ -17,7 +17,6 @@ SEER_FLOUROS = 18559
 TISSUE_CH = 13832
 TISSUE_SF = 13833
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -99,7 +98,6 @@ class Quest(JQuest):
                 st.giveItems(TISSUE_SF, 1)
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(10277, qn, "Mutated Kaneus - Dion")
 

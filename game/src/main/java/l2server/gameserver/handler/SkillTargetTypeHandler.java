@@ -28,7 +28,6 @@ import java.util.Map;
 public class SkillTargetTypeHandler {
 	private static Logger log = LoggerFactory.getLogger(SkillTargetTypeHandler.class.getName());
 
-
 	private Map<Enum<SkillTargetType>, ISkillTargetTypeHandler> datatable;
 
 	public static SkillTargetTypeHandler getInstance() {

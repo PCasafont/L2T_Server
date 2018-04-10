@@ -36,8 +36,6 @@ import java.util.*;
 public class MacroList {
 	private static Logger log = LoggerFactory.getLogger(MacroList.class.getName());
 
-
-
 	private Player owner;
 	private int revision;
 	private int macroId;

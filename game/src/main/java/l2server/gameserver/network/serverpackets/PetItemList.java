@@ -30,7 +30,6 @@ public class PetItemList extends L2ItemListPacket {
 	private static Logger log = LoggerFactory.getLogger(PetItemList.class.getName());
 
 
-	
 	private PetInstance activeChar;
 	
 	public PetItemList(PetInstance character) {

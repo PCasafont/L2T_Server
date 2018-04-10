@@ -10,7 +10,6 @@ TUNATUN = 31537
 # ITEMS
 GEM = 7185
 
-
 # NOTE: This quest requires the giving of item GEM upon successful growth and taming of a wild beast, so the rewarding of
 # the gem is handled by the feedable_beasts ai script.
 
@@ -58,7 +57,6 @@ class Quest(JQuest):
             else:
                 htmltext = "31537-11.htm"
         return htmltext
-
 
 QUEST = Quest(20, qn, "Bring up with Love")
 

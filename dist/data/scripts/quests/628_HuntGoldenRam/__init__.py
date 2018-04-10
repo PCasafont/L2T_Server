@@ -48,7 +48,6 @@ BUFF = {
 # needed count
 count = 100
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -160,7 +159,6 @@ class Quest(JQuest):
                             st.playSound("ItemSound.quest_itemget")
                         st.giveItems(item, int(numItems))
         return
-
 
 QUEST = Quest(628, qn, "Hunt of the Golden Ram Mercenary Force")
 

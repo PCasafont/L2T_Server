@@ -20,7 +20,6 @@ QUEEN_ENABLED = 0
 NEWBIE_REWARD = 16
 TRAVELER_REWARD = 32
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -64,7 +63,6 @@ class Quest(JQuest):
         if not st:
             st = self.newQuestState(player)
         return "31760.htm"
-
 
 QUEST = Quest(-1, qn, "custom")
 

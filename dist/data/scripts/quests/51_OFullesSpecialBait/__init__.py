@@ -16,7 +16,6 @@ ICY_AIR_LURE = 7611
 # MOB
 FETTERED_SOUL = 20552
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -80,7 +79,6 @@ class Quest(JQuest):
                         st.playSound("ItemSound.quest_itemget")
                     st.giveItems(LOST_BAIT, int(numItems))
         return
-
 
 QUEST = Quest(51, qn, "O'Fulle's Special Bait")
 

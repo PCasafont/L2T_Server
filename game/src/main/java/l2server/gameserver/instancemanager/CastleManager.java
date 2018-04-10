@@ -40,7 +40,6 @@ public class CastleManager implements InstanceListManager {
 	private static Logger log = LoggerFactory.getLogger(CastleManager.class.getName());
 
 
-	
 	public static CastleManager getInstance() {
 		return SingletonHolder.instance;
 	}

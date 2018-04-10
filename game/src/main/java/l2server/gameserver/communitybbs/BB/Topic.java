@@ -26,8 +26,6 @@ import java.sql.PreparedStatement;
 public class Topic {
 	private static Logger log = LoggerFactory.getLogger(Topic.class.getName());
 
-
-
 	public static final int MORMAL = 0;
 	public static final int MEMO = 1;
 

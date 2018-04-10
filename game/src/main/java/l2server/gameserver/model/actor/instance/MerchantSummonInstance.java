@@ -37,7 +37,6 @@ import java.util.StringTokenizer;
 public class MerchantSummonInstance extends SummonInstance {
 	private static Logger log = LoggerFactory.getLogger(MerchantSummonInstance.class.getName());
 
-
 	public MerchantSummonInstance(int objectId, NpcTemplate template, Player owner, Skill skill) {
 		super(objectId, template, owner, skill);
 		setInstanceType(InstanceType.L2MerchantSummonInstance);

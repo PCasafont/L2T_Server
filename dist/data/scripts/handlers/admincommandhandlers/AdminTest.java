@@ -75,7 +75,6 @@ import java.util.StringTokenizer;
 public class AdminTest implements IAdminCommandHandler {
 	private static Logger log = LoggerFactory.getLogger(AdminTest.class.getName());
 
-
 	private static final String[] ADMIN_COMMANDS = {"admin_stats", "admin_skill_test", "admin_known", "admin_test", "admin_do"};
 
 	private List<NpcTemplate> npcTemplates = new ArrayList<NpcTemplate>();

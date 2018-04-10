@@ -38,7 +38,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class PlayerClassTable {
 	private static Logger log = LoggerFactory.getLogger(PlayerClassTable.class.getName());
 
-
 	private Map<Integer, PlayerClass> classes = new HashMap<>();
 
 	private Map<Long, Integer> minSkillLevels = new HashMap<>();

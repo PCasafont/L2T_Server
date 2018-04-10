@@ -58,7 +58,6 @@ RADAR = {
     6: [144218, -5816, -4722],
 }
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -141,7 +140,6 @@ class Quest(JQuest):
                 st.giveItems(item, 1)
                 st.playSound("ItemSound.quest_middle")
         return
-
 
 # Quest class and state definition
 QUEST = Quest(508, qn, qd)

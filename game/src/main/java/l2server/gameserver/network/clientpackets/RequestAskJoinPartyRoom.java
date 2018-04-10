@@ -26,7 +26,6 @@ import org.slf4j.LoggerFactory;
 public class RequestAskJoinPartyRoom extends L2GameClientPacket {
 	private static Logger log = LoggerFactory.getLogger(RequestAskJoinPartyRoom.class.getName());
 
-
 	private String player; // not tested, just guessed
 	
 	@Override

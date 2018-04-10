@@ -31,7 +31,6 @@ import java.util.Map;
 public class RequestGetBossRecord extends L2GameClientPacket {
 	private static Logger log = LoggerFactory.getLogger(RequestGetBossRecord.class.getName());
 
-
 	private int bossId;
 	
 	@Override

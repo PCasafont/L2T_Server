@@ -40,7 +40,6 @@ import java.util.StringTokenizer;
 public class ClanHallManagerInstance extends MerchantInstance {
 	private static Logger log = LoggerFactory.getLogger(ClanHallManagerInstance.class.getName());
 
-
 	protected static final int COND_OWNER_FALSE = 0;
 	protected static final int COND_ALL_FALSE = 1;
 	protected static final int COND_BUSY_BECAUSE_OF_SIEGE = 2;

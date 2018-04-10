@@ -36,7 +36,6 @@ import java.util.*;
 public class ClanRecruitManager {
 	private static Logger log = LoggerFactory.getLogger(ClanRecruitManager.class.getName());
 
-
 	public class ClanRecruitData {
 		public L2Clan clan = null;
 		public int karma = 0;

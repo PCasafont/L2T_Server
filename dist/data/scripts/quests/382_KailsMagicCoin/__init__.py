@@ -14,7 +14,6 @@ MOBS = {21017: [5961], 21019: [5962], 21020: [5963], 21022: [5961, 5962, 5963]}
 CHANCE = 10
 MAX = 100
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -62,7 +61,6 @@ class Quest(JQuest):
                 st.giveItems(MOBS[npcId][st.getRandom(len(MOBS[npcId]))], int(numItems))
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(382, qn, "Kail's Magic Coin")
 

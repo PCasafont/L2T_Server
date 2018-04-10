@@ -32,7 +32,6 @@ import java.util.concurrent.ScheduledFuture;
 public class NpcWalkerAI extends CreatureAI implements Runnable {
 	private static Logger log = LoggerFactory.getLogger(NpcWalkerAI.class.getName());
 
-
 	private static final int DEFAULT_MOVE_DELAY = 100;
 
 	ScheduledFuture<?> task = null;

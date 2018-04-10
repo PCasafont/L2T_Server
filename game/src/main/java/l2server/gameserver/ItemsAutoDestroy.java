@@ -30,7 +30,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class ItemsAutoDestroy {
 	private static Logger log = LoggerFactory.getLogger(ItemsAutoDestroy.class.getName());
 
-
 	protected List<Item> items = null;
 	protected static long sleep;
 

@@ -12,7 +12,6 @@ Wahkan = 31371
 # Item
 Box = 7231
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -68,7 +67,6 @@ class Quest(JQuest):
             elif npcId == Wahkan and cond == 2:
                 htmltext = "31371-01.htm"
         return htmltext
-
 
 QUEST = Quest(11, qn, "Secret Meeting With Ketra Orcs")
 

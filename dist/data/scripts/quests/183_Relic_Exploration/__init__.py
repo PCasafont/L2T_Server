@@ -13,7 +13,6 @@ Kusto = 30512
 Lorain = 30673
 Nikola = 30621
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -85,7 +84,6 @@ class Quest(JQuest):
             if cond == 2:
                 htmltext = "30621-01.htm"
         return htmltext
-
 
 QUEST = Quest(183, qn, "Relics Exploration")
 

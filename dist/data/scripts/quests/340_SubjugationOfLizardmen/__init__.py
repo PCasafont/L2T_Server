@@ -20,7 +20,6 @@ MOBS_1 = [20008, 20010, 20014]
 MOBS_2 = [20357, 21100, 20356, 21101]
 BIFRON = 25146
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -150,7 +149,6 @@ class Quest(JQuest):
             elif npcId == BIFRON:
                 st.addSpawn(CHEST, npc, 30000)
         return
-
 
 QUEST = Quest(340, qn, "Subjugation of Lizardmen")
 

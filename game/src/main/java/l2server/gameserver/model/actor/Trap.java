@@ -39,7 +39,6 @@ import java.util.Collection;
 public class Trap extends Creature {
 	private static Logger log = LoggerFactory.getLogger(Trap.class.getName());
 
-
 	protected static final int TICK = 1000; // 1s
 
 	private boolean isTriggered;

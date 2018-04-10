@@ -20,7 +20,6 @@ EMPTY_CRYSTAL = 10356
 MEDICINE = 10357
 MESSAGE = 10358
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -123,7 +122,6 @@ class Quest(JQuest):
             elif cond == 5:
                 htmltext = "32369-10.htm"
         return htmltext
-
 
 QUEST = Quest(143, qn, "Fallen Angel - Request of Dusk")
 

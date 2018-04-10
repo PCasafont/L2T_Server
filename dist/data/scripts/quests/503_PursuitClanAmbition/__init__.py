@@ -52,7 +52,6 @@ DROPLIST = {
     27181: [10, 0, 100, []]  # Imperial Gravekeeper
 }
 
-
 def suscribe_members(st):
     clan = st.getPlayer().getClan().getClanId()
     con = DatabasePool.getInstance().getConnection()
@@ -79,7 +78,6 @@ def suscribe_members(st):
     except:
         pass
 
-
 def offlineMemberExit(st):
     clan = st.getPlayer().getClan().getClanId()
     con = DatabasePool.getInstance().getConnection()
@@ -96,7 +94,6 @@ def offlineMemberExit(st):
             con.close()
         except:
             pass
-
 
 # returns leaders quest cond, if he is offline will read out of database :)
 def getLeaderVar(st, var):
@@ -131,7 +128,6 @@ def getLeaderVar(st, var):
         val = -1
     return int(val)
 
-
 # set's leaders quest cond, if he is offline will read out of database :)
 # for now, if the leader is not logged in, this assumes that the variable
 # has already been inserted once (initialized, in some sense).
@@ -160,7 +156,6 @@ def setLeaderVar(st, var, value):
                 pass
     return
 
-
 def checkEggs(st):
     count = 0
     for item in EggList:
@@ -171,7 +166,6 @@ def checkEggs(st):
     else:
         return 0
 
-
 def giveItem(item, maxcount, st):
     count = st.getQuestItemsCount(item)
     if count < maxcount:
@@ -181,7 +175,6 @@ def giveItem(item, maxcount, st):
         else:
             st.playSound("ItemSound.quest_itemget")
     return
-
 
 def exit503(completed, st):
     if completed:
@@ -201,7 +194,6 @@ def exit503(completed, st):
     except:
         return "You dont have any members in your Clan, so you can't finish the Pursuit of Aspiration"
     return "Congratulations, you have finished the Pursuit of Clan Ambition"
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -548,7 +540,6 @@ class Quest(JQuest):
                     else:
                         leader_st.addSpawn(27179)
         return
-
 
 QUEST = Quest(503, qn, "Pursuit of Clan Ambition")
 

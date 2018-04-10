@@ -22,7 +22,6 @@ ITEMS = {
     HOT_SPRINGS_NEPENTHES: TRUNK_OF_NEPENTHES
 }
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -109,7 +108,6 @@ class Quest(JQuest):
                         else:
                             st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(624, qn, "The Finest Ingredients - Part 1")
 

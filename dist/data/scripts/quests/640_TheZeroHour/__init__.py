@@ -31,7 +31,6 @@ REWARDS = {
     "9": [123, 1893, 10],
 }
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -87,7 +86,6 @@ class Quest(JQuest):
         st.giveItems(Fang, int(Config.RATE_QUEST_DROP))
         st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(640, qn, "The Zero Hour")
 

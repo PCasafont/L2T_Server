@@ -24,7 +24,6 @@ RANDOM_REWARDS = [[736, 15],  # SoE
                   [955, 1],  # Enchant Weapon D
                   ]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -94,7 +93,6 @@ class Quest(JQuest):
         if random <= CHANCE2 and st.getQuestItemsCount(TORN_MAP_FRAGMENT) < 10:
             st.giveItems(TORN_MAP_FRAGMENT, 1)
         return
-
 
 QUEST = Quest(354, qn, "Conquest Of Alligator Island")
 

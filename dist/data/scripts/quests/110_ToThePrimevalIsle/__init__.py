@@ -12,7 +12,6 @@ MARQUEZ = 32113
 ANCIENT_BOOK = 8777
 ADENA_ID = 57
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -59,7 +58,6 @@ class Quest(JQuest):
                 if cond == 1:
                     htmltext = "2.htm"
         return htmltext
-
 
 QUEST = Quest(110, qn, "To The Primeval Isle")
 

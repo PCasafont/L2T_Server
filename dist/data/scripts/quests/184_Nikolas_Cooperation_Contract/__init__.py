@@ -22,7 +22,6 @@ Metal = 10359
 BrokenMetal = 10360
 NicolasMap = 10361
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -151,7 +150,6 @@ class Quest(JQuest):
                     elif step == 3:
                         htmltext = "32366-03.htm"
         return htmltext
-
 
 QUEST = Quest(184, qn, "Nikola's Cooperation - Contract")
 

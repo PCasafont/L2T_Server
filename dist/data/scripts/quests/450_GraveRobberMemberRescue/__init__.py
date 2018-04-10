@@ -21,7 +21,6 @@ ADENA = 57
 RESET_HOUR = 6
 RESET_MIN = 30
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -110,7 +109,6 @@ class Quest(JQuest):
                     npc.getSpawn().decreaseCount(npc)
                     npc.deleteMe()
         return htmltext
-
 
 QUEST = Quest(450, qn, "Grave Robber Member Rescue")
 

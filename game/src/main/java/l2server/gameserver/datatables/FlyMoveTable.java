@@ -40,7 +40,6 @@ import java.io.File;
 public class FlyMoveTable {
 	private static Logger log = LoggerFactory.getLogger(FlyMoveTable.class.getName());
 
-
 	private static FlyMoveTable instance;
 
 	public static FlyMoveTable getInstance() {

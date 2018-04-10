@@ -25,7 +25,6 @@ import java.util.HashMap;
 public class DarkCloudMansion extends Quest {
 	private static Logger log = LoggerFactory.getLogger(DarkCloudMansion.class.getName());
 
-
 	public DarkCloudMansion(int questId, String name, String descr) {
 		super(questId, name, descr);
 

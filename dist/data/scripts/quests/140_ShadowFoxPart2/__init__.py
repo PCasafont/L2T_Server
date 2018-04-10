@@ -18,7 +18,6 @@ CRYPT = 10349
 # MONSTERs
 NPC = [20789, 20790, 20791, 20792]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -121,7 +120,6 @@ class Quest(JQuest):
                 st.setState(State.STARTED)
         npc.showChatWindow(player)
         return
-
 
 QUEST = Quest(140, qn, "Shadow Fox - 2")
 

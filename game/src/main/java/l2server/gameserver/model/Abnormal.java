@@ -46,8 +46,6 @@ import java.util.concurrent.TimeUnit;
 public class Abnormal {
 	private static Logger log = LoggerFactory.getLogger(Abnormal.class.getName());
 
-
-
 	public enum AbnormalState {
 		CREATED,
 		ACTING,

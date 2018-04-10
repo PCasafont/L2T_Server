@@ -19,7 +19,6 @@ SORROW_MAIDEN = 20197
 MAX_COUNT = 30
 MIN_LEVEL = 26
 
-
 class Quest(JQuest):
     def onEvent(self, event, st):
         htmltext = event
@@ -107,7 +106,6 @@ class Quest(JQuest):
                 st.playSound("ItemSound.quest_itemget")
             st.giveItems(MAP_PIECE, int(numItems))
         return
-
 
 QUEST = Quest(43, qn, "Help The Sister!")
 

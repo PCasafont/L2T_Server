@@ -13,7 +13,6 @@ BLOOD_OF_SAINT = 7169
 # REWARDS
 ADENA = 57
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -82,7 +81,6 @@ class Quest(JQuest):
                     else:
                         st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(626, qn, "A Dark Twilight")
 

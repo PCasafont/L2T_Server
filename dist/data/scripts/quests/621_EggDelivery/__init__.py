@@ -26,7 +26,6 @@ RPCHANCE = 10
 # Change this value to 1 if you wish 100% recipes, default 70%
 ALT_RP100 = 0
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -146,7 +145,6 @@ class Quest(JQuest):
                 elif npcId == 31584 and cond == 7 and st.getQuestItemsCount(FEE_OF_EGGS) == 5:
                     htmltext = "31584-1.htm"
         return htmltext
-
 
 QUEST = Quest(621, qn, "Egg Delivery")
 

@@ -21,7 +21,6 @@ PUPINA_REC = 10344
 # MONSTERs
 NPC = [20176, 20550, 20551, 20552]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -152,7 +151,6 @@ class Quest(JQuest):
                 st.setState(State.STARTED)
         npc.showChatWindow(player)
         return
-
 
 QUEST = Quest(138, qn, "Temple Champion - 2")
 

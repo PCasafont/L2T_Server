@@ -46,8 +46,6 @@ import java.util.stream.Collectors;
 public class AutoChatHandler implements SpawnListener {
 	private static Logger log = LoggerFactory.getLogger(AutoChatHandler.class.getName());
 
-
-
 	private static final int DEFAULT_CHAT_DELAY = 60000; // 60 secs by default
 
 	protected final Map<Integer, AutoChatInstance> registeredChats = new HashMap<>();

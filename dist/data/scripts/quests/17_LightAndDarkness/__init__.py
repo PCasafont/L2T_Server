@@ -18,7 +18,6 @@ SAINT_ALTAR_4 = 31511
 # ITEMS
 BLOOD_OF_SAINT = 7168
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -124,7 +123,6 @@ class Quest(JQuest):
                 elif cond > 4:
                     htmltext = "31511-03.htm"
         return htmltext
-
 
 QUEST = Quest(17, qn, "Light and Darkness")
 

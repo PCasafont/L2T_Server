@@ -16,7 +16,6 @@ Lorain = 30673
 Certificate = 10362
 Metal = 10368
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -69,7 +68,6 @@ class Quest(JQuest):
                 if cond == 2:
                     htmltext = "30512-01.htm"
         return htmltext
-
 
 QUEST = Quest(187, qn, "Nikola's Heart")
 

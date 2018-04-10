@@ -26,7 +26,6 @@ Starstone = 8287
 Letter = 8288
 Starstone2 = 8289
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -361,7 +360,6 @@ class Quest(JQuest):
                                            "This enemy is far too powerful for me to fight. I must withdraw"))
                 st.set("cond", "11")
                 st.playSound("ItemSound.quest_middle")
-
 
 QUEST = Quest(114, qn, "Resurrection Of An Old Manager")
 

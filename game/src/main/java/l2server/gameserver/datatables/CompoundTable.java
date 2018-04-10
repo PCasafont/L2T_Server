@@ -36,7 +36,6 @@ import java.util.Set;
 public class CompoundTable {
 	private static Logger log = LoggerFactory.getLogger(CompoundTable.class.getName());
 
-
 	public class Combination {
 		private final int item1;
 		private final int item2;

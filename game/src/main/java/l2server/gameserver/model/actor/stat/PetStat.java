@@ -31,7 +31,6 @@ import org.slf4j.LoggerFactory;
 public class PetStat extends SummonStat {
 	private static Logger log = LoggerFactory.getLogger(PetStat.class.getName());
 
-
 	public PetStat(PetInstance activeChar) {
 		super(activeChar);
 	}

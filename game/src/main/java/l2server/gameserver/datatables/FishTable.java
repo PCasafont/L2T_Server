@@ -33,8 +33,6 @@ import java.util.List;
 public class FishTable {
 	private static Logger log = LoggerFactory.getLogger(FishTable.class.getName());
 
-
-
 	private static List<FishData> fishsNormal = new ArrayList<>();
 	private static List<FishData> fishsEasy = new ArrayList<>();
 	private static List<FishData> fishsHard = new ArrayList<>();

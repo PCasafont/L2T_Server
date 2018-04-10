@@ -19,7 +19,6 @@ DROP_CHANCE = 20
 # Mobs
 MOBS = [22670, 22671, 22672, 22673, 22674, 22675, 22676, 22677]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -114,7 +113,6 @@ class Quest(JQuest):
                 st.giveItems(ANCIENT_PARCHMENT, 1)
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(376, qn, "Exploration of the Giants Cave, Part I")
 

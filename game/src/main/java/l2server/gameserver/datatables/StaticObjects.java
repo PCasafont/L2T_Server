@@ -34,7 +34,6 @@ import java.util.Map;
 public class StaticObjects {
 	private static Logger log = LoggerFactory.getLogger(StaticObjects.class.getName());
 
-
 	private Map<Integer, StaticObjectInstance> staticObjects = new HashMap<>();
 
 	public static StaticObjects getInstance() {

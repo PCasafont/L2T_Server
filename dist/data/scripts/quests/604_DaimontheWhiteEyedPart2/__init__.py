@@ -18,14 +18,12 @@ U_SUMMON, S_SUMMON, ESSENCE = range(7192, 7195)
 # Rewards dye +2int-2men/+2int-2wit/+2men-2int/+2men-2wit/+2wit-2int/+2wit-2men
 REWARDS = range(4595, 4601)
 
-
 def AutoChat(npc, text):
     chars = npc.getKnownList().getKnownPlayers().values().toArray()
     if chars != None:
         for pc in chars:
             sm = NpcSay(npc.getObjectId(), 0, npc.getNpcId(), text)
             pc.sendPacket(sm)
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -151,7 +149,6 @@ class Quest(JQuest):
                     st.set("cond", "3")
                     st.playSound("ItemSound.quest_middle")
         return
-
 
 QUEST = Quest(604, qn, "Daimon the White-Eyed - Part 2")
 

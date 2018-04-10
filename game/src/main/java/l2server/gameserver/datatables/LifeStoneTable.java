@@ -44,7 +44,6 @@ import java.util.Map;
 public class LifeStoneTable {
 	private static Logger log = LoggerFactory.getLogger(LifeStoneTable.class.getName());
 
-
 	public static final class EnchantEffectSet {
 		private final List<EnchantEffect> enchantEffects;
 		private final float chance;

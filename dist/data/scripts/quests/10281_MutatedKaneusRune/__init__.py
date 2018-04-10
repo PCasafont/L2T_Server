@@ -15,7 +15,6 @@ WHITE_ALLOSCE = 18577
 # Items
 TISSUE_WA = 13840
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -89,7 +88,6 @@ class Quest(JQuest):
                 st.giveItems(TISSUE_WA, 1)
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(10281, qn, "Mutated Kaneus - Rune")
 

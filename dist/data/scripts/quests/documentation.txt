@@ -17,7 +17,6 @@ Developers who are comfortable with Java may read the source code for this class
 l2jserver project (www.l2jserver.com) for full details and available functions.  Alternatively, one
 may read forward in this documentation.
 
-
 AVAILABLE TRIGGER FUNCTIONS:
 There exist a set of functions that are predefined for quests and are triggered from various actions.
 These functions, their triggers, and the parameters passed into the script are defined below:

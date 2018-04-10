@@ -21,8 +21,6 @@ import java.util.Map;
 public class ResidentialSkillTable {
 	private static Logger log = LoggerFactory.getLogger(ResidentialSkillTable.class.getName());
 
-
-
 	private static ResidentialSkillTable instance = null;
 	private static Map<Integer, ArrayList<Skill>> list;
 

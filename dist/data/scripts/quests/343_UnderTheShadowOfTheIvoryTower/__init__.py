@@ -36,7 +36,6 @@ toss_msg = [["You're right!", "You win!"], \
             ["Hu wah! Right again!", "You won three times in a row!"], \
             ["Ho ho! Right again!", "You won four times in a row!"]]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -197,7 +196,6 @@ class Quest(JQuest):
             st.giveItems(ORB, 1)
             st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(343, qn, "Under The Shadow Of The Ivory Tower")
 

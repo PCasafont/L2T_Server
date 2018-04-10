@@ -54,7 +54,6 @@ import java.util.*;
 public class L2Clan {
 	private static Logger log = LoggerFactory.getLogger(L2Clan.class.getName());
 
-
 	private String name;
 	private int clanId;
 	private L2ClanMember leader;

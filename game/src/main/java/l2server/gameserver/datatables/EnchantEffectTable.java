@@ -37,7 +37,6 @@ import java.util.Map;
 public class EnchantEffectTable {
 	private static Logger log = LoggerFactory.getLogger(EnchantEffectTable.class.getName());
 
-
 	public static EnchantEffectTable getInstance() {
 		return SingletonHolder.instance;
 	}

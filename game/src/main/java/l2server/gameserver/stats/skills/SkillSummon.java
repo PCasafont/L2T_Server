@@ -42,7 +42,6 @@ import org.slf4j.LoggerFactory;
 public class SkillSummon extends Skill {
 	private static Logger log = LoggerFactory.getLogger(SkillSummon.class.getName());
 
-
 	private int npcId;
 	private float expPenalty;
 	private final boolean isCubic;

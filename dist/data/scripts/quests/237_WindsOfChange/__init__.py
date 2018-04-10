@@ -17,7 +17,6 @@ ATHENIA_LETTER = 14864
 VICINITY_OF_FOS = 14865
 SUPPORT_CERTIFICATE = 14866
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -122,7 +121,6 @@ class Quest(JQuest):
             elif cond == 6:
                 htmltext = "32643-01.htm"
         return htmltext
-
 
 QUEST = Quest(237, qn, "Winds of Change")
 

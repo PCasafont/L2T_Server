@@ -20,7 +20,6 @@ DROPLIST_FLARE = {20612: [FLARE_SHARD, 77],  # Salamander Rowin
                   20749: [FLARE_SHARD, 85]  # Death Fire
                   }
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -116,7 +115,6 @@ class Quest(JQuest):
                 else:
                     st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(369, qn, "Collector of Jewels")
 

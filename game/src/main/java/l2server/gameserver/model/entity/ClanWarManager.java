@@ -25,7 +25,6 @@ import java.util.concurrent.ScheduledFuture;
 public class ClanWarManager {
 	private static Logger log = LoggerFactory.getLogger(ClanWarManager.class.getName());
 
-
 	private static ClanWarManager instance = null;
 
 	private List<ClanWar> wars = new ArrayList<>();

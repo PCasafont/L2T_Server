@@ -31,7 +31,6 @@ import java.util.List;
 public class SpawnGroup {
 	private static Logger log = LoggerFactory.getLogger(SpawnGroup.class.getName());
 
-
 	private final int minZ;
 	private final int maxZ;
 	private final L2Territory territory = new L2Territory(0);

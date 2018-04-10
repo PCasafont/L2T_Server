@@ -26,7 +26,6 @@ import java.util.concurrent.ScheduledFuture;
 public class QuestTimer {
 	private static Logger log = LoggerFactory.getLogger(QuestTimer.class.getName());
 
-
 	// =========================================================
 	// Schedule Task
 	public class ScheduleTimerTask implements Runnable {

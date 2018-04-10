@@ -33,7 +33,6 @@ import java.util.List;
 public class HennaTemplate {
 	private static Logger log = LoggerFactory.getLogger(HennaTemplate.class.getName());
 
-
 	private final int symbolId;
 	private final int dye;
 	private final String name;

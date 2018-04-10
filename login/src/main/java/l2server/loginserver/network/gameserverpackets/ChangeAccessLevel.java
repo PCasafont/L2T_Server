@@ -26,8 +26,6 @@ import org.slf4j.LoggerFactory;
 public class ChangeAccessLevel extends BaseRecievePacket {
 	private static org.slf4j.Logger log = LoggerFactory.getLogger(ChangeAccessLevel.class.getName());
 
-
-
 	public ChangeAccessLevel(byte[] decrypt, GameServerThread server) {
 		super(decrypt);
 		int level = readD();

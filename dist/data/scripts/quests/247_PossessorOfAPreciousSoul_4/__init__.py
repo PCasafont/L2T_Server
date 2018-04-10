@@ -12,7 +12,6 @@ LADY_OF_LAKE = 31745
 CARADINE_LETTER_LAST = 7679
 NOBLESS_TIARA = 7694
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -70,7 +69,6 @@ class Quest(JQuest):
         else:
             htmltext = "<html><body>This quest may only be undertaken by sub-class characters of level 50 or above.</body></html>"
         return htmltext
-
 
 QUEST = Quest(247, qn, "Possessor Of A Precious Soul - 4")
 

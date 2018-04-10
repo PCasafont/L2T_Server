@@ -17,7 +17,6 @@ ROUTES = {
     5: [52143, -51418, -3085, 0]
 }
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -177,7 +176,6 @@ class Quest(JQuest):
             elif cond == 0 and onlyone == 1:
                 htmltext = "31328-06.htm"
         return htmltext
-
 
 QUEST = Quest(21, qn, "Hidden Truth")
 

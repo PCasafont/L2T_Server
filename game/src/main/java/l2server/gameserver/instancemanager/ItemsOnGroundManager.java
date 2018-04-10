@@ -40,7 +40,6 @@ import java.util.List;
 public class ItemsOnGroundManager {
 	private static Logger log = LoggerFactory.getLogger(ItemsOnGroundManager.class.getName());
 
-
 	protected List<Item> items = new ArrayList<>();
 	private final StoreInDb task = new StoreInDb();
 

@@ -23,7 +23,6 @@ ALTARS = {
 RESET_HOUR = 6
 RESET_MIN = 30
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -95,7 +94,6 @@ class Quest(JQuest):
             else:
                 htmltext = "findother.htm"
         return htmltext
-
 
 QUEST = Quest(451, qn, "Lucien's Altar")
 

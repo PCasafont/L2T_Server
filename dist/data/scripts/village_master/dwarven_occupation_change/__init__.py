@@ -40,7 +40,6 @@ UNIQUE_DIALOGS = [30594, 30595, 30498, 30499]
 
 default = "No Quest"
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -122,7 +121,6 @@ class Quest(JQuest):
             else:
                 st.exitQuest(1)
         return htmltext
-
 
 QUEST = Quest(99999, qn, "village_master")
 

@@ -11,7 +11,6 @@ GHOST_OF_ADVENTURER = 31538
 # QUEST ITEM
 LETTER = 7253
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -59,7 +58,6 @@ class Quest(JQuest):
         elif npcId == GHOST_OF_ADVENTURER and cond == 1 and id == State.STARTED:
             htmltext = "31538-0.htm"
         return htmltext
-
 
 QUEST = Quest(14, qn, "Whereabouts Of The Archaeologist")
 

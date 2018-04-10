@@ -62,7 +62,6 @@ MOB = {
     MESSENGER_A2: [WH_PAP, 25]
 }
 
-
 # Helpers
 def check_n_take(st, collection):
     result = False
@@ -76,7 +75,6 @@ def check_n_take(st, collection):
             st.takeItems(coll2check[k], 1)
         result = True
     return result
-
 
 def give_reward(st, reward):
     luck = st.getRandom(REWARD_RATE[-1])
@@ -97,7 +95,6 @@ def give_reward(st, reward):
             del prize[l]
     else:  # ordinary reward: 1 recipe or mat
         st.giveItems(prize[st.getRandom(len(prize))], 1)
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -167,7 +164,6 @@ class Quest(JQuest):
             st.giveItems(item, numItems)
             st.playSound("ItemSound.quest_itemget")
         return
-
 
 # Quest class and state definition
 QUEST = Quest(QUEST_NUMBER, str(QUEST_NUMBER) + "_" + QUEST_NAME, QUEST_DESCRIPTION)

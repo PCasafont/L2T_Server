@@ -32,7 +32,6 @@ import java.util.List;
 public class L2Territory {
 	private static Logger log = LoggerFactory.getLogger(L2Territory.class.getName());
 
-
 	public static class Point {
 		public int x, y, zmin, zmax, proc;
 

@@ -8,7 +8,6 @@ from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 qn = "1630_PaganTeleporters"
 NPCS = [32034, 32035, 32036, 32037, 32039, 32040]
 
-
 # Main Quest Code
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -60,7 +59,6 @@ class Quest(JQuest):
             htmltext = "FadedMark.htm"
         st.exitQuest(1)
         return htmltext
-
 
 # Quest class and state definition
 QUEST = Quest(-1, qn, "Teleports")

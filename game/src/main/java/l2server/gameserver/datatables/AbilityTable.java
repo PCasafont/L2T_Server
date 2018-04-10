@@ -34,7 +34,6 @@ public class AbilityTable {
 	private static Logger log = LoggerFactory.getLogger(AbilityTable.class.getName());
 
 
-	
 	public class Ability {
 		private int type;
 		private int skillId;

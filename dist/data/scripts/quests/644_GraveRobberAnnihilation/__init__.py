@@ -23,7 +23,6 @@ REWARDS = {
 # Mobs
 MOBS = [22003, 22004, 22005, 22006, 22008]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -90,7 +89,6 @@ class Quest(JQuest):
                             st.playSound("ItemSound.quest_itemget")
                         st.giveItems(ORC_GOODS, int(numItems))
         return
-
 
 QUEST = Quest(644, qn, "Grave Robber Annihilation")
 

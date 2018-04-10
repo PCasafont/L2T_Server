@@ -43,8 +43,6 @@ import java.util.Properties;
 public class CastleSiegeManager {
 	private static Logger log = LoggerFactory.getLogger(CastleSiegeManager.class.getName());
 
-
-
 	public static CastleSiegeManager getInstance() {
 		return SingletonHolder.instance;
 	}

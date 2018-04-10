@@ -35,7 +35,6 @@ import java.util.Map;
 public class CompiledScriptCache implements Serializable {
 	private static Logger log = LoggerFactory.getLogger(CompiledScriptCache.class.getName());
 
-
 	private static final long serialVersionUID = 3L;
 	
 	private final Map<String, CompiledScriptHolder> compiledScripts = new HashMap<>();

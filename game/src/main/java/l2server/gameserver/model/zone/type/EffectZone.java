@@ -42,7 +42,6 @@ import java.util.concurrent.Future;
 public class EffectZone extends ZoneType {
 	private static Logger log = LoggerFactory.getLogger(EffectZone.class.getName());
 
-
 	private int chance;
 	private int initialDelay;
 	private int reuse;

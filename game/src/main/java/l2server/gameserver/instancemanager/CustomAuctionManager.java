@@ -42,7 +42,6 @@ import java.util.concurrent.TimeUnit;
 public class CustomAuctionManager {
 	private static Logger log = LoggerFactory.getLogger(CustomAuctionManager.class.getName());
 
-
 	private static final long ADDED_DURATION = 3600000L;
 
 	private enum Currency {

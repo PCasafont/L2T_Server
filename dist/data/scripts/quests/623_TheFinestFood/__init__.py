@@ -17,7 +17,6 @@ BUFFALO, FLAVA, ANTELOPE = [21315, 21316, 21318]
 DROPLIST = {BUFFALO: [BUFFALO_MEAT, 99], FLAVA: [LEAF_OF_FLAVA, 99], ANTELOPE: [ANTELOPE_HORN, 99]}
 REWARDS = [[6849, 25000, 0, 11], [6847, 65000, 12, 23], [6851, 25000, 24, 33], [0, 73000, 34, 100]]
 
-
 # needed count
 
 class Quest(JQuest):
@@ -111,7 +110,6 @@ class Quest(JQuest):
                             else:
                                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(623, qn, "The Finest Food")
 

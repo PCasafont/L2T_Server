@@ -34,7 +34,6 @@ import java.sql.PreparedStatement;
 public class ConfirmMenteeAdd extends L2GameClientPacket {
 	private static Logger log = LoggerFactory.getLogger(ConfirmMenteeAdd.class.getName());
 
-
 	int response;
 	
 	@Override

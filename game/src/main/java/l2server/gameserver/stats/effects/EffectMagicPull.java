@@ -35,7 +35,6 @@ import org.slf4j.LoggerFactory;
 public class EffectMagicPull extends L2Effect {
 	private static Logger log = LoggerFactory.getLogger(EffectMagicPull.class.getName());
 
-
 	private int x, y, z;
 
 	public EffectMagicPull(Env env, EffectTemplate template) {

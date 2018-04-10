@@ -55,8 +55,6 @@ import java.util.*;
 public class Castle {
 	private static Logger log = LoggerFactory.getLogger(Castle.class.getName());
 
-
-
 	// =========================================================
 	// Data Field
 	private List<CropProcure> procure = new ArrayList<>();

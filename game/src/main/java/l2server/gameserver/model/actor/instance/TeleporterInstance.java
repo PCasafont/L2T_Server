@@ -43,7 +43,6 @@ import java.util.StringTokenizer;
 public class TeleporterInstance extends Npc {
 	private static Logger log = LoggerFactory.getLogger(TeleporterInstance.class.getName());
 
-
 	private static final int COND_ALL_FALSE = 0;
 	private static final int COND_BUSY_BECAUSE_OF_SIEGE = 1;
 	private static final int COND_OWNER = 2;

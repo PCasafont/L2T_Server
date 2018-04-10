@@ -41,10 +41,8 @@ JONAS_SALAD_RECIPE_ID = 1455
 JONAS_SAUCE_RECIPE_ID = 1456
 JONAS_STEAK_RECIPE_ID = 1457
 
-
 def has_list(st):
     return st.getQuestItemsCount(INGREDIENT_LIST_ID)
-
 
 def has_review(st):
     return st.getQuestItemsCount(MIRIENS_REVIEW1_ID) + \
@@ -53,7 +51,6 @@ def has_review(st):
            st.getQuestItemsCount(MIRIENS_REVIEW4_ID) + \
            st.getQuestItemsCount(MIRIENS_REVIEW5_ID)
 
-
 def has_dish(st):
     return st.getQuestItemsCount(JONAS_STEAK_DISH1_ID) + \
            st.getQuestItemsCount(JONAS_STEAK_DISH2_ID) + \
@@ -61,12 +58,10 @@ def has_dish(st):
            st.getQuestItemsCount(JONAS_STEAK_DISH4_ID) + \
            st.getQuestItemsCount(JONAS_STEAK_DISH5_ID)
 
-
 def special_ingredients(st):
     return st.getQuestItemsCount(WHITE_MANDRAGORA_SAP_ID) + \
            st.getQuestItemsCount(GOLDEN_HONEY_ID) + \
            st.getQuestItemsCount(BROWN_MOSS_BUNDLE_ID)
-
 
 def ingredients_count(st):
     return st.getQuestItemsCount(RED_MANDRAGORA_SAP_ID) + \
@@ -75,7 +70,6 @@ def ingredients_count(st):
            st.getQuestItemsCount(GREEN_MOSS_BUNDLE_ID) + \
            st.getQuestItemsCount(MONSTER_EYE_MEAT_ID) + \
            special_ingredients(st)
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -560,7 +554,6 @@ class Quest(JQuest):
                         else:
                             st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(330, qn, "Adept Of Taste")
 

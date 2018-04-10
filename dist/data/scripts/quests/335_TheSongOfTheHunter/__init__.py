@@ -254,7 +254,6 @@ Tor_menu = [
     "<a action=\"bypass -h Quest 335_TheSongOfTheHunter 3768\">A: Recover 10 swords of Cadmus</a><br>"
 ]
 
-
 def HasItems(st, check):
     count = 0
     for list in Grey_Advance:
@@ -269,14 +268,12 @@ def HasItems(st, check):
         return 1
     return 0
 
-
 def AutoChat(npc, text):
     chars = npc.getKnownList().getKnownPlayers().values().toArray()
     if chars != None:
         for pc in chars:
             sm = NpcSay(npc.getObjectId(), 0, npc.getNpcId(), text)
             pc.sendPacket(sm)
-
 
 def HasRequestCompleted(st, level):
     rewards = Tor_Rewards_1
@@ -287,7 +284,6 @@ def HasRequestCompleted(st, level):
             if st.getQuestItemsCount(rewards[req][0]) >= rewards[req][1]:
                 return req
     return 0
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -619,7 +615,6 @@ class Quest(JQuest):
                     st.takeItems(item, -1)
                 st.giveItems(3708, 1)
         return
-
 
 QUEST = Quest(335, qn, "The Song of the Hunter")
 

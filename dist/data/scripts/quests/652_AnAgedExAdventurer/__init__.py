@@ -10,7 +10,6 @@ SARA = 30180
 # Items
 CSS = 1464
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -54,7 +53,6 @@ class Quest(JQuest):
             st.playSound("ItemSound.quest_finish")
             st.exitQuest(1)
         return htmltext
-
 
 QUEST = Quest(652, qn, "AnAgedExAdventurer")
 

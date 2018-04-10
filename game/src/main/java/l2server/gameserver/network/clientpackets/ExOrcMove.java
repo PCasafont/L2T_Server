@@ -1,6 +1,5 @@
 package l2server.gameserver.network.clientpackets;
 
-
 /**
  * @author MegaParzor!
  */

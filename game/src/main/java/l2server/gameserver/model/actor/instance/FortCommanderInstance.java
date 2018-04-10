@@ -33,7 +33,6 @@ import java.util.List;
 public class FortCommanderInstance extends DefenderInstance {
 	private static Logger log = LoggerFactory.getLogger(FortCommanderInstance.class.getName());
 
-
 	private boolean canTalk;
 	
 	public FortCommanderInstance(int objectId, NpcTemplate template) {

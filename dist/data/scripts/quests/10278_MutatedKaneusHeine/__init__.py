@@ -17,7 +17,6 @@ WEIRD_BUNEI = 18564
 TISSUE_BO = 13834
 TISSUE_WB = 13835
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -99,7 +98,6 @@ class Quest(JQuest):
                 st.giveItems(TISSUE_WB, 1)
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(10278, qn, "Mutated Kaneus - Heine")
 

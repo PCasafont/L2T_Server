@@ -21,8 +21,6 @@ import java.util.*;
 public class Ranked2v2 {
 	private static Logger log = LoggerFactory.getLogger(Ranked2v2.class.getName());
 
-
-
 	public static enum State {
 		INACTIVE,
 		REGISTER,

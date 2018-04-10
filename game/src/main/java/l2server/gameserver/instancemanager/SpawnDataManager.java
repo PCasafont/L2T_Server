@@ -35,7 +35,6 @@ import java.util.Map;
 public class SpawnDataManager {
 	private static Logger log = LoggerFactory.getLogger(SpawnDataManager.class.getName());
 
-
 	public class DbSpawnData {
 		public long respawnTime;
 		public int currentHp;

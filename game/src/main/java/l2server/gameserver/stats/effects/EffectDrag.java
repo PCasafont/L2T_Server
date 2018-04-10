@@ -37,7 +37,6 @@ import org.slf4j.LoggerFactory;
 public class EffectDrag extends L2Effect {
 	private static Logger log = LoggerFactory.getLogger(EffectDrag.class.getName());
 
-
 	private int x, y, z;
 
 	public EffectDrag(Env env, EffectTemplate template) {

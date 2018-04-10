@@ -9,7 +9,6 @@ VLADIMIR = 31302
 HIERARCH = 31517
 M_NECROMANCER = 31518
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -61,7 +60,6 @@ class Quest(JQuest):
             elif npcId == HIERARCH and cond == 2:
                 htmltext = "31517-0.htm"
         return htmltext
-
 
 QUEST = Quest(15, qn, "Sweet Whisper")
 

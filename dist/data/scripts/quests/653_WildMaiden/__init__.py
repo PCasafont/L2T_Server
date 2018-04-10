@@ -10,7 +10,6 @@ GALIBREDO = 30181
 # Items
 SOE = 736
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -51,7 +50,6 @@ class Quest(JQuest):
             st.playSound("ItemSound.quest_finish")
             st.exitQuest(1)
         return htmltext
-
 
 QUEST = Quest(653, qn, "Wild Maiden")
 

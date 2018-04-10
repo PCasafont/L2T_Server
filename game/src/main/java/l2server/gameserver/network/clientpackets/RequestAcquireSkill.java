@@ -39,8 +39,6 @@ import java.util.List;
 public class RequestAcquireSkill extends L2GameClientPacket {
 	private static Logger log = LoggerFactory.getLogger(RequestAcquireSkill.class.getName());
 
-
-
 	private int id;
 	private int level;
 	@SuppressWarnings("unused")

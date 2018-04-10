@@ -42,8 +42,6 @@ import java.util.concurrent.ScheduledFuture;
 public class CursedWeapon {
 	private static Logger log = LoggerFactory.getLogger(CursedWeapon.class.getName());
 
-
-
 	// name is the name of the cursed weapon associated with its ID.
 	private final String name;
 	// itemId is the Item ID of the cursed weapon.

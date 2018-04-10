@@ -21,7 +21,6 @@ ORVEN = 30857
 KAIEN = 30623
 GARVARENTZ = 30704
 
-
 def rewards(st, npcId):
     state = False
     chance = st.getRandom(100)
@@ -68,7 +67,6 @@ def rewards(st, npcId):
         else:
             st.giveItems(885, 1)
     return state
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -164,7 +162,6 @@ class Quest(JQuest):
             st.giveItems(ARTICLES_DEAD_HEROES, 1 + bonus)
             st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(344, qn, "1000 Years, the End of Lamentation")
 

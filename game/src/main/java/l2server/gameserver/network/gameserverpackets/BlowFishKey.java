@@ -29,8 +29,6 @@ import java.security.interfaces.RSAPublicKey;
 public class BlowFishKey extends BaseSendablePacket {
 	private static Logger log = LoggerFactory.getLogger(BlowFishKey.class.getName());
 
-
-
 	public BlowFishKey(byte[] blowfishKey, RSAPublicKey publicKey) {
 		writeC(0x00);
 		byte[] encrypted = null;

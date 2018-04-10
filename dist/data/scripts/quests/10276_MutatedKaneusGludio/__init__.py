@@ -17,7 +17,6 @@ OL_ARIOSH = 18555
 TISSUE_TK = 13830
 TISSUE_OA = 13831
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -99,7 +98,6 @@ class Quest(JQuest):
                 st.giveItems(TISSUE_OA, 1)
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(10276, qn, "Mutated Kaneus - Gludio")
 

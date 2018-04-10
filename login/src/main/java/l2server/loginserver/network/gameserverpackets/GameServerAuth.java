@@ -43,7 +43,6 @@ import java.util.Arrays;
 public class GameServerAuth extends BaseRecievePacket {
 	private static org.slf4j.Logger log = LoggerFactory.getLogger(GameServerAuth.class.getName());
 
-
 	GameServerThread server;
 	private byte[] hexId;
 	private int desiredId;

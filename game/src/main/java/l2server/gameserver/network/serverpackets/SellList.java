@@ -33,8 +33,6 @@ import java.util.List;
 public class SellList extends L2GameServerPacket {
 	private static Logger log = LoggerFactory.getLogger(SellList.class.getName());
 
-
-
 	private final Player activeChar;
 	private final MerchantInstance lease;
 	private long money;

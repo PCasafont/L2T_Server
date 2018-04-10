@@ -42,7 +42,6 @@ import java.util.concurrent.Future;
 public class DecoyInstance extends Attackable {
 	private static Logger log = LoggerFactory.getLogger(DecoyInstance.class.getName());
 
-
 	private Player owner;
 	private int totalLifeTime;
 	private int timeRemaining;

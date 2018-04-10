@@ -32,7 +32,6 @@ CLASSES = {
 # Messages
 default = "No Quest"
 
-
 def change(st, player, newclass, items):
     for item in items:
         st.takeItems(item, 1)
@@ -41,7 +40,6 @@ def change(st, player, newclass, items):
     player.setBaseClass(newclass)
     player.broadcastUserInfo()
     return
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -108,7 +106,6 @@ class Quest(JQuest):
                 htmltext += "-34.htm"  # other races
         st.exitQuest(1)
         return htmltext
-
 
 QUEST = Quest(99993, qn, "village_master")
 

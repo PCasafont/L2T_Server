@@ -9,7 +9,6 @@ html = '<html><body><br>Ah, you\'re a Noblesse! I can offer you a special servic
         <a action="bypass -h %bypass%">Teleport to Hunting Grounds</a><br><br>Don\'t use Olympiad Token.<br>\
         <a action="bypass -h npc_%objectId%_Chat 2">Teleport to Hunting Grounds</a><br><a action="bypass -h npc_%objectId%_Chat 0">Back</a></body></html>'
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -27,7 +26,6 @@ class Quest(JQuest):
         else:
             htmltext = "nobleteleporter-no.htm"
         return htmltext
-
 
 QUEST = Quest(-1, qn, "Teleports")
 

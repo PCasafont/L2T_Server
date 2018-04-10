@@ -48,7 +48,6 @@ public class GameServerTable {
 	private static Logger log = LoggerFactory.getLogger(GameServerTable.class.getName());
 
 
-	
 	private static GameServerTable instance;
 	
 	// Server Names Config

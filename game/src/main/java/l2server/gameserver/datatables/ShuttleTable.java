@@ -37,7 +37,6 @@ import java.util.Map;
 public class ShuttleTable {
 	private static Logger log = LoggerFactory.getLogger(ShuttleTable.class.getName());
 
-
 	private Map<Integer, ShuttleInstance> shuttles = new HashMap<>();
 
 	private static ShuttleTable instance;

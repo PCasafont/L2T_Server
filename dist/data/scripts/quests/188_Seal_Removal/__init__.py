@@ -15,7 +15,6 @@ Dorothy = 30970
 # Items
 BrokenMetal = 10369
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -67,7 +66,6 @@ class Quest(JQuest):
                 if cond == 2:
                     htmltext = "30970-01.htm"
         return htmltext
-
 
 QUEST = Quest(188, qn, "Seal Removal")
 

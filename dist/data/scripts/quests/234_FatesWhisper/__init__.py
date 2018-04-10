@@ -60,7 +60,6 @@ Weapons = {
     7893: "Kaim Vanul's Bones"
 }
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -339,7 +338,6 @@ class Quest(JQuest):
                                 if st.getQuestItemsCount(dropId) >= 30:
                                     st.set("cond", "9")
         return
-
 
 QUEST = Quest(234, qn, "Fate's Whisper")
 

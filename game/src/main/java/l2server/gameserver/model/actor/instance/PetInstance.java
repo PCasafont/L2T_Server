@@ -60,7 +60,6 @@ import java.util.concurrent.Future;
 public class PetInstance extends Summon {
 	private static Logger log = LoggerFactory.getLogger(PetInstance.class.getName());
 
-
 	private int curFed;
 	private PetInventory inventory;
 	private final int controlObjectId;

@@ -26,7 +26,6 @@ NEWBIE_COUPONS_ENABLED = 1
 NEWBIE_WEAPON = 16
 NEWBIE_ACCESORY = 32
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -80,7 +79,6 @@ class Quest(JQuest):
         if not st:
             st = self.newQuestState(player)
         return "30598.htm"
-
 
 QUEST = Quest(-1, qn, "custom")
 

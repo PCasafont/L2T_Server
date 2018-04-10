@@ -35,7 +35,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class GmListTable {
 	private static Logger log = LoggerFactory.getLogger(GmListTable.class.getName());
 
-
 	/**
 	 * Set(Player>) containing all the GM in game
 	 */

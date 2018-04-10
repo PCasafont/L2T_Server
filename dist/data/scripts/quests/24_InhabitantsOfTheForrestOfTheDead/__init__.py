@@ -20,7 +20,6 @@ SilverCross = 7153
 BrokenSilverCross = 7154
 SuspiciousTotem = 7156
 
-
 def FindTemplate(npcId):
     npcinstance = 0
     for spawn in SpawnTable.getInstance().getSpawnTable().values():
@@ -30,14 +29,12 @@ def FindTemplate(npcId):
                 break
     return npcinstance
 
-
 def AutoChat(npc, text):
     chars = npc.getKnownList().getKnownPlayers().values().toArray()
     if chars != None:
         for pc in chars:
             sm = NpcSay(npc.getObjectId(), 0, npc.getNpcId(), text)
             pc.sendPacket(sm)
-
 
 class Quest(JQuest):
     def __init__(self, id, name, descr):
@@ -168,7 +165,6 @@ class Quest(JQuest):
                     st.set("cond", "4")
                     AutoChat(npc, "That sign!")
         return
-
 
 QUEST = Quest(24, qn, "Inhabitants Of The Forrest Of The Dead")
 

@@ -35,7 +35,6 @@ Chance = {
 Seed = 7187
 Molar = 7234
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -112,7 +111,6 @@ class Quest(JQuest):
             st.takeItems(Molar, -1)
             st.exitQuest(1)
         return
-
 
 QUEST = Quest(612, qn, "War With Ketra Orcs")
 

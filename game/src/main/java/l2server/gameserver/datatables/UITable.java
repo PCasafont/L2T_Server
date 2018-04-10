@@ -35,7 +35,6 @@ import java.util.Map;
 public class UITable {
 	private static Logger log = LoggerFactory.getLogger(UITable.class.getName());
 
-
 	private Map<Integer, List<ActionKey>> storedKeys = new HashMap<>();
 	private Map<Integer, List<Integer>> storedCategories = new HashMap<>();
 

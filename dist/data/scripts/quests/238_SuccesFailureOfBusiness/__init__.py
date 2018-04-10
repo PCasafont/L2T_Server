@@ -14,7 +14,6 @@ VICINITY_OF_FOS = 14865
 BROKEN_PIECE_OF_MAGIC_FORCE = 14867
 GUARDIAN_SPIRIT_FRAGMENT = 14868
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -100,7 +99,6 @@ class Quest(JQuest):
                         st.set("cond", "4")
                         st.playSound("ItemSound.quest_middle")
         return
-
 
 QUEST = Quest(238, qn, "Succes/Failure of Business")
 

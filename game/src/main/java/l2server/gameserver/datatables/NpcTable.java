@@ -43,7 +43,6 @@ import java.util.Map.Entry;
 public class NpcTable {
 	private static Logger log = LoggerFactory.getLogger(NpcTable.class.getName());
 
-
 	private Map<Integer, NpcTemplate> npcs;
 	
 	public static NpcTable getInstance() {

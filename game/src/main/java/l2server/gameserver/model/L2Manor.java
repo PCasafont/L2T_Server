@@ -37,7 +37,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class L2Manor {
 	private static Logger log = LoggerFactory.getLogger(L2Manor.class.getName());
 
-
 	private static ConcurrentHashMap<Integer, SeedData> seeds = new ConcurrentHashMap<>();
 
 	private L2Manor() {

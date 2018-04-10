@@ -40,7 +40,6 @@ import org.slf4j.LoggerFactory;
 public class DefenderInstance extends Attackable {
 	private static Logger log = LoggerFactory.getLogger(DefenderInstance.class.getName());
 
-
 	private Castle castle = null; // the castle which the instance should defend
 	private Fort fort = null; // the fortress which the instance should defend
 	

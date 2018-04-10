@@ -16,7 +16,6 @@ EARTH_FISHING_LURE = 7612
 # MOB
 TARLK_BASILISK = 20573
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -80,7 +79,6 @@ class Quest(JQuest):
                         st.playSound("ItemSound.quest_itemget")
                     st.giveItems(TARLK_EYE, int(numItems))
         return
-
 
 QUEST = Quest(52, qn, "Willie's Special Bait")
 

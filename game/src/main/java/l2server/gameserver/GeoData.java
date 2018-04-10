@@ -30,8 +30,6 @@ import org.slf4j.LoggerFactory;
 public class GeoData {
 	private static Logger log = LoggerFactory.getLogger(GeoData.class.getName());
 
-
-
 	protected GeoData() {
 	}
 

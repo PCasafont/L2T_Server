@@ -11,7 +11,6 @@ KEY_2 = 4324
 BEER = 4321
 ECHO = 4421
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -80,7 +79,6 @@ class Quest(JQuest):
             st.takeItems(BEER, 1)
             htmltext = "30060-01.htm"
         return htmltext
-
 
 QUEST = Quest(364, qn, "Ask What You Need to Do")
 

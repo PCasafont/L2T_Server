@@ -1,6 +1,5 @@
 from l2server.gameserver.model.quest.jython import QuestJython
 
-
 class Quest(QuestJython):
     def __init__(self, id, name, descr):
         QuestJython.__init__(self, id, name, descr)
@@ -14,7 +13,6 @@ class Quest(QuestJython):
             player.teleToLocation(17724, 114004, -11672)
         st.exitQuest(1)
         return htmltext
-
 
 QUEST = Quest(-1, "1107_CrumaTower", "Teleports")
 

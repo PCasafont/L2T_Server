@@ -12,7 +12,6 @@ ADENA = 57
 # BASE CHANCE FOR DROP
 CHANCE = 50
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -63,7 +62,6 @@ class Quest(JQuest):
             st.giveItems(STONE, 1)
             st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(353, qn, "Power of Darkness")
 

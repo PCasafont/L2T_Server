@@ -45,7 +45,6 @@ REWARDS_TEXT = [
     "Hmmm...? This is... A full house? Excellent! you're better than I thought. Here's your prize."
 ]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -159,7 +158,6 @@ class Quest(JQuest):
                 st.giveItems(RED_GEM, int(numItems))
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(662, qn, "A Game Of Cards")
 

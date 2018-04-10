@@ -36,7 +36,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class CrestCache {
 	private static Logger log = LoggerFactory.getLogger(CrestCache.class.getName());
 
-
 	private ConcurrentHashMap<Integer, byte[]> mapPledge = new ConcurrentHashMap<>();
 
 	private ConcurrentHashMap<Integer, byte[][]> mapPledgeLarge = new ConcurrentHashMap<>();

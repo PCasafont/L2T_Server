@@ -68,7 +68,6 @@ TALKS = {
     32134: [5, ["32134-01.htm", "32134-03.htm", 0, "32134-04.htm", ], 1, DIPLOMA]
 }
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -241,7 +240,6 @@ class Quest(JQuest):
                 st.dropItem(npc, player, 6353, 1)
                 st.playSound("ItemSound.quest_tutorial")
         return
-
 
 QUEST = Quest(999, qn, "Kamael Tutorial")
 

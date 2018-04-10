@@ -29,7 +29,6 @@ import java.util.Map;
 public class PlayerStatDataTable {
 	private static Logger log = LoggerFactory.getLogger(PlayerStatDataTable.class.getName());
 
-
 	public class PlayerStatData {
 		public final float HP;
 		public final float MP;

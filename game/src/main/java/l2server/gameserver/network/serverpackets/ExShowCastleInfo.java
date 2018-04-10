@@ -29,8 +29,6 @@ import java.util.List;
 public class ExShowCastleInfo extends L2GameServerPacket {
 	private static Logger log = LoggerFactory.getLogger(ExShowCastleInfo.class.getName());
 
-
-
     /*
 	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */

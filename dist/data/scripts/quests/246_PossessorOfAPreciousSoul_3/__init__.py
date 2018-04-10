@@ -25,7 +25,6 @@ BARAKIEL = 25325
 # CHANCE FOR DROP
 CHANCE_FOR_DROP = 5
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -164,7 +163,6 @@ class Quest(JQuest):
                         pst.playSound("ItemSound.quest_middle")
                         pst.set("cond", "5")
         return
-
 
 QUEST = Quest(246, qn, "Possessor Of A Precious Soul - 3")
 

@@ -17,7 +17,6 @@ import java.util.Map;
 public class DimensionalDoor extends Quest {
 	private static Logger log = LoggerFactory.getLogger(DimensionalDoor.class.getName());
 
-
 	private static final String qn = "DimensionalDoor";
 	private static final boolean debug = false;
 

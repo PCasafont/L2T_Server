@@ -136,7 +136,6 @@ number of errands run when the number of "Blooded Fabrics" that have to be deliv
 the quest is ended.
 """
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -412,7 +411,6 @@ class Quest(JQuest):
         if npcId == ANGEL_KILLER:
             return "Ha, that was fun! If you wish to find the key, search the corpse"
         return
-
 
 # Quest class and state definition
 QUEST = Quest(QUEST_NUMBER, str(QUEST_NUMBER) + "_" + QUEST_NAME, QUEST_DESCRIPTION)

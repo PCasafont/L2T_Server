@@ -48,7 +48,6 @@ import java.util.concurrent.CopyOnWriteArraySet;
 public class SpawnTable {
 	private static Logger log = LoggerFactory.getLogger(SpawnTable.class.getName());
 
-
 	private CopyOnWriteArraySet<L2Spawn> spawnTable = new CopyOnWriteArraySet<>();
 	private ConcurrentMap<String, List<L2Spawn>> specificSpawnTable = new ConcurrentHashMap<>();
 	private CopyOnWriteArraySet<SpawnGroup> spawnGroups = new CopyOnWriteArraySet<>();

@@ -29,7 +29,6 @@ RETURN_LOCS = [[-80826, 149775, -3043], [-12672, 122776, -3116], [15670, 142983,
 
 ISLE_LOCS = [[-58752, -56898, -2032], [-59716, -57868, -2032], [-60691, -56893, -2032], [-59720, -55921, -2032]]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -64,7 +63,6 @@ class Quest(JQuest):
                 st.getPlayer().teleToLocation(43835, -47749, -792)
             st.exitQuest(1)
         return
-
 
 QUEST = Quest(-1, qn, "Teleports")
 

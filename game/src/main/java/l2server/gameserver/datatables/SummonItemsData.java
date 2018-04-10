@@ -34,7 +34,6 @@ import java.util.Map;
 public class SummonItemsData {
 	private static Logger log = LoggerFactory.getLogger(SummonItemsData.class.getName());
 
-
 	
 	private Map<Integer, L2SummonItem> summonitems = new HashMap<>();
 

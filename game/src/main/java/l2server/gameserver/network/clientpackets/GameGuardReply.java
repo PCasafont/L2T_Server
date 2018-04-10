@@ -31,8 +31,6 @@ import java.util.Arrays;
 public class GameGuardReply extends L2GameClientPacket {
 	private static Logger log = LoggerFactory.getLogger(GameGuardReply.class.getName());
 
-
-
 	private static final byte[] VALID =
 			{(byte) 0x88, 0x40, 0x1c, (byte) 0xa7, (byte) 0x83, 0x42, (byte) 0xe9, 0x15, (byte) 0xde, (byte) 0xc3, 0x68, (byte) 0xf6, 0x2d, 0x23,
 					(byte) 0xf1, 0x3f, (byte) 0xee, 0x68, 0x5b, (byte) 0xc5,};

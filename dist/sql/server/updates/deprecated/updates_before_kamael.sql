@@ -465,7 +465,6 @@ INSERT INTO `clanhall` VALUES ('62', 'Rainbow Springs', '0', '500000', '', 'Godd
 INSERT INTO `clanhall` VALUES ('63', 'Beast Farm', '0', '500000', '', 'Rune', '0', '0');
 INSERT INTO `clanhall` VALUES ('64', 'Fortress of the Dead', '0', '500000', '', 'Rune', '0', '0');
 
-
 DROP TABLE IF EXISTS `auction`;
 CREATE TABLE `auction` (
   id             INT(11)        NOT NULL DEFAULT '0',

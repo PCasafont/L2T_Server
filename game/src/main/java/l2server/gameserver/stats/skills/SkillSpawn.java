@@ -35,7 +35,6 @@ import org.slf4j.LoggerFactory;
 public class SkillSpawn extends Skill {
 	private static Logger log = LoggerFactory.getLogger(SkillSpawn.class.getName());
 
-
 	private final int npcId;
 	private final int despawnDelay;
 	private final boolean summonSpawn;

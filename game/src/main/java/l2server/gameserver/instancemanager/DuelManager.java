@@ -27,8 +27,6 @@ import java.util.ArrayList;
 public class DuelManager {
 	private static Logger log = LoggerFactory.getLogger(DuelManager.class.getName());
 
-
-
 	public static DuelManager getInstance() {
 		return SingletonHolder.instance;
 	}

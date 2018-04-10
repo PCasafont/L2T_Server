@@ -34,7 +34,6 @@ public class RequestPartyMatchList extends L2GameClientPacket {
 	private static Logger log = LoggerFactory.getLogger(RequestPartyMatchList.class.getName());
 
 
-	
 	private int roomid;
 	private int membersmax;
 	private int lvlmin;

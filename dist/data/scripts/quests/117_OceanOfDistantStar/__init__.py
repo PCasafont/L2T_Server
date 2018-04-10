@@ -15,7 +15,6 @@ GREY_STAR = 8495
 ENGRAVED_HAMMER = 8488
 CHANCE = 38
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -118,7 +117,6 @@ class Quest(JQuest):
                     st.playSound("ItemSound.quest_itemget")
                     st.set("cond", "8")
         return
-
 
 QUEST = Quest(117, qn, "Ocean Of Distant Star")
 

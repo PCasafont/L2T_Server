@@ -13,7 +13,6 @@ Torrant = 32016
 # Items
 Box = 8086
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -57,7 +56,6 @@ class Quest(JQuest):
         elif npcId == Torrant and st.getQuestItemsCount(Box) == 1:
             htmltext = "32016-01.htm"
         return htmltext
-
 
 QUEST = Quest(113, qn, "Status Of The Beacon Tower")
 

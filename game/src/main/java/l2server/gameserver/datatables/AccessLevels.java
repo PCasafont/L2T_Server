@@ -33,7 +33,6 @@ import java.util.Map;
 public class AccessLevels {
 	private static Logger log = LoggerFactory.getLogger(AccessLevels.class.getName());
 
-
 	/* The logger<br> */
 
 	/**

@@ -48,7 +48,6 @@ import java.util.concurrent.TimeUnit;
 public class Fort {
 	private static Logger log = LoggerFactory.getLogger(Fort.class.getName());
 
-
 	// =========================================================
 	// Data Field
 	private int fortId = 0;

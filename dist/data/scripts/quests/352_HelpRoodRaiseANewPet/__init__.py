@@ -10,7 +10,6 @@ LIENRIK_EGG2 = 5861
 CHANCE = 30
 CHANCE2 = 7
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -76,7 +75,6 @@ class Quest(JQuest):
         if random <= CHANCE2:
             st.giveItems(LIENRIK_EGG2, 1)
         return
-
 
 QUEST = Quest(352, qn, "Help Rood Raise A New Pet")
 

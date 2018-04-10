@@ -9,7 +9,6 @@ THREAD = 1868
 ADENA = 57
 DRESS_SHOES_BOX = 7113
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -77,7 +76,6 @@ class Quest(JQuest):
             elif npcId == 30838 and cond == 5:
                 htmltext = "30838-6.htm"
         return htmltext
-
 
 QUEST = Quest(33, qn, "Make A Pair Of Dress Shoes")
 

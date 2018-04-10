@@ -21,7 +21,6 @@ STATUE_ORIGINAL = 4352
 STATUE_REPLICA = 4353
 STATUE_FORGERY = 4354
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -118,7 +117,6 @@ class Quest(JQuest):
             if chance_2 < CHANCE_FOR_GODDESS_BUST:
                 st.giveItems(BUST_OF_ANCIENT_GODDESS, 1)
         return
-
 
 QUEST = Quest(355, qn, "Family Honor")
 

@@ -19,7 +19,6 @@ Hemocyte = 8057
 Silver_Ice = 8077
 Black_Ice = 8078
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -118,7 +117,6 @@ class Quest(JQuest):
                 st.giveItems(Hemocyte, 1)
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(648, qn, "An Ice Merchant's Dream")
 

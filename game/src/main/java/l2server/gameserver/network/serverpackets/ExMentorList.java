@@ -34,7 +34,6 @@ import java.util.List;
 public class ExMentorList extends L2GameServerPacket {
 	private static Logger log = LoggerFactory.getLogger(ExMentorList.class.getName());
 
-
 	private class PartnerInfo {
 		public int objId;
 		public String name;

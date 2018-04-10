@@ -20,7 +20,6 @@ JACOB_NECK = 13814
 DEADMANS_HERB = 13816
 SCULPTURE = 14353
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -120,7 +119,6 @@ class Quest(JQuest):
             st.giveItems(SCULPTURE, 1)
             st.set("cond", "5")
         return
-
 
 QUEST = Quest(193, qn, "Seven Signs Dying Message")
 

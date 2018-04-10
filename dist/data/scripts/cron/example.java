@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 public class example {
 	private static Logger log = LoggerFactory.getLogger(example.class.getName());
 
-
 	public static void main(String[] args) {
 		log.info("Hello world!");
 	}

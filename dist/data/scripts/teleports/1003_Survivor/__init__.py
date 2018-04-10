@@ -3,7 +3,6 @@ from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "1003_Survivor"
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -25,7 +24,6 @@ class Quest(JQuest):
         if not st:
             return ""
         return "32632-1.htm"
-
 
 QUEST = Quest(-1, qn, "Teleports")
 QUEST.addStartNpc(32632)

@@ -15,7 +15,6 @@ Memo = 8083
 Golden_Badge_Recruit = 7246
 Golden_Badge_Soldier = 7247
 
-
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 class Quest(JQuest):
@@ -82,7 +81,6 @@ class Quest(JQuest):
                     st.exitQuest(False)
                     st.playSound("ItemSound.quest_finish")
         return htmltext
-
 
 QUEST = Quest(109, qn, "In Search of the Nest")
 

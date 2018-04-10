@@ -26,7 +26,6 @@ RPCHANCE = 10
 # Change this value to 1 if you wish 100% recipes, default 70%
 ALT_RP100 = 0
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -151,7 +150,6 @@ class Quest(JQuest):
                 elif npcId == 31267 and cond == 7 and st.getQuestItemsCount(FEE_OF_DRINK) == 5:
                     htmltext = "31267-1.htm"
         return htmltext
-
 
 QUEST = Quest(622, qn, "Delivery of special liquor")
 

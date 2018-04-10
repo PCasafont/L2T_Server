@@ -23,8 +23,6 @@ import java.sql.ResultSet;
 public class OfflineAdminCommandsManager {
 	private static Logger log = LoggerFactory.getLogger(OfflineAdminCommandsManager.class.getName());
 
-
-
 	private final int TIME_BETWEEN_CHECKS = 60000; // 1 min
 
 	private Player dummy;

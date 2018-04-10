@@ -37,8 +37,6 @@ import java.util.Map;
 public class ClanHallManager {
 	private static Logger log = LoggerFactory.getLogger(ClanHallManager.class.getName());
 
-
-
 	private Map<Integer, ClanHall> clanHall = new HashMap<>();
 	private Map<Integer, ClanHall> freeClanHall = new HashMap<>();
 	private Map<Integer, ClanHall> allClanHalls = new HashMap<>();

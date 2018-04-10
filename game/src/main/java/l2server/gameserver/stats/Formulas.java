@@ -2137,7 +2137,6 @@ public final class Formulas {
 							damage *= 0.10;
 					}
 
-
 					break;
 				}
 				case 22957: // Garden Warrior

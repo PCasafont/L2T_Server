@@ -8,7 +8,6 @@ qn = "122_OminousNews"
 MOIRA = 31979
 KARUDA = 32017
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -60,7 +59,6 @@ class Quest(JQuest):
             htmltext = "32017-01.htm"
             st.set("ok", "1")
         return htmltext
-
 
 QUEST = Quest(122, qn, "Ominous News")
 

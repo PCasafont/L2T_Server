@@ -13,7 +13,6 @@ MOBS = [20078, 21026, 21025, 21024, 21023]
 # QUEST ITEMS
 FAIRY_BREATH = 8286
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -66,7 +65,6 @@ class Quest(JQuest):
                 st.giveItems(FAIRY_BREATH, 1)
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(659, qn, "I'd Rather Be Collecting Fairy Breath")
 

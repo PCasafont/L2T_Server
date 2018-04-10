@@ -37,7 +37,6 @@ public class L2UIKeysSettings {
 	private static Logger log = LoggerFactory.getLogger(L2UIKeysSettings.class.getName());
 
 
-	
 	private final Player player;
 	
 	Map<Integer, List<ActionKey>> storedKeys;

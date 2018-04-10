@@ -34,7 +34,6 @@ import java.util.*;
 public class SkillTreeTable {
 	private static Logger log = LoggerFactory.getLogger(SkillTreeTable.class.getName());
 
-
 	private List<L2SkillLearn> fishingSkillTrees = new ArrayList<>();
 	//all common skills (taught by Fisherman)
 	private List<L2SkillLearn> expandDwarfCraftSkillTrees = new ArrayList<>();

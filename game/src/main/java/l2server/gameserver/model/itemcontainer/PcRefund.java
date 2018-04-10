@@ -28,7 +28,6 @@ import org.slf4j.LoggerFactory;
 public class PcRefund extends ItemContainer {
 	private static Logger log = LoggerFactory.getLogger(PcRefund.class.getName());
 
-
 	private Player owner;
 
 	public PcRefund(Player owner) {

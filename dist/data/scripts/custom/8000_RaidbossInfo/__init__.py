@@ -227,7 +227,6 @@ RADAR = {
     29065: [26528, -8244, -2007]
 }
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -247,7 +246,6 @@ class Quest(JQuest):
 
     def onTalk(Self, npc, player):
         return "info.htm"
-
 
 QUEST = Quest(-1, qn, "custom")
 

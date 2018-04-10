@@ -14,7 +14,6 @@ Allenos = 32526
 # items
 Introduction = 13812
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -58,7 +57,6 @@ class Quest(JQuest):
             st.exitQuest(False)
             st.playSound("ItemSound.quest_finish")
         return htmltext
-
 
 QUEST = Quest(10269, qn, "To the Seed of Destruction")
 

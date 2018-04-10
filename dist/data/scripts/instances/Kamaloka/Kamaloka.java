@@ -24,7 +24,6 @@ import java.util.*;
 public class Kamaloka extends Quest {
 	private static Logger log = LoggerFactory.getLogger(Kamaloka.class.getName());
 
-
 	private static String qn = "Kamaloka";
 
 	/*

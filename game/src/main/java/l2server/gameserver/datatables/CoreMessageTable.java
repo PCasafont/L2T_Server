@@ -19,7 +19,6 @@ import java.util.Map;
 public class CoreMessageTable {
 	private static Logger log = LoggerFactory.getLogger(CoreMessageTable.class.getName());
 
-
 	private static CoreMessageTable instance;
 
 	private static Map<Integer, CoreMessage> messages = new HashMap<>();

@@ -18,7 +18,6 @@ import java.util.Map;
 public class ImageTable {
 	private static Logger log = LoggerFactory.getLogger(ImageTable.class.getName());
 
-
 	private static ImageTable instance;
 
 	private static Map<Integer, PledgeCrest> images = new HashMap<>();

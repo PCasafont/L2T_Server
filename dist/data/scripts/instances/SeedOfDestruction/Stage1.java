@@ -62,7 +62,6 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Stage1 extends Quest {
 	private static Logger log = LoggerFactory.getLogger(Stage1.class.getName());
 
-
 	private class SOD1World extends InstanceWorld {
 		public Map<Npc, Boolean> npcList = new HashMap<Npc, Boolean>();
 		public int deviceSpawnedMobCount = 0;

@@ -34,7 +34,6 @@ import java.util.StringTokenizer;
 public class DoormenInstance extends NpcInstance {
 	private static Logger log = LoggerFactory.getLogger(DoormenInstance.class.getName());
 
-
 	public DoormenInstance(int objectID, NpcTemplate template) {
 		super(objectID, template);
 		setInstanceType(InstanceType.L2DoormenInstance);

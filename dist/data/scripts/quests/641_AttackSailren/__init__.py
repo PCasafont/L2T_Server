@@ -19,7 +19,6 @@ PTE = 22199
 FRAGMENTS = 8782
 GAZKH = 8784
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -74,7 +73,6 @@ class Quest(JQuest):
                     else:
                         st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(641, qn, "Attack Sailren!")
 

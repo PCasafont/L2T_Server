@@ -27,7 +27,6 @@ import java.util.HashMap;
 public class MentorManager {
 	private static Logger log = LoggerFactory.getLogger(MentorManager.class.getName());
 
-
 	HashMap<Integer, Integer> coinsRewardForLevel;
 
 	public MentorManager() {

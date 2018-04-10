@@ -26,8 +26,6 @@ import java.sql.ResultSet;
 public class SqlUtils {
 	private static Logger log = LoggerFactory.getLogger(SqlUtils.class.getName());
 
-
-
 	private SqlUtils() {
 	}
 

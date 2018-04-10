@@ -12,7 +12,6 @@ MOBS = range(22617, 22634)
 # QUEST ITEM
 STAKATOFANGS = 14879
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -71,7 +70,6 @@ class Quest(JQuest):
                 st.giveItems(STAKATOFANGS, 1)
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(240, qn, "I'm the Only One You Can Trust")
 

@@ -17,7 +17,6 @@ KNIGHT_MONTAGNAR = 18568
 TISSUE_KA = 13836
 TISSUE_KM = 13837
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -99,7 +98,6 @@ class Quest(JQuest):
                 st.giveItems(TISSUE_KM, 1)
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(10279, qn, "Mutated Kaneus - Oren")
 

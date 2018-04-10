@@ -12,7 +12,6 @@ ADENA = 57
 # BASE CHANCE FOR DROP
 CHANCE = 55
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -63,7 +62,6 @@ class Quest(JQuest):
             st.giveItems(HAIR, 1)
             st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(366, qn, "Silver Haired Shaman")
 

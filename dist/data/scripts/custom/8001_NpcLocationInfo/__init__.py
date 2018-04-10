@@ -226,7 +226,6 @@ RADAR = {
     32169: [-119237, 46587, 360]  # Spellbook Trader Mifren
 }
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -250,7 +249,6 @@ class Quest(JQuest):
         if npcId in NPC:
             htmltext = str(npcId) + ".htm"
         return htmltext
-
 
 QUEST = Quest(-1, qn, "custom")
 

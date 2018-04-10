@@ -30,8 +30,6 @@ import java.util.Map;
 public class UserCommandHandler {
 	private static Logger log = LoggerFactory.getLogger(UserCommandHandler.class.getName());
 
-
-
 	private Map<Integer, IUserCommandHandler> datatable = new HashMap<>();
 
 	public static UserCommandHandler getInstance() {

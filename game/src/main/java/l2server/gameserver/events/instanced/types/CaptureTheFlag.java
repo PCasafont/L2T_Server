@@ -27,8 +27,6 @@ import java.util.List;
 public class CaptureTheFlag extends EventInstance {
 	private static Logger log = LoggerFactory.getLogger(CaptureTheFlag.class.getName());
 
-
-
 	private boolean flagsSpawned = false;
 
 	public CaptureTheFlag(int id, EventConfig config) {

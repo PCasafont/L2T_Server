@@ -17,7 +17,6 @@ red = 13858
 blue = 13859
 green = 13860
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -80,7 +79,6 @@ class Quest(JQuest):
                 st.giveItems(green, 1)
             npc.doDie(player)
         return
-
 
 QUEST = Quest(10274, qn, "Collecting in the Air")
 

@@ -39,7 +39,6 @@ EWD = 955  # Scroll: Enchant Weapon D
 B_RECIPES = [4963, 4966, 4967, 4968, 5001, 5003, 5004, 5005, 5006, 5007]
 B_KEYMATS = [4101, 4107, 4108, 4109, 4115, 4117, 4118, 4119, 4120, 4121]
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -183,7 +182,6 @@ class Quest(JQuest):
                 st.giveItems(SPIRIT_BEAD, int(numItems))
                 st.playSound("ItemSound.quest_itemget")
         return
-
 
 QUEST = Quest(663, qn, "Seductive Whispers")
 

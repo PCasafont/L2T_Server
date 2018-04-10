@@ -50,8 +50,6 @@ import java.util.Map.Entry;
 public class MultiSellChoose extends L2GameClientPacket {
 	private static Logger log = LoggerFactory.getLogger(MultiSellChoose.class.getName());
 
-
-
 	private int listId;
 	private int entryId;
 	private long amount;

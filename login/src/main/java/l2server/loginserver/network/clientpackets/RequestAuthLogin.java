@@ -37,7 +37,6 @@ import java.security.GeneralSecurityException;
 public class RequestAuthLogin extends L2LoginClientPacket {
 	private static Logger log = LoggerFactory.getLogger(RequestAuthLogin.class.getName());
 
-
 	private byte[] raw = new byte[256];
 	
 	private String user;

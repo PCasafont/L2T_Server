@@ -21,7 +21,6 @@ Accessory = 10367
 # Monsters
 Mobs = range(20577, 20583)
 
-
 class Quest(JQuest):
     def __init__(self, id, name, descr):
         JQuest.__init__(self, id, name, descr)
@@ -115,7 +114,6 @@ class Quest(JQuest):
                     qs5.setState(State.STARTED)
         npc.showChatWindow(player)
         return None
-
 
 QUEST = Quest(186, qn, "Contract Execution")
 
