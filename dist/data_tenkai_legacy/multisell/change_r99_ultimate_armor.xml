@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list maintainEnchantment="true">
+    <!-- LV1 -->
+    <!-- HEAVY -->
+    <item>
+        <ingredient id="27779" count="1" /> <!-- Ultimate Eternal Helmet - Attack Type / Heavy Armor / Lv1 -->
+        <production id="27794" count="1" /> <!--  Ultimate Eternal Helmet - Defense Type / Heavy Armor / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27794" count="1" /> <!-- Ultimate Eternal Helmet - Defense Type / Heavy Armor / Lv1 -->
+        <production id="27779" count="1" /> <!-- Ultimate Eternal Helmet - Attack Type / Heavy Armor / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27780" count="1" /> <!-- Ultimate Eternal Breatplate - Attack Type / Heavy Armor / Lv1 -->
+        <production id="27795" count="1" /> <!--  Ultimate Eternal Breatplate - Defense Type / Heavy Armor / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27795" count="1" /> <!-- Ultimate Eternal Breatplate - Defense Type / Heavy Armor / Lv1 -->
+        <production id="27780" count="1" /> <!-- Ultimate Eternal Breatplate - Attack Type / Heavy Armor / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27781" count="1" /> <!-- Ultimate Eternal Gaiters - Attack Type / Heavy Armor / Lv1 -->
+        <production id="27796" count="1" /> <!--  Ultimate Eternal Gaiters - Defense Type / Heavy Armor / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27796" count="1" /> <!-- Ultimate Eternal Gaiters - Defense Type / Heavy Armor / Lv1 -->
+        <production id="27781" count="1" /> <!-- Ultimate Eternal Gaiters - Attack Type / Heavy Armor / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27782" count="1" /> <!-- Ultimate Eternal Gauntlets - Attack Type / Heavy Armor / Lv1 -->
+        <production id="27797" count="1" /> <!--  Ultimate Eternal Gauntlets - Defense Type / Heavy Armor / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27797" count="1" /> <!-- Ultimate Eternal Gauntlets - Defense Type / Heavy Armor / Lv1 -->
+        <production id="27782" count="1" /> <!-- Ultimate Eternal Gauntlets - Attack Type / Heavy Armor / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27783" count="1" /> <!-- Ultimate Eternal Boots - Attack Type / Heavy Armor / Lv1 -->
+        <production id="27798" count="1" /> <!--  Ultimate Eternal Boots - Defense Type / Heavy Armor / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27798" count="1" /> <!-- Ultimate Eternal Boots - Defense Type / Heavy Armor / Lv1 -->
+        <production id="27783" count="1" /> <!-- Ultimate Eternal Boots - Attack Type / Heavy Armor / Lv1 -->
+    </item>
+    <!-- LIGHT -->
+    <item>
+        <ingredient id="27799" count="1" /> <!-- Ultimate Eternal Leather Helmet - Enchant Type / Light Armor / Lv1 -->
+        <production id="27784" count="1" /> <!--  Ultimate Eternal Leather Helmet - Assassin Type / Light Armor / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27784" count="1" /> <!-- Ultimate Eternal Leather Helmet - Assassin Type / Light Armor / Lv1 -->
+        <production id="27799" count="1" /> <!-- Ultimate Eternal Leather Helmet - Enchant Type / Light Armor / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27800" count="1" /> <!-- Ultimate Eternal Leather Armor - Enchant Type / Light Armor / Lv1 -->
+        <production id="27785" count="1" /> <!--  Ultimate Eternal Leather Armor - Assassin Type / Light Armor / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27785" count="1" /> <!-- Ultimate Eternal Leather Armor - Assassin Type / Light Armor / Lv1 -->
+        <production id="27800" count="1" /> <!-- Ultimate Eternal Leather Armor - Enchant Type / Light Armor / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27801" count="1" /> <!-- Ultimate Eternal Leather Leggings - Enchant Type / Light Armor / Lv1 -->
+        <production id="27786" count="1" /> <!--  Ultimate Eternal Leather Leggings - Assassin Type / Light Armor / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27786" count="1" /> <!-- Ultimate Eternal Leather Leggings - Assassin Type / Light Armor / Lv1 -->
+        <production id="27801" count="1" /> <!-- Ultimate Eternal Leather Leggings - Enchant Type / Light Armor / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27802" count="1" /> <!-- Ultimate Eternal Leather Gloves - Enchant Type / Light Armor / Lv1 -->
+        <production id="27787" count="1" /> <!--  Ultimate Eternal Leather Gloves - Assassin Type / Light Armor / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27787" count="1" /> <!-- Ultimate Eternal Leather Gloves - Assassin Type / Light Armor / Lv1 -->
+        <production id="27802" count="1" /> <!-- Ultimate Eternal Leather Gloves - Enchant Type / Light Armor / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27803" count="1" /> <!-- Ultimate Eternal Leather Boots - Enchant Type / Light Armor / Lv1 -->
+        <production id="27788" count="1" /> <!--  Ultimate Eternal Leather Boots - Assassin Type / Light Armor / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27788" count="1" /> <!-- Ultimate Eternal Leather Boots - Assassin Type / Light Armor / Lv1 -->
+        <production id="27803" count="1" /> <!-- Ultimate Eternal Leather Boots - Enchant Type / Light Armor / Lv1 -->
+    </item>
+    <!-- ROBE -->
+    <item>
+        <ingredient id="27789" count="1" /> <!-- Ultimate Eternal Circlet - Magic Type / Robe / Lv1 -->
+        <production id="27804" count="1" /> <!--  Ultimate Eternal Circlet - Recovery Type / Robe / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27804" count="1" /> <!-- Ultimate Eternal Circlet - Recovery Type / Robe / Lv1 -->
+        <production id="27789" count="1" /> <!-- Ultimate Eternal Circlet - Magic Type / Robe / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27790" count="1" /> <!-- Ultimate Eternal Tunic - Magic Type / Robe / Lv1 -->
+        <production id="27805" count="1" /> <!--  Ultimate Eternal Tunic - Recovery Type / Robe / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27805" count="1" /> <!-- Ultimate Eternal Tunic - Recovery Type / Robe / Lv1 -->
+        <production id="27790" count="1" /> <!-- Ultimate Eternal Tunic - Magic Type / Robe / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27791" count="1" /> <!-- Ultimate Eternal Stockings - Magic Type / Robe / Lv1 -->
+        <production id="27806" count="1" /> <!--  Ultimate Eternal Stockings - Recovery Type / Robe / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27806" count="1" /> <!-- Ultimate Eternal Stockings - Recovery Type / Robe / Lv1 -->
+        <production id="27791" count="1" /> <!-- Ultimate Eternal Stockings - Magic Type / Robe / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27792" count="1" /> <!-- Ultimate Eternal Gloves - Magic Type / Robe / Lv1 -->
+        <production id="27807" count="1" /> <!--  Ultimate Eternal Gloves - Recovery Type / Robe / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27807" count="1" /> <!-- Ultimate Eternal Gloves - Recovery Type / Robe / Lv1 -->
+        <production id="27792" count="1" /> <!-- Ultimate Eternal Gloves - Magic Type / Robe / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27793" count="1" /> <!-- Ultimate Eternal Shoes - Magic Type / Robe / Lv1 -->
+        <production id="27808" count="1" /> <!--  Ultimate Eternal Shoes - Recovery Type / Robe / Lv1 -->
+    </item>
+    <item>
+        <ingredient id="27808" count="1" /> <!-- Ultimate Eternal Shoes - Recovery Type / Robe / Lv1 -->
+        <production id="27793" count="1" /> <!-- Ultimate Eternal Shoes - Magic Type / Robe / Lv1 -->
+    </item>
+    <!-- LV2 -->
+    <!-- HEAVY -->
+    <item>
+        <ingredient id="27824" count="1" /> <!-- Ultimate Eternal Helmet - Attack Type / Heavy Armor / Lv2 -->
+        <production id="27839" count="1" /> <!--  Ultimate Eternal Helmet - Defense Type / Heavy Armor / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27839" count="1" /> <!-- Ultimate Eternal Helmet - Defense Type / Heavy Armor / Lv2 -->
+        <production id="27824" count="1" /> <!-- Ultimate Eternal Helmet - Attack Type / Heavy Armor / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27825" count="1" /> <!-- Ultimate Eternal Breatplate - Attack Type / Heavy Armor / Lv2 -->
+        <production id="27840" count="1" /> <!--  Ultimate Eternal Breatplate - Defense Type / Heavy Armor / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27840" count="1" /> <!-- Ultimate Eternal Breatplate - Defense Type / Heavy Armor / Lv2 -->
+        <production id="27825" count="1" /> <!-- Ultimate Eternal Breatplate - Attack Type / Heavy Armor / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27826" count="1" /> <!-- Ultimate Eternal Gaiters - Attack Type / Heavy Armor / Lv2 -->
+        <production id="27841" count="1" /> <!--  Ultimate Eternal Gaiters - Defense Type / Heavy Armor / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27841" count="1" /> <!-- Ultimate Eternal Gaiters - Defense Type / Heavy Armor / Lv2 -->
+        <production id="27826" count="1" /> <!-- Ultimate Eternal Gaiters - Attack Type / Heavy Armor / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27827" count="1" /> <!-- Ultimate Eternal Gauntlets - Attack Type / Heavy Armor / Lv2 -->
+        <production id="27842" count="1" /> <!--  Ultimate Eternal Gauntlets - Defense Type / Heavy Armor / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27842" count="1" /> <!-- Ultimate Eternal Gauntlets - Defense Type / Heavy Armor / Lv2 -->
+        <production id="27827" count="1" /> <!-- Ultimate Eternal Gauntlets - Attack Type / Heavy Armor / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27828" count="1" /> <!-- Ultimate Eternal Boots - Attack Type / Heavy Armor / Lv2 -->
+        <production id="27843" count="1" /> <!--  Ultimate Eternal Boots - Defense Type / Heavy Armor / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27843" count="1" /> <!-- Ultimate Eternal Boots - Defense Type / Heavy Armor / Lv2 -->
+        <production id="27828" count="1" /> <!-- Ultimate Eternal Boots - Attack Type / Heavy Armor / Lv2 -->
+    </item>
+    <!-- LIGHT -->
+    <item>
+        <ingredient id="27844" count="1" /> <!-- Ultimate Eternal Leather Helmet - Enchant Type / Light Armor / Lv2 -->
+        <production id="27829" count="1" /> <!--  Ultimate Eternal Leather Helmet - Assassin Type / Light Armor / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27829" count="1" /> <!-- Ultimate Eternal Leather Helmet - Assassin Type / Light Armor / Lv2 -->
+        <production id="27844" count="1" /> <!-- Ultimate Eternal Leather Helmet - Enchant Type / Light Armor / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27845" count="1" /> <!-- Ultimate Eternal Leather Armor - Enchant Type / Light Armor / Lv2 -->
+        <production id="27830" count="1" /> <!--  Ultimate Eternal Leather Armor - Assassin Type / Light Armor / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27830" count="1" /> <!-- Ultimate Eternal Leather Armor - Assassin Type / Light Armor / Lv2 -->
+        <production id="27845" count="1" /> <!-- Ultimate Eternal Leather Armor - Enchant Type / Light Armor / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27846" count="1" /> <!-- Ultimate Eternal Leather Leggings - Enchant Type / Light Armor / Lv2 -->
+        <production id="27831" count="1" /> <!--  Ultimate Eternal Leather Leggings - Assassin Type / Light Armor / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27831" count="1" /> <!-- Ultimate Eternal Leather Leggings - Assassin Type / Light Armor / Lv2 -->
+        <production id="27846" count="1" /> <!-- Ultimate Eternal Leather Leggings - Enchant Type / Light Armor / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27847" count="1" /> <!-- Ultimate Eternal Leather Gloves - Enchant Type / Light Armor / Lv2 -->
+        <production id="27832" count="1" /> <!--  Ultimate Eternal Leather Gloves - Assassin Type / Light Armor / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27832" count="1" /> <!-- Ultimate Eternal Leather Gloves - Assassin Type / Light Armor / Lv2 -->
+        <production id="27847" count="1" /> <!-- Ultimate Eternal Leather Gloves - Enchant Type / Light Armor / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27848" count="1" /> <!-- Ultimate Eternal Leather Boots - Enchant Type / Light Armor / Lv2 -->
+        <production id="27833" count="1" /> <!--  Ultimate Eternal Leather Boots - Assassin Type / Light Armor / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27833" count="1" /> <!-- Ultimate Eternal Leather Boots - Assassin Type / Light Armor / Lv2 -->
+        <production id="27848" count="1" /> <!-- Ultimate Eternal Leather Boots - Enchant Type / Light Armor / Lv2 -->
+    </item>
+    <!-- ROBE -->
+    <item>
+        <ingredient id="27834" count="1" /> <!-- Ultimate Eternal Circlet - Magic Type / Robe / Lv2 -->
+        <production id="27849" count="1" /> <!--  Ultimate Eternal Circlet - Recovery Type / Robe / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27849" count="1" /> <!-- Ultimate Eternal Circlet - Recovery Type / Robe / Lv2 -->
+        <production id="27834" count="1" /> <!-- Ultimate Eternal Circlet - Magic Type / Robe / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27835" count="1" /> <!-- Ultimate Eternal Tunic - Magic Type / Robe / Lv2 -->
+        <production id="27850" count="1" /> <!--  Ultimate Eternal Tunic - Recovery Type / Robe / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27850" count="1" /> <!-- Ultimate Eternal Tunic - Recovery Type / Robe / Lv2 -->
+        <production id="27835" count="1" /> <!-- Ultimate Eternal Tunic - Magic Type / Robe / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27836" count="1" /> <!-- Ultimate Eternal Stockings - Magic Type / Robe / Lv2 -->
+        <production id="27851" count="1" /> <!--  Ultimate Eternal Stockings - Recovery Type / Robe / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27851" count="1" /> <!-- Ultimate Eternal Stockings - Recovery Type / Robe / Lv2 -->
+        <production id="27836" count="1" /> <!-- Ultimate Eternal Stockings - Magic Type / Robe / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27837" count="1" /> <!-- Ultimate Eternal Gloves - Magic Type / Robe / Lv2 -->
+        <production id="27852" count="1" /> <!--  Ultimate Eternal Gloves - Recovery Type / Robe / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27852" count="1" /> <!-- Ultimate Eternal Gloves - Recovery Type / Robe / Lv2 -->
+        <production id="27837" count="1" /> <!-- Ultimate Eternal Gloves - Magic Type / Robe / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27838" count="1" /> <!-- Ultimate Eternal Shoes - Magic Type / Robe / Lv2 -->
+        <production id="27853" count="1" /> <!--  Ultimate Eternal Shoes - Recovery Type / Robe / Lv2 -->
+    </item>
+    <item>
+        <ingredient id="27853" count="1" /> <!-- Ultimate Eternal Shoes - Recovery Type / Robe / Lv2 -->
+        <production id="27838" count="1" /> <!-- Ultimate Eternal Shoes - Magic Type / Robe / Lv2 -->
+    </item>
+    </list>

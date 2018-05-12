@@ -1567,16 +1567,16 @@ public final class Formulas {
 			}
 		}
 
-		if (Config.isServer(Config.TENKAI) && attacker.getActingPlayer() != null) {
-			if (pAtk > 100000) {
-				pAtk = 100000 + Math.pow(pAtk - 100000, 0.8);
-			}
-			if (critBonus > 3) {
-				critBonus = 2 + Math.pow(critBonus - 2, 0.55);
-			}
-		}
+		//if (Config.isServer(Config.TENKAI) && attacker.getActingPlayer() != null) {
+		//	if (pAtk > 100000) {
+		//		pAtk = 100000 + Math.pow(pAtk - 100000, 0.8);
+		//	}
+		//	if (critBonus > 3) {
+		//		critBonus = 2 + Math.pow(critBonus - 2, 0.55);
+		//	}
+		//}
 
-		double damage = 77.0 * (weaponRandom * (pAtk * critBonus + pAtk * positionBonus) + critStaticBonus) / pDef * finalBonus * ssBonus;
+		double damage = 100.0 * (weaponRandom * (pAtk * critBonus + pAtk * positionBonus) + critStaticBonus) / pDef * finalBonus * ssBonus;
 		//if (isBow)
 		//	damage = (70.0 * ((pAtk + pAtk * critBonus) * weaponRandom + critStaticBonus + positionBonus * (pAtk + pAtk)) / pDef) * finalBonus;
 
@@ -1585,9 +1585,9 @@ public final class Formulas {
 
 		damage = calcCustomModifier(attacker, target, damage);
 
-		if (Config.isServer(Config.TENKAI) && isPvP && damage > 10000) {
-			damage = 10000 + Math.pow(damage - 10000, 0.9);
-		}
+		//if (Config.isServer(Config.TENKAI) && isPvP && damage > 10000) {
+		//	damage = 10000 + Math.pow(damage - 10000, 0.9);
+		//}
 
 		int dmgCap = (int) target.getStat().calcStat(Stats.DAMAGE_CAP, 0, null, null);
 		if (dmgCap > 0 && damage > dmgCap) {
@@ -1840,7 +1840,7 @@ public final class Formulas {
 		double weaponRandom = attacker.getRandomDamageMultiplier();
 
 		double skillDmgBonus = 1.0;
-		// Dmg/def bonusses in PvP Fight
+		// Dmg/def bonusses in PvP fight
 		if (isPvP) {
 			skillDmgBonus *= attacker.getPvPPhysicalSkillDamage(target) / target.getPvPPhysicalSkillDefense(attacker);
 		}
@@ -1855,9 +1855,9 @@ public final class Formulas {
 
 		// Physical skill dmg boost
 		skillDmgBonus *= attacker.calcStat(Stats.PHYSICAL_SKILL_POWER, 1, target, skill);
-		if (Config.isServer(Config.TENKAI) && attacker.getActingPlayer() != null && skillDmgBonus > 2) {
-			skillDmgBonus = 1 + Math.pow(skillDmgBonus - 1, 0.6);
-		}
+		//if (Config.isServer(Config.TENKAI) && attacker.getActingPlayer() != null && skillDmgBonus > 2) {
+		//	skillDmgBonus = 1 + Math.pow(skillDmgBonus - 1, 0.6);
+		//}
 
 		double finalBonus = skillDmgBonus;
 		finalBonus *= calcElemental(attacker, target, skill);
@@ -1879,20 +1879,20 @@ public final class Formulas {
 			finalBonus *= 1.20;
 		}
 
-		if (Config.isServer(Config.TENKAI) && attacker.getActingPlayer() != null) {
-			if (pAtk > 100000) {
-				pAtk = 100000 + Math.pow(pAtk - 100000, 0.8);
-			}
-			if (critBonus > 2) {
-				critBonus = 1 + Math.pow(critBonus - 1, 0.55);
-			}
-			if (finalBonus > 2) {
-				finalBonus = 1 + Math.pow(finalBonus - 1, 0.6);
-			}
-		}
+		//if (Config.isServer(Config.TENKAI) && attacker.getActingPlayer() != null) {
+		//	if (pAtk > 100000) {
+		//		pAtk = 100000 + Math.pow(pAtk - 100000, 0.8);
+		//	}
+		//	if (critBonus > 2) {
+		//		critBonus = 1 + Math.pow(critBonus - 1, 0.55);
+		//	}
+		//	if (finalBonus > 2) {
+		//		finalBonus = 1 + Math.pow(finalBonus - 1, 0.6);
+		//	}
+		//}
 
 		double damage =
-				77.0 * ((pAtk * levelMod + power) * powerBonus * weaponRandom + positionBonus * pAtk) / pDef * finalBonus * ssBonus * critBonus;
+				100.0 * ((pAtk * levelMod + power) * powerBonus * weaponRandom + positionBonus * pAtk) / pDef * finalBonus * ssBonus * critBonus;
 		//if (isBow)
 		{
 			//if (ssBonus >= 2.0)
@@ -1902,9 +1902,9 @@ public final class Formulas {
 
 		damage = calcCustomModifier(attacker, target, damage);
 
-		if (Config.isServer(Config.TENKAI) && isPvP && damage > 10000) {
-			damage = 10000 + Math.pow(damage - 10000, 0.9);
-		}
+		//if (Config.isServer(Config.TENKAI) && isPvP && damage > 10000) {
+		//	damage = 10000 + Math.pow(damage - 10000, 0.9);
+		//}
 
 		//if (isPvP)
 		//System.out.println(skill.getName() + ": " + pAtk + " | " + levelMod
@@ -2017,9 +2017,9 @@ public final class Formulas {
 
 		double finalBonus = 1;
 		if (attacker instanceof Playable && target instanceof Playable) {
-			// Dmg bonuses in PvP Fight
+			// Dmg bonuses in PvP fight
 			finalBonus *= attacker.getPvPPhysicalSkillDamage(target);
-			// Def bonuses in PvP Fight
+			// Def bonuses in PvP fight
 			finalBonus /= target.getPvPPhysicalSkillDefense(attacker);
 		}
 
@@ -2035,16 +2035,16 @@ public final class Formulas {
 			}
 		}
 
-		if (Config.isServer(Config.TENKAI) && attacker.getActingPlayer() != null) {
-			if (pAtk > 100000) {
-				pAtk = 100000 + Math.pow(pAtk - 100000, 0.8);
-			}
-			if (critBonus > 5) {
-				critBonus = 4 + Math.pow(critBonus - 4, 0.65);
-			}
-		}
+		//if (Config.isServer(Config.TENKAI) && attacker.getActingPlayer() != null) {
+		//	if (pAtk > 100000) {
+		//		pAtk = 100000 + Math.pow(pAtk - 100000, 0.8);
+		//	}
+		//	if (critBonus > 5) {
+		//		critBonus = 4 + Math.pow(critBonus - 4, 0.65);
+		//	}
+		//}
 
-		double damage = 77.0 * ((pAtk * levelMod + power) * weaponRandom * 0.666 * critBonus * ssBonus + critStaticBonus * 6 +
+		double damage = 100.0 * ((pAtk * levelMod + power) * weaponRandom * 0.666 * critBonus * ssBonus + critStaticBonus * 6 +
 				positionBonus * (power + pAtk * ssBonus)) / pDef * finalBonus;
 
 		//System.out.println(attacker.getName());
@@ -2053,13 +2053,13 @@ public final class Formulas {
 
 		damage = calcCustomModifier(attacker, target, damage);
 
-		if (Config.isServer(Config.TENKAI) && damage > 20000 && attacker.getActingPlayer() != null && target.getActingPlayer() != null) {
-			damage = 20000 + Math.pow(damage - 20000, 0.93);
-		}
+		//if (Config.isServer(Config.TENKAI) && damage > 20000 && attacker.getActingPlayer() != null && target.getActingPlayer() != null) {
+		//	damage = 20000 + Math.pow(damage - 20000, 0.93);
+		//}
 
 		if (attacker instanceof Player) {
 			Player player = (Player) attacker;
-			player.sendSysMessage("Formula = (77 * ((pAtk * levelMod + power) * weaponRandom * 0.666 * critBonus * ssBonus + critStaticBonus * 6" +
+			player.sendSysMessage("Formula = (100 * ((pAtk * levelMod + power) * weaponRandom * 0.666 * critBonus * ssBonus + critStaticBonus * 6" +
 					" + positionBonus * (power + pAtk * ssBonus)) / pDef) * finalBonus");
 			player.sendSysMessage("P.Atk = " + pAtk + ".");
 			player.sendSysMessage("Level Mod = " + attacker.getLevelMod() + ".");
@@ -2317,25 +2317,25 @@ public final class Formulas {
 			}
 		}
 
-		if (Config.isServer(Config.TENKAI) && attacker.getActingPlayer() != null) {
-			//if (mAtk > 1000000)
-			//	mAtk = 1000000 + Math.pow(mAtk - 1000000, 0.9);
-			if (critBonus > 2) {
-				critBonus = 1 + Math.pow(critBonus - 1, 0.55);
-			}
-			if (finalBonus > 2) {
-				finalBonus = 1 + Math.pow(finalBonus - 1, 0.45);
-			}
-		}
+		//if (Config.isServer(Config.TENKAI) && attacker.getActingPlayer() != null) {
+		//	//if (mAtk > 1000000)
+		//	//	mAtk = 1000000 + Math.pow(mAtk - 1000000, 0.9);
+		//	if (critBonus > 2) {
+		//		critBonus = 1 + Math.pow(critBonus - 1, 0.55);
+		//	}
+		//	if (finalBonus > 2) {
+		//		finalBonus = 1 + Math.pow(finalBonus - 1, 0.45);
+		//	}
+		//}
 
 		double damage = 91.0 * Math.sqrt(mAtk) * skill.getPower(attacker, target, isPvP, isPvE) / mDef * finalBonus * critBonus * weaponRandom +
 				staticCritBonus;
 
 		damage = calcCustomModifier(attacker, target, damage);
 
-		if (Config.isServer(Config.TENKAI) && isPvP && damage > 10000) {
-			damage = 10000 + Math.pow(damage - 10000, 0.9);
-		}
+		//if (Config.isServer(Config.TENKAI) && isPvP && damage > 10000) {
+		//	damage = 10000 + Math.pow(damage - 10000, 0.9);
+		//}
 
 		if (missed) {
 			if (halfMiss) {
@@ -2495,9 +2495,9 @@ public final class Formulas {
 		}
 
 		double rate = 10 * activeChar.calcStat(Stats.LETHAL_RATE, chance, target, null);
-		if (Config.isServer(Config.TENKAI) && rate > 2 && target instanceof Attackable && target.getLevel() >= 100) {
-			rate /= 2;
-		}
+		//if (Config.isServer(Config.TENKAI) && rate > 2 && target instanceof Attackable && target.getLevel() >= 100) {
+		//	rate /= 2;
+		//}
 		return rate;
 	}
 
@@ -3071,9 +3071,9 @@ public final class Formulas {
 	}
 
 	public static double calcSkillStatModifier(Skill skill, Creature attacker, Creature target) {
-		if (Config.isServer(Config.TENKAI)) {
-			return 0.0;
-		}
+		//if (Config.isServer(Config.TENKAI)) {
+		//	return 0.0;
+		//}
 
 		if (skill.isMagic()) {
 			return BaseStats.MEN.calcBonus(attacker) * 10;
@@ -3250,10 +3250,10 @@ public final class Formulas {
 		// Resists and proficiency boosts (epics etc.)
 		double resModifier = calcEffectTypeResistance(target, effect.getType());
 		double profModifier = calcEffectTypeProficiency(attacker, target, effect.getType());
-		if (Config.isServer(Config.TENKAI)) {
-			//resModifier = Math.pow(resModifier, 0.75);
-			//profModifier = Math.pow(profModifier, 0.75);
-		}
+		//if (Config.isServer(Config.TENKAI)) {
+		//	//resModifier = Math.pow(resModifier, 0.75);
+		//	//profModifier = Math.pow(profModifier, 0.75);
+		//}
 
 		double resMod = profModifier / resModifier;
 		if (resMod > 1.9) {
@@ -3926,37 +3926,37 @@ public final class Formulas {
 	}
 
 	public static double damageMultiplier(Creature attacker, Creature target) {
-		if (!Config.isServer(Config.TENKAI)) {
-			return 1.0;
-		}
+		//if (!Config.isServer(Config.TENKAI)) {
+		//	return 1.0;
+		//}
 
 		double multiplier = 1.0;
 		if (attacker.getActingPlayer() != null) {
 			PlayerClass attackerClass = attacker.getActingPlayer().getCurrentClass();
 			if (target.getActingPlayer() != null) // PvP Damage
 			{
-				multiplier *= 0.99;
-				int attackerClanId = attacker.getActingPlayer().getClanId();
-				L2Party attackerParty = attacker.getActingPlayer().getParty();
-				int targetClanId = target.getActingPlayer().getClanId();
-				L2Party targetParty = attacker.getActingPlayer().getParty();
-				if (attackerClanId > 0 && targetClanId > 0 && attackerClanId != targetClanId && attackerParty != null && targetParty != null &&
-						!attacker.isInsideZone(Creature.ZONE_PVP)) {
-					int attackerClannies = 0;
-					int targetClannies = 0;
-					for (Player clanny : attacker.getKnownList().getKnownPlayers().values()) {
-						if (clanny.getClanId() == attackerClanId || clanny.getParty() == attackerParty) {
-							attackerClannies++;
-						} else if (clanny.getClanId() == targetClanId || clanny.getParty() == targetParty) {
-							targetClannies++;
-						}
-					}
-
-					if (targetClannies > 2 && attackerClannies > targetClannies) {
-						multiplier *= Math.pow(targetClannies / (double) attackerClannies, 1.15);
-						//System.out.println(targetClannies + " " + attackerClannies + " " + multiplier);
-					}
-				}
+				//multiplier *= 0.99;
+				//int attackerClanId = attacker.getActingPlayer().getClanId();
+				//L2Party attackerParty = attacker.getActingPlayer().getParty();
+				//int targetClanId = target.getActingPlayer().getClanId();
+				//L2Party targetParty = attacker.getActingPlayer().getParty();
+				//if (attackerClanId > 0 && targetClanId > 0 && attackerClanId != targetClanId && attackerParty != null && targetParty != null &&
+				//		!attacker.isInsideZone(Creature.ZONE_PVP)) {
+				//	int attackerClannies = 0;
+				//	int targetClannies = 0;
+				//	for (Player clanny : attacker.getKnownList().getKnownPlayers().values()) {
+				//		if (clanny.getClanId() == attackerClanId || clanny.getParty() == attackerParty) {
+				//			attackerClannies++;
+				//		} else if (clanny.getClanId() == targetClanId || clanny.getParty() == targetParty) {
+				//			targetClannies++;
+				//		}
+				//	}
+				//
+				//	if (targetClannies > 2 && attackerClannies > targetClannies) {
+				//		multiplier *= Math.pow(targetClannies / (double) attackerClannies, 1.15);
+				//		//System.out.println(targetClannies + " " + attackerClannies + " " + multiplier);
+				//	}
+				//}
 
 				if (attacker.getActingPlayer().isPlayingEvent()) {
 					EventInstance event = attacker.getActingPlayer().getEvent();
@@ -3971,58 +3971,58 @@ public final class Formulas {
 					WeaponTemplate weapon = attacker.getActiveWeaponItem();
 					switch (awakening) {
 						case 139: // Sigel Knight
-							multiplier *= 1.2;
+							multiplier *= 1.0;
 							if (weapon != null && (weapon.getItemType() == WeaponType.BOW || weapon.getItemType() == WeaponType.CROSSBOW)) {
-								multiplier *= 0.3;
+								multiplier *= 0.9;
 							}
 							break;
 						case 140: // Tyrr Warrior
-							multiplier *= 0.95;
+							multiplier *= 1.0;
 							break;
 						case 141: // Othell Rogue
 							if (weapon != null && (weapon.getItemType() == WeaponType.DAGGER || weapon.getItemType() == WeaponType.DUALDAGGER)) {
-								multiplier *= 1.2;
+								multiplier *= 1.0;
 							}
 							break;
 						case 142: // Yul Archer
-							multiplier *= 1.05;
+							multiplier *= 1.00;
 							break;
 						case 143: // Feoh Wizard
-							multiplier *= 1.3;
+							multiplier *= 1.0;
 							break;
 						case 144: // Iss Enchanter
-							multiplier *= 1.5;
+							multiplier *= 1.0;
 							break;
 						case 145: // Wynn Summoner
-							multiplier *= 1.7;
+							multiplier *= 1.0;
 							break;
 						case 146: // Aeore Healer
-							multiplier *= 1.5;
+							multiplier *= 1.0;
 							break;
 					}
 				}
 
 				switch (attackerClass.getId()) {
 					case 152: // Tyrr Duelist
-						multiplier *= 0.9;
+						multiplier *= 1.0;
 						break;
 					case 166: // Feoh Archmage
-						multiplier *= 1.5;
+						multiplier *= 1.0;
 						break;
 					case 167: // Feoh Soultaker
-						multiplier *= 0.9;
+						multiplier *= 1.0;
 						break;
 					case 168: // Feoh Mystic Muse
-						multiplier *= 1.3;
+						multiplier *= 1.0;
 						break;
 					case 169: // Feoh Storm Screamer
-						multiplier *= 0.9;
+						multiplier *= 1.0;
 						break;
 					case 188: // Eviscerator
-						multiplier *= 1.2;
+						multiplier *= 1.0;
 						break;
 					case 189: // Sayha's Seer
-						multiplier *= 1.2;
+						multiplier *= 1.0;
 						break;
 				}
 
@@ -4031,44 +4031,44 @@ public final class Formulas {
 					int awakening = targetClass.getParent().getAwakeningClassId();
 					switch (awakening) {
 						case 139: // Sigel Knight
-							multiplier *= 0.8;
+							multiplier *= 1.0;
 							break;
 						case 140: // Tyrr Warrior
-							multiplier *= 1.1;
+							multiplier *= 1.0;
 							break;
 						case 141: // Othell Rogue
-							multiplier *= 0.95;
+							multiplier *= 1.0;
 							break;
 						case 142: // Yul Archer
-							//multiplier *= 1.4;
+							multiplier *= 1.0;
 							break;
 						case 143: // Feoh Wizard
-							multiplier *= 0.85;
+							multiplier *= 1.0;
 							break;
 						case 144: // Iss Enchanter
-							//multiplier *= 1.8;
+							multiplier *= 1.0;
 							break;
 						case 145: // Wynn Summoner
-							multiplier *= 0.85;
+							multiplier *= 1.0;
 							break;
 						case 146: // Aeore Healer
-							//multiplier *= 2.1;
+							multiplier *= 1.0;
 							break;
 					}
 				}
 
 				switch (targetClass.getId()) {
 					case 166: // Feoh Archmage
-						multiplier *= 0.8;
+						multiplier *= 1.0;
 						break;
 					case 167: // Feoh Soultaker
-						multiplier *= 1.2;
+						multiplier *= 1.0;
 						break;
 					case 188: // Eviscerator
-						//multiplier *= 0.8;
+						multiplier *= 1.0;
 						break;
 					case 189: // Sayha's Seer
-						//multiplier *= 1.4;
+						multiplier *= 1.0;
 						break;
 				}
 			} else
@@ -4091,44 +4091,44 @@ public final class Formulas {
 					@SuppressWarnings("unused") WeaponTemplate weapon = attacker.getActiveWeaponItem();
 					switch (awakening) {
 						case 139: // Sigel Knight
-							multiplier *= 1.6;
+							multiplier *= 1.0;
 							break;
 						case 140: // Tyrr Warrior
-							multiplier *= 0.9;
+							multiplier *= 1.0;
 							break;
 						case 141: //Othell Rogue
-							multiplier *= 1.5;
+							multiplier *= 1.0;
 							break;
 						case 142: //Yul Archer
-							multiplier *= 1.2;
+							multiplier *= 1.0;
 							break;
 						case 143: //Feoh Wizard
-							multiplier *= 1.5;
+							multiplier *= 1.0;
 							break;
 						case 144: // Iss Enchanter
-							multiplier *= 1.5;
+							multiplier *= 1.0;
 							break;
 						case 145: // Wynn Summoner
-							multiplier *= 1.5;
+							multiplier *= 1.0;
 							break;
 						case 146: // Aeore Healer
-							multiplier *= 2.3;
+							multiplier *= 1.0;
 							break;
 					}
 				}
 
 				switch (attackerClass.getId()) {
 					case 166: // Feoh Archmage
-						multiplier *= 1.4;
+						multiplier *= 1.0;
 						break;
 					case 167: // Feoh Soultaker
-						multiplier *= 0.9;
+						multiplier *= 1.0;
 						break;
 					case 188: // Eviscerator
 						multiplier *= 1.0;
 						break;
 					case 189: // Sayha's Seer
-						multiplier *= 1.3;
+						multiplier *= 1.0;
 						break;
 				}
 			}

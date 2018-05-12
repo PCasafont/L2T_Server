@@ -27,9 +27,6 @@ import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.model.actor.instance.GrandBossInstance;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.ItemParser;
-import l2server.gameserver.stats.Stats;
-import l2server.gameserver.stats.funcs.FuncTemplate;
-import l2server.gameserver.stats.funcs.LambdaConst;
 import l2server.gameserver.templates.item.*;
 import l2server.gameserver.util.GMAudit;
 import l2server.util.loader.annotations.Load;
@@ -183,11 +180,11 @@ public class ItemTable {
 							item.parse();
 						}
 						
-						if (Config.isServer(Config.TENKAI) && item.getItem() instanceof WeaponTemplate &&
-								(item.getName().contains("Antharas") || item.getName().contains("Valakas") || item.getName().contains("Lindvior"))) {
-							item.getItem().attach(new FuncTemplate(null, "SubPercent", Stats.PHYS_ATTACK, new LambdaConst(50.0)));
-							item.getItem().attach(new FuncTemplate(null, "SubPercent", Stats.MAGIC_ATTACK, new LambdaConst(30.0)));
-						}
+						//if (Config.isServer(Config.TENKAI) && item.getItem() instanceof WeaponTemplate &&
+						//		(item.getName().contains("Antharas") || item.getName().contains("Valakas") || item.getName().contains("Lindvior"))) {
+						//	item.getItem().attach(new FuncTemplate(null, "SubPercent", Stats.PHYS_ATTACK, new LambdaConst(50.0)));
+						//	item.getItem().attach(new FuncTemplate(null, "SubPercent", Stats.MAGIC_ATTACK, new LambdaConst(30.0)));
+						//}
 						
 						items.put(item.getId(), item);
 					} catch (Exception e) {

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+    <!-- Scroll: Enchant Armor (D) -->
+    <item>
+        <ingredient id="57" count="2" />
+        <production id="956" count="1" />
+    </item>
+    <!-- Scroll: Enchant Armor (C) -->
+    <item>
+        <ingredient id="57" count="5" />
+        <production id="952" count="1" />
+    </item>
+    <!-- Scroll: Enchant Armor (B) -->
+    <item>
+        <ingredient id="57" count="20" />
+        <production id="948" count="1" />
+    </item>
+    <!-- Scroll: Enchant Armor (A) -->
+    <item>
+        <ingredient id="57" count="63" />
+        <production id="730" count="1" />
+    </item>
+    <!-- Scroll: Enchant Armor (S) -->
+    <item>
+        <ingredient id="57" count="250" />
+        <production id="960" count="1" />
+    </item>
+    <!-- Scroll: Enchant Armor (R) -->
+    <item>
+        <ingredient id="57" count="850" />
+        <production id="17527" count="1" />
+    </item>
+</list>

@@ -58,7 +58,7 @@ public class DimensionalDoor extends Quest {
 		}
 
 		if (event.equalsIgnoreCase("main")) {
-			return qn + (Config.SERVER_NAME.contains("vasper") ? "_old" : "") + ".html";
+			return qn + (Config.SERVER_NAME.contains("legacy") ? "_old" : "") + ".html";
 		} else if (event.equalsIgnoreCase("learnSkills")) {
 			return "learnSkills.html";
 		} else if (event.startsWith("claim_")) {
@@ -94,7 +94,7 @@ public class DimensionalDoor extends Quest {
 			log.warn(getName() + ": onFirstTalk: " + player.getName());
 		}
 
-		return qn + (Config.SERVER_NAME.contains("vasper") ? "_old" : "") + ".html";
+		return qn + (Config.SERVER_NAME.contains("legacy") ? "_old" : "") + ".html";
 	}
 
 	public static int getNpcManagerId() {

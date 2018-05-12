@@ -16,12 +16,14 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
+import l2server.gameserver.GeoData;
 import l2server.gameserver.Shutdown;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.datatables.CharTemplateTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.SkillTreeTable;
 import l2server.gameserver.idfactory.IdFactory;
+import l2server.gameserver.instancemanager.MainTownManager;
 import l2server.gameserver.instancemanager.QuestManager;
 import l2server.gameserver.model.*;
 import l2server.gameserver.model.L2Macro.L2MacroCmd;
@@ -36,6 +38,7 @@ import l2server.gameserver.network.serverpackets.CharSelectionInfo;
 import l2server.gameserver.templates.chars.PcTemplate;
 import l2server.gameserver.templates.chars.PcTemplate.PcTemplateItem;
 import l2server.gameserver.util.Util;
+import l2server.util.Rnd;
 
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
@@ -246,11 +249,21 @@ public final class CharacterCreate extends L2GameClientPacket {
 		PcTemplate template = newChar.getTemplate();
 
 		newChar.addAdena("Init", Config.STARTING_ADENA, null, false);
-
-		newChar.setXYZInvisible(template.startX, template.startY, template.startZ);
-		newChar.setTitle("");
-
-		newChar.setTitle("");
+		
+		MainTownManager.MainTownInfo mainTown = MainTownManager.getInstance().getCurrentMainTown();
+		if (mainTown != null)
+		{
+			int startX = mainTown.getStartX() + Rnd.get(-mainTown.getStartRandom(), mainTown.getStartRandom());
+			int startY = mainTown.getStartY() + Rnd.get(-mainTown.getStartRandom(), mainTown.getStartRandom());
+			int startZ = GeoData.getInstance().getHeight(startX, startY, mainTown.getStartZ());
+			newChar.setXYZInvisible(startX, startY, startZ);
+		}
+		else
+		{
+			newChar.setXYZInvisible(template.startX + Rnd.get(-template.startRandom, template.startRandom),
+					template.startY + Rnd.get(-template.startRandom, template.startRandom), template.startZ);
+		}
+		newChar.setTitle("L2Legacy");
 
 		if (Config.STARTING_LEVEL > 1) {
 			newChar.getStat().addLevel((byte) (Config.STARTING_LEVEL - 1));
@@ -370,41 +383,46 @@ public final class CharacterCreate extends L2GameClientPacket {
 			player.registerMacro(macro);
 			shortcut = new L2ShortCut(7, 0, 4, 1001, 0, 0);
 			player.registerShortCut(shortcut);
-			// .treasure macro
-			macro = new L2Macro(1002, 5, "Treasure", "Treasure Seeking Hints", "TRSR", new L2MacroCmd[]{new L2MacroCmd(0, 3, 0, 0, ".treasure")});
-			player.registerMacro(macro);
-			shortcut = new L2ShortCut(8, 0, 4, 1002, 0, 0);
-			player.registerShortCut(shortcut);
-			// .noexp macro
-			macro = new L2Macro(1003, 5, "No Exp", "To not earn experience", "NOEX", new L2MacroCmd[]{new L2MacroCmd(0, 3, 0, 0, ".noexp")});
-			player.registerMacro(macro);
-			shortcut = new L2ShortCut(9, 0, 4, 1003, 0, 0);
-			player.registerShortCut(shortcut);
-			// .blockrequests macro
-			macro = new L2Macro(1004,
-					5,
-					"Block Requests",
-					"To block all the requests",
-					"BKTR",
-					new L2MacroCmd[]{new L2MacroCmd(0, 3, 0, 0, ".blockrequests")});
-			player.registerMacro(macro);
-			shortcut = new L2ShortCut(10, 0, 4, 1004, 0, 0);
-			player.registerShortCut(shortcut);
-			// .refusebuff macro
-			macro = new L2Macro(1005,
-					5,
-					"Refuse Buff",
-					"To refuse other players' buffs",
-					"RFBF",
-					new L2MacroCmd[]{new L2MacroCmd(0, 3, 0, 0, ".refusebuff")});
-			player.registerMacro(macro);
-			shortcut = new L2ShortCut(11, 0, 4, 1005, 0, 0);
-			player.registerShortCut(shortcut);
+			//// .treasure macro
+			//macro = new L2Macro(1002, 5, "Treasure", "Treasure Seeking Hints", "TRSR", new L2MacroCmd[]{new L2MacroCmd(0, 3, 0, 0, ".treasure")});
+			//player.registerMacro(macro);
+			//shortcut = new L2ShortCut(8, 0, 4, 1002, 0, 0);
+			//player.registerShortCut(shortcut);
+			//// .noexp macro
+			//macro = new L2Macro(1003, 5, "No Exp", "To not earn experience", "NOEX", new L2MacroCmd[]{new L2MacroCmd(0, 3, 0, 0, ".noexp")});
+			//player.registerMacro(macro);
+			//shortcut = new L2ShortCut(9, 0, 4, 1003, 0, 0);
+			//player.registerShortCut(shortcut);
+			//// .blockrequests macro
+			//macro = new L2Macro(1004,
+			//		5,
+			//		"Block Requests",
+			//		"To block all the requests",
+			//		"BKTR",
+			//		new L2MacroCmd[]{new L2MacroCmd(0, 3, 0, 0, ".blockrequests")});
+			//player.registerMacro(macro);
+			//shortcut = new L2ShortCut(10, 0, 4, 1004, 0, 0);
+			//player.registerShortCut(shortcut);
+			//// .refusebuff macro
+			//macro = new L2Macro(1005,
+			//		5,
+			//		"Refuse Buff",
+			//		"To refuse other players' buffs",
+			//		"RFBF",
+			//		new L2MacroCmd[]{new L2MacroCmd(0, 3, 0, 0, ".refusebuff")});
+			//player.registerMacro(macro);
+			//shortcut = new L2ShortCut(11, 0, 4, 1005, 0, 0);
+			//player.registerShortCut(shortcut);
 			// .landrates macro
             /*macro = new L2Macro(1006, 5, "Land Rates", "To see the skill land rates", "LDRT", new L2MacroCmd[]{new L2MacroCmd(0, 3, 0, 0, ".landrates")});
 			player.registerMacro(macro);
 			shortcut = new L2ShortCut(11, 0, 4, 1006, 0, 0);
 			player.registerShortCut(shortcut);*/
+			
+			//7 Day Boss Jewels set
+			item = player.getInventory().addItem("Init",40213, 1, player, null);
+			shortcut = new L2ShortCut(3,0,1, item.getObjectId(), 0, 1);
+			player.registerShortCut(shortcut);
 		}
 
 		if (Config.isServer(Config.TENKAI_LEGACY)) {

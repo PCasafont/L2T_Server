@@ -56,7 +56,7 @@ public class EffectHeavyPunch extends L2Effect {
 
 		int lastPhysicalDamages = attacker.getLastPhysicalDamages();
 
-		int minDamageNeeded = attacker.getFirstEffect(30520) != null ? 300 : 150;
+		int minDamageNeeded = attacker.getFirstEffect(30520) != null ? 150 : 150;
 
 		if (lastPhysicalDamages < minDamageNeeded) {
 			return false;
@@ -64,15 +64,15 @@ public class EffectHeavyPunch extends L2Effect {
 
 		attacker.sendMessage("Heavy Punch is acting up.");
 
-		double multiplier = 17.5;
-
-		multiplier = 17;
+		double multiplier = 5;
 
 		int damage = (int) (attacker.getLastPhysicalDamages() * multiplier * attacker.calcStat(Stats.PHYSICAL_SKILL_POWER, 1, target, null));
-
-		if (damage > 10000 && target.getActingPlayer() != null) {
-			damage = 10000 + (int) Math.pow(damage - 10000, 0.9);
-		}
+		
+		
+		//if (Config.isServer(Config.TENKAI) && damage > 10000 && target.getActingPlayer() != null)
+		//{
+		//	damage = 10000 + (int) Math.pow(damage - 10000, 0.9);
+		//}
 
 		attacker.onHitTimer(target, damage, false, false, Item.CHARGED_SOULSHOT, (byte) 0, true);
 

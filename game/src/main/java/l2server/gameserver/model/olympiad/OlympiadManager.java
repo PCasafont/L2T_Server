@@ -18,6 +18,7 @@ package l2server.gameserver.model.olympiad;
 import l2server.Config;
 import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.instancemanager.AntiFeedManager;
+import l2server.gameserver.model.World;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -316,6 +317,12 @@ public class OlympiadManager {
 			return null;
 		}
 		
+		if (player.getLevel() < 105 || player.getPvpKills() < 200)
+		{
+			player.sendMessage("Sorry, you do not meet the requirements to join the Grand Olympiad. Please return when you have them.");
+			return null;
+		}
+		
 		if (player.isSubClassActive()) {
 			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_CANT_JOIN_THE_OLYMPIAD_WITH_A_SUB_CLASS_CHARACTER);
 			sm.addPcName(player);
@@ -347,7 +354,7 @@ public class OlympiadManager {
 		}
 		
 		//If we have access to the player HWID we will use it to check dualbox otherwise we will use the external ip and the internal ip
-		/*for (Player pl : World.getInstance().getAllOlympiadPlayers())
+		for (Player pl : World.getInstance().getAllOlympiadPlayers())
         {
 			if (pl == null)
 				continue;
@@ -367,7 +374,7 @@ public class OlympiadManager {
 					return null;
 				}
 			}
-		}*/
+		}
 		
 		if (isRegistered(player, true)) {
 			return null;

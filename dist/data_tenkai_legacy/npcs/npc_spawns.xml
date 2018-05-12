@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Dimensional Door -->
-	<npc id="80200">
-		<spawn x="83681" y="148856" z="-3408" heading="32478" respawn="60" />
-	</npc>
-	<!-- Altar of Souls -->
-	<npc id="33920">
-		<spawn x="6788" y="-19187" z="-3724" heading="11175" respawn="0" />
-	</npc>
-	<!-- Vote NPC -->
-	<npc id="80215">
-		<spawn x="83285" y="149323" z="-3405" heading="49095" respawn="0" />
-	</npc>
+    <!-- Beryn
+    <npc id="2512">
+        <spawn x="83681" y="148856" z="-3408" heading="32478" respawn="60" />
+    </npc> -->
+    <!-- Andromeda -->
+    <npc id="50007">
+        <spawn x="84629" y="148797" z="-3403" heading="64171" respawn="10000" />
+    </npc>
+    <!-- Raiders annoying army -->
+    <npc id="19322" overrideSpawns="true">
+    </npc>
+    <npc id="19323" overrideSpawns="true">
+    </npc>
+    <!-- Nerva Orc Merchants are not welcome here -->
+    <npc id="23320" overrideSpawns="true">
+    </npc>
 </list>

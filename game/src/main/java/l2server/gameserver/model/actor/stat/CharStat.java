@@ -422,9 +422,9 @@ public class CharStat {
 			val = Config.MAX_MATK_SPEED;
 		}
 		
-		if (val > 1650) {
-			val = 1650 + (int) Math.pow(val - 1650, 0.8);
-		}
+		//if (val > 1650) {
+		//	val = 1650 + (int) Math.pow(val - 1650, 0.8);
+		//}
 		
 		return (int) val;
 	}

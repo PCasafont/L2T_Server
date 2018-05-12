@@ -188,8 +188,9 @@
 		<mob id="23326" /> <!-- Nerva Bloodlust Wizard -->
 		<mob id="23327" /> <!-- Nerva Bloodlust Soldier -->
 		<mob id="23328" /> <!-- Nerva Bloodlust Assassin -->
+	</farmZone>
+	<farmZone name="raider_crossroads_special"> <!-- Lvl: 99 | Strength: 40000 | Exp Score: 230 | Extremelly high attack -->
 		<mob id="23329" /> <!-- Nerva Kaiser -->
-		<mob id="23318" /> <!-- Nerva Orc Assassin -->
 	</farmZone>
 	<farmZone name="gainak_siege"> <!-- Lvl: 99 | Strength: 16000 | Exp Score: 0 -->
 		<mob id="19471" /> <!-- Mysterious Assassin -->
@@ -370,5 +371,9 @@
 		<mob id="23350" /> <!-- Demonic Noctum -->
 		<mob id="22946" /> <!-- Demonic Seknus -->
 		<mob id="22940" /> <!-- Demonic Carcass -->
+	</farmZone>
+	<farmZone name="christmas">
+		<mob id="80198" /> <!-- Snowman_Red -->
+		<mob id="80199" /> <!-- Snowman_Blue -->
 	</farmZone>
 </list>

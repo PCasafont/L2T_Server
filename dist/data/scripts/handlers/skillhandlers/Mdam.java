@@ -24,7 +24,6 @@ import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Playable;
 import l2server.gameserver.model.actor.Summon;
-import l2server.gameserver.model.actor.instance.MonsterInstance;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.StatusUpdate.StatusUpdateDisplay;
@@ -72,7 +71,7 @@ public class Mdam implements ISkillHandler {
 			activeSummon.setChargedSpiritShot(Item.CHARGED_NONE);
 		}
 		
-		double pveAoeNerf = 1.0;
+		//double pveAoeNerf = 1.0;
 		for (WorldObject obj : targets) {
 			if (!(obj instanceof Creature)) {
 				continue;
@@ -91,10 +90,10 @@ public class Mdam implements ISkillHandler {
 			final byte reflect = Formulas.calcSkillReflect(target, skill);
 			
 			int damage = (int) Formulas.calcMagicDam(activeChar, target, skill, shld, ssMul, mcrit);
-			if (target instanceof MonsterInstance && Config.isServer(Config.TENKAI)) {
-				damage *= pveAoeNerf;
-				pveAoeNerf *= 0.5;
-			}
+			//if (target instanceof MonsterInstance && Config.isServer(Config.TENKAI)) {
+			//	damage *= pveAoeNerf;
+			//	pveAoeNerf *= 0.5;
+			//}
 			
 			if (damage != 0) {
 				if (target instanceof Player && ((Player) target).getAppearance().getInvisible()) {

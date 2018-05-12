@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<specificSpawnList name="nornil_cave_observations_room_manifest">
-		<!-- Spicula Larva -->
-		<spawn npcId="23304" x="-87753" y="55062" z="-4568" heading="49256" respawn="60" />
-		<spawn npcId="23304" x="-87473" y="55448" z="-4568" heading="0" respawn="60" />
-		<spawn npcId="23304" x="-87828" y="55585" z="-4568" heading="2264" respawn="60" />
-		<spawn npcId="23304" x="-88012" y="55460" z="-4568" heading="0" respawn="60" />
-		<!-- Boz -->
-		<!-- <spawn npcId="19298" x="-88012" y="55460" z="-4568" heading="0" respawn="60" /> -->
-	</specificSpawnList>
-	<specificSpawnList name="nornil_cave_observations_room">
-		<!-- Spicula Captain -->
-		<spawn npcId="23275" x="-87753" y="55062" z="-4568" heading="49256" respawn="60" />
-		<spawn npcId="23275" x="-87473" y="55448" z="-4568" heading="0" respawn="60" />
-		<spawn npcId="23275" x="-87828" y="55585" z="-4568" heading="2264" respawn="60" />
-		<spawn npcId="23275" x="-88012" y="55460" z="-4568" heading="0" respawn="60" />
-	</specificSpawnList>
-	<specificSpawnList name="nornil_cave_prophecies_room_manifest">
-		<!-- Spicula Larva -->
-		<spawn npcId="23304" x="-87929" y="50765" z="-4472" heading="55583" respawn="60" />
-		<spawn npcId="23304" x="-87864" y="51245" z="-4472" heading="0" respawn="60" />
-		<spawn npcId="23304" x="-88381" y="51235" z="-4472" heading="0" respawn="60" />
-		<spawn npcId="23304" x="-88340" y="50751" z="-4472" heading="3742" respawn="60" />
-		<!-- Boz -->
-		<spawn npcId="19298" x="-88133" y="51741" z="-4376" heading="49176" respawn="60" />
-	</specificSpawnList>
-	<specificSpawnList name="nornil_cave_prophecies_room">
-		<!-- Spicula Captain -->
-		<spawn npcId="23275" x="-87929" y="50765" z="-4472" heading="55583" respawn="60" />
-		<spawn npcId="23275" x="-87864" y="51245" z="-4472" heading="0" respawn="60" />
-		<spawn npcId="23275" x="-88381" y="51235" z="-4472" heading="0" respawn="60" />
-		<spawn npcId="23275" x="-88340" y="50751" z="-4472" heading="3742" respawn="60" />
-	</specificSpawnList>
-	<specificSpawnList name="nornil_cave_records_room_manifest">
-		<!-- Spicula Larva -->
-		<spawn npcId="23304" x="-79282" y="55037" z="-4952" heading="0" respawn="60" />
-		<spawn npcId="23304" x="-79029" y="55460" z="-4952" heading="0" respawn="60" />
-		<spawn npcId="23304" x="-79188" y="55631" z="-4952" heading="48721" respawn="60" />
-		<spawn npcId="23304" x="-79572" y="55446" z="-4952" heading="0" respawn="60" />
-		<!-- Boz -->
-		<!-- <spawn npcId="19298" x="-88012" y="55460" z="-4568" heading="0" respawn="60" /> -->
-	</specificSpawnList>
-	<specificSpawnList name="nornil_cave_records_room">
-		<!-- Spicula Captain -->
-		<spawn npcId="23275" x="-79282" y="55037" z="-4952" heading="0" respawn="60" />
-		<spawn npcId="23275" x="-79029" y="55460" z="-4952" heading="0" respawn="60" />
-		<spawn npcId="23275" x="-79188" y="55631" z="-4952" heading="48721" respawn="60" />
-		<spawn npcId="23275" x="-79572" y="55446" z="-4952" heading="0" respawn="60" />
-	</specificSpawnList>
+    <specificSpawnList name="nornil_cave_observations_room_manifest">
+        <!-- Spicula Larva -->
+        <spawn npcId="23304" x="-87753" y="55062" z="-4568" heading="49256" respawn="60" />
+        <spawn npcId="23304" x="-87473" y="55448" z="-4568" heading="0" respawn="60" />
+        <spawn npcId="23304" x="-87828" y="55585" z="-4568" heading="2264" respawn="60" />
+        <spawn npcId="23304" x="-88012" y="55460" z="-4568" heading="0" respawn="60" />
+        <!-- Boz -->
+        <!-- <spawn npcId="19298" x="-88012" y="55460" z="-4568" heading="0" respawn="60" /> -->
+    </specificSpawnList>
+    <specificSpawnList name="nornil_cave_observations_room">
+        <!-- Spicula Captain -->
+        <spawn npcId="23275" x="-87753" y="55062" z="-4568" heading="49256" respawn="60" />
+        <spawn npcId="23275" x="-87473" y="55448" z="-4568" heading="0" respawn="60" />
+        <spawn npcId="23275" x="-87828" y="55585" z="-4568" heading="2264" respawn="60" />
+        <spawn npcId="23275" x="-88012" y="55460" z="-4568" heading="0" respawn="60" />
+    </specificSpawnList>
+    <specificSpawnList name="nornil_cave_prophecies_room_manifest">
+        <!-- Spicula Larva -->
+        <spawn npcId="23304" x="-87929" y="50765" z="-4472" heading="55583" respawn="60" />
+        <spawn npcId="23304" x="-87864" y="51245" z="-4472" heading="0" respawn="60" />
+        <spawn npcId="23304" x="-88381" y="51235" z="-4472" heading="0" respawn="60" />
+        <spawn npcId="23304" x="-88340" y="50751" z="-4472" heading="3742" respawn="60" />
+        <!-- Boz -->
+        <spawn npcId="19298" x="-88133" y="51741" z="-4376" heading="49176" respawn="60" />
+    </specificSpawnList>
+    <specificSpawnList name="nornil_cave_prophecies_room">
+        <!-- Spicula Captain -->
+        <spawn npcId="23275" x="-87929" y="50765" z="-4472" heading="55583" respawn="60" />
+        <spawn npcId="23275" x="-87864" y="51245" z="-4472" heading="0" respawn="60" />
+        <spawn npcId="23275" x="-88381" y="51235" z="-4472" heading="0" respawn="60" />
+        <spawn npcId="23275" x="-88340" y="50751" z="-4472" heading="3742" respawn="60" />
+    </specificSpawnList>
+    <specificSpawnList name="nornil_cave_records_room_manifest">
+        <!-- Spicula Larva -->
+        <spawn npcId="23304" x="-79282" y="55037" z="-4952" heading="0" respawn="60" />
+        <spawn npcId="23304" x="-79029" y="55460" z="-4952" heading="0" respawn="60" />
+        <spawn npcId="23304" x="-79188" y="55631" z="-4952" heading="48721" respawn="60" />
+        <spawn npcId="23304" x="-79572" y="55446" z="-4952" heading="0" respawn="60" />
+        <!-- Boz -->
+        <!-- <spawn npcId="19298" x="-88012" y="55460" z="-4568" heading="0" respawn="60" /> -->
+    </specificSpawnList>
+    <specificSpawnList name="nornil_cave_records_room">
+        <!-- Spicula Captain -->
+        <spawn npcId="23275" x="-79282" y="55037" z="-4952" heading="0" respawn="60" />
+        <spawn npcId="23275" x="-79029" y="55460" z="-4952" heading="0" respawn="60" />
+        <spawn npcId="23275" x="-79188" y="55631" z="-4952" heading="48721" respawn="60" />
+        <spawn npcId="23275" x="-79572" y="55446" z="-4952" heading="0" respawn="60" />
+    </specificSpawnList>
 </list>
