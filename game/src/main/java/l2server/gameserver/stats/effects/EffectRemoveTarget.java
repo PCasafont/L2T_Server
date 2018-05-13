@@ -81,7 +81,7 @@ public class EffectRemoveTarget extends L2Effect {
 		//getEffected().abortCast();
 		getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, getEffector());
 		
-		if (getEffected() instanceof Playable && getAbnormal().getTemplate().duration > 0 && getSkill().getId() != 10265) {
+		if (getEffected() instanceof Playable && getAbnormal().getTemplate().getDuration() > 0 && getSkill().getId() != 10265) {
 			((Playable) getEffected()).setLockedTarget(getEffected());
 		}
 		

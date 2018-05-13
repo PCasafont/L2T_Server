@@ -293,8 +293,8 @@ public final class BabyPetInstance extends PetInstance {
 									iter.remove();
 								} else {
 									// effect with same stacktype and greater or equal stackorder
-									if (skill.hasEffects() && e.getStackLvl() >= skill.getEffectTemplates()[0].stackLvl) {
-										for (String stackType : skill.getEffectTemplates()[0].stackType) {
+									if (skill.hasEffects() && e.getStackLvl() >= skill.getEffectTemplates()[0].getStackLvl()) {
+										for (String stackType : skill.getEffectTemplates()[0].getStackType()) {
 											boolean found = false;
 											if (!stackType.equals("none")) {
 												for (String stackType2 : e.getStackType()) {

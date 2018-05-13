@@ -99,8 +99,8 @@ public class EffectPartyMpConsumePerLevel extends L2Effect {
 							continue;
 						}
 
-						if (removingEffect.getTemplate().visualEffect != null) {
-							for (VisualEffect ve : removingEffect.getTemplate().visualEffect) {
+						if (removingEffect.getTemplate().getVisualEffect() != null) {
+							for (VisualEffect ve : removingEffect.getTemplate().getVisualEffect()) {
 								member.stopVisualEffect(ve);
 							}
 						}

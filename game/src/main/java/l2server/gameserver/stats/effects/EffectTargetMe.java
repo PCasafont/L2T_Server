@@ -64,7 +64,7 @@ public class EffectTargetMe extends L2Effect {
 				}
 			}
 
-			if (getAbnormal().getTemplate().duration > 0) {
+			if (getAbnormal().getTemplate().getDuration() > 0) {
 				((Playable) getEffected()).setLockedTarget(getEffector());
 			}
 

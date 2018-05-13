@@ -2244,7 +2244,7 @@ public abstract class Skill implements IChanceSkillTrigger {
 				}
 				
 				if (effected.isAffected(EffectType.BLOCK_INVUL.getMask())) {
-					for (EffectTemplate eff : effect.effects) {
+					for (EffectTemplate eff : effect.getEffects()) {
 						if (eff.funcName.equals("Invincible")) {
 							return emptyEffectSet;
 						}
@@ -2252,7 +2252,7 @@ public abstract class Skill implements IChanceSkillTrigger {
 				}
 				
 				if (effected.isAffected(EffectType.BLOCK_HIDE.getMask())) {
-					for (EffectTemplate eff : effect.effects) {
+					for (EffectTemplate eff : effect.getEffects()) {
 						if (eff.funcName.equals("Hide")) {
 							return emptyEffectSet;
 						}
@@ -2277,7 +2277,7 @@ public abstract class Skill implements IChanceSkillTrigger {
 			}
 			
 			boolean success = true;
-			if (et.landRate > -1) {
+			if (et.getLandRate() > -1) {
 				success = Formulas.calcEffectSuccess(effector, effected, e, this, env.shld, env.ssMul);
 			}
 			
@@ -2286,7 +2286,7 @@ public abstract class Skill implements IChanceSkillTrigger {
 				effects.add(e);
 			}
 			// display fail message only for effects with icons
-			else if (et.icon && effector instanceof Player) {
+			else if (et.getIcon() && effector instanceof Player) {
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_RESISTED_YOUR_S2);
 				sm.addCharName(effected);
 				sm.addSkillName(this);
@@ -2354,7 +2354,7 @@ public abstract class Skill implements IChanceSkillTrigger {
 			}
 			
 			boolean success = true;
-			if (et.landRate > -1) {
+			if (et.getLandRate() > -1) {
 				success = Formulas.calcEffectSuccess(effector.getOwner(), effected, e, this, env.shld, env.ssMul);
 			}
 			
@@ -2678,11 +2678,11 @@ public abstract class Skill implements IChanceSkillTrigger {
 	
 	public String getFirstEffectStack() {
 		if (getEffectTemplates() != null && getEffectTemplates().length > 0) {
-			if (getEffectTemplates()[0].stackType.length == 0) {
+			if (getEffectTemplates()[0].getStackType().length == 0) {
 				return "";
 			}
 			
-			return getEffectTemplates()[0].stackType[0];
+			return getEffectTemplates()[0].getStackType()[0];
 		}
 		return "";
 	}

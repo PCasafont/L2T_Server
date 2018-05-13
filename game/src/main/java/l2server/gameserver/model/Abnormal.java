@@ -38,11 +38,6 @@ import java.util.ArrayList;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-/**
- * This class ...
- *
- * @version $Revision: 1.1.2.1.2.12 $ $Date: 2005/04/11 10:06:07 $
- */
 public class Abnormal {
 	private static Logger log = LoggerFactory.getLogger(Abnormal.class.getName());
 
@@ -147,12 +142,12 @@ public class Abnormal {
 		this.template = template;
 		effected = env.target;
 		effector = env.player;
-		funcTemplates = template.funcTemplates;
-		count = template.counter;
+		funcTemplates = template.getFuncTemplates();
+		count = template.getCounter();
 		totalCount = count;
 
 		// Support for retail herbs duration when effected has a Summon
-		int temp = template.duration;
+		int temp = template.getDuration();
 
 		if (skill.getId() > 2277 && skill.getId() < 2286 || skill.getId() >= 2512 && skill.getId() <= 2514) {
 			if (effected instanceof SummonInstance || effected instanceof Player && !((Player) effected).getSummons().isEmpty()) {
@@ -165,16 +160,16 @@ public class Abnormal {
 		}
 
 		duration = temp;
-		visualEffect = template.visualEffect;
-		stackType = template.stackType;
-		stackLvl = template.stackLvl;
+		visualEffect = template.getVisualEffect();
+		stackType = template.getStackType();
+		stackLvl = template.getStackLvl();
 		periodStartTicks = TimeController.getGameTicks();
 		periodFirstTime = 0;
-		icon = template.icon;
-		landRate = template.landRate;
+		icon = template.getIcon();
+		landRate = template.getLandRate();
 
 		isHerbEffect = skill.getName().contains("Herb");
-		comboId = template.comboId;
+		comboId = template.getComboId();
 
 		this.effects = effects;
 	}
@@ -193,16 +188,16 @@ public class Abnormal {
 		skill = env.skill;
 		effected = env.target;
 		effector = env.player;
-		funcTemplates = template.funcTemplates;
+		funcTemplates = template.getFuncTemplates();
 		count = effect.getCount();
-		totalCount = template.counter;
-		duration = template.duration;
-		visualEffect = template.visualEffect;
-		stackType = template.stackType;
-		stackLvl = template.stackLvl;
+		totalCount = template.getCounter();
+		duration = template.getDuration();
+		visualEffect = template.getVisualEffect();
+		stackType = template.getStackType();
+		stackLvl = template.getStackLvl();
 		periodStartTicks = effect.getPeriodStartTicks();
 		periodFirstTime = effect.getTime();
-		icon = template.icon;
+		icon = template.getIcon();
 
 		isHerbEffect = skill.getName().contains("Herb");
 
@@ -367,8 +362,8 @@ public class Abnormal {
 	 * returns effect type
 	 */
 	public AbnormalType getType() {
-		if (getTemplate().effectType != AbnormalType.NONE) {
-			return getTemplate().effectType;
+		if (getTemplate().getEffectType() != AbnormalType.NONE) {
+			return getTemplate().getEffectType();
 		}
 
 		for (L2Effect e : effects) {
