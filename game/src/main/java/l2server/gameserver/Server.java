@@ -82,8 +82,8 @@ public class Server {
 		}
 		
 		//Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
-		
-		log.info("IdFactory: Free ObjectID's remaining: " + IdFactory.getInstance().size());
+
+		log.info("Free ObjectID's remaining: " + IdFactory.getInstance().size());
 		
 		if (Config.DEADLOCK_DETECTOR) {
 			deadDetectThread = new DeadLockDetector();

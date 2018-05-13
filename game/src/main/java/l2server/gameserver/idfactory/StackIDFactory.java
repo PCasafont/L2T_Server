@@ -62,7 +62,7 @@ public class StackIDFactory extends IdFactory {
 			}
 			
 			curOID++;
-			log.info("IdFactory: Next usable Object ID is: " + curOID);
+			log.info("Next usable Object ID is: " + curOID);
 			initialized = true;
 		} catch (Exception e) {
 			log.error("ID Factory could not be initialized correctly:" + e.getMessage(), e);
