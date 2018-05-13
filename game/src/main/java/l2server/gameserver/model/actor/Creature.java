@@ -106,8 +106,7 @@ import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_ACTIVE;
  */
 public abstract class Creature extends WorldObject {
 	private static Logger log = LoggerFactory.getLogger(Creature.class.getName());
-	// =========================================================
-	// Data Field
+	
 	private Set<Creature> attackByList;
 	private volatile boolean isCastingNow = false;
 	private volatile boolean isCastingNow2 = false;
@@ -276,32 +275,6 @@ public abstract class Creature extends WorldObject {
 		return false;
 	}
 	
-	// =========================================================
-	// Constructor
-	
-	/**
-	 * Constructor of Creature.<BR><BR>
-	 * <p>
-	 * <B><U> Concept</U> :</B><BR><BR>
-	 * Each Creature owns generic and static properties (ex : all Keltir have the same number of HP...).
-	 * All of those properties are stored in a different template for each type of Creature.
-	 * Each template is loaded once in the server cache memory (reduce memory use).
-	 * When a new instance of Creature is spawned, server just create a link between the instance and the template
-	 * This link is stored in <B>template</B><BR><BR>
-	 * <p>
-	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Set the template of the Creature </li>
-	 * <li>Set overloaded to false (the charcater can take more items)</li><BR><BR>
-	 * <p>
-	 * <li>If Creature is a L2NPCInstance, copy skills from template to object</li>
-	 * <li>If Creature is a L2NPCInstance, link calculators to NPC_STD_CALCULATOR</li><BR><BR>
-	 * <p>
-	 * <li>If Creature is NOT a L2NPCInstance, create an empty skills slot</li>
-	 * <li>If Creature is a Player or Summon, copy basic Calculator set to object</li><BR><BR>
-	 *
-	 * @param objectId Identifier of the object to initialized
-	 * @param template The CreatureTemplate to apply to the object
-	 */
 	public Creature(int objectId, CreatureTemplate template) {
 		super(objectId);
 		setInstanceType(InstanceType.L2Character);
@@ -341,9 +314,6 @@ public abstract class Creature extends WorldObject {
 		hpUpdateDecCheck = hpUpdateIncCheck - hpUpdateInterval;
 	}
 	
-	// =========================================================
-	// Event - Public
-	
 	/**
 	 * Remove the Creature from the world when the decay task is launched.<BR><BR>
 	 * <p>
@@ -377,9 +347,6 @@ public abstract class Creature extends WorldObject {
 			doRevive();
 		}
 	}
-	
-	// =========================================================
-	// Method - Public
 	
 	/**
 	 * Add Creature instance that is attacking to the attacker list.<BR><BR>
@@ -621,9 +588,6 @@ public abstract class Creature extends WorldObject {
 	public void teleToLocation(TeleportWhereType teleportWhere) {
 		teleToLocation(MapRegionTable.getInstance().getTeleToLocation(this, teleportWhere), true);
 	}
-	
-	// =========================================================
-	// Method - Private
 	
 	/**
 	 * Launch a physical attack against a target (Simple, Bow, Pole or Dual).<BR><BR>
@@ -1231,7 +1195,6 @@ public abstract class Creature extends WorldObject {
 
 		/*if (angleChar <= 0)
 			angleChar += 360;*/
-		// ===========================================================
 		
 		boolean hitted = doAttackHitSimple(attack, target, 100, sAtk);
 		int percentLostPerTarget = 15;
@@ -2372,9 +2335,6 @@ public abstract class Creature extends WorldObject {
 		doRevive();
 	}
 	
-	// =========================================================
-	// Property - Public
-	
 	/**
 	 * Gets this creature's AI.
 	 *
@@ -2967,8 +2927,6 @@ public abstract class Creature extends WorldObject {
 			}
 		}
 	}
-	
-	// =========================================================
 	
 	/**
 	 * Task lauching the magic skill phases
@@ -6983,9 +6941,6 @@ public abstract class Creature extends WorldObject {
 	 */
 	public abstract int getLevel();
 	
-	// =========================================================
-	
-	// =========================================================
 	// Stat - NEED TO REMOVE ONCE L2CHARSTAT IS COMPLETE
 	// Property - Public
 	public final double calcStat(Stats stat, double init, Creature target, Skill skill) {
@@ -7240,9 +7195,6 @@ public abstract class Creature extends WorldObject {
 		return getStat().getWIT();
 	}
 	
-	// =========================================================
-	
-	// =========================================================
 	// Status - NEED TO REMOVE ONCE L2CHARTATUS IS COMPLETE
 	// Method - Public
 	public void addStatusListener(Creature object) {
@@ -7319,8 +7271,6 @@ public abstract class Creature extends WorldObject {
 	public final void setCurrentMp(double newMp) {
 		getStatus().setCurrentMp(newMp);
 	}
-	
-	// =========================================================
 	
 	public boolean isChampion() {
 		return false;
