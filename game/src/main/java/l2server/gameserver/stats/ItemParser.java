@@ -51,9 +51,9 @@ public final class ItemParser extends StatsParser {
 
 	@Override
 	public void parse() throws RuntimeException {
-		type = node.getString("type");
+		type = getNode().getString("type");
 		set = new StatsSet();
-		for (Entry<String, String> e : node.getAttributes().entrySet()) {
+		for (Entry<String, String> e : getNode().getAttributes().entrySet()) {
 			set.set(e.getKey(), e.getValue());
 		}
 
@@ -61,19 +61,19 @@ public final class ItemParser extends StatsParser {
 
 		parseChildren();
 
-		if (node.hasAttribute("rCrit") && !node.hasAttribute("mCritRate")) {
-			node.getAttributes().put("mCritRate", node.getString("rCrit"));
+		if (getNode().hasAttribute("rCrit") && !getNode().hasAttribute("mCritRate")) {
+			getNode().getAttributes().put("mCritRate", getNode().getString("rCrit"));
 		}
-		parseTemplate(node, item);
+		parseTemplate(getNode(), item);
 	}
 
 	public void parse(ItemParser original) throws RuntimeException {
-		type = node.getString("type", original.type);
+		type = getNode().getString("type", original.type);
 
 		set = new StatsSet();
 		set.add(original.set);
 
-		for (Entry<String, String> e : node.getAttributes().entrySet()) {
+		for (Entry<String, String> e : getNode().getAttributes().entrySet()) {
 			set.set(e.getKey(), e.getValue());
 		}
 
@@ -99,11 +99,11 @@ public final class ItemParser extends StatsParser {
 			}
 		}
 
-		parseTemplate(node, item);
+		parseTemplate(getNode(), item);
 	}
 
 	private void parseChildren() {
-		for (XmlNode n : node.getChildren()) {
+		for (XmlNode n : getNode().getChildren()) {
 			if (n.getName().equalsIgnoreCase("cond")) {
 				Condition condition = parseCondition(n.getFirstChild(), item);
 				if (condition != null && n.hasAttribute("msg")) {
