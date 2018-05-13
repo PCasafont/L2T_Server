@@ -130,12 +130,12 @@ public class Lindvior extends L2AttackableAIScript {
 		if (npc.getNpcId() == generatorId) {
 			npc.disableCoreAI(true);
 			npc.setDisplayEffect(1);
-			npc.setIsMortal(false);
-			npc.setIsInvul(true); //Can't get damage now
+			npc.setMortal(false);
+			npc.setInvul(true); //Can't get damage now
 		}
 
 		if (npc.getNpcId() == generatorGuard) {
-			npc.setIsInvul(true);
+			npc.setInvul(true);
 		}
 
 		return super.onSpawn(npc);
@@ -285,7 +285,7 @@ public class Lindvior extends L2AttackableAIScript {
 
 								//Display & invul maybe should be done before the intro movie
 								generator.setDisplayEffect(1);
-								generator.setIsInvul(false); //generator now can get damage
+								generator.setInvul(false); //generator now can get damage
 							}
 
 							bossZone.broadcastPacket(new EventTrigger(allGeneratorsConnectedEffect, true));
@@ -428,7 +428,7 @@ public class Lindvior extends L2AttackableAIScript {
 						0,
 						true,
 						npc.getInstanceId());
-				minion.setIsRunning(true);
+				minion.setRunning(true);
 
 				//To be sure
 				if (!bossZone.isInsideZone(minion)) {
@@ -609,7 +609,7 @@ public class Lindvior extends L2AttackableAIScript {
 			case 8:
 			case 9:
 				lindviorBoss.disableCoreAI(true);
-				lindviorBoss.setIsInvul(true);
+				lindviorBoss.setInvul(true);
 				lindviorBoss.setTarget(lindviorBoss);
 
 				if (lindviorBoss.isCastingNow()) {

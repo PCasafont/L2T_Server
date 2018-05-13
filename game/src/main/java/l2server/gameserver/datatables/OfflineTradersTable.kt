@@ -272,9 +272,9 @@ object OfflineTradersTable {
                         player.restoreEffects()
                         player.broadcastUserInfo()
 
-                        player.setIsInvul(true)
+						player.isInvul = true
 
-                        nTraders++
+						nTraders++
                     } catch (e: Exception) {
                         log.warn("OfflineTradersTable[loadOffliners()]: Error loading trader: " + player!!, e)
                         player.deleteMe()

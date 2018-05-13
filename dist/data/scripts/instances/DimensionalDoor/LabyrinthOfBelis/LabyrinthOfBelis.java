@@ -93,7 +93,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript {
 		if (walker == null) {
 			return;
 		}
-		walker.setIsRunning(true);
+		walker.setRunning(true);
 		walker.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(x, y, z, h));
 	}
 
@@ -189,11 +189,11 @@ public class LabyrinthOfBelis extends L2AttackableAIScript {
 				InstanceManager.getInstance().getInstance(world.instanceId).getDoor(16240001).openMe();
 
 				world.generator = addSpawn(generatorId, -118253, 214706, -8584, 57541, false, 0, false, world.instanceId);
-				world.generator.setIsMortal(false);
+				world.generator.setMortal(false);
 
 				world.officer = (GuardInstance) addSpawn(combatOfficer, -119061, 211151, -8592, 142, false, 0, false, world.instanceId);
-				world.officer.setIsInvul(true);
-				world.officer.setIsMortal(false);
+				world.officer.setInvul(true);
+				world.officer.setMortal(false);
 				world.officer.setCanReturnToSpawnPoint(false);
 
 				for (int[] spawn : operativeSpawns) {
@@ -242,8 +242,8 @@ public class LabyrinthOfBelis extends L2AttackableAIScript {
 
 				world.officer.broadcastPacket(new NpcSay(world.officer.getObjectId(), 0, world.officer.getTemplate().TemplateId, 1811217));
 				world.officer.broadcastPacket(new NpcSay(world.officer.getObjectId(), 0, world.officer.getTemplate().TemplateId, 1600025));
-				world.officer.setIsInvul(false);
-				world.officer.setIsMortal(true);
+				world.officer.setInvul(false);
+				world.officer.setMortal(true);
 
 				startQuestTimer("stage_3_spawn_guard", 3000, npc, null);
 				startQuestTimer("stage_3_generator_die", 60000, npc, null);
@@ -318,7 +318,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript {
 								if (target == null || !(target instanceof MonsterInstance) ||
 										target instanceof MonsterInstance && ((MonsterInstance) target).isDead()) {
 									if (world.officer.getAI().getIntention() != CtrlIntention.AI_INTENTION_FOLLOW) {
-										world.officer.setIsRunning(true);
+										world.officer.setRunning(true);
 										world.officer.setTarget(world.instancePlayer);
 										world.officer.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, world.instancePlayer);
 									}

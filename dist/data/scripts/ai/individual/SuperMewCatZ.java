@@ -70,7 +70,7 @@ public class SuperMewCatZ extends L2AttackableAIScript {
 		final int y = 148376 + Rnd.get(-250, 250);
 		final int z = -3406;
 
-		npc.setIsRunning(Rnd.nextBoolean());
+		npc.setRunning(Rnd.nextBoolean());
 		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(x, y, z, 0));
 
 		for (Player player : World.getInstance().getAllPlayersArray()) {

@@ -154,7 +154,7 @@ public class AdminEffects implements IAdminCommandHandler {
 					for (Player player : plrs) {
 						if (!player.isGM()) {
 							player.startVisualEffect(VisualEffect.HOLD_1);
-							player.setIsParalyzed(true);
+							player.setParalyzed(true);
 							player.startParalyze();
 						}
 					}
@@ -168,7 +168,7 @@ public class AdminEffects implements IAdminCommandHandler {
 				{
 					for (Player player : plrs) {
 						player.stopVisualEffect(VisualEffect.HOLD_1);
-						player.setIsParalyzed(false);
+						player.setParalyzed(false);
 						player.stopParalyze(false);
 					}
 				}
@@ -181,7 +181,7 @@ public class AdminEffects implements IAdminCommandHandler {
 					int radius = Integer.parseInt(st.nextToken());
 					for (Player player : activeChar.getKnownList().getKnownPlayersInRadius(radius)) {
 						player.startVisualEffect(VisualEffect.HOLD_1);
-						player.setIsParalyzed(true);
+						player.setParalyzed(true);
 						StopMove sm = new StopMove(player);
 						player.sendPacket(sm);
 						player.broadcastPacket(sm);
@@ -199,7 +199,7 @@ public class AdminEffects implements IAdminCommandHandler {
 				if (target instanceof Creature) {
 					player = (Creature) target;
 					player.startVisualEffect(VisualEffect.HOLD_1);
-					player.setIsParalyzed(true);
+					player.setParalyzed(true);
 					player.startParalyze();
 				}
 			}
@@ -210,7 +210,7 @@ public class AdminEffects implements IAdminCommandHandler {
 					int radius = Integer.parseInt(st.nextToken());
 					for (Player player : activeChar.getKnownList().getKnownPlayersInRadius(radius)) {
 						player.stopVisualEffect(VisualEffect.HOLD_1);
-						player.setIsParalyzed(false);
+						player.setParalyzed(false);
 					}
 
 					activeChar.sendMessage("Unparalized all the players within a " + radius + " unit radius.");
@@ -225,7 +225,7 @@ public class AdminEffects implements IAdminCommandHandler {
 				if (target instanceof Creature) {
 					player = (Creature) target;
 					player.stopVisualEffect(VisualEffect.HOLD_1);
-					player.setIsParalyzed(false);
+					player.setParalyzed(false);
 					player.stopParalyze(false);
 				}
 			}

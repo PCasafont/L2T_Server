@@ -80,7 +80,7 @@ public class DenOfEvil extends L2AttackableAIScript {
 	public String onSpawn(Npc npc) {
 		if (Util.contains(_eye_ids, npc.getNpcId())) {
 			npc.disableCoreAI(true);
-			npc.setIsImmobilized(true);
+			npc.setImmobilized(true);
 			EffectZone zone = ZoneManager.getInstance().getZone(npc, EffectZone.class);
 			if (zone == null) {
 				log.warn("NPC " + npc + " spawned outside of EffectZone, check your zone coords! X:" + npc.getX() + " Y:" + npc.getY() + " Z:" +

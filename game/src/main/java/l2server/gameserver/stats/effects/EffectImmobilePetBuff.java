@@ -43,7 +43,7 @@ public class EffectImmobilePetBuff extends L2Effect {
 
 		if (getEffected() instanceof Summon && getEffector() instanceof Player && ((Summon) getEffected()).getOwner() == getEffector()) {
 			pet = (Summon) getEffected();
-			pet.setIsImmobilized(true);
+			pet.setImmobilized(true);
 			return true;
 		}
 		return false;
@@ -51,7 +51,7 @@ public class EffectImmobilePetBuff extends L2Effect {
 
 	@Override
 	public void onExit() {
-		pet.setIsImmobilized(false);
+		pet.setImmobilized(false);
 	}
 
 	@Override

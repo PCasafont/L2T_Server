@@ -47,7 +47,7 @@ public class SpiculaScoutGolem extends L2AttackableAIScript {
 		for (int a = 0; a < Rnd.get(2, 3); a++) {
 			Npc golem = addSpawn(battleGolem, npc.getX(), npc.getY(), npc.getZ(), 0, true, 120000);
 
-			golem.setIsRunning(true);
+			golem.setRunning(true);
 
 			golem.setTarget(player);
 

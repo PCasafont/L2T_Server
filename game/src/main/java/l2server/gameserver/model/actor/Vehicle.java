@@ -58,7 +58,7 @@ public abstract class Vehicle extends Creature {
 	public Vehicle(int objectId, CreatureTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2Vehicle);
-		setIsFlying(true);
+		setFlying(true);
 	}
 
 	public boolean isBoat() {
@@ -108,7 +108,7 @@ public abstract class Vehicle extends Creature {
 
 	@Override
 	public boolean moveToNextRoutePoint() {
-		move = null;
+		setMove(null);
 
 		if (currentPath != null) {
 			runState++;
@@ -127,12 +127,12 @@ public abstract class Vehicle extends Creature {
 						}
 
 						MoveData m = new MoveData();
-						m.disregardingGeodata = false;
-						m.onGeodataPathIndex = -1;
-						m.xDestination = point.x;
-						m.yDestination = point.y;
-						m.zDestination = point.z;
-						m.heading = 0;
+						m.setDisregardingGeodata(false);
+						m.setOnGeodataPathIndex(-1);
+						m.setXDestination(point.x);
+						m.setYDestination(point.y);
+						m.setZDestination(point.z);
+						m.setHeading(0);
 
 						final double dx = point.x - getX();
 						final double dy = point.y - getY();
@@ -142,8 +142,8 @@ public abstract class Vehicle extends Creature {
 							setHeading(Util.calculateHeadingFrom(getX(), getY(), point.x, point.y));
 						}
 
-						m.moveStartTime = TimeController.getGameTicks();
-						move = m;
+						m.setMoveStartTime(TimeController.getGameTicks());
+						setMove(m);
 
 						TimeController.getInstance().registerMovingObject(this);
 						return true;
@@ -303,7 +303,7 @@ public abstract class Vehicle extends Creature {
 			stopMove(null, false);
 		}
 
-		setIsTeleporting(true);
+		setTeleporting(true);
 
 		getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 
@@ -327,7 +327,7 @@ public abstract class Vehicle extends Creature {
 
 	@Override
 	public void stopMove(L2CharPosition pos, boolean updateKnownObjects) {
-		move = null;
+		setMove(null);
 		if (pos != null) {
 			setXYZ(pos.x, pos.y, pos.z);
 			setHeading(pos.heading);
@@ -417,8 +417,8 @@ public abstract class Vehicle extends Creature {
 
 	@Override
 	public void setAI(CreatureAI newAI) {
-		if (ai == null) {
-			ai = newAI;
+		if (getAi() == null) {
+			setAi(newAI);
 		}
 	}
 }

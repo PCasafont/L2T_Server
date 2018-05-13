@@ -255,7 +255,7 @@ public class HallOfSuffering extends Quest {
 				false,
 				world.instanceId);
 		mob.disableCoreAI(true);
-		mob.setIsImmobilized(true);
+		mob.setImmobilized(true);
 		mob.setCurrentHp(mob.getMaxHp() * 0.5);
 		world.npcList.put(mob, false);
 		world.status++;
@@ -265,8 +265,8 @@ public class HallOfSuffering extends Quest {
 		world.status++;
 		world.klodekus = addSpawn(TWIN_SPAWNS[0][0], TWIN_SPAWNS[0][1], TWIN_SPAWNS[0][2], TWIN_SPAWNS[0][3], 0, false, 0, false, world.instanceId);
 		world.klanikus = addSpawn(TWIN_SPAWNS[1][0], TWIN_SPAWNS[1][1], TWIN_SPAWNS[1][2], TWIN_SPAWNS[1][3], 0, false, 0, false, world.instanceId);
-		world.klanikus.setIsMortal(false);
-		world.klodekus.setIsMortal(false);
+		world.klanikus.setMortal(false);
+		world.klodekus.setMortal(false);
 	}
 
 	protected void bossSimpleDie(Npc boss) {
@@ -391,11 +391,11 @@ public class HallOfSuffering extends Quest {
 				startQuestTimer("spawnBossGuards", BOSS_MINION_SPAWN_TIME, npc, null);
 			} else if (event.equalsIgnoreCase("isTwinSeparated")) {
 				if (Util.checkIfInRange(500, world.klanikus, world.klodekus, false)) {
-					world.klanikus.setIsInvul(false);
-					world.klodekus.setIsInvul(false);
+					world.klanikus.setInvul(false);
+					world.klodekus.setInvul(false);
 				} else {
-					world.klanikus.setIsInvul(true);
-					world.klodekus.setIsInvul(true);
+					world.klanikus.setInvul(true);
+					world.klodekus.setInvul(true);
 				}
 				startQuestTimer("isTwinSeparated", 10000, npc, null);
 			} else if (event.equalsIgnoreCase("ressurectTwin")) {
@@ -412,10 +412,10 @@ public class HallOfSuffering extends Quest {
 					npc.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, hated, 1000);
 				}
 
-				aliveTwin.setIsInvul(true); //make other boss invul
+				aliveTwin.setInvul(true); //make other boss invul
 				startQuestTimer("uninvul", BOSS_INVUL_TIME, aliveTwin, null);
 			} else if (event.equals("uninvul")) {
-				npc.setIsInvul(false);
+				npc.setInvul(false);
 			}
 		}
 		return "";

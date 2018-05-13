@@ -238,7 +238,7 @@ public class CreatureAI extends AbstractAI {
 	protected void onIntentionCast(Skill skill, WorldObject target) {
 		if (getIntention() == AI_INTENTION_REST && skill.isMagic()) {
 			clientActionFailed();
-			actor.setIsCastingNow(false);
+			actor.setCastingNow(false);
 			return;
 		}
 

@@ -70,7 +70,7 @@ public abstract class Summon extends Playable {
 
 		setInstanceId(owner.getInstanceId()); // set instance to same as owner
 
-		showSummonAnimation = true;
+		setShowSummonAnimation(true);
 		this.owner = owner;
 		getAI();
 
@@ -702,8 +702,8 @@ public abstract class Summon extends Playable {
 	}
 
 	@Override
-	public void setIsImmobilized(boolean value) {
-		super.setIsImmobilized(value);
+	public void setImmobilized(boolean value) {
+		super.setImmobilized(value);
 
 		if (value) {
 			previousFollowStatus = getFollowStatus();

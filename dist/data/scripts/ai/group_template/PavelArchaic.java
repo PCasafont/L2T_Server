@@ -56,7 +56,7 @@ public class PavelArchaic extends L2AttackableAIScript {
 	}
 
 	private void attackPlayer(Attackable npc, Player player) {
-		npc.setIsRunning(true);
+		npc.setRunning(true);
 		npc.addDamageHate(player, 0, 999);
 		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
 	}

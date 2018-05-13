@@ -38,8 +38,8 @@ public class TeleportPortal extends Quest {
 	public String onAggroRangeEnter(Npc npc, Player player, boolean isPet) {
 		if (!npc.isImmobilized()) {
 			npc.disableCoreAI(true);
-			npc.setIsImmobilized(true);
-			npc.setIsInvul(true);
+			npc.setImmobilized(true);
+			npc.setInvul(true);
 		}
 		player.teleToLocation(207559, 86429, -1000);
 

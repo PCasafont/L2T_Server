@@ -27,7 +27,7 @@ open class NpcInstance(objectId: Int, template: NpcTemplate) : Npc(objectId, tem
 
 	init {
 		instanceType = InstanceType.L2NpcInstance
-		setIsInvul(false)
+		isInvul = false
 	}
 
 	override fun getStatus(): FolkStatus {

@@ -137,7 +137,7 @@ public class SummonItems implements IItemHandler {
 						final Npc npc = spawn.getNpc();
 						spawn.doSpawn(true);
 						npc.setTitle(activeChar.getName());
-						npc.setIsRunning(false); // broadcast info
+						npc.setRunning(false); // broadcast info
 						if (sitem.getDespawnDelay() > 0) {
 							npc.scheduleDespawn(sitem.getDespawnDelay() * 1000L);
 						}
@@ -153,7 +153,7 @@ public class SummonItems implements IItemHandler {
 				activeChar.setTarget(oldTarget);
 				activeChar.sendPacket(new SetupGauge(0, 5000));
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SUMMON_A_PET));
-				activeChar.setIsCastingNow(true);
+				activeChar.setCastingNow(true);
 
 				ThreadPoolManager.getInstance().scheduleGeneral(new PetSummonFinalizer(activeChar, npcTemplate, item), 5000);
 				break;
@@ -205,7 +205,7 @@ public class SummonItems implements IItemHandler {
 		public void run() {
 			try {
 				activeChar.sendPacket(new MagicSkillLaunched(activeChar, 2046, 1));
-				activeChar.setIsCastingNow(false);
+				activeChar.setCastingNow(false);
 
 				// check for summon item validity
 				if (item == null || item.getOwnerId() != activeChar.getObjectId() || item.getLocation() != Item.ItemLocation.INVENTORY) {

@@ -548,7 +548,7 @@ public class SeedOfDestruction extends Quest {
 			if (addToKillTable) {
 				world.npcList.put(npc, false);
 			}
-			npc.setIsImmobilized(TIAT == mob[0] ? true : isImmobilized);
+			npc.setImmobilized(TIAT == mob[0] ? true : isImmobilized);
 			if (npc.isInstanceType(InstanceType.L2Attackable)) {
 				((Attackable) npc).setCanSeeThroughSilentMove(true);
 			}

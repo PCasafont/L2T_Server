@@ -88,7 +88,7 @@ public class EffectStance extends L2Effect {
 			}
 
 			activeChar.abortCast();
-			activeChar.setIsCastingNow2(false);
+			activeChar.setCastingNow2(false);
 		}
 	}
 

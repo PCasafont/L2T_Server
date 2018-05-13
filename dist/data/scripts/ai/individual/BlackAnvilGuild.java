@@ -48,7 +48,7 @@ public class BlackAnvilGuild extends L2AttackableAIScript {
 
 	@Override
 	public final String onSpawn(Npc npc) {
-		npc.setIsInvul(true);
+		npc.setInvul(true);
 
 		return super.onSpawn(npc);
 	}

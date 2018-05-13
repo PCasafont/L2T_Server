@@ -84,8 +84,8 @@ public class Wisps extends L2AttackableAIScript {
 
 	@Override
 	public final String onSpawn(Npc npc) {
-		npc.setIsImmobilized(true);
-		npc.setIsInvul(true);
+		npc.setImmobilized(true);
+		npc.setInvul(true);
 
 		return super.onSpawn(npc);
 	}

@@ -114,7 +114,7 @@ public class EffectKnockBack extends L2Effect {
 					x = destiny.getX();
 					y = destiny.getY();
 				}
-				getEffected().setIsParalyzed(true);
+				getEffected().setParalyzed(true);
 				getEffected().startParalyze();
 				getEffected().broadcastPacket(new FlyToLocation(getEffected(), x, y, z, FlyType.KNOCK_DOWN));
 				getEffected().startVisualEffect(VisualEffect.S_KNOCK_DOWN);
@@ -182,7 +182,7 @@ public class EffectKnockBack extends L2Effect {
 					getEffected().broadcastPacket(new ValidateLocation(getEffected()));
 					return false;
 				} else {
-					getEffected().setIsParalyzed(true);
+					getEffected().setParalyzed(true);
 					getEffected().startParalyze();
 					getEffected().broadcastPacket(new FlyToLocation(getEffected(), x, y, z, FlyType.KNOCK_DOWN));
 					getEffected().startVisualEffect(VisualEffect.S_KNOCK_DOWN);
@@ -242,7 +242,7 @@ public class EffectKnockBack extends L2Effect {
 				z = GeoData.getInstance().getHeight(x, y, z);
 			}
 		}
-		getEffected().setIsParalyzed(true);
+		getEffected().setParalyzed(true);
 		getEffected().startParalyze();
 
 		boolean throwUp = getSkill().getId() == 30012 || getSkill().getId() == 30506;
@@ -264,7 +264,7 @@ public class EffectKnockBack extends L2Effect {
 	 */
 	@Override
 	public void onExit() {
-		getEffected().setIsParalyzed(false);
+		getEffected().setParalyzed(false);
 		getEffected().stopParalyze(false);
 		getEffected().stopVisualEffect(VisualEffect.S_KNOCK_DOWN);
 		getEffected().broadcastPacket(new ValidateLocation(getEffected()));

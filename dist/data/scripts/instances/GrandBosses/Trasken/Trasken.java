@@ -136,7 +136,7 @@ public class Trasken extends L2AttackableAIScript {
 
 			teredor.stopMove(null);
 			world.teredor_WalkAI.cancelTask();
-			teredor.setIsInvul(false);
+			teredor.setInvul(false);
 			world.teredor_AttackAI = new AttackableAI(teredor);
 			teredor.setAI(world.teredor_AttackAI);
 		}
@@ -152,8 +152,8 @@ public class Trasken extends L2AttackableAIScript {
 				teredor.abortCast();
 			}
 
-			teredor.setIsInvul(true);
-			teredor.setIsRunning(true);
+			teredor.setInvul(true);
+			teredor.setRunning(true);
 			world.teredor_WalkAI = new NpcWalkerAI(teredor);
 			teredor.setAI(world.teredor_WalkAI);
 			world.teredor_WalkAI.initializeRoute(route, null);
@@ -188,7 +188,7 @@ public class Trasken extends L2AttackableAIScript {
 				//Teredors
 				for (int i = 0; i < Rnd.get(1, 6); i++) {
 					Npc teredor = addSpawn(teredorId, 82366, -183533, -9888, 56178, false, 0, false, world.instanceId);
-					teredor.setIsInvul(true);
+					teredor.setInvul(true);
 					world.teredors.add(teredor);
 				}
 
@@ -204,9 +204,9 @@ public class Trasken extends L2AttackableAIScript {
 						0,
 						false,
 						world.instanceId);
-				world.Trasken.setIsInvul(true);
-				world.Trasken.setIsImmobilized(true);
-				world.Trasken.setIsMortal(false);
+				world.Trasken.setInvul(true);
+				world.Trasken.setImmobilized(true);
+				world.Trasken.setMortal(false);
 
 				//Cast the earthquake
 				InstanceManager.getInstance()
@@ -221,7 +221,7 @@ public class Trasken extends L2AttackableAIScript {
 						.sendPacket(world.instanceId, new Earthquake(world.Trasken.getX(), world.Trasken.getY(), world.Trasken.getZ(), 5, 5));
 
 				//set the tail invul
-				world.Trasken.setIsInvul(true);
+				world.Trasken.setInvul(true);
 				//Hiding
 				world.Trasken.doCast(tailHiding);
 
@@ -253,15 +253,15 @@ public class Trasken extends L2AttackableAIScript {
 					world.Trasken.setCurrentHp(world.tailHP);
 				}
 				world.Trasken.setIsInvisible(true);
-				world.Trasken.setIsInvul(true);
-				world.Trasken.setIsImmobilized(true);
-				world.Trasken.setIsMortal(false);
+				world.Trasken.setInvul(true);
+				world.Trasken.setImmobilized(true);
+				world.Trasken.setMortal(false);
 
 				//Start the spawn
 				startQuestTimer("stage_all_raid_spawn", 15000 + Rnd.get(5000, 7000), npc, null);
 			} else if (event.equalsIgnoreCase("stage_all_haunting_casted")) {
 				if (world.Trasken.isInvul()) {
-					world.Trasken.setIsInvul(false);
+					world.Trasken.setInvul(false);
 				}
 
 				if (world.isTraskenTime) {
@@ -272,7 +272,7 @@ public class Trasken extends L2AttackableAIScript {
 			} else if (event.equalsIgnoreCase("stage_last_spawn_larvas")) {
 				for (int[] a : larvaSpawns) {
 					Npc larva = addSpawn(larvas[Rnd.get(larvas.length)], a[0], a[1], a[2], a[3], false, 0, false, world.instanceId);
-					larva.setIsRunning(true);
+					larva.setRunning(true);
 				}
 			} else if (event.equalsIgnoreCase("stage_last_stomach_glands_message")) {
 				InstanceManager.getInstance()
@@ -292,7 +292,7 @@ public class Trasken extends L2AttackableAIScript {
 
 				startQuestTimer("stage_last_heart_invul", 30000, npc, null);
 			} else if (event.equalsIgnoreCase("stage_last_heart_invul")) {
-				world.TraskenHeart.setIsInvul(false); //Now the heart can get damage
+				world.TraskenHeart.setInvul(false); //Now the heart can get damage
 			} else if (event.equalsIgnoreCase("stage_last_time_elapsed")) {
 				QuestTimer timer = getQuestTimer("stage_last_spawn_larvas", world.Trasken, null);
 				if (timer != null) {
@@ -367,10 +367,10 @@ public class Trasken extends L2AttackableAIScript {
 					if (world.status == 1 && !npc.isInvul() && npc.getCurrentHp() < npc.getMaxHp() * 0.05) {
 						world.status = 2;
 
-						world.Trasken.setIsInvul(true);
+						world.Trasken.setInvul(true);
 						//Spawn Earth Wyrm Heart
 						world.TraskenHeart = addSpawn(earthWyrmHeart, 88285, -173758, -15965, 49151, false, 0, false, world.instanceId);
-						world.TraskenHeart.setIsInvul(true);
+						world.TraskenHeart.setInvul(true);
 
 						//Teleport players to Heart
 						for (Player pl : InstanceManager.getInstance().getPlayers(world.instanceId)) {
@@ -429,7 +429,7 @@ public class Trasken extends L2AttackableAIScript {
 				case teredorId:
 					world.teredors.remove(npc);
 					if (world.teredors.isEmpty()) {
-						world.Trasken.setIsInvul(false);
+						world.Trasken.setInvul(false);
 					}
 					break;
 
@@ -462,8 +462,8 @@ public class Trasken extends L2AttackableAIScript {
 						timer.cancel();
 					}
 
-					world.Trasken.setIsMortal(true);
-					world.Trasken.setIsInvul(false);
+					world.Trasken.setMortal(true);
+					world.Trasken.setInvul(false);
 
 					//System.out.println(getName() + " heart killer is: " + (player == null ? "NULL" : player.getName()));
 
@@ -513,7 +513,7 @@ public class Trasken extends L2AttackableAIScript {
 			case tentacleSmall:
 			case tentacleMedium:
 			case stomachGland:
-				npc.setIsImmobilized(true);
+				npc.setImmobilized(true);
 				break;
 		}
 		return super.onSpawn(npc);

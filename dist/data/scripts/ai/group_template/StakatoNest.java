@@ -187,7 +187,7 @@ public class StakatoNest extends L2AttackableAIScript {
 
 	private void attackPlayer(Player player, Npc npc) {
 		if (npc != null && player != null) {
-			((Attackable) npc).setIsRunning(true);
+			((Attackable) npc).setRunning(true);
 			((Attackable) npc).addDamageHate(player, 0, 999);
 			((Attackable) npc).getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
 		}

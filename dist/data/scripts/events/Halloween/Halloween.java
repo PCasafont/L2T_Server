@@ -231,10 +231,10 @@ public class Halloween extends Quest {
 				
 				players.stopEffects(EffectType.PHOENIX_BLESSING);
 				players.reduceCurrentHp(players.getMaxHp(), boss, null);
-				players.setIsImmobilized(true);
+				players.setImmobilized(true);
 			}
 			
-			boss.setIsImmobilized(true);
+			boss.setImmobilized(true);
 			
 			dummy.broadcastPacket(new SpecialCamera(dummy.getObjectId(), 700, -45, 160, 10000, 15200, 0, 0, 1, 0));
 			
@@ -259,15 +259,15 @@ public class Halloween extends Quest {
 			//Supports
 			kegor = addSpawn(kegorId, 153511, 142101, -12741, 62606, false, 0, false, instanceId);
 			((GuardInstance) kegor).setCanReturnToSpawnPoint(false);
-			kegor.setIsInvul(true);
-			kegor.setIsMortal(false);
-			kegor.setIsImmobilized(true);
+			kegor.setInvul(true);
+			kegor.setMortal(false);
+			kegor.setImmobilized(true);
 			
 			jinia = addSpawn(jiniaId, 153610, 142129, -12741, 40159, false, 0, false, instanceId);
 			((GuardInstance) jinia).setCanReturnToSpawnPoint(false);
-			jinia.setIsInvul(true);
-			jinia.setIsMortal(false);
-			jinia.setIsImmobilized(true);
+			jinia.setInvul(true);
+			jinia.setMortal(false);
+			jinia.setImmobilized(true);
 			
 			kegor.broadcastPacket(new MagicSkillUse(kegor, kegor, 6463, 1, 500, 500, 500, 0, 0));
 			
@@ -306,7 +306,7 @@ public class Halloween extends Quest {
 				}
 				
 				players.doRevive();
-				players.setIsImmobilized(false);
+				players.setImmobilized(false);
 			}
 			
 			InstanceManager.getInstance()
@@ -316,22 +316,22 @@ public class Halloween extends Quest {
 			
 			startQuestTimer("stage_all_help_process_attack_boss", 2000, null, null);
 		} else if (event.equalsIgnoreCase("stage_all_help_process_attack_boss")) {
-			boss.setIsImmobilized(false);
+			boss.setImmobilized(false);
 			
 			kegor.setTarget(boss);
 			
 			((Attackable) kegor).addDamageHate(boss, 500, 99999);
 			kegor.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, boss, null);
-			kegor.setIsRunning(true);
+			kegor.setRunning(true);
 			
 			jinia.setTarget(boss);
 			
 			((Attackable) jinia).addDamageHate(boss, 500, 99999);
 			jinia.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, boss, null);
-			jinia.setIsRunning(true);
-			jinia.setIsImmobilized(false);
+			jinia.setRunning(true);
+			jinia.setImmobilized(false);
 			
-			kegor.setIsImmobilized(false);
+			kegor.setImmobilized(false);
 		} else if (event.equalsIgnoreCase("stage_last_boss_change")) {
 			int x = boss.getX();
 			int y = boss.getY();
@@ -371,8 +371,8 @@ public class Halloween extends Quest {
 				if (!npc.isInvul() && eventState == 2) {
 					eventState = 3;
 					
-					npc.setIsInvul(true);
-					npc.setIsImmobilized(true);
+					npc.setInvul(true);
+					npc.setImmobilized(true);
 					
 					//Do cast some skill
 					boss.broadcastPacket(new MagicSkillUse(boss, boss, 6796, 1, 500, 500, 500, 0, 0));

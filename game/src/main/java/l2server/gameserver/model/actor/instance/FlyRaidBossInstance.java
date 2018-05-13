@@ -27,7 +27,7 @@ public final class FlyRaidBossInstance extends RaidBossInstance {
 	
 	@Override
 	public void onSpawn() {
-		setIsFlying(true);
+		setFlying(true);
 		super.onSpawn();
 	}
 }

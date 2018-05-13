@@ -89,8 +89,8 @@ public abstract class PlayableAI extends CreatureAI {
 				// Newbie Protection Buff,
 				actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 				clientActionFailed();
-				actor.setIsCastingNow(false);
-				actor.setIsCastingNow2(false);
+				actor.setCastingNow(false);
+				actor.setCastingNow2(false);
 				return;
 			}
 
@@ -100,24 +100,24 @@ public abstract class PlayableAI extends CreatureAI {
 				// Newbie Protection Buff,
 				actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 				clientActionFailed();
-				actor.setIsCastingNow(false);
-				actor.setIsCastingNow2(false);
+				actor.setCastingNow(false);
+				actor.setCastingNow2(false);
 				return;
 			}
 
 			if (target.getActingPlayer().isCursedWeaponEquipped() && actor.getActingPlayer().getLevel() <= 20) {
 				actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 				clientActionFailed();
-				actor.setIsCastingNow(false);
-				actor.setIsCastingNow2(false);
+				actor.setCastingNow(false);
+				actor.setCastingNow2(false);
 				return;
 			}
 
 			if (actor.getActingPlayer().isCursedWeaponEquipped() && target.getActingPlayer().getLevel() <= 20) {
 				actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 				clientActionFailed();
-				actor.setIsCastingNow(false);
-				actor.setIsCastingNow2(false);
+				actor.setCastingNow(false);
+				actor.setCastingNow2(false);
 				return;
 			}
 		}

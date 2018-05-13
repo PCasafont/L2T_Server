@@ -143,7 +143,7 @@ public class EnterWorld extends L2GameClientPacket {
 		// Apply special GM properties to the GM when entering
 		if (activeChar.isGM()) {
 			if (Config.GM_STARTUP_INVULNERABLE && AdminCommandAccessRights.getInstance().hasAccess("admin_invul", activeChar.getAccessLevel())) {
-				activeChar.setIsInvul(true);
+				activeChar.setInvul(true);
 			}
 
 			if (Config.GM_STARTUP_INVISIBLE && AdminCommandAccessRights.getInstance().hasAccess("admin_invisible", activeChar.getAccessLevel())) {

@@ -261,11 +261,11 @@ public class MonsterInvasion {
 		} catch (Exception e) {
 			for (int i = 0; i < nMobs; i++) {
 				if (armySpawns[i] != null && armySpawns[i].getNpc() != null) {
-					armySpawns[i].getNpc().setIsInvul(false);
+					armySpawns[i].getNpc().setInvul(false);
 				}
 			}
 			if (armyCommanderSpawn != null && armyCommanderSpawn.getNpc() != null) {
-				armyCommanderSpawn.getNpc().setIsInvul(false);
+				armyCommanderSpawn.getNpc().setInvul(false);
 			}
 			//Logozo.warning("Error moving ivasion army:");
 			e.printStackTrace();
@@ -286,12 +286,12 @@ public class MonsterInvasion {
 		if (!invasionFightStarted) {
 			for (L2Spawn armySpawn : armySpawns) {
 				if (armySpawn != null && armySpawn.getNpc() != null) {
-					armySpawn.getNpc().setIsInvul(false);
+					armySpawn.getNpc().setInvul(false);
 				}
 			}
 			if (armyCommanderSpawn != null && armyCommanderSpawn.getNpc() != null) {
 				ArmyMonsterInstance commander = (ArmyMonsterInstance) armyCommanderSpawn.getNpc();
-				commander.setIsInvul(false);
+				commander.setInvul(false);
 				commander.shout("ATTACK!");
 			}
 			invasionFightStarted = true;

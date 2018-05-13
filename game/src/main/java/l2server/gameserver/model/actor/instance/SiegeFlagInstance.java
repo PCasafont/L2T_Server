@@ -61,7 +61,7 @@ public class SiegeFlagInstance extends Npc {
 		}
 		isAdvanced = advanced;
 		getStatus();
-		setIsInvul(false);
+		setInvul(false);
 	}
 	
 	/**

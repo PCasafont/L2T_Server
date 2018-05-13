@@ -88,7 +88,7 @@ public class DoorInstance extends Creature {
 	public DoorInstance(int objectId, DoorTemplate template, StatsSet data) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2DoorInstance);
-		setIsInvul(false);
+		setInvul(false);
 		isTargetable = data.getInteger("targetable", 1) == 1;
 		if (getGroupName() != null) {
 			DoorTable.addDoorGroup(getGroupName(), getDoorId());

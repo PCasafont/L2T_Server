@@ -209,7 +209,7 @@ public class FaeronSiege extends Quest {
 								0,
 								true,
 								world.instanceId);
-						minion.setIsRunning(true);
+						minion.setRunning(true);
 						minion.addSkill(passiveSkill);
 						minion.setCurrentHpMp(minion.getMaxHp(), minion.getMaxMp());
 
@@ -284,8 +284,8 @@ public class FaeronSiege extends Quest {
 						continue;
 					}
 
-					guard.setIsRunning(true);
-					guard.setIsInvul(true);
+					guard.setRunning(true);
+					guard.setInvul(true);
 
 					if (guard instanceof GuardInstance) {
 						((GuardInstance) guard).setCanReturnToSpawnPoint(false);

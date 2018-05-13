@@ -71,7 +71,7 @@ public class StatueInstance extends Npc {
 		
 		setInstanceType(InstanceType.L2StatueInstance);
 		
-		setIsInvul(true);
+		setInvul(true);
 		
 		Connection con = null;
 		try {

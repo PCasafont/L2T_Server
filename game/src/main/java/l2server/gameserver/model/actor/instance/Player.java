@@ -2012,11 +2012,11 @@ public class Player extends Playable {
 		
 		// This function is called too often from movement code
 		if (force) {
-			zoneValidateCounter = 4;
+			setZoneValidateCounter((byte)4);
 		} else {
-			zoneValidateCounter--;
-			if (zoneValidateCounter < 0) {
-				zoneValidateCounter = 4;
+			setZoneValidateCounter((byte)(getZoneValidateCounter() - 1));
+			if (getZoneValidateCounter() < 0) {
+				setZoneValidateCounter((byte)4);
 			} else {
 				return;
 			}
@@ -2424,10 +2424,10 @@ public class Player extends Playable {
 				curWeightPenalty = newWeightPenalty;
 				if (newWeightPenalty > 0 && !dietMode) {
 					super.addSkill(SkillTable.getInstance().getInfo(4270, newWeightPenalty));
-					setIsOverloaded(getCurrentLoad() > maxLoad);
+					setOverloaded(getCurrentLoad() > maxLoad);
 				} else {
 					super.removeSkill(getKnownSkill(4270));
-					setIsOverloaded(false);
+					setOverloaded(false);
 				}
 				sendPacket(new UserInfo(this));
 				sendPacket(new ExUserLoad(this));
@@ -3456,7 +3456,7 @@ public class Player extends Playable {
 			broadcastPacket(new ChangeWaitType(this, ChangeWaitType.WT_SITTING));
 			// Schedule a sit down task to wait for the animation to finish
 			ThreadPoolManager.getInstance().scheduleGeneral(new SitDownTask(), 2500);
-			setIsParalyzed(true);
+			setParalyzed(true);
 		}
 	}
 	
@@ -3466,7 +3466,7 @@ public class Player extends Playable {
 	private class SitDownTask implements Runnable {
 		@Override
 		public void run() {
-			setIsParalyzed(false);
+			setParalyzed(false);
 			getAI().setIntention(CtrlIntention.AI_INTENTION_REST);
 		}
 	}
@@ -3487,7 +3487,7 @@ public class Player extends Playable {
 	 */
 	public void standUp() {
 		if (waitTypeSitting && !isInStoreMode() && !isAlikeDead()) {
-			if (effects.isAffected(EffectType.RELAXING.getMask())) {
+			if (getEffects().isAffected(EffectType.RELAXING.getMask())) {
 				stopEffects(EffectType.RELAXING);
 			}
 			
@@ -5749,7 +5749,7 @@ public class Player extends Playable {
 			cubics.clear();
 		}
 		
-		if (fusionSkill != null || continuousDebuffTargets != null) {
+		if (getFusionSkill() != null || getContinuousDebuffTargets() != null) {
 			abortCast();
 		}
 		
@@ -9126,9 +9126,9 @@ public class Player extends Playable {
 		}
 		
 		if (canDoubleCast() && isCastingNow1()) {
-			setIsCastingNow2(true);
+			setCastingNow2(true);
 		} else {
-			setIsCastingNow(true);
+			setCastingNow(true);
 		}
 		// Create a new SkillDat object and set the player currentSkill
 		// This is used mainly to save & queue the button presses, since Creature has
@@ -9142,9 +9142,9 @@ public class Player extends Playable {
 		
 		if (!checkUseMagicConditions(skill, forceUse, dontMove)) {
 			if (wasLastCast1()) {
-				setIsCastingNow(false);
+				setCastingNow(false);
 			} else {
-				setIsCastingNow2(false);
+				setCastingNow2(false);
 			}
 			return false;
 		}
@@ -9901,7 +9901,7 @@ public class Player extends Playable {
 	public boolean setMount(int npcId, int npcLevel, int mountType) {
 		switch (mountType) {
 			case 0:
-				setIsFlying(false);
+				setFlying(false);
 				setIsRidingStrider(false);
 				break; //Dismounted
 			case 1:
@@ -9912,7 +9912,7 @@ public class Player extends Playable {
 				}
 				break;
 			case 2:
-				setIsFlying(true);
+				setFlying(true);
 				break; //Flying Wyvern
 			case 3:
 				break;
@@ -9962,7 +9962,7 @@ public class Player extends Playable {
 	 * Stop all toggle-type effects
 	 */
 	public final void stopAllToggles() {
-		effects.stopAllToggles();
+		getEffects().stopAllToggles();
 	}
 	
 	public final void stopCubics() {
@@ -10394,9 +10394,9 @@ public class Player extends Playable {
 		
 		observerMode = true;
 		setTarget(null);
-		setIsParalyzed(true);
+		setParalyzed(true);
 		startParalyze();
-		setIsInvul(true);
+		setInvul(true);
 		getAppearance().setInvisible();
 		//sendPacket(new GMHide(1));
 		sendPacket(new ObservationMode(x, y, z));
@@ -10444,7 +10444,7 @@ public class Player extends Playable {
 		
 		observerMode = true;
 		setTarget(null);
-		setIsInvul(true);
+		setInvul(true);
 		getAppearance().setInvisible();
 		setInstanceId(id + Olympiad.BASE_INSTANCE_ID);
 		//sendPacket(new GMHide(1));
@@ -10458,14 +10458,14 @@ public class Player extends Playable {
 		setTarget(null);
 		getKnownList().removeAllKnownObjects(); // reinit knownlist
 		setXYZ(lastX, lastY, lastZ);
-		setIsParalyzed(false);
+		setParalyzed(false);
 		stopParalyze(false);
 		//sendPacket(new GMHide(0));
 		if (!AdminCommandAccessRights.getInstance().hasAccess("admin_invis", getAccessLevel())) {
 			getAppearance().setVisible();
 		}
 		if (!AdminCommandAccessRights.getInstance().hasAccess("admin_invul", getAccessLevel())) {
-			setIsInvul(false);
+			setInvul(false);
 		}
 		if (getAI() != null) {
 			getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
@@ -10493,7 +10493,7 @@ public class Player extends Playable {
 			getAppearance().setVisible();
 		}
 		if (!AdminCommandAccessRights.getInstance().hasAccess("admin_invul", getAccessLevel())) {
-			setIsInvul(false);
+			setInvul(false);
 		}
 		if (getAI() != null) {
 			getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
@@ -11237,8 +11237,8 @@ public class Player extends Playable {
 			regiveTemporarySkills();
 			
 			// Prevents some issues when changing between subclases that shares skills
-			if (disabledSkills != null && !disabledSkills.isEmpty()) {
-				disabledSkills.clear();
+			if (getDisabledSkills() != null && !getDisabledSkills().isEmpty()) {
+				getDisabledSkills().clear();
 			}
 			
 			restoreEffects();
@@ -11620,12 +11620,12 @@ public class Player extends Playable {
 	}
 	
 	@Override
-	public void setIsTeleporting(boolean teleport) {
-		setIsTeleporting(teleport, true);
+	public void setTeleporting(boolean teleport) {
+		setTeleporting(teleport, true);
 	}
 	
-	public void setIsTeleporting(boolean teleport, boolean useWatchDog) {
-		super.setIsTeleporting(teleport);
+	public void setTeleporting(boolean teleport, boolean useWatchDog) {
+		super.setTeleporting(teleport);
 		if (!useWatchDog) {
 			return;
 		}
@@ -12237,7 +12237,7 @@ public class Player extends Playable {
 		}
 		
 		try {
-			setIsTeleporting(false);
+			setTeleporting(false);
 		} catch (Exception e) {
 			log.error("deleteMe()", e);
 		}
@@ -12257,7 +12257,7 @@ public class Player extends Playable {
 		}
 		
 		try {
-			if (fusionSkill != null || continuousDebuffTargets != null) {
+			if (getFusionSkill() != null || getContinuousDebuffTargets() != null) {
 				abortCast();
 			}
 			
@@ -12521,7 +12521,7 @@ public class Player extends Playable {
 	 */
 	public void startFishing(int x, int y, int z) {
 		stopMove(null);
-		setIsImmobilized(true);
+		setImmobilized(true);
 		fishing = true;
 		fishx = x;
 		fishy = y;
@@ -12804,7 +12804,7 @@ public class Player extends Playable {
 		//Ends fishing
 		broadcastPacket(new ExFishingEnd(win, this));
 		sendPacket(SystemMessage.getSystemMessage(SystemMessageId.REEL_LINE_AND_STOP_FISHING));
-		setIsImmobilized(false);
+		setImmobilized(false);
 		stopLookingForFishTask();
 	}
 	
@@ -14082,9 +14082,9 @@ public class Player extends Playable {
 		return isFlyingMounted;
 	}
 	
-	public void setIsFlyingMounted(boolean val) {
+	public void setFlyingMounted(boolean val) {
 		isFlyingMounted = val;
-		setIsFlying(val);
+		setFlying(val);
 	}
 	
 	/**
@@ -14951,7 +14951,7 @@ public class Player extends Playable {
 	 * Check all player skills for skill level. If player level is lower than skill learn level - 9, skill level is decreased to next possible level.
 	 */
 	public void checkPlayerSkills() {
-		for (int id : skills.keySet()) {
+		for (int id : getSkills().keySet()) {
 			int level = getSkillLevelHash(id);
 			if (level >= 100) // enchanted skill
 			{
@@ -14983,7 +14983,7 @@ public class Player extends Playable {
 			if (!Config.isServer(Config.TENKAI)) {
 				log.info("Removing skill id " + id + " level " + getSkillLevelHash(id) + " from player " + this);
 			}
-			removeSkill(skills.get(id), true);
+			removeSkill(getSkills().get(id), true);
 		} else
 		// replace with lower one
 		{
@@ -15806,7 +15806,7 @@ public class Player extends Playable {
 		setTarget(oldtarget);
 		sendPacket(new SetupGauge(0, 5000));
 		sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SUMMON_A_PET));
-		setIsCastingNow(true);
+		setCastingNow(true);
 		
 		ThreadPoolManager.getInstance().scheduleGeneral(new MobPetSummonFinalizer(npcTemplate, item), 5000);
 	}
@@ -15823,7 +15823,7 @@ public class Player extends Playable {
 		@Override
 		public void run() {
 			sendPacket(new MagicSkillLaunched(Player.this, 2046, 1));
-			setIsCastingNow(false);
+			setCastingNow(false);
 			MobSummonInstance summon = new MobSummonInstance(IdFactory.getInstance().getNextId(), npcTemplate, Player.this, item);
 			
 			summon.setName(npcTemplate.Name);
@@ -15863,7 +15863,7 @@ public class Player extends Playable {
 		@Override
 		public void run() {
 			sendPacket(new MagicSkillLaunched(Player.this, 2046, 1));
-			setIsCastingNow(false);
+			setCastingNow(false);
 			
 			if (mob.isDead()) {
 				sendMessage("This monster is already dead!");
@@ -15896,7 +15896,7 @@ public class Player extends Playable {
 	}
 	
 	public void setLandRates(boolean landRates) {
-		debugger = landRates ? this : null;
+		setDebugger(landRates ? this : null);
 		this.landRates = landRates;
 	}
 	
@@ -16024,7 +16024,7 @@ public class Player extends Playable {
 			
 			wasInEvent = false;
 		}
-		setIsCastingNow(false);
+		setCastingNow(false);
 	}
 	
 	public void returnedFromEvent() {
@@ -16058,7 +16058,7 @@ public class Player extends Playable {
 		
 		observerMode = true;
 		setTarget(null);
-		setIsInvul(true);
+		setInvul(true);
 		getAppearance().setInvisible();
 		teleToLocation(x, y, z, false);
 		sendPacket(new ExOlympiadMode(3));
@@ -16075,7 +16075,7 @@ public class Player extends Playable {
 			getAppearance().setVisible();
 		}
 		if (!AdminCommandAccessRights.getInstance().hasAccess("admin_invul", getAccessLevel())) {
-			setIsInvul(false);
+			setInvul(false);
 		}
 		if (getAI() != null) {
 			getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);

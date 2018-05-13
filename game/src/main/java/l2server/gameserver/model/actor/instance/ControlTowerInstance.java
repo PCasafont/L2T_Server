@@ -36,7 +36,7 @@ public class ControlTowerInstance extends Npc {
 	public ControlTowerInstance(int objectId, NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2ControlTowerInstance);
-		setIsInvul(false);
+		setInvul(false);
 	}
 	
 	@Override

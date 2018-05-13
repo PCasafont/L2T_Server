@@ -227,8 +227,8 @@ public class PlayerAI extends PlayableAI {
 		if ((skill.getTargetType() == SkillTargetType.TARGET_GROUND || skill.getTargetType() == SkillTargetType.TARGET_GROUND_AREA) &&
 				actor instanceof Player) {
 			if (maybeMoveToPosition(actor.getSkillCastPosition(), actor.getMagicalAttackRange(skill))) {
-				actor.setIsCastingNow(false);
-				actor.setIsCastingNow2(false);
+				actor.setCastingNow(false);
+				actor.setCastingNow2(false);
 				return;
 			}
 		} else {
@@ -237,13 +237,13 @@ public class PlayerAI extends PlayableAI {
 					//Notify the target
 					setCastTarget(null);
 				}
-				actor.setIsCastingNow(false);
-				actor.setIsCastingNow2(false);
+				actor.setCastingNow(false);
+				actor.setCastingNow2(false);
 				return;
 			}
 			if (target != null && maybeMoveToPawn(target, actor.getMagicalAttackRange(skill))) {
-				actor.setIsCastingNow(false);
-				actor.setIsCastingNow2(false);
+				actor.setCastingNow(false);
+				actor.setCastingNow2(false);
 				return;
 			}
 		}

@@ -133,7 +133,7 @@ public class Escape implements IUserCommandHandler {
 			}
 
 			activeChar.enableAllSkills();
-			activeChar.setIsCastingNow(false);
+			activeChar.setCastingNow(false);
 			activeChar.setInstanceId(0);
 
 			try {

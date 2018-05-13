@@ -84,7 +84,7 @@ public class EffectSignetMDam extends L2Effect {
 				z = wordPosition.getZ();
 			}
 		}
-		effectPoint.setIsInvul(true);
+		effectPoint.setInvul(true);
 		effectPoint.spawnMe(x, y, z);
 
 		actor = effectPoint;

@@ -760,7 +760,7 @@ public class CrystalCaverns extends Quest {
 					world.dragonScaleNeed--;
 				}
 				if (world.dragonScaleNeed == 0 && Rnd.get(100) < 80) {
-					npc.setIsInvul(false);
+					npc.setInvul(false);
 				}
 			}
 		}
@@ -827,7 +827,7 @@ public class CrystalCaverns extends Quest {
 				} else if (nowHp < maxHp * 0.15 && !world.isUsedInvulSkill) {
 					if (rand > 994 || nowHp < maxHp * 0.1) {
 						world.isUsedInvulSkill = true;
-						npc.setIsInvul(true);
+						npc.setInvul(true);
 					}
 				}
 			}
@@ -960,9 +960,9 @@ public class CrystalCaverns extends Quest {
 			} else if (event.equalsIgnoreCase("RaidStart")) {
 				world.camera.decayMe();
 				world.camera = null;
-				npc.setIsParalyzed(false);
+				npc.setParalyzed(false);
 				for (Player p : world.raiders) {
-					p.setIsParalyzed(false);
+					p.setParalyzed(false);
 					Throw(npc, p);
 					if (p.getPet() != null) {
 						Throw(npc, p.getPet());
@@ -991,7 +991,7 @@ public class CrystalCaverns extends Quest {
 					npc.addSkill(SkillTable.getInstance().getInfo(5245, 1));
 					world.alarm = addSpawn(ALARMID, spawnLoc[0], spawnLoc[1], spawnLoc[2], 10800, false, 0, false, world.instanceId);
 					world.alarm.disableCoreAI(true);
-					world.alarm.setIsImmobilized(true);
+					world.alarm.setImmobilized(true);
 					world.alarm.broadcastPacket(new CreatureSay(world.alarm.getObjectId(),
 							1,
 							world.alarm.getName(),
@@ -1025,7 +1025,7 @@ public class CrystalCaverns extends Quest {
 				npc.stopSkillEffects(5225);
 			} else if (event.equalsIgnoreCase("Baylor")) {
 				world.baylor = addSpawn(29099, 153572, 142075, -12738, 10800, false, 0, false, world.instanceId);
-				world.baylor.setIsParalyzed(true);
+				world.baylor.setParalyzed(true);
 				world.camera = addSpawn(29120, 153273, 141400, -12738, 10800, false, 0, false, world.instanceId);
 				world.camera.broadcastPacket(new SpecialCamera(world.camera.getObjectId(), 700, -45, 160, 500, 15200, 0, 0, 1, 0));
 				startQuestTimer("baylorMinions", 2000, world.baylor, null);
@@ -1487,7 +1487,7 @@ public class CrystalCaverns extends Quest {
 						pet.teleToLocation(153571 + x, 142075 + y, -12737, true);
 						pet.broadcastPacket(new ValidateLocation(pet));
 					}
-					p.setIsParalyzed(true);
+					p.setParalyzed(true);
 					p.broadcastPacket(new ValidateLocation(p));
 				}
 				startQuestTimer("Baylor", 30000, npc, null);

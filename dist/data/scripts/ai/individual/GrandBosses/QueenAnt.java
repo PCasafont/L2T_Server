@@ -287,8 +287,8 @@ public class QueenAnt extends L2AttackableAIScript {
 		final MonsterInstance mob = (MonsterInstance) npc;
 		switch (npc.getNpcId()) {
 			case larvaId:
-				mob.setIsImmobilized(true);
-				mob.setIsMortal(false);
+				mob.setImmobilized(true);
+				mob.setMortal(false);
 				mob.setIsRaidMinion(true);
 				break;
 

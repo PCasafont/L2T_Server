@@ -53,7 +53,7 @@ public class DecoyInstance extends Attackable {
 		super(objectId, template);
 		this.owner = owner;
 		setXYZ(owner.getX(), owner.getY(), owner.getZ());
-		setIsInvul(false);
+		setInvul(false);
 		setInstanceType(InstanceType.L2DecoyInstance);
 		if (skill != null) {
 			totalLifeTime = ((SkillDecoy) skill).getTotalLifeTime();
@@ -94,7 +94,7 @@ public class DecoyInstance extends Attackable {
 	
 	@Override
 	public CreatureAI initAI() {
-		setIsRunning(true);
+		setRunning(true);
 		
 		if (getNpcId() >= 13319 && getNpcId() <= 13322) {
 			return new AttackableAI(this);

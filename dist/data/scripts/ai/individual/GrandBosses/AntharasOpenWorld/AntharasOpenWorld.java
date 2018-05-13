@@ -167,7 +167,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript {
 
 			GrandBossManager.getInstance().addBoss((GrandBossInstance) antharasBoss);
 
-			antharasBoss.setIsImmobilized(true);
+			antharasBoss.setImmobilized(true);
 
 			GrandBossManager.getInstance().setBossStatus(antharasId, GrandBossManager.getInstance().FIGHTING);
 
@@ -187,7 +187,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript {
 		} else if (event.equalsIgnoreCase("antharas_spawn_task_7")) {
 			antharasBoss.abortCast();
 
-			antharasBoss.setIsImmobilized(false);
+			antharasBoss.setImmobilized(false);
 
 			startQuestTimer("antharas_move_random", 500, null, null);
 		} else if (event.equalsIgnoreCase("antharas_move_random")) {
@@ -271,7 +271,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript {
 					}
 
 					Npc minion = addSpawn(minionsToSpawn.get(i), x, y, -7704, 0, true, 120 * 2 * 60000);
-					minion.setIsRunning(true);
+					minion.setRunning(true);
 					allMonsters.add(minion);
 				}
 			}

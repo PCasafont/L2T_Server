@@ -27,7 +27,7 @@ public final class FlyNpcInstance extends NpcInstance {
 	
 	@Override
 	public void onSpawn() {
-		setIsFlying(true);
+		setFlying(true);
 		super.onSpawn();
 	}
 }

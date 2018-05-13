@@ -59,7 +59,7 @@ public class Monastery extends L2AttackableAIScript {
 						break;
 					}
 					default: {
-						npc.setIsRunning(true);
+						npc.setRunning(true);
 						((Attackable) npc).addDamageHate(player, 0, 999);
 						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
 						break;
@@ -119,7 +119,7 @@ public class Monastery extends L2AttackableAIScript {
 								break;
 							}
 							default: {
-								npc.setIsRunning(true);
+								npc.setRunning(true);
 								((Attackable) npc).addDamageHate(target, 0, 999);
 								npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 								break;
@@ -135,7 +135,7 @@ public class Monastery extends L2AttackableAIScript {
 	@Override
 	public String onSpellFinished(Npc npc, Player player, Skill skill) {
 		if (Util.contains(mobs1, npc.getNpcId()) && skill.getId() == 4589) {
-			npc.setIsRunning(true);
+			npc.setRunning(true);
 			((Attackable) npc).addDamageHate(player, 0, 999);
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
 		}

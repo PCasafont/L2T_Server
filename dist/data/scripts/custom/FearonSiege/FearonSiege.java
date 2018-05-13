@@ -269,16 +269,16 @@ public class FearonSiege extends Quest {
 				end_event.cancel();
 			}
 		} else if (event.equalsIgnoreCase("kain_ai")) {
-			warriorKain.setIsRunning(true);
-			warriorKain.setIsInvul(true);
+			warriorKain.setRunning(true);
+			warriorKain.setInvul(true);
 			((GuardInstance) warriorKain).setCanReturnToSpawnPoint(false);
 
 			warriorKain.setTarget(bossMakkum);
 			((GuardInstance) warriorKain).addDamageHate(bossMakkum, 500, 9999);
 			warriorKain.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, bossMakkum);
 		} else if (event.equalsIgnoreCase("leona_ai")) {
-			warriorLeona.setIsRunning(true);
-			warriorLeona.setIsInvul(true);
+			warriorLeona.setRunning(true);
+			warriorLeona.setInvul(true);
 			((GuardInstance) warriorLeona).setCanReturnToSpawnPoint(false);
 
 			warriorLeona.setTarget(bossMakkum);
@@ -360,8 +360,8 @@ public class FearonSiege extends Quest {
 					continue;
 				}
 
-				guard.setIsRunning(true);
-				guard.setIsInvul(true);
+				guard.setRunning(true);
+				guard.setInvul(true);
 				((GuardInstance) guard).setCanReturnToSpawnPoint(false);
 
 				guard.setTarget(bossMakkum);
@@ -617,7 +617,7 @@ public class FearonSiege extends Quest {
 
 					Npc minion =
 							addSpawn(invadeMobs[Rnd.get(invadeMobs.length)], -79660 + x, 244954 + y, -3651 + 20, -1, false, 0, true, instanceId);
-					minion.setIsRunning(true);
+					minion.setRunning(true);
 					minion.addSkill(passiveSkill);
 					minion.setCurrentHpMp(minion.getMaxHp(), minion.getMaxMp());
 

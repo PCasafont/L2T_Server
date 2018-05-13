@@ -119,9 +119,9 @@ public final class RequestChangeToAwakenedClass extends L2GameClientPacket {
 		player.broadcastPacket(new SocialAction(player.getObjectId(), 20)); //All use same id since valiance
 		
 		player.broadcastUserInfo();
-		player.setIsImmobilized(true);
+		player.setImmobilized(true);
 		ThreadPoolManager.getInstance().scheduleGeneral(() -> {
-			player.setIsImmobilized(false);
+			player.setImmobilized(false);
 			
 			// Is this even custom?
 			//player.sendPacket(new ExShowUsmPacket(10));

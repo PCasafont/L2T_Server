@@ -138,7 +138,7 @@ public class Apherus extends L2AttackableAIScript {
 							false,
 							600000,
 							false);
-					protector.setIsRunning(true);
+					protector.setRunning(true);
 					protector.setTarget(player);
 					protector.addDamageHate(player, 500, 99999);
 					protector.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);

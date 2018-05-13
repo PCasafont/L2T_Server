@@ -317,7 +317,7 @@ public class HiddenChests {
 		public void run() {
 			if (player.isCastingNow()) {
 				player.sendPacket(new MagicSkillLaunched(player, 11030, 1));
-				player.setIsCastingNow(false);
+				player.setCastingNow(false);
 				
 				if (player.getTarget() == chest && !chest.isDead() && Util.checkIfInRange(1000, player, chest, true)) {
 					String name = player.getName();

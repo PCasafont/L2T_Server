@@ -25,7 +25,7 @@ public final class ArmyMonsterInstance extends MonsterInstance {
 	public ArmyMonsterInstance(int objectId, NpcTemplate template) {
 		super(objectId, template);
 		type = getNpcId() % 10;
-		setIsInvul(true);
+		setInvul(true);
 		setTitle(template.Title);
 	}
 	

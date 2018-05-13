@@ -574,7 +574,7 @@ public class CustomOfflineBuffersManager {
 					player.setOnlineStatus(true, true);
 					player.restoreEffects();
 					player.broadcastUserInfo();
-					player.setIsInvul(true);
+					player.setInvul(true);
 
 					BufferTable table = new BufferTable(player.getObjectId());
 					table.setDescription(desc);

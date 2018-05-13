@@ -497,7 +497,7 @@ public class DarkCloudMansion extends Quest {
 		//TODO: unify this into previous loop
 		for (DMCNpc npc : ForthRoom.npcList) {
 			if (npc.status == 0) {
-				npc.npc.setIsInvul(true);
+				npc.npc.setInvul(true);
 			}
 		}
 

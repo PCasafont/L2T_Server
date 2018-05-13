@@ -41,7 +41,7 @@ public class AdminInvul implements IAdminCommandHandler {
 			if (target instanceof Player) {
 				handleInvul((Player) target);
 			} else if (target instanceof Creature) {
-				((Creature) target).setIsInvul(((Creature) target).isInvul());
+				((Creature) target).setInvul(((Creature) target).isInvul());
 			}
 		}
 		return true;
@@ -55,13 +55,13 @@ public class AdminInvul implements IAdminCommandHandler {
 	private void handleInvul(Player activeChar) {
 		String text;
 		if (activeChar.isInvul()) {
-			activeChar.setIsInvul(false);
+			activeChar.setInvul(false);
 			text = activeChar.getName() + " is now mortal";
 			if (Config.DEBUG) {
 				log.debug("GM: Gm removed invul mode from character " + activeChar.getName() + "(" + activeChar.getObjectId() + ")");
 			}
 		} else {
-			activeChar.setIsInvul(true);
+			activeChar.setInvul(true);
 			text = activeChar.getName() + " is now invulnerable";
 			if (Config.DEBUG) {
 				log.debug("GM: Gm activated invul mode for character " + activeChar.getName() + "(" + activeChar.getObjectId() + ")");

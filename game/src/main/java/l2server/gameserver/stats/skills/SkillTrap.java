@@ -87,7 +87,7 @@ public class SkillTrap extends SkillSummon {
 		trap = new TrapInstance(IdFactory.getInstance().getNextId(), TrapTemplate, activeChar, getTotalLifeTime(), skill);
 		trap.setCurrentHp(trap.getMaxHp());
 		trap.setCurrentMp(trap.getMaxMp());
-		trap.setIsInvul(true);
+		trap.setInvul(true);
 		trap.setHeading(activeChar.getHeading());
 		activeChar.setTrap(trap);
 		//World.getInstance().storeObject(trap);

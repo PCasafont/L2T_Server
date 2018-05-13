@@ -41,7 +41,7 @@ public class BrokenBodiedGolem extends L2AttackableAIScript {
 	public String onKill(Npc npc, Player killer, boolean isPet) {
 		for (int a = 0; a < 2; a++) {
 			Npc minion = addSpawn(summonedGolem, killer.getX(), killer.getY(), killer.getZ(), 0, true, 60000, true);
-			minion.setIsRunning(true);
+			minion.setRunning(true);
 			minion.setTarget(killer);
 			((MonsterInstance) minion).addDamageHate(killer, 500, 99999);
 			minion.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, killer);

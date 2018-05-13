@@ -312,7 +312,7 @@ public class Teredor extends L2AttackableAIScript {
 	private void stopBossWalk(TeredorWorld world) {
 		world.Teredor.stopMove(null);
 		world.teredorWalkAI.cancelTask();
-		world.Teredor.setIsInvul(false);
+		world.Teredor.setInvul(false);
 		world.teredorAttackAI = new AttackableAI(world.Teredor);
 		world.Teredor.setAI(world.teredorAttackAI);
 	}
@@ -322,8 +322,8 @@ public class Teredor extends L2AttackableAIScript {
 			world.Teredor.abortCast();
 		}
 
-		world.Teredor.setIsInvul(true);
-		world.Teredor.setIsRunning(true);
+		world.Teredor.setInvul(true);
+		world.Teredor.setRunning(true);
 		world.teredorWalkAI = new NpcWalkerAI(world.Teredor);
 		world.Teredor.setAI(world.teredorWalkAI);
 		world.teredorWalkAI.initializeRoute(route, null);
@@ -338,7 +338,7 @@ public class Teredor extends L2AttackableAIScript {
 		for (int id = 0; id < count; id++) {
 			Attackable minion =
 					(Attackable) addSpawn(npcId, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0, false, world.instanceId);
-			minion.setIsRunning(true);
+			minion.setRunning(true);
 
 			if (target != null) {
 				minion.addDamageHate(target, 0, 500);

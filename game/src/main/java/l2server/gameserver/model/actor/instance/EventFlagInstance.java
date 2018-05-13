@@ -93,7 +93,7 @@ public class EventFlagInstance extends NpcInstance {
 		public void run() {
 			if (player.isCastingNow()) {
 				player.sendPacket(new MagicSkillLaunched(player, 2046, 1));
-				player.setIsCastingNow(false);
+				player.setCastingNow(false);
 				
 				if (player.getEvent() != null && player.getEvent() instanceof FieldDomination && !isToDelete()) {
 					if (getTeam() == null) {

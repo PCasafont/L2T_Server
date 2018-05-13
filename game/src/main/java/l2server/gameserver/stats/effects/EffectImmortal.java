@@ -36,7 +36,7 @@ public class EffectImmortal extends L2Effect {
 	 */
 	@Override
 	public boolean onStart() {
-		getEffected().setIsMortal(false);
+		getEffected().setMortal(false);
 		return true;
 	}
 
@@ -45,7 +45,7 @@ public class EffectImmortal extends L2Effect {
 	 */
 	@Override
 	public void onExit() {
-		getEffected().setIsMortal(true);
+		getEffected().setMortal(true);
 	}
 
 	/**

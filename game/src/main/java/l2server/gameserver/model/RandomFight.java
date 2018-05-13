@@ -105,8 +105,8 @@ public class RandomFight {
 		players.firstElement().setTeam(1);
 		players.lastElement().setTeam(2);
 		
-		players.firstElement().setIsParalyzed(true);
-		players.lastElement().setIsParalyzed(true);
+		players.firstElement().setParalyzed(true);
+		players.lastElement().setParalyzed(true);
 		
 		players.firstElement().sendMessage("Fight will begin in 15 seconds!");
 		players.lastElement().sendMessage("Fight will begin in 15 seconds!");
@@ -205,8 +205,8 @@ public class RandomFight {
 		players.firstElement().setPvpFlag(1);
 		players.lastElement().setPvpFlag(1);
 		
-		players.firstElement().setIsParalyzed(false);
-		players.lastElement().setIsParalyzed(false);
+		players.firstElement().setParalyzed(false);
+		players.lastElement().setParalyzed(false);
 		
 		players.firstElement().sendMessage("Fight!");
 		players.lastElement().sendMessage("Fight!");

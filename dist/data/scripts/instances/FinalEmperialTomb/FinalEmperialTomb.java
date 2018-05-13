@@ -452,7 +452,7 @@ public class FinalEmperialTomb extends Quest {
 							world.songEffectTask.cancel(false);
 						}
 						world.songEffectTask = null;
-						world.activeScarlet.setIsInvul(true);
+						world.activeScarlet.setInvul(true);
 						if (world.activeScarlet.isCastingNow()) {
 							world.activeScarlet.abortCast();
 						}
@@ -632,7 +632,7 @@ public class FinalEmperialTomb extends Quest {
 					break;
 				case 2: // finish morph
 					world.activeScarlet.setRHandId(SECOND_SCARLET_WEAPON);
-					world.activeScarlet.setIsInvul(false);
+					world.activeScarlet.setInvul(false);
 					break;
 			}
 		}
@@ -672,26 +672,26 @@ public class FinalEmperialTomb extends Quest {
 					break;
 				case 2:
 					world.frintezzaDummy = addSpawn(29052, -87784, -155083, -9087, 16048, false, 0, false, world.instanceId);
-					world.frintezzaDummy.setIsInvul(true);
-					world.frintezzaDummy.setIsImmobilized(true);
+					world.frintezzaDummy.setInvul(true);
+					world.frintezzaDummy.setImmobilized(true);
 
 					world.overheadDummy = addSpawn(29052, -87784, -153298, -9175, 16384, false, 0, false, world.instanceId);
-					world.overheadDummy.setIsInvul(true);
-					world.overheadDummy.setIsImmobilized(true);
+					world.overheadDummy.setInvul(true);
+					world.overheadDummy.setImmobilized(true);
 					world.overheadDummy.setCollisionHeight(600);
 					broadCastPacket(world, new NpcInfo(world.overheadDummy, null));
 
 					world.portraitDummy1 = addSpawn(29052, -89566, -153168, -9165, 16048, false, 0, false, world.instanceId);
-					world.portraitDummy1.setIsImmobilized(true);
-					world.portraitDummy1.setIsInvul(true);
+					world.portraitDummy1.setImmobilized(true);
+					world.portraitDummy1.setInvul(true);
 
 					world.portraitDummy3 = addSpawn(29052, -86004, -153168, -9165, 16048, false, 0, false, world.instanceId);
-					world.portraitDummy3.setIsImmobilized(true);
-					world.portraitDummy3.setIsInvul(true);
+					world.portraitDummy3.setImmobilized(true);
+					world.portraitDummy3.setInvul(true);
 
 					world.scarletDummy = addSpawn(29053, -87784, -153298, -9175, 16384, false, 0, false, world.instanceId);
-					world.scarletDummy.setIsInvul(true);
-					world.scarletDummy.setIsImmobilized(true);
+					world.scarletDummy.setInvul(true);
+					world.scarletDummy.setImmobilized(true);
 
 					stopPc();
 					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 3), 1000);
@@ -702,8 +702,8 @@ public class FinalEmperialTomb extends Quest {
 					broadCastPacket(world, new SpecialCamera(world.overheadDummy.getObjectId(), 300, 90, -10, 6500, 7000, 0, 0, 1, 0));
 
 					world.frintezza = (GrandBossInstance) addSpawn(FRINTEZZA, -87784, -155083, -9087, 16048, false, 0, false, world.instanceId);
-					world.frintezza.setIsImmobilized(true);
-					world.frintezza.setIsInvul(true);
+					world.frintezza.setImmobilized(true);
+					world.frintezza.setInvul(true);
 					world.frintezza.disableAllSkills();
 					updateKnownList(world, world.frintezza);
 
@@ -717,7 +717,7 @@ public class FinalEmperialTomb extends Quest {
 								0,
 								false,
 								world.instanceId);
-						demon.setIsImmobilized(true);
+						demon.setImmobilized(true);
 						demon.disableAllSkills();
 						updateKnownList(world, demon);
 						world.demons.add(demon);
@@ -804,8 +804,8 @@ public class FinalEmperialTomb extends Quest {
 				case 18:
 					world.activeScarlet = (GrandBossInstance) addSpawn(29046, -87784, -153298, -9165, 16384, false, 0, false, world.instanceId);
 					world.activeScarlet.setRHandId(FIRST_SCARLET_WEAPON);
-					world.activeScarlet.setIsInvul(true);
-					world.activeScarlet.setIsImmobilized(true);
+					world.activeScarlet.setInvul(true);
+					world.activeScarlet.setImmobilized(true);
 					world.activeScarlet.disableAllSkills();
 					updateKnownList(world, world.activeScarlet);
 					broadCastPacket(world, new SocialAction(world.activeScarlet.getObjectId(), 3));
@@ -845,17 +845,17 @@ public class FinalEmperialTomb extends Quest {
 					break;
 				case 22:
 					for (MonsterInstance demon : world.demons) {
-						demon.setIsImmobilized(false);
+						demon.setImmobilized(false);
 						demon.enableAllSkills();
 					}
-					world.activeScarlet.setIsInvul(false);
-					world.activeScarlet.setIsImmobilized(false);
+					world.activeScarlet.setInvul(false);
+					world.activeScarlet.setImmobilized(false);
 					world.activeScarlet.enableAllSkills();
 					world.activeScarlet.setRunning();
 					world.activeScarlet.doCast(INTRO_SKILL.getSkill());
 					world.frintezza.enableAllSkills();
 					world.frintezza.disableCoreAI(true);
-					world.frintezza.setIsMortal(false);
+					world.frintezza.setMortal(false);
 					startPc();
 
 					ThreadPoolManager.getInstance().scheduleGeneral(new DemonSpawnTask(world), TIME_BETWEEN_DEMON_SPAWNS);
@@ -869,8 +869,8 @@ public class FinalEmperialTomb extends Quest {
 					broadCastPacket(world, new SpecialCamera(world.frintezza.getObjectId(), 250, 120, 15, 0, 10000, 0, 0, 1, 0));
 					world.activeScarlet.abortAttack();
 					world.activeScarlet.abortCast();
-					world.activeScarlet.setIsInvul(true);
-					world.activeScarlet.setIsImmobilized(true);
+					world.activeScarlet.setInvul(true);
+					world.activeScarlet.setImmobilized(true);
 					world.activeScarlet.disableAllSkills();
 					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 25), 7000);
 					break;
@@ -917,8 +917,8 @@ public class FinalEmperialTomb extends Quest {
 							0,
 							false,
 							world.instanceId);
-					world.activeScarlet.setIsInvul(true);
-					world.activeScarlet.setIsImmobilized(true);
+					world.activeScarlet.setInvul(true);
+					world.activeScarlet.setImmobilized(true);
 					world.activeScarlet.disableAllSkills();
 					updateKnownList(world, world.activeScarlet);
 
@@ -932,8 +932,8 @@ public class FinalEmperialTomb extends Quest {
 					break;
 				case 32:
 					startPc();
-					world.activeScarlet.setIsInvul(false);
-					world.activeScarlet.setIsImmobilized(false);
+					world.activeScarlet.setInvul(false);
+					world.activeScarlet.setImmobilized(false);
 					world.activeScarlet.enableAllSkills();
 					world.isVideo = false;
 					break;
@@ -972,7 +972,7 @@ public class FinalEmperialTomb extends Quest {
 					player.disableAllSkills();
 					player.setTarget(null);
 					player.stopMove(null);
-					player.setIsImmobilized(true);
+					player.setImmobilized(true);
 					player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 				}
 			}
@@ -983,7 +983,7 @@ public class FinalEmperialTomb extends Quest {
 				Player player = World.getInstance().getPlayer(objId);
 				if (player != null && player.isOnline() && player.getInstanceId() == world.instanceId) {
 					player.enableAllSkills();
-					player.setIsImmobilized(false);
+					player.setImmobilized(false);
 				}
 			}
 		}

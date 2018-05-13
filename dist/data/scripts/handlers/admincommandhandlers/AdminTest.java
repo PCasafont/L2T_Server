@@ -449,7 +449,7 @@ public class AdminTest implements IAdminCommandHandler {
 					//activeChar.sendMessage("Said it to " + player.getName() + ".");
 				}
 			} else if (secondaryCommand.equals("TellHim")) {
-				((Creature) activeChar.getTarget()).setIsInvul(false);
+				((Creature) activeChar.getTarget()).setInvul(false);
 			} else if (secondaryCommand.equals("FixClanWars")) {
 				for (L2Clan clan : ClanTable.getInstance().getClans()) {
 					for (ClanWar war : clan.getWars()) {

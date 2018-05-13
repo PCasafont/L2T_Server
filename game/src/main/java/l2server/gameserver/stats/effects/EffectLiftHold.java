@@ -41,7 +41,7 @@ public class EffectLiftHold extends L2Effect {
 			return false;
 		}
 
-		getEffected().setIsParalyzed(true);
+		getEffected().setParalyzed(true);
 		getEffected().startParalyze();
 		getEffected().startVisualEffect(VisualEffect.S_LIFT_HOLD);
 		return true;
@@ -49,7 +49,7 @@ public class EffectLiftHold extends L2Effect {
 
 	@Override
 	public void onExit() {
-		getEffected().setIsParalyzed(false);
+		getEffected().setParalyzed(false);
 		getEffected().stopParalyze(false);
 		getEffected().stopVisualEffect(VisualEffect.S_LIFT_HOLD);
 	}

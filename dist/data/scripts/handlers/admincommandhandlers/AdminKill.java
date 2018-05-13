@@ -111,13 +111,13 @@ public class AdminKill implements IAdminCommandHandler {
 			boolean targetIsInvul = false;
 			if (target.isInvul(activeChar)) {
 				targetIsInvul = true;
-				target.setIsInvul(false);
+				target.setInvul(false);
 			}
 
 			target.reduceCurrentHp(target.getMaxHp() + 1, activeChar, null);
 
 			if (targetIsInvul) {
-				target.setIsInvul(true);
+				target.setInvul(true);
 			}
 		}
 		if (Config.DEBUG) {

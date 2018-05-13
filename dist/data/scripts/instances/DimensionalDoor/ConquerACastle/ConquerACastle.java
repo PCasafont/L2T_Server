@@ -180,8 +180,8 @@ public class ConquerACastle extends L2AttackableAIScript {
 			ConquerACastleWorld world = (ConquerACastleWorld) tmpWorld;
 			if (Util.contains(raidMinions, npc.getNpcId())) {
 				if (world.status == 0) {
-					npc.setIsParalyzed(true);
-					npc.setIsInvul(true);
+					npc.setParalyzed(true);
+					npc.setInvul(true);
 					npc.startVisualEffect(VisualEffect.HOLD_2);
 				}
 			}
@@ -215,8 +215,8 @@ public class ConquerACastle extends L2AttackableAIScript {
 				if (world.status == 6 && world.castleId != 9 && world.castleId != 7 ||
 						world.status == 7 && (world.castleId == 9 || world.castleId == 7)) {
 					world.finalBoss.stopVisualEffect(VisualEffect.HOLD_2);
-					world.finalBoss.setIsInvul(false);
-					world.finalBoss.setIsParalyzed(false);
+					world.finalBoss.setInvul(false);
+					world.finalBoss.setParalyzed(false);
 
 					for (MonsterInstance minion : ((GrandBossInstance) world.finalBoss).getMinionList().getSpawnedMinions()) {
 						if (minion == null) {
@@ -224,8 +224,8 @@ public class ConquerACastle extends L2AttackableAIScript {
 						}
 
 						minion.stopVisualEffect(VisualEffect.HOLD_2);
-						minion.setIsInvul(false);
-						minion.setIsParalyzed(false);
+						minion.setInvul(false);
+						minion.setParalyzed(false);
 					}
 
 					InstanceManager.getInstance()
@@ -329,8 +329,8 @@ public class ConquerACastle extends L2AttackableAIScript {
 						0,
 						false,
 						world.instanceId);
-				world.finalBoss.setIsParalyzed(true);
-				world.finalBoss.setIsInvul(true);
+				world.finalBoss.setParalyzed(true);
+				world.finalBoss.setInvul(true);
 				world.finalBoss.startVisualEffect(VisualEffect.HOLD_2);
 
 				InstanceManager.getInstance()
@@ -361,7 +361,7 @@ public class ConquerACastle extends L2AttackableAIScript {
 
 				if (world.dwarf == null) {
 					world.dwarf = npc;
-					world.dwarf.setIsRunning(true);
+					world.dwarf.setRunning(true);
 				}
 
 				if (event.endsWith("follow")) {
@@ -399,7 +399,7 @@ public class ConquerACastle extends L2AttackableAIScript {
 											(player.getAppearance().getSex() ? "Mrs. " : "Mr. ") + player.getName() +
 													"! I'll make my best golem, give me few minutes!"));
 
-					npc.setIsCastingNow(true);
+					npc.setCastingNow(true);
 					npc.doCast(dummyCast);
 				}
 			}

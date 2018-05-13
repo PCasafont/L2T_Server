@@ -70,7 +70,7 @@ public final class SkillSignet extends Skill {
 		}
 		getEffects(caster, effectPoint);
 
-		effectPoint.setIsInvul(true);
+		effectPoint.setInvul(true);
 		effectPoint.spawnMe(x, y, z);
 	}
 }

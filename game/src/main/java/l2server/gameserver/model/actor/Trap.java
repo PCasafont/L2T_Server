@@ -52,7 +52,7 @@ public class Trap extends Creature {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2Trap);
 		setName(template.Name);
-		setIsInvul(false);
+		setInvul(false);
 
 		isTriggered = false;
 		this.skill = skill;

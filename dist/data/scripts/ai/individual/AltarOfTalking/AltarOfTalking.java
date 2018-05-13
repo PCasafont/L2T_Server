@@ -68,7 +68,7 @@ public class AltarOfTalking extends Quest {
                     spawnInfo.put(bossId, true); //Boss is spawned
 
                     Attackable boss = (Attackable) addSpawn(bossId, npc.getX(), npc.getY() + 200, npc.getZ(), 0, false, 0, true);
-                    boss.setIsRunning(true);
+                    boss.setRunning(true);
                     boss.setTarget(player);
                     boss.addDamageHate(player, 9999, 9999);
                     boss.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);

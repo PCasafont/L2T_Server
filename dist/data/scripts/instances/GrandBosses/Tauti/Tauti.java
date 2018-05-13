@@ -188,8 +188,8 @@ public class Tauti extends L2AttackableAIScript {
 				startQuestTimer("stage_1_spawn_boss", ScenePlayerDataTable.getInstance().getVideoDuration(69) + 2000, null, player);
 			} else if (event.equalsIgnoreCase("stage_1_spawn_boss")) {
 				world.Tauti = addSpawn(world.TautiId, -147265, 212902, -10056, 49314, false, 0, false, world.instanceId);
-				world.Tauti.setIsRunning(true);
-				world.Tauti.setIsMortal(false);
+				world.Tauti.setRunning(true);
+				world.Tauti.setMortal(false);
 
 				startQuestTimer("stage_all_leap_attack_up", 60000, world.Tauti, null);
 			} else if (event.equalsIgnoreCase("stage_all_leap_attack_up")) {
@@ -245,7 +245,7 @@ public class Tauti extends L2AttackableAIScript {
 			} else if (event.equalsIgnoreCase("stage_2_spawn_axe")) {
 				world.Tauti = addSpawn(world.TautiAxeId, -147265, 212902, -10056, 49314, false, 0, false, world.instanceId);
 				world.Tauti.setCurrentHp(world.Tauti.getMaxHp() / 3);
-				world.Tauti.setIsRunning(true);
+				world.Tauti.setRunning(true);
 			} else if (event.equalsIgnoreCase("stage_last_finish")) {
 				Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 				if (inst != null) {
@@ -292,8 +292,8 @@ public class Tauti extends L2AttackableAIScript {
 
 					for (int[] loc : world.isHardMode ? zahakExtremeCords : zahakEasyeCords) {
 						Npc minion = addSpawn(zahakId, loc[0], loc[1], loc[2], loc[3], false, 0, false, world.instanceId);
-						minion.setIsInvul(true);
-						minion.setIsImmobilized(true);
+						minion.setInvul(true);
+						minion.setImmobilized(true);
 						minion.broadcastPacket(new NpcSay(minion.getObjectId(),
 								0,
 								minion.getNpcId(),

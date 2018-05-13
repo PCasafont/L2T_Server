@@ -96,7 +96,7 @@ public class PailakaDevilsLegacy extends Quest {
 	private static Skill energy_skill = SkillTable.getInstance().getInfo(5712, 1);
 
 	private void attackPlayer(Attackable npc, Playable attacker) {
-		npc.setIsRunning(true);
+		npc.setRunning(true);
 		npc.addDamageHate(attacker, 0, 999);
 		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
 	}

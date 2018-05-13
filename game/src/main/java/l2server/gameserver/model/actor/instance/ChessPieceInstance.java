@@ -41,7 +41,7 @@ public final class ChessPieceInstance extends MonsterInstance {
 		
 		firstMove = true;
 		
-		setIsInvul(true);
+		setInvul(true);
 	}
 	
 	@Override
@@ -211,7 +211,7 @@ public final class ChessPieceInstance extends MonsterInstance {
 				}
 			}
 			
-			enemy.setIsInvul(false);
+			enemy.setInvul(false);
 			enemy.getSpawn().stopRespawn();
 			
 			setTarget(enemy);

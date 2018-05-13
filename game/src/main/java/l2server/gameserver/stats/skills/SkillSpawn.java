@@ -116,7 +116,7 @@ public class SkillSpawn extends Skill {
 					npc.setInstanceId(caster.getInstanceId());
 				}
 
-				npc.setIsRunning(true);
+				npc.setRunning(true);
 				spawn.doSpawn(summonSpawn);
 
 				if (despawnDelay > 0) {

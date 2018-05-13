@@ -135,7 +135,7 @@ public class Balok extends L2AttackableAIScript {
 				synchronized (world.minionList) {
 					Npc minion = world.minionList.get(Rnd.get(world.minionList.size()));
 					if (minion != null) {
-						minion.setIsRunning(true);
+						minion.setRunning(true);
 						((Attackable) minion).setCanReturnToSpawnPoint(false);
 
 						world.currentMinion = minion;

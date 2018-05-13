@@ -141,7 +141,7 @@ public class Ranked2v2 {
 			}
 			team1.teleToLocation(-88900, -252849, -3330);
 			team1.setTeam(1);
-			team1.setIsParalyzed(true);
+			team1.setParalyzed(true);
 			team1.setPvpFlag(0);
 			team1.heal();
 			team1.sendMessage("Fight will start in 15 seconds");
@@ -152,7 +152,7 @@ public class Ranked2v2 {
 			}
 			team2.teleToLocation(-88900, -252849, -3330);
 			team2.setTeam(1);
-			team2.setIsParalyzed(true);
+			team2.setParalyzed(true);
 			team2.setPvpFlag(0);
 			team2.heal();
 			team2.sendMessage("Fight will start in 15 seconds");
@@ -288,7 +288,7 @@ public class Ranked2v2 {
 				continue;
 			}
 			team1.setPvpFlag(1);
-			team1.setIsParalyzed(false);
+			team1.setParalyzed(false);
 			team1.sendMessage("[RANKED] Fight !");
 		}
 		for (Player team2 : teamTwo) {
@@ -296,7 +296,7 @@ public class Ranked2v2 {
 				continue;
 			}
 			team2.setPvpFlag(1);
-			team2.setIsParalyzed(false);
+			team2.setParalyzed(false);
 			team2.sendMessage("[RANKED] Fight !");
 		}
 

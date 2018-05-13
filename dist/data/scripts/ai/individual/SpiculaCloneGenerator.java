@@ -62,10 +62,10 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript {
 	@Override
 	public final String onSpawn(Npc npc) {
 		if (npc.getNpcId() == yin) {
-			npc.setIsInvul(true);
+			npc.setInvul(true);
 		}
 
-		npc.setIsImmobilized(true);
+		npc.setImmobilized(true);
 
 		return super.onSpawn(npc);
 	}
@@ -101,7 +101,7 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript {
 		for (int a = 0; a <= (npc.getNpcId() == yinFragment ? 2 : 4); a++) {
 			Npc minion = addSpawn(spiculaElite, killer.getX(), killer.getY(), killer.getZ(), 0, true, 180000, true);
 
-			minion.setIsRunning(true);
+			minion.setRunning(true);
 
 			minion.setTarget(killer);
 

@@ -41,7 +41,7 @@ public class BallistaBomb implements ISkillHandler {
 		Creature target = (Creature) targetList[0];
 		if (target instanceof FortBallistaInstance) {
 			if (Rnd.get(3) == 0) {
-				target.setIsInvul(false);
+				target.setInvul(false);
 				target.reduceCurrentHp(target.getMaxHp() + 1, activeChar, skill);
 			}
 		}

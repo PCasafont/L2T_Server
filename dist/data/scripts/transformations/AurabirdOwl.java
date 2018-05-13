@@ -17,7 +17,7 @@ public class AurabirdOwl extends L2Transformation {
 		if (getPlayer().getTransformationId() != 9 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
-		getPlayer().setIsFlyingMounted(true);
+		getPlayer().setFlyingMounted(true);
 		
 		transformedSkills();
 	}
@@ -57,7 +57,7 @@ public class AurabirdOwl extends L2Transformation {
 	
 	@Override
 	public void onUntransform() {
-		getPlayer().setIsFlyingMounted(false);
+		getPlayer().setFlyingMounted(false);
 		
 		removeSkills();
 	}

@@ -57,7 +57,7 @@ public class GuillotineOfDeath extends L2AttackableAIScript {
 
 		if (boss != null) //boss is spawned
 		{
-			boss.setIsMortal(false);
+			boss.setMortal(false);
 		}
 	}
 
@@ -89,7 +89,7 @@ public class GuillotineOfDeath extends L2AttackableAIScript {
 
 				//Cast some skill to the boss
 
-				npc.setIsInvul(true);
+				npc.setInvul(true);
 
 				npc.deleteMe();
 
@@ -99,7 +99,7 @@ public class GuillotineOfDeath extends L2AttackableAIScript {
 			if (bossStage == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.05) {
 				bossStage = 2;
 
-				npc.setIsInvul(true);
+				npc.setInvul(true);
 
 				npc.deleteMe();
 
@@ -126,7 +126,7 @@ public class GuillotineOfDeath extends L2AttackableAIScript {
 
 	@Override
 	public String onSpawn(Npc npc) {
-		npc.setIsMortal(false);
+		npc.setMortal(false);
 
 		return super.onSpawn(npc);
 	}

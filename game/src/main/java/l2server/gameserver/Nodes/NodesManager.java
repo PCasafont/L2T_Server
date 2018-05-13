@@ -29,8 +29,8 @@ public class NodesManager {
 		
 		currentNodes++;
 		//nodes.add(newNode);
-		newNode.setIsMortal(false);
-		newNode.setIsImmobilized(true);
+		newNode.setMortal(false);
+		newNode.setImmobilized(true);
 		newNode.ownersId = new Vector<Integer>();
 		newNode.spawnMe(player.getX(), player.getY(), player.getZ());
 		
@@ -75,7 +75,7 @@ public class NodesManager {
 		public void run() {
 			if (player.isCastingNow()) {
 				player.sendPacket(new MagicSkillLaunched(player, 11030, 1));
-				player.setIsCastingNow(false);
+				player.setCastingNow(false);
 				
 				if (player.getTarget() == npc && !npc.isDead() && Util.checkIfInRange(1000, player, npc, true)) {
 					String name = player.getName();

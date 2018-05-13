@@ -760,7 +760,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 					
 					if (offlineModeConditions(getActiveChar())) {
 						player.leaveParty();
-						player.setIsInvul(true);
+						player.setInvul(true);
 						
 						if (Config.OFFLINE_SET_NAME_COLOR) {
 							player.getAppearance().setNameColor(Config.OFFLINE_NAME_COLOR);

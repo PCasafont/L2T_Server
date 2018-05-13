@@ -176,7 +176,7 @@ public class Antharas extends L2AttackableAIScript {
 									0,
 									false,
 									world.instanceId);
-							behemoth.setIsRunning(true);
+							behemoth.setRunning(true);
 
 							Npc tarrasque = addSpawn(tarrasqueId,
 									world.antharas.getX(),
@@ -187,7 +187,7 @@ public class Antharas extends L2AttackableAIScript {
 									0,
 									false,
 									world.instanceId);
-							tarrasque.setIsRunning(true);
+							tarrasque.setRunning(true);
 						}
 						break;
 
@@ -201,7 +201,7 @@ public class Antharas extends L2AttackableAIScript {
 									continue;
 								}
 
-								_npc.setIsInvul(false);
+								_npc.setInvul(false);
 								_npc.doDie(world.antharas);
 							}
 
@@ -210,7 +210,7 @@ public class Antharas extends L2AttackableAIScript {
 									continue;
 								}
 
-								_npc.setIsInvul(false);
+								_npc.setInvul(false);
 								_npc.doCast(suicideSKill);
 							}
 
@@ -219,7 +219,7 @@ public class Antharas extends L2AttackableAIScript {
 
 							//Antharas can now can be attacked
 							world.antharas.disableCoreAI(false);
-							world.antharas.setIsInvul(false);
+							world.antharas.setInvul(false);
 							world.antharas.getStatus().startHpMpRegeneration();
 
 							if (world.status == 4) {
@@ -280,9 +280,9 @@ public class Antharas extends L2AttackableAIScript {
 				world.antharas = addSpawn(antharasId, 177480, 114887, -7710, 32675, false, 0, false, world.instanceId);
 				world.antharas.setCurrentHp(world.antharas.getMaxHp() / 2);
 				world.antharas.getStatus().stopHpMpRegeneration();
-				world.antharas.setIsInvul(true);
-				world.antharas.setIsImmobilized(true);
-				world.antharas.setIsMortal(false); //Antharas can't die
+				world.antharas.setInvul(true);
+				world.antharas.setImmobilized(true);
+				world.antharas.setMortal(false); //Antharas can't die
 
 				//Skills?
 				for (Skill sk : world.antharas.getAllSkills()) {
@@ -326,7 +326,7 @@ public class Antharas extends L2AttackableAIScript {
 						continue;
 					}
 
-					chara.setIsImmobilized(false);
+					chara.setImmobilized(false);
 					chara.setTarget(world.antharas);
 
 					((Attackable) chara).addDamageHate(world.antharas, 500, 99999);
@@ -334,7 +334,7 @@ public class Antharas extends L2AttackableAIScript {
 					chara.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, world.antharas, null);
 				}
 
-				world.antharas.setIsImmobilized(false);
+				world.antharas.setImmobilized(false);
 
 				//Force Antharas to attack a target
 				ThreadPoolManager.getInstance().scheduleAi(new Runnable() {
@@ -383,7 +383,7 @@ public class Antharas extends L2AttackableAIScript {
 						continue;
 					}
 
-					_npc.setIsImmobilized(true);
+					_npc.setImmobilized(true);
 				}
 
 				//TODO NOT SURE
@@ -409,14 +409,14 @@ public class Antharas extends L2AttackableAIScript {
 						continue;
 					}
 
-					_npc.setIsImmobilized(false);
+					_npc.setImmobilized(false);
 				}
 
 				ZoneType zone = ZoneManager.getInstance().getZoneById(12001);
 				for (int a = 0; a < 150; a++) {
 					int[] _point = zone.getZone().getRandomPoint();
 					Npc minion = addSpawn(dragonBomberId, _point[0], _point[1], _point[2], 64122, true, 0, false, world.instanceId);
-					minion.setIsRunning(true);
+					minion.setRunning(true);
 					world.minions.add(minion);
 				}
 
@@ -442,7 +442,7 @@ public class Antharas extends L2AttackableAIScript {
 				world.antharas.doCast(skill);
 			} else if (event.equalsIgnoreCase("stage_all_move_antharas")) {
 				if (world.status != 1 && world.status <= 3) {
-					world.antharas.setIsRunning(true);
+					world.antharas.setRunning(true);
 					switch (world.status) {
 						case 0:
 							world.antharas.getAI()
@@ -518,7 +518,7 @@ public class Antharas extends L2AttackableAIScript {
 								0,
 								false,
 								world.instanceId);
-						treater.setIsRunning(true);
+						treater.setRunning(true);
 						treater.setTarget(world.antharas);
 						treater.doCast(sacrifice);
 					}
@@ -544,7 +544,7 @@ public class Antharas extends L2AttackableAIScript {
 								0,
 								false,
 								world.instanceId);
-						treater.setIsRunning(true);
+						treater.setRunning(true);
 						treater.setTarget(world.antharas);
 						treater.doCast(sacrifice);
 					}
@@ -632,9 +632,9 @@ public class Antharas extends L2AttackableAIScript {
 		}
 
 		if (npc instanceof GuardInstance) {
-			npc.setIsImmobilized(true);
-			npc.setIsInvul(true);
-			npc.setIsRunning(true);
+			npc.setImmobilized(true);
+			npc.setInvul(true);
+			npc.setRunning(true);
 		}
 
 		return super.onSpawn(npc);

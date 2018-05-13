@@ -30,7 +30,7 @@ public final class FlyTerrainObjectInstance extends Npc {
 	
 	@Override
 	public void onSpawn() {
-		setIsFlying(true);
+		setFlying(true);
 		super.onSpawn();
 	}
 	

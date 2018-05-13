@@ -18,7 +18,7 @@ public class FlyingFinalForm extends L2Transformation {
 			return;
 		}
 
-		getPlayer().setIsFlyingMounted(true);
+		getPlayer().setFlyingMounted(true);
 
 		transformedSkills();
 	}
@@ -47,7 +47,7 @@ public class FlyingFinalForm extends L2Transformation {
 
 	@Override
 	public void onUntransform() {
-		getPlayer().setIsFlyingMounted(false);
+		getPlayer().setFlyingMounted(false);
 
 		removeSkills();
 	}

@@ -112,7 +112,7 @@ public class EffectDrag extends L2Effect {
 				y = destiny.getY() - (int) (sin * 10);
 			}
 		}
-		getEffected().setIsParalyzed(true);
+		getEffected().setParalyzed(true);
 		getEffected().startParalyze();
 		getEffected().broadcastPacket(new FlyToLocation(getEffected(), x, y, z, FlyType.DRAG));
 		getEffected().setXYZ(x, y, z);
@@ -133,7 +133,7 @@ public class EffectDrag extends L2Effect {
 	 */
 	@Override
 	public void onExit() {
-		getEffected().setIsParalyzed(false);
+		getEffected().setParalyzed(false);
 		getEffected().stopParalyze(false);
 		getEffected().broadcastPacket(new ValidateLocation(getEffected()));
 	}

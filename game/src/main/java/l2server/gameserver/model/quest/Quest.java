@@ -1703,7 +1703,7 @@ public class Quest extends ManagedScript {
 		Trap trap = new TrapInstance(IdFactory.getInstance().getNextId(), TrapTemplate, instanceId, -1, skill);
 		trap.setCurrentHp(trap.getMaxHp());
 		trap.setCurrentMp(trap.getMaxMp());
-		trap.setIsInvul(true);
+		trap.setInvul(true);
 		trap.setHeading(heading);
 		//World.getInstance().storeObject(trap);
 		trap.spawnMe(x, y, z);

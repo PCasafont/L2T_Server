@@ -143,7 +143,7 @@ public class Freya extends L2AttackableAIScript {
 									0,
 									true,
 									world.instanceId);
-							minion.setIsRunning(true);
+							minion.setRunning(true);
 							minion.getSpawn().stopRespawn();
 							world.AllMobs.add(minion);
 						}
@@ -235,7 +235,7 @@ public class Freya extends L2AttackableAIScript {
 
 				world.dummy.setDisplayEffect(1);
 
-				world.Freya.setIsRunning(true);
+				world.Freya.setRunning(true);
 				world.Freya.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(114717, -114973, -11200, 0));
 				world.Freya.getSpawn().setX(114717);
 				world.Freya.getSpawn().setY(-114973);
@@ -254,8 +254,8 @@ public class Freya extends L2AttackableAIScript {
 				world.status = 4;
 
 				world.Freya = addSpawn(world.FirstFreyaId, 114723, -117502, -10672, 15956, false, 0, false, world.instanceId);
-				world.Freya.setIsImmobilized(true);
-				world.Freya.setIsInvul(true);
+				world.Freya.setImmobilized(true);
+				world.Freya.setInvul(true);
 				world.Freya.disableCoreAI(true);
 				world.Freya.disableAllSkills();
 
@@ -328,8 +328,8 @@ public class Freya extends L2AttackableAIScript {
 					world.AllMobs.add(monument);
 
 					monument.getSpawn().stopRespawn();
-					monument.setIsImmobilized(false);
-					monument.setIsInvul(false);
+					monument.setImmobilized(false);
+					monument.setInvul(false);
 					monument.enableAllSkills();
 					monument.disableCoreAI(false);
 
@@ -350,7 +350,7 @@ public class Freya extends L2AttackableAIScript {
 					if (victim != null && victim.isOnline() && victim.getInstanceId() == world.instanceId && !npc.isImmobilized()) {
 						((Attackable) npc).addDamageHate(victim, 0, 99999);
 
-						npc.setIsRunning(true);
+						npc.setRunning(true);
 						npc.setTarget(victim);
 						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, victim, null);
 					} else {
@@ -373,8 +373,8 @@ public class Freya extends L2AttackableAIScript {
 				InstanceManager.getInstance().sendPacket(world.instanceId, new ExShowScreenMessage(1801089, 2, true, 7000));
 
 				//Invul again
-				world.jiniaInner.setIsInvul(true);
-				world.kegorInner.setIsInvul(true);
+				world.jiniaInner.setInvul(true);
+				world.kegorInner.setInvul(true);
 
 				world.jiniaInner.doCast(SkillTable.getInstance().getInfo(6288, 1));
 				world.kegorInner.doCast(SkillTable.getInstance().getInfo(6289, 1));
@@ -394,8 +394,8 @@ public class Freya extends L2AttackableAIScript {
 				((Attackable) world.jiniaInner).addDamageHate(world.Freya, 500, 99999);
 				world.jiniaInner.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, world.Freya, null);
 
-				world.jiniaInner.setIsRunning(true);
-				world.kegorInner.setIsRunning(true);
+				world.jiniaInner.setRunning(true);
+				world.kegorInner.setRunning(true);
 			} else if (event.equalsIgnoreCase("stage_4_finalscene")) {
 				InstanceManager.getInstance().showVidToInstance(20, world.instanceId);
 			}
@@ -618,7 +618,7 @@ public class Freya extends L2AttackableAIScript {
 				npc.setDisplayEffect(1);
 			}
 
-			npc.setIsRunning(true);
+			npc.setRunning(true);
 
 			L2Spawn spawn = npc.getSpawn();
 			spawn.setRespawnDelay(20);
@@ -631,8 +631,8 @@ public class Freya extends L2AttackableAIScript {
 			Npc npc = addSpawn(world.IceKnightId, sp[0], sp[1], sp[2], sp[3], false, 0, false, world.instanceId);
 			world.Monuments.add(npc);
 			npc.disableCoreAI(true);
-			npc.setIsImmobilized(true);
-			npc.setIsInvul(true);
+			npc.setImmobilized(true);
+			npc.setInvul(true);
 			npc.disableAllSkills();
 			npc.setDisplayEffect(1);
 			npc.setEnchant(1);

@@ -1463,7 +1463,7 @@ public class Npc extends Creature {
 			log.error("Failed decayMe().", e);
 		}
 		try {
-			if (fusionSkill != null || continuousDebuffTargets != null) {
+			if (getFusionSkill() != null || getContinuousDebuffTargets() != null) {
 				abortCast();
 			}
 			

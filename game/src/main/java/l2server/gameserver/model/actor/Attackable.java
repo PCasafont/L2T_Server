@@ -299,7 +299,7 @@ public class Attackable extends Npc {
 	public Attackable(int objectId, NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2Attackable);
-		setIsInvul(false);
+		setInvul(false);
 		mustGiveExpSp = true;
 	}
 	
@@ -2341,9 +2341,9 @@ public class Attackable extends Npc {
 	}
 	
 	public void escape(String message) {
-		setIsInvul(true);
+		setInvul(true);
 		setTarget(this);
-		setIsCastingNow(true);
+		setCastingNow(true);
 		disableAllSkills();
 		
 		int unstuckTimer = 4000;
@@ -2375,11 +2375,11 @@ public class Attackable extends Npc {
 		@Override
 		public void run() {
 			mob.enableAllSkills();
-			mob.setIsCastingNow(false);
+			mob.setCastingNow(false);
 			if (!mob.isRaid()) {
 				mob.setCurrentHpMp(mob.getMaxHp(), mob.getMaxMp());
 			}
-			mob.setIsInvul(false);
+			mob.setInvul(false);
 			mob.teleToLocation(mob.getSpawn().getX(), mob.getSpawn().getY(), mob.getSpawn().getZ());
 		}
 	}

@@ -210,15 +210,15 @@ public class ShuttleInstance extends Vehicle {
 		
 		public void moveTo() {
 			MoveData m = new MoveData();
-			m.disregardingGeodata = false;
-			m.onGeodataPathIndex = -1;
-			m.xDestination = position.getX();
-			m.yDestination = position.getY();
-			m.zDestination = position.getZ();
-			m.heading = 0;
+			m.setDisregardingGeodata(false);
+			m.setOnGeodataPathIndex(-1);
+			m.setXDestination(position.getX());
+			m.setYDestination(position.getY());
+			m.setZDestination(position.getZ());
+			m.setHeading(0);
 			
-			m.moveStartTime = TimeController.getGameTicks();
-			move = m;
+			m.setMoveStartTime(TimeController.getGameTicks());
+			setMove(m);
 			
 			TimeController.getInstance().registerMovingObject(ShuttleInstance.this);
 			

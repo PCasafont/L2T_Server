@@ -72,7 +72,7 @@ public class Cocoons extends L2AttackableAIScript {
 
 	@Override
 	public final String onSpawn(Npc npc) {
-		npc.setIsImmobilized(true);
+		npc.setImmobilized(true);
 
 		return super.onSpawn(npc);
 	}
@@ -113,7 +113,7 @@ public class Cocoons extends L2AttackableAIScript {
 		if (mobs != null) {
 			for (int a = 0; a <= 3; a++) {
 				Npc mob = addSpawn(mobs[Rnd.get(mobs.length)], npc.getX(), npc.getY(), npc.getZ(), 0, false, 180000, true); //3 min self-despawn
-				mob.setIsRunning(true);
+				mob.setRunning(true);
 				mob.setTarget(player);
 				((MonsterInstance) mob).addDamageHate(player, 500, 99999);
 				mob.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);

@@ -51,7 +51,7 @@ public abstract class Playable extends Creature {
 	public Playable(int objectId, CreatureTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2Playable);
-		setIsInvul(false);
+		setInvul(false);
 	}
 	
 	@Override
@@ -233,7 +233,7 @@ public abstract class Playable extends Creature {
 	// Support for Noblesse Blessing skill, where buffs are retained
 	// after resurrect
 	public final boolean isNoblesseBlessed() {
-		return effects.isAffected(EffectType.NOBLESSE_BLESSING.getMask()) && !getActingPlayer().getIsInsideGMEvent();
+		return getEffects().isAffected(EffectType.NOBLESSE_BLESSING.getMask()) && !getActingPlayer().getIsInsideGMEvent();
 	}
 	
 	public final void stopNoblesseBlessing(Abnormal effect) {
@@ -247,7 +247,7 @@ public abstract class Playable extends Creature {
 	
 	// Support for Soul of the Phoenix and Salvation skills
 	public final boolean isPhoenixBlessed() {
-		return effects.isAffected(EffectType.PHOENIX_BLESSING.getMask());
+		return getEffects().isAffected(EffectType.PHOENIX_BLESSING.getMask());
 	}
 	
 	public final void stopPhoenixBlessing(Abnormal effect) {
@@ -264,12 +264,12 @@ public abstract class Playable extends Creature {
 	 * Return True if the Silent Moving mode is active.<BR><BR>
 	 */
 	public boolean isSilentMoving() {
-		return effects.isAffected(EffectType.SILENT_MOVE.getMask());
+		return getEffects().isAffected(EffectType.SILENT_MOVE.getMask());
 	}
 	
 	// for Newbie Protection Blessing skill, keeps you safe from an attack by a chaotic character >= 10 levels apart from you
 	public final boolean getProtectionBlessing() {
-		return effects.isAffected(EffectType.PROTECTION_BLESSING.getMask());
+		return getEffects().isAffected(EffectType.PROTECTION_BLESSING.getMask());
 	}
 	
 	public void stopProtectionBlessing(Abnormal effect) {
@@ -284,7 +284,7 @@ public abstract class Playable extends Creature {
 	
 	//Charm of Luck - During a Raid/Boss war, decreased chance for death penalty
 	public final boolean getCharmOfLuck() {
-		return effects.isAffected(EffectType.CHARM_OF_LUCK.getMask());
+		return getEffects().isAffected(EffectType.CHARM_OF_LUCK.getMask());
 	}
 	
 	public final void stopCharmOfLuck(Abnormal effect) {
@@ -299,7 +299,7 @@ public abstract class Playable extends Creature {
 	
 	@Override
 	public void updateEffectIcons(boolean partyOnly) {
-		effects.updateEffectIcons(partyOnly);
+		getEffects().updateEffectIcons(partyOnly);
 	}
 	
 	public boolean isLockedTarget() {

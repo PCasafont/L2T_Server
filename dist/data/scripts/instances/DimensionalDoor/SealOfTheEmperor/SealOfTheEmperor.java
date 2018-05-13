@@ -238,21 +238,21 @@ public class SealOfTheEmperor extends L2AttackableAIScript {
 				}
 			} else if (event.equalsIgnoreCase("stage_last_spawns")) {
 				world.bossAnakim = addSpawn(anakim, -83179, 216479, -7504, 0, true, 0, false, world.instanceId);
-				world.bossAnakim.setIsInvul(true);
+				world.bossAnakim.setInvul(true);
 
 				for (int b = 0; b <= 1; b++) {
 					for (int a : anakimMinions) {
 						Npc minion = addSpawn(a, -83179, 216479, -7504, 0, true, 0, false, world.instanceId);
-						minion.setIsInvul(true);
+						minion.setInvul(true);
 					}
 				}
 				world.bossLilith = addSpawn(lilith, -83175, 217021, -7504, 0, true, 0, false, world.instanceId);
-				world.bossLilith.setIsInvul(true);
+				world.bossLilith.setInvul(true);
 
 				for (int b = 0; b <= 1; b++) {
 					for (int a : lilithMinions) {
 						Npc minion = addSpawn(a, -83175, 217021, -7504, 0, true, 0, false, world.instanceId);
-						minion.setIsInvul(true);
+						minion.setInvul(true);
 					}
 				}
 
@@ -270,8 +270,8 @@ public class SealOfTheEmperor extends L2AttackableAIScript {
 					}
 
 					if (monster.getNpcId() == sealDevice) {
-						monster.setIsMortal(false); //device can't die
-						monster.setIsImmobilized(true);
+						monster.setMortal(false); //device can't die
+						monster.setImmobilized(true);
 						monster.getStatus().stopHpMpRegeneration();
 					}
 				}

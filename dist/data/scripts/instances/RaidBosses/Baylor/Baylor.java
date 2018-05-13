@@ -110,10 +110,10 @@ public class Baylor extends L2AttackableAIScript {
 				InstanceManager.getInstance().stopWholeInstance(world.instanceId);
 
 				world.baylorOne = addSpawn(baylorId, 153751, 142333, -12738, 10617, false, 0, false, world.instanceId);
-				world.baylorOne.setIsParalyzed(true);
+				world.baylorOne.setParalyzed(true);
 
 				world.baylorTwo = addSpawn(baylorId, 153832, 141930, -12738, 60191, false, 0, false, world.instanceId);
-				world.baylorTwo.setIsParalyzed(true);
+				world.baylorTwo.setParalyzed(true);
 
 				world.camera = addSpawn(cameraId, 153273, 141400, -12738, 10800, false, 0, false, world.instanceId);
 				world.camera.broadcastPacket(new SpecialCamera(world.camera.getObjectId(), 700, -45, 160, 500, 15200, 0, 0, 1, 0));
@@ -126,7 +126,7 @@ public class Baylor extends L2AttackableAIScript {
 					int y = (int) (radius * Math.sin(i * 0.618));
 
 					Npc mob = addSpawn(cameraMinionId, 153571 + x, 142075 + y, -12737, 0, false, 0, false, world.instanceId);
-					mob.setIsParalyzed(true);
+					mob.setParalyzed(true);
 					world.cameraMinions.add(mob);
 				}
 				startQuestTimer("stage_1_camera_1", 200, world.camera, null);
@@ -157,8 +157,8 @@ public class Baylor extends L2AttackableAIScript {
 				startQuestTimer("stage_2_start", 2000, world.camera, null);
 			} else if (event.equalsIgnoreCase("stage_2_start")) {
 				world.camera.decayMe();
-				world.baylorOne.setIsParalyzed(false);
-				world.baylorTwo.setIsParalyzed(false);
+				world.baylorOne.setParalyzed(false);
+				world.baylorTwo.setParalyzed(false);
 
 				for (Npc mob : world.cameraMinions) {
 					mob.doDie(mob);

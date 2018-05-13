@@ -27,7 +27,7 @@ public class EffectPointInstance extends Npc {
 	public EffectPointInstance(int objectId, NpcTemplate template, Creature owner) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2EffectPointInstance);
-		setIsInvul(false);
+		setInvul(false);
 		this.owner = owner == null ? null : owner.getActingPlayer();
 		setInstanceId(this.owner.getInstanceId());
 	}

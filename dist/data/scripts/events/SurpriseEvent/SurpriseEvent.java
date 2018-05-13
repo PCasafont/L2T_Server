@@ -281,8 +281,8 @@ public class SurpriseEvent extends Quest {
 			for (int i = 0; i < nb_box; i++) {
 				int r = Rnd.get(loc.length);
 				Npc inv = addSpawn(invaderIds[Rnd.get(invaderIds.length)], loc[r][0], loc[r][1], loc[r][2] + 20, -1, false, 0);
-				inv.setIsImmobilized(true);
-				inv.setIsMortal(false);
+				inv.setImmobilized(true);
+				inv.setMortal(false);
 				invaders.add(inv);
 			}
 

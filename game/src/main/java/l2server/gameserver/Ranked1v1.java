@@ -101,7 +101,7 @@ public class Ranked1v1 {
 				fighter.getKey().setTeam(2);
 			}
 
-			fighter.getKey().setIsParalyzed(true);
+			fighter.getKey().setParalyzed(true);
 			fighter.getKey().sendMessage("Fight will start in 15 seconds.");
 			fighter.getKey().setPvpFlag(0);
 			fighter.getKey().heal();
@@ -212,7 +212,7 @@ public class Ranked1v1 {
 				continue;
 			}
 			fighter.getKey().setPvpFlag(1);
-			fighter.getKey().setIsParalyzed(false);
+			fighter.getKey().setParalyzed(false);
 			fighter.getKey().sendMessage("[RANKED] Fight!");
 			fighter.setValue(System.currentTimeMillis());
 		}

@@ -202,7 +202,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 				//Spawn the dummy npc
 				world.dummyNpc = addSpawn(13310, -107929, 208860, -10877, 49151, false, 0, false, world.instanceId);
 				world.dummyNpc.disableCoreAI(true);
-				world.dummyNpc.setIsImmobilized(true);
+				world.dummyNpc.setImmobilized(true);
 			} else if (event.equalsIgnoreCase("stage_2_start")) {
 				world.dummyNpc.deleteMe();
 				
@@ -543,7 +543,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 	private static void sendToCenter(int inst, int npcid, int x, int y, int z, int head) {
 		for (Npc mob : InstanceManager.getInstance().getInstance(inst).getNpcs()) {
 			if (mob != null && mob.getNpcId() == npcid) {
-				mob.setIsRunning(true);
+				mob.setRunning(true);
 				mob.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(x, y, z, head));
 				mob.getSpawn().setX(x);
 				mob.getSpawn().setY(y);
@@ -557,7 +557,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 			return;
 		}
 		
-		npc.setIsRunning(true);
+		npc.setRunning(true);
 		npc.setTarget(player);
 		((Attackable) npc).addDamageHate(player, 500, 99999);
 		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player, null);

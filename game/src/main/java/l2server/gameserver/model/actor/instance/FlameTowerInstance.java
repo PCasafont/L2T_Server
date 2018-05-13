@@ -36,7 +36,7 @@ public class FlameTowerInstance extends Npc {
 	public FlameTowerInstance(int objectId, NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2FlameTowerInstance);
-		setIsInvul(false);
+		setInvul(false);
 	}
 	
 	@Override

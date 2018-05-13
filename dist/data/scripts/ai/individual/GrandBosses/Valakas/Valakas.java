@@ -230,7 +230,7 @@ public class Valakas extends L2AttackableAIScript {
 			bossZone.stopWholeZone();
 
 			valakasBoss = addSpawn(valakasId, 212852, -114842, -1632, 0, false, 0);
-			valakasBoss.setIsInvul(true);
+			valakasBoss.setInvul(true);
 			valakasBoss.disableCoreAI(true);
 
 			GrandBossManager.getInstance().addBoss((GrandBossInstance) valakasBoss);
@@ -256,7 +256,7 @@ public class Valakas extends L2AttackableAIScript {
 
 			startQuestTimer("valakas_last_spawn_task", 26000, null, null);
 		} else if (event.equalsIgnoreCase("valakas_last_spawn_task")) {
-			valakasBoss.setIsInvul(false);
+			valakasBoss.setInvul(false);
 
 			bossZone.startWholeZone();
 
@@ -313,12 +313,12 @@ public class Valakas extends L2AttackableAIScript {
 					// Cast the skill or follow the target.
 					if (Util.checkIfInRange(skill.getCastRange() < 600 ? 600 : skill.getCastRange(), valakasBoss, actualVictim, true)) {
 						valakasBoss.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-						valakasBoss.setIsCastingNow(true);
+						valakasBoss.setCastingNow(true);
 						valakasBoss.setTarget(actualVictim);
 						valakasBoss.doCast(skill);
 					} else {
 						valakasBoss.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, actualVictim, null);
-						valakasBoss.setIsCastingNow(false);
+						valakasBoss.setCastingNow(false);
 					}
 				}
 			}

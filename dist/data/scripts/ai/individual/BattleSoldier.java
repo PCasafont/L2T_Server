@@ -70,7 +70,7 @@ public class BattleSoldier extends L2AttackableAIScript {
 
 		npc.setAI(battleSoldierAI);
 
-		npc.setIsInvul(true);
+		npc.setInvul(true);
 
 		battleSoldierAI.initializeRoute(route, null);
 

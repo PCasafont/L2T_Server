@@ -762,7 +762,7 @@ public class PailakaInjuredDragon extends Quest {
 					final MonsterInstance monster = (MonsterInstance) npc;
 					//monster.setIsAggresiveOverride(900);
 					//monster.setClanOverride("pailaka_clan");
-					monster.setIsImmobilized(true);
+					monster.setImmobilized(true);
 					break;
 				}
 			}

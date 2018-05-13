@@ -67,9 +67,9 @@ public class PrisonGuards extends L2AttackableAIScript {
 		guards.put(addSpawn(GUARD1, 155578, 160177, -3352, 0, false, 0), 3);
 
 		for (Npc npc : guards.keySet()) {
-			npc.setIsImmobilized(true);
+			npc.setImmobilized(true);
 			if (npc.getNpcId() == GUARD1) {
-				npc.setIsInvul(true);
+				npc.setInvul(true);
 				npc.disableCoreAI(true);
 			}
 		}
@@ -85,9 +85,9 @@ public class PrisonGuards extends L2AttackableAIScript {
 					npc.getSpawn().getHeading(),
 					false,
 					0);
-			newGuard.setIsImmobilized(true);
+			newGuard.setImmobilized(true);
 			if (npc.getNpcId() == GUARD1) {
-				newGuard.setIsInvul(true);
+				newGuard.setInvul(true);
 				newGuard.disableCoreAI(true);
 			}
 
@@ -98,7 +98,7 @@ public class PrisonGuards extends L2AttackableAIScript {
 			if (npc.getNpcId() == GUARD2) {
 				if (npc.getX() != npc.getSpawn().getX() || npc.getY() != npc.getSpawn().getY()) {
 					npc.teleToLocation(npc.getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ(), npc.getSpawn().getHeading(), false);
-					npc.setIsImmobilized(true);
+					npc.setImmobilized(true);
 				}
 				((Attackable) npc).getAggroList().clear();
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
@@ -138,7 +138,7 @@ public class PrisonGuards extends L2AttackableAIScript {
 				cancelQuestTimer("attackEnd", null, null);
 				startQuestTimer("attackEnd", 180000, npc, null);
 
-				npc.setIsImmobilized(false);
+				npc.setImmobilized(false);
 				npc.setTarget(target);
 				npc.setRunning();
 				((Attackable) npc).addDamageHate(target, 0, 999);
@@ -146,7 +146,7 @@ public class PrisonGuards extends L2AttackableAIScript {
 			} else {
 				if (npc.getX() != npc.getSpawn().getX() || npc.getY() != npc.getSpawn().getY()) {
 					npc.teleToLocation(npc.getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ(), npc.getSpawn().getHeading(), false);
-					npc.setIsImmobilized(true);
+					npc.setImmobilized(true);
 				}
 				((Attackable) npc).getAggroList().remove(target);
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
@@ -183,7 +183,7 @@ public class PrisonGuards extends L2AttackableAIScript {
 			cancelQuestTimer("attackEnd", null, null);
 			startQuestTimer("attackEnd", 180000, npc, null);
 
-			npc.setIsImmobilized(false);
+			npc.setImmobilized(false);
 			npc.setTarget(attacker);
 			npc.setRunning();
 			((Attackable) npc).addDamageHate(attacker, 0, 999);

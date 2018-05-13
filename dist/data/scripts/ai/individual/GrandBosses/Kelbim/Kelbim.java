@@ -204,7 +204,7 @@ public class Kelbim extends L2AttackableAIScript {
 		} else if (event.equalsIgnoreCase("stage_all_spawn_minions")) {
 			for (int i = 0; i < Rnd.get(bossStage * 5 / 2, bossStage * 5); i++) {
 				Npc minion = addSpawn(kelbimGuard, kelbimBoss.getX(), kelbimBoss.getY(), kelbimBoss.getZ(), 0, true, 0, true, 0);
-				minion.setIsRunning(true);
+				minion.setRunning(true);
 				((Attackable) minion).setIsRaidMinion(true);
 
 				minions.add(minion);
@@ -220,7 +220,7 @@ public class Kelbim extends L2AttackableAIScript {
 						0,
 						true,
 						0);
-				minion.setIsRunning(true);
+				minion.setRunning(true);
 				((Attackable) minion).setIsRaidMinion(true);
 
 				minions.add(minion);

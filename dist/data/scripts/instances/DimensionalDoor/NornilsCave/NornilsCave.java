@@ -114,14 +114,14 @@ public class NornilsCave extends L2AttackableAIScript {
 				for (int[] i : bozSpawns[0]) {
 					Npc boz = addSpawn(bozId, i[0], i[1], i[2], i[3], false, 0, false, world.instanceId);
 					world.bozMobs.add(boz);
-					boz.setIsParalyzed(true);
-					boz.setIsInvul(true);
+					boz.setParalyzed(true);
+					boz.setInvul(true);
 					notifyEvent("stage_all_spicula_spawns", boz, null);
 				}
 			} else if (event.equalsIgnoreCase("stage_all_spicula_spawns")) {
 				if (!npc.isDead()) {
 					if (!npc.isInvul()) {
-						npc.setIsInvul(true);
+						npc.setInvul(true);
 					}
 
 					if (world.roomMobs.size() < 20) {
@@ -150,16 +150,16 @@ public class NornilsCave extends L2AttackableAIScript {
 				for (int[] i : bozSpawns[1]) {
 					Npc boz = addSpawn(bozId, i[0], i[1], i[2], i[3], false, 0, true, world.instanceId);
 					world.bozMobs.add(boz);
-					boz.setIsParalyzed(true);
-					boz.setIsInvul(true);
+					boz.setParalyzed(true);
+					boz.setInvul(true);
 					notifyEvent("stage_all_spicula_spawns", boz, null);
 				}
 			} else if (event.equalsIgnoreCase("stage_3_start")) {
 				for (int[] i : bozSpawns[2]) {
 					Npc boz = addSpawn(bozId, i[0], i[1], i[2], i[3], false, 0, true, world.instanceId);
 					world.bozMobs.add(boz);
-					boz.setIsParalyzed(true);
-					boz.setIsInvul(true);
+					boz.setParalyzed(true);
+					boz.setInvul(true);
 					notifyEvent("stage_all_spicula_spawns", boz, null);
 				}
 			} else if (event.equalsIgnoreCase("stage_4_start")) {
@@ -167,8 +167,8 @@ public class NornilsCave extends L2AttackableAIScript {
 				for (int[] i : bozSpawns[3]) {
 					Npc boz = addSpawn(bozId, i[0], i[1], i[2], i[3], false, 0, false, world.instanceId);
 					world.bozMobs.add(boz);
-					boz.setIsParalyzed(true);
-					boz.setIsInvul(true);
+					boz.setParalyzed(true);
+					boz.setInvul(true);
 					notifyEvent("stage_all_spicula_spawns", boz, null);
 				}
 			}
@@ -233,7 +233,7 @@ public class NornilsCave extends L2AttackableAIScript {
 
 					if (world.roomMobs.isEmpty()) {
 						for (Npc boz : world.bozMobs) {
-							boz.setIsInvul(false);
+							boz.setInvul(false);
 						}
 					}
 				}

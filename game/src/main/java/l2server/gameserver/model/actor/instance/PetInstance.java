@@ -976,10 +976,10 @@ public class PetInstance extends Summon {
 				curWeightPenalty = newWeightPenalty;
 				if (newWeightPenalty > 0) {
 					addSkill(SkillTable.getInstance().getInfo(4270, newWeightPenalty));
-					setIsOverloaded(getCurrentLoad() >= maxLoad);
+					setOverloaded(getCurrentLoad() >= maxLoad);
 				} else {
 					super.removeSkill(getKnownSkill(4270));
-					setIsOverloaded(false);
+					setOverloaded(false);
 				}
 			}
 		}

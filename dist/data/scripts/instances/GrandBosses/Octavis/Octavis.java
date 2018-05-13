@@ -178,8 +178,8 @@ public class Octavis extends L2AttackableAIScript {
 			OctavisWorld world = (OctavisWorld) wrld;
 			if (npc.getNpcId() == world.firstOctavisId) {
 				if (skill == heroArrowShaft) {
-					world.octavisLions.setIsRunning(true);
-					world.octavisBoss.setIsRunning(true);
+					world.octavisLions.setRunning(true);
+					world.octavisBoss.setRunning(true);
 					world.lionsAI.walkToLocation();
 
 					world.octavisBoss.getAI().startFollow(world.octavisLions, 100);
@@ -265,12 +265,12 @@ public class Octavis extends L2AttackableAIScript {
 				startQuestTimer("stage_1_spawnboss", ScenePlayerDataTable.getInstance().getVideoDuration(35) + 2000, null, player);
 			} else if (event.equalsIgnoreCase("stage_1_spawnboss")) {
 				world.octavisLions = addSpawn(world.octavisLionsId, 207187, 120575, -10006, 65463, false, 0, false, world.instanceId);
-				world.octavisLions.setIsRunning(true);
-				world.octavisLions.setIsMortal(false); //Lions cant die
+				world.octavisLions.setRunning(true);
+				world.octavisLions.setMortal(false); //Lions cant die
 				world.octavisBoss = addSpawn(world.firstOctavisId, 206990, 120575, -10006, 65004, false, 0, false, world.instanceId);
 				world.octavisBoss.disableCoreAI(true);
-				world.octavisBoss.setIsInvul(true);
-				world.octavisBoss.setIsRunning(true);
+				world.octavisBoss.setInvul(true);
+				world.octavisBoss.setRunning(true);
 				world.octavisBoss.getAI().startFollow(world.octavisLions, 105);
 
 				world.Dummy = addSpawn(octavisInfluenceDummy, 207190, 120568, -10011, 47671, false, 0, false, world.instanceId);
@@ -323,7 +323,7 @@ public class Octavis extends L2AttackableAIScript {
 					for (int[] id : beastSpawns) {
 						Npc minion = addSpawn(world.beastOfTheArena, id[0], id[1], id[2], id[3], false, 0, true, world.instanceId);
 						world.allMinions.add(minion);
-						minion.setIsRunning(true);
+						minion.setRunning(true);
 
 						L2Spawn spawn = minion.getSpawn();
 						spawn.setRespawnDelay(20);
@@ -333,7 +333,7 @@ public class Octavis extends L2AttackableAIScript {
 					for (int[] id : gladiatorSpawns) {
 						Npc minion = addSpawn(world.octavisGladiatorId, id[0], id[1], id[2], id[3], false, 0, true, world.instanceId);
 						world.allMinions.add(minion);
-						minion.setIsRunning(true);
+						minion.setRunning(true);
 
 						L2Spawn spawn = minion.getSpawn();
 						spawn.setRespawnDelay(20);
@@ -349,7 +349,7 @@ public class Octavis extends L2AttackableAIScript {
 					for (int[] id : heroOfTheArenaSpawns) {
 						Npc minion = addSpawn(heroOfTheArena, id[0], id[1], id[2], id[3], false, 0, true, world.instanceId);
 						world.allMinions.add(minion);
-						minion.setIsRunning(true);
+						minion.setRunning(true);
 
 						L2Spawn spawn = minion.getSpawn();
 						spawn.setRespawnDelay(20);
@@ -365,7 +365,7 @@ public class Octavis extends L2AttackableAIScript {
 					Npc minion = addSpawn(world.octavisCuratorId, id[0], id[1], id[2], id[3], false, 0, true, world.instanceId);
 					world.allMinions.add(minion);
 					world.curatorMinions.add(minion);
-					minion.setIsRunning(true);
+					minion.setRunning(true);
 					L2Spawn spawn = minion.getSpawn();
 					spawn.setRespawnDelay(20);
 					spawn.startRespawn();
@@ -441,9 +441,9 @@ public class Octavis extends L2AttackableAIScript {
 					}
 
 					if (world.octavisLions.getCurrentHp() < world.octavisLions.getMaxHp() * 0.50) {
-						npc.setIsInvul(false);
+						npc.setInvul(false);
 					} else {
-						npc.setIsInvul(true);
+						npc.setInvul(true);
 					}
 				}
 			} else if (npc.getNpcId() == world.secondOctavisId) {

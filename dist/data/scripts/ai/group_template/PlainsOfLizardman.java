@@ -117,7 +117,7 @@ public class PlainsOfLizardman extends L2AttackableAIScript {
 		} else if (npc.getNpcId() == FANTASY_MUSHROOM) {
 			for (Creature target : npc.getKnownList().getKnownCharactersInRadius(1000)) {
 				if (target != null && target instanceof Attackable && target.getAI() != null) {
-					target.setIsRunning(true);
+					target.setRunning(true);
 					target.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(npc.getX(), npc.getY(), npc.getZ(), 0));
 				}
 			}
@@ -150,7 +150,7 @@ public class PlainsOfLizardman extends L2AttackableAIScript {
 	}
 
 	private void attackPlayer(Attackable npc, Playable playable) {
-		npc.setIsRunning(true);
+		npc.setRunning(true);
 		npc.addDamageHate(playable, 0, 999);
 		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, playable);
 	}

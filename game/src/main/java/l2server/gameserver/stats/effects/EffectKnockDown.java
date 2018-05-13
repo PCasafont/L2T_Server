@@ -112,7 +112,7 @@ public class EffectKnockDown extends L2Effect {
 				y = destiny.getY() + (int) (sin * 10);
 			}
 		}
-		getEffected().setIsParalyzed(true);
+		getEffected().setParalyzed(true);
 		getEffected().startParalyze();
 		getEffected().broadcastPacket(new FlyToLocation(getEffected(), x, y, z, FlyType.KNOCK_DOWN));
 		getEffected().startVisualEffect(VisualEffect.S_KNOCK_DOWN);
@@ -133,7 +133,7 @@ public class EffectKnockDown extends L2Effect {
 	 */
 	@Override
 	public void onExit() {
-		getEffected().setIsParalyzed(false);
+		getEffected().setParalyzed(false);
 		getEffected().stopParalyze(false);
 		getEffected().stopVisualEffect(VisualEffect.S_KNOCK_DOWN);
 		getEffected().broadcastPacket(new ValidateLocation(getEffected()));

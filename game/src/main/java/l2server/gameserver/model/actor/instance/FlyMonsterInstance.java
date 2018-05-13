@@ -27,7 +27,7 @@ public final class FlyMonsterInstance extends MonsterInstance {
 	
 	@Override
 	public void onSpawn() {
-		setIsFlying(true);
+		setFlying(true);
 		super.onSpawn();
 	}
 }

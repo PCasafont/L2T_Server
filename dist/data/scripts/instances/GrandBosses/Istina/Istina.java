@@ -359,7 +359,7 @@ public class Istina extends L2AttackableAIScript {
 				world.status = 3;
 
 				world.Istina = addSpawn(world.IstinaId, -177119, 147857, -11385, 49511, false, 0, false, world.instanceId);
-				world.Istina.setIsMortal(false);
+				world.Istina.setMortal(false);
 
 				startQuestTimer("stage_all_manifestation_of_authority", Rnd.get(60000 / 2, 60000), world.Istina, null);
 
@@ -448,7 +448,7 @@ public class Istina extends L2AttackableAIScript {
 									180000,
 									true,
 									world.instanceId);
-							sealingEnergy.setIsInvul(true);
+							sealingEnergy.setInvul(true);
 						}
 						world.Istina.broadcastPacket(new PlaySound(3, "Npcdialog1.istina_voice_04", 0, 0, 0, 0, 0));
 					}
@@ -502,8 +502,8 @@ public class Istina extends L2AttackableAIScript {
 
 				world.Ballista = addSpawn(ballistaId, -177119, 146889, -11384, 16571, false, 0, false, world.instanceId);
 				world.Ballista.disableCoreAI(true);
-				world.Ballista.setIsInvul(true);
-				world.Ballista.setIsParalyzed(true);
+				world.Ballista.setInvul(true);
+				world.Ballista.setParalyzed(true);
 
 				addSpawn(rumieseInnerId, -177028, 146879, -11384, 22754, false, 0, false, world.instanceId);
 

@@ -445,8 +445,8 @@ public class MobSummonInstance extends SummonInstance {
 	}
 	
 	@Override
-	public void setIsImmobilized(boolean value) {
-		super.setIsImmobilized(value);
+	public void setImmobilized(boolean value) {
+		super.setImmobilized(value);
 		
 		if (value) {
 			previousFollowStatus = getFollowStatus();

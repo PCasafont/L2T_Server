@@ -36,7 +36,7 @@ public class SearchingMaster extends L2AttackableAIScript {
 			return null;
 		}
 
-		npc.setIsRunning(true);
+		npc.setRunning(true);
 		((Attackable) npc).addDamageHate(player, 0, 999);
 		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
 

@@ -178,7 +178,7 @@ public class Baium extends L2AttackableAIScript {
 
 				baiumBoss = addSpawn(liveBaium, 116033, 17447, 10107, -25348, false, 0);
 
-				baiumBoss.setIsInvul(true);
+				baiumBoss.setInvul(true);
 
 				baiumBoss.disableCoreAI(true);
 
@@ -237,7 +237,7 @@ public class Baium extends L2AttackableAIScript {
 
 			startQuestTimer("minions_attack_task", 60000, null, null, true);
 
-			baiumBoss.setIsInvul(false);
+			baiumBoss.setInvul(false);
 
 			baiumBoss.disableCoreAI(false);
 		} else if (event.equalsIgnoreCase("minions_attack_task")) {
@@ -369,7 +369,7 @@ public class Baium extends L2AttackableAIScript {
 			log.warn(getName() + ": onSpawn: " + npc.getName());
 		}
 
-		npc.setIsRunning(true);
+		npc.setRunning(true);
 		((Attackable) npc).setIsRaidMinion(true);
 
 		return super.onSpawn(npc);

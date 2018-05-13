@@ -331,7 +331,7 @@ public class Beleth extends L2AttackableAIScript {
 			} else if (event.equalsIgnoreCase("stage_1_intro_1_16")) {
 				world.beleth.teleToLocation(16323, 213059, -9357, 49152, false);
 
-				world.beleth.setIsImmobilized(true);
+				world.beleth.setImmobilized(true);
 
 				if (world.beleth.isCastingNow()) {
 					world.beleth.abortCast();
@@ -354,7 +354,7 @@ public class Beleth extends L2AttackableAIScript {
 				for (Npc blth : world.Minions) {
 					blth.spawnMe();
 
-					blth.setIsImmobilized(true);//3000
+					blth.setImmobilized(true);//3000
 				}
 
 				startQuestTimer("stage_1_intro_1_20", 3000, null, player);
@@ -372,7 +372,7 @@ public class Beleth extends L2AttackableAIScript {
 
 				minion.spawnMe();
 
-				minion.setIsImmobilized(true);
+				minion.setImmobilized(true);
 
 				startQuestTimer("stage_1_intro_1_21", 3000, null, player);
 			} else if (event.equalsIgnoreCase("stage_1_intro_1_21")) {
@@ -522,9 +522,9 @@ public class Beleth extends L2AttackableAIScript {
 
 				world.beleth = addSpawn(realBelethId, 16323, 213170, -9357, 49152, false, 0, false, world.instanceId);
 
-				world.beleth.setIsInvul(true);
+				world.beleth.setInvul(true);
 
-				world.beleth.setIsImmobilized(true);
+				world.beleth.setImmobilized(true);
 
 				world.beleth.disableAllSkills();
 

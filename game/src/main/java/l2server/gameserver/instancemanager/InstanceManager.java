@@ -341,16 +341,16 @@ public class InstanceManager {
 			mobs.abortCast();
 			mobs.disableAllSkills();
 			mobs.stopMove(null);
-			mobs.setIsInvul(true);
-			mobs.setIsImmobilized(true);
+			mobs.setInvul(true);
+			mobs.setImmobilized(true);
 		}
 		
 		for (Player pl : World.getInstance().getAllPlayers().values()) {
 			if (pl != null && pl.getInstanceId() == instId && !pl.isGM()) {
-				pl.setIsImmobilized(true);
+				pl.setImmobilized(true);
 				pl.setTarget(null);
 				pl.disableAllSkills();
-				pl.setIsInvul(true);
+				pl.setInvul(true);
 				pl.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 			}
 		}
@@ -375,16 +375,16 @@ public class InstanceManager {
 				continue;
 			}
 			
-			mobs.setIsInvul(false);
+			mobs.setInvul(false);
 			mobs.enableAllSkills();
-			mobs.setIsImmobilized(false);
+			mobs.setImmobilized(false);
 		}
 		
 		for (Player pl : World.getInstance().getAllPlayers().values()) {
 			if (pl != null && pl.getInstanceId() == instId && !pl.isGM()) {
 				pl.enableAllSkills();
-				pl.setIsInvul(false);
-				pl.setIsImmobilized(false);
+				pl.setInvul(false);
+				pl.setImmobilized(false);
 			}
 		}
 	}

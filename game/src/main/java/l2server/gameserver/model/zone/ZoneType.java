@@ -478,8 +478,8 @@ public abstract class ZoneType {
 			ch.abortCast();
 			ch.disableAllSkills();
 			ch.stopMove(null);
-			ch.setIsInvul(true);
-			ch.setIsImmobilized(true);
+			ch.setInvul(true);
+			ch.setImmobilized(true);
 			ch.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		}
 	}
@@ -502,8 +502,8 @@ public abstract class ZoneType {
 			}
 			
 			ch.enableAllSkills();
-			ch.setIsInvul(false);
-			ch.setIsImmobilized(false);
+			ch.setInvul(false);
+			ch.setImmobilized(false);
 		}
 	}
 	

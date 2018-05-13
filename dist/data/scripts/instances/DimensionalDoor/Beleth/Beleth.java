@@ -268,7 +268,7 @@ public class Beleth extends L2AttackableAIScript {
 			} else if (event.equalsIgnoreCase("stage_1_intro_1_16")) {
 				world.belethBoss.deleteMe();
 				world.belethBoss = addSpawn(realBelethId, 16323, 213059, -9357, 49152, false, 0, false, world.instanceId);
-				world.belethBoss.setIsImmobilized(true);
+				world.belethBoss.setImmobilized(true);
 
 				startQuestTimer("stage_1_intro_1_17", 200, null, player);
 			} else if (event.equalsIgnoreCase("stage_1_intro_1_17")) {
@@ -286,7 +286,7 @@ public class Beleth extends L2AttackableAIScript {
 						.sendPacket(world.instanceId, new SpecialCamera(world.camera3.getObjectId(), 40, 260, 0, 0, 4000, 0, 0, 1, 0));
 				for (Npc blth : world.minions) {
 					blth.spawnMe();
-					blth.setIsImmobilized(true);//3000
+					blth.setImmobilized(true);//3000
 				}
 				startQuestTimer("stage_1_intro_1_20", 3000, null, player);
 			} else if (event.equalsIgnoreCase("stage_1_intro_1_20")) {
@@ -298,7 +298,7 @@ public class Beleth extends L2AttackableAIScript {
 				minion.decayMe();
 				world.minions.add(minion);
 				minion.spawnMe();
-				minion.setIsImmobilized(true);
+				minion.setImmobilized(true);
 
 				startQuestTimer("stage_1_intro_1_21", 3000, null, player);
 			} else if (event.equalsIgnoreCase("stage_1_intro_1_21")) {
@@ -428,8 +428,8 @@ public class Beleth extends L2AttackableAIScript {
 
 				world.belethBoss.deleteMe();
 				world.belethBoss = addSpawn(realBelethId, 16323, 213170, -9357, 49152, false, 0, false, world.instanceId);
-				world.belethBoss.setIsInvul(true);
-				world.belethBoss.setIsImmobilized(true);
+				world.belethBoss.setInvul(true);
+				world.belethBoss.setImmobilized(true);
 				world.belethBoss.disableAllSkills();
 
 				world.priest = addSpawn(priestId, 16323, 213170, -9357, 49152, false, 0, false, world.instanceId);

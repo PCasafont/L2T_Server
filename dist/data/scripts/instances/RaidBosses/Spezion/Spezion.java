@@ -150,7 +150,7 @@ public class Spezion extends L2AttackableAIScript {
 					npc.broadcastPacket(new NicknameChanged(npc));
 
 					world.spezionBoss.setDisplayEffect(2);
-					world.spezionBoss.setIsInvul(false);
+					world.spezionBoss.setInvul(false);
 					world.spezionBoss.stopVisualEffect(VisualEffect.S_INVINCIBLE);
 
 					if (world.isHardMode) //Delete the fake shits
@@ -192,7 +192,7 @@ public class Spezion extends L2AttackableAIScript {
 				startQuestTimer("stage_1_spawns", ScenePlayerDataTable.getInstance().getVideoDuration(53) + 2000, null, player);
 			} else if (event.equalsIgnoreCase("stage_1_spawns")) {
 				world.spezionBoss = addSpawn(world.spezionId, 175474, 143502, -11769, 15397, true, 0, false, world.instanceId);
-				world.spezionBoss.setIsInvul(true);
+				world.spezionBoss.setInvul(true);
 				world.spezionBoss.startVisualEffect(VisualEffect.S_INVINCIBLE);
 
 				if (world.isHardMode) {
@@ -215,7 +215,7 @@ public class Spezion extends L2AttackableAIScript {
 							false,
 							world.instanceId);
 					world.fakeMonsters.add(fakeSpezion);
-					fakeSpezion.setIsInvul(true);
+					fakeSpezion.setInvul(true);
 					fakeSpezion.startVisualEffect(VisualEffect.S_INVINCIBLE);
 				}
 
@@ -234,8 +234,8 @@ public class Spezion extends L2AttackableAIScript {
 									world.instanceId);
 							world.fakeMonsters.add(newGuard);
 							((MonsterInstance) newGuard).setIsRaidMinion(true);
-							newGuard.setIsRunning(true);
-							newGuard.setIsInvul(true);
+							newGuard.setRunning(true);
+							newGuard.setInvul(true);
 						}
 					}
 				}
@@ -257,7 +257,7 @@ public class Spezion extends L2AttackableAIScript {
 												world.instanceId);
 										world.minions.add(newGuard);
 										((MonsterInstance) newGuard).setIsRaidMinion(true);
-										newGuard.setIsRunning(true);
+										newGuard.setRunning(true);
 									}
 								}
 							}
@@ -269,7 +269,7 @@ public class Spezion extends L2AttackableAIScript {
 			} else if (event.equalsIgnoreCase("stage_all_spezion_back")) {
 				if (world.spezionBoss != null && !world.spezionBoss.isDead()) {
 					world.spezionBoss.setDisplayEffect(3);
-					world.spezionBoss.setIsInvul(true);
+					world.spezionBoss.setInvul(true);
 					world.spezionBoss.startVisualEffect(VisualEffect.S_INVINCIBLE);
 
 					if (world.isHardMode) {

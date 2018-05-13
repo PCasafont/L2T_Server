@@ -199,7 +199,7 @@ public class SepulcherNpcInstance extends Npc {
 			case 31485:
 			case 31486:
 			case 31487:
-				setIsInvul(false);
+				setInvul(false);
 				reduceCurrentHp(getMaxHp() + 1, player, null);
 				if (spawnMonsterTask != null) {
 					spawnMonsterTask.cancel(true);
@@ -220,7 +220,7 @@ public class SepulcherNpcInstance extends Npc {
 			case 31465:
 			case 31466:
 			case 31467:
-				setIsInvul(false);
+				setInvul(false);
 				reduceCurrentHp(getMaxHp() + 1, player, null);
 				if (player.getParty() != null && !player.getParty().isLeader(player)) {
 					player = player.getParty().getLeader();

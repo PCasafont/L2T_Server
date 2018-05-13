@@ -46,7 +46,7 @@ public class DeathGate extends L2AttackableAIScript {
 	@Override
 	public final String onSpawn(Npc npc) {
 		npc.disableCoreAI(true);
-		npc.setIsInvul(true);
+		npc.setInvul(true);
 
 		DeathGateAI ai = new DeathGateAI(npc, npc.getOwner());
 

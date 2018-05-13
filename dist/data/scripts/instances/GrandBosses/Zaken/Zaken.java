@@ -224,7 +224,7 @@ public class Zaken extends L2AttackableAIScript {
 								false,
 								world.instanceId);
 						world.zakenBoss.setTarget(player);
-						world.zakenBoss.setIsRunning(true);
+						world.zakenBoss.setRunning(true);
 
 						((Attackable) world.zakenBoss).addDamageHate(player, 500, 99999);
 						((Attackable) world.zakenBoss).getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);

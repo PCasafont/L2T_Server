@@ -335,7 +335,7 @@ public class Wedding implements IVoicedCommandHandler {
 			}
 
 			activeChar.enableAllSkills();
-			activeChar.setIsCastingNow(false);
+			activeChar.setCastingNow(false);
 
 			try {
 				activeChar.teleToLocation(partnerx, partnery, partnerz);
