@@ -1,0 +1,50 @@
+<configuration>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss} %boldWhite([%.-4thread]) %highlight(%-5level) %gray(%-20.-20logger{0}) - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>./log/game.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>./log/game.log.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>200</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss:SSS} [%-4.-4thread] %-5level %-20.-20logger{0} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="ACCOUNTING_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>./log/accounting.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>./log/accounting.log.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>200</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="org.apache" level="WARN" />
+	<logger name="org.springframework" level="WARN" />
+	<logger name="org.springframework.transaction" level="WARN" />
+	<logger name="org.springframework.security" level="WARN" /> <!-- to debug security related issues (DEBUG) -->
+	<logger name="org.springframework.web.servlet.mvc"
+			level="WARN" /> <!-- some serialization issues are at trace level here: org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod -->
+
+	<logger name="l2server" level="INFO" />
+
+	<Logger name="login" level="all" additivity="false">
+		<appender-ref ref="ACCOUNTING_FILE" />
+	</Logger>
+
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+	</root>
+
+</configuration>

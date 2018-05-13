@@ -44,5 +44,4 @@
     <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains:annotations:13.0" level="project" />
   </component>
-  <component name="TestModuleProperties" production-module="common_main" />
 </module>

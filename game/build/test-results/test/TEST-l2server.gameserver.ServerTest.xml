@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="l2server.gameserver.ServerTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2018-05-13T10:36:54" hostname="WIN-KDS71MA" time="0.0">
+  <properties/>
+  <testcase name="testFullLoad" classname="l2server.gameserver.ServerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

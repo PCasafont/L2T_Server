@@ -1,0 +1,16 @@
+š12:36:43 [1;37m[Test][0;39m [34mINFO [0;39m [1;30mConfig              [0;39m - Loading GameServer[tenkai_legacy.properties] Configuration Files...
+m12:36:44 [1;37m[Test][0;39m [34mINFO [0;39m [1;30mConfig              [0;39m - Loaded 1 Filter Words.
+r12:36:44 [1;37m[Test][0;39m [34mINFO [0;39m [1;30mConfig              [0;39m - Loaded 26 Foreign Keywords.
+g12:36:44 [1;37m[Test][0;39m [34mINFO [0;39m [1;30mThreadPool          [0;39m - Initialized with
+v12:36:44 [1;37m[Test][0;39m [34mINFO [0;39m [1;30mThreadPool          [0;39m - 	... 32/32 scheduled thread(s).
+l12:36:44 [1;37m[Test][0;39m [34mINFO [0;39m [1;30mThreadPool          [0;39m - 	... 16/16 thread(s).
+}12:36:44 [1;37m[Test][0;39m [34mINFO [0;39m [1;30mCompoundTable       [0;39m - CompoundTable: Loaded 80 combinations.
+š12:36:44 [1;37m[Test][0;39m [34mINFO [0;39m [1;30mConfig              [0;39m - Loading GameServer[tenkai_legacy.properties] Configuration Files...
+m12:36:44 [1;37m[Test][0;39m [34mINFO [0;39m [1;30mConfig              [0;39m - Loaded 1 Filter Words.
+r12:36:44 [1;37m[Test][0;39m [34mINFO [0;39m [1;30mConfig              [0;39m - Loaded 26 Foreign Keywords.
+r12:36:47 [1;37m[Test][0;39m [34mINFO [0;39m [1;30mItemTable           [0;39m - Highest item id used: 50623
+š12:36:47 [1;37m[Test][0;39m [34mINFO [0;39m [1;30mConfig              [0;39m - Loading GameServer[tenkai_legacy.properties] Configuration Files...
+m12:36:47 [1;37m[Test][0;39m [34mINFO [0;39m [1;30mConfig              [0;39m - Loaded 1 Filter Words.
+r12:36:47 [1;37m[Test][0;39m [34mINFO [0;39m [1;30mConfig              [0;39m - Loaded 26 Foreign Keywords.
+…12:36:47 [1;37m[Test][0;39m [34mINFO [0;39m [1;30mEnchantCostsTable   [0;39m - EnchantGroupsTable: Loaded 30 enchant details.
+x12:36:54 [1;37m[Test][0;39m [34mINFO [0;39m [1;30mSkillTable          [0;39m - SkillTable: Loaded 146827 skills.

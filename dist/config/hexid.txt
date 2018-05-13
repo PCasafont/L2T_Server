@@ -1,4 +1,4 @@
 #the hexID to auth into login
-#Sun Apr 08 18:31:25 CEST 2018
-HexID=288a3d6d68dd8a30da4613d3146b4abc
-ServerID=48
+#Sun May 13 13:14:57 CEST 2018
+HexID=59d2135af0505f27a6d9b021ec1b7525
+ServerID=4
