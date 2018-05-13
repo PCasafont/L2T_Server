@@ -68,8 +68,8 @@ public class StaticObjectInstance extends Creature {
 	}
 	
 	@Override
-	public void initKnownList() {
-		setKnownList(new StaticObjectKnownList(this));
+	public StaticObjectKnownList initialKnownList() {
+		return new StaticObjectKnownList(this);
 	}
 	
 	@Override

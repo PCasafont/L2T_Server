@@ -81,8 +81,8 @@ public class Trap extends Creature {
 	}
 
 	@Override
-	public void initKnownList() {
-		setKnownList(new TrapKnownList(this));
+	public TrapKnownList initialKnownList() {
+		return new TrapKnownList(this);
 	}
 
 	@Override

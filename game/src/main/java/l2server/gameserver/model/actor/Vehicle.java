@@ -159,8 +159,8 @@ public abstract class Vehicle extends Creature {
 	}
 
 	@Override
-	public void initKnownList() {
-		setKnownList(new VehicleKnownList(this));
+	public VehicleKnownList initialKnownList() {
+		return new VehicleKnownList(this);
 	}
 
 	@Override

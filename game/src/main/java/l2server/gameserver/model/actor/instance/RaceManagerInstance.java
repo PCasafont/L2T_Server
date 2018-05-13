@@ -102,8 +102,8 @@ public class RaceManagerInstance extends Npc {
 	}
 	
 	@Override
-	public void initKnownList() {
-		setKnownList(new RaceManagerKnownList(this));
+	public RaceManagerKnownList initialKnownList() {
+		return new RaceManagerKnownList(this);
 	}
 	
 	class Announcement implements Runnable {

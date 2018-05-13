@@ -1272,8 +1272,8 @@ public class Player extends Playable {
 	}
 	
 	@Override
-	public void initKnownList() {
-		setKnownList(new PcKnownList(this));
+	public PcKnownList initialKnownList() {
+		return new PcKnownList(this);
 	}
 	
 	@Override
@@ -1301,9 +1301,8 @@ public class Player extends Playable {
 		return (PcPosition) super.getPosition();
 	}
 	
-	@Override
-	public void initPosition() {
-		setObjectPosition(new PcPosition(this));
+	public PcPosition initialPosition() {
+		return new PcPosition(this);
 	}
 	
 	public final PcAppearance getAppearance() {

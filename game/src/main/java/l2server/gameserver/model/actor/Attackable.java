@@ -309,8 +309,8 @@ public class Attackable extends Npc {
 	}
 	
 	@Override
-	public void initKnownList() {
-		setKnownList(new AttackableKnownList(this));
+	public AttackableKnownList initialKnownList() {
+		return new AttackableKnownList(this);
 	}
 	
 	@Override

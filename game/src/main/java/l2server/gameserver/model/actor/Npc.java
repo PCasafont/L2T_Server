@@ -528,8 +528,8 @@ public class Npc extends Creature {
 	}
 	
 	@Override
-	public void initKnownList() {
-		setKnownList(new NpcKnownList(this));
+	public NpcKnownList initialKnownList() {
+		return new NpcKnownList(this);
 	}
 	
 	@Override

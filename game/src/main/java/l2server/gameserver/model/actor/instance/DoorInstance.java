@@ -126,8 +126,8 @@ public class DoorInstance extends Creature {
 	}
 	
 	@Override
-	public void initKnownList() {
-		setKnownList(new DoorKnownList(this));
+	public DoorKnownList initialKnownList() {
+		return new DoorKnownList(this);
 	}
 	
 	@Override

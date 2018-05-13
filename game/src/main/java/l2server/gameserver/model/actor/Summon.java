@@ -114,8 +114,8 @@ public abstract class Summon extends Playable {
 	}
 
 	@Override
-	public void initKnownList() {
-		setKnownList(new SummonKnownList(this));
+	public SummonKnownList initialKnownList() {
+		return new SummonKnownList(this);
 	}
 
 	@Override

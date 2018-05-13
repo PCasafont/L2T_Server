@@ -60,8 +60,8 @@ public abstract class Playable extends Creature {
 	}
 	
 	@Override
-	public void initKnownList() {
-		setKnownList(new PlayableKnownList(this));
+	public PlayableKnownList initialKnownList() {
+		return new PlayableKnownList(this);
 	}
 	
 	@Override

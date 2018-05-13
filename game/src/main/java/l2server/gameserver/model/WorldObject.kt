@@ -43,13 +43,13 @@ import l2server.gameserver.network.serverpackets.L2GameServerPacket
 abstract class WorldObject(objectId: Int) {
 
 	private var isVisible: Boolean = false // Object visibility
-	open var knownList: ObjectKnownList? = null
 	open var name: String? = null
 	var objectId: Int = 0
 		private set // Object identifier
 	val poly: ObjectPoly by lazy { ObjectPoly(this) }
-	open lateinit var position: ObjectPosition
-		protected set
+
+	open val knownList: ObjectKnownList
+	open val position: ObjectPosition
 
 	// If we change it for visible objects, me must clear & revalidate knownlists
 	// We don't want some ugly looking disappear/appear effects, so don't update
@@ -152,10 +152,8 @@ abstract class WorldObject(objectId: Int) {
 		instanceType = InstanceType.L2Object
 		this.objectId = objectId
 
-		@Suppress("LeakingThis")
-		initKnownList()
-		@Suppress("LeakingThis")
-		initPosition()
+		knownList = initialKnownList()
+		position = initialPosition()
 	}
 
 	fun isInstanceType(i: InstanceType): Boolean {
@@ -363,9 +361,7 @@ abstract class WorldObject(objectId: Int) {
 	 *
 	 * Removes the need for instanceof checks.
 	 */
-	open fun initKnownList() {
-		knownList = ObjectKnownList(this)
-	}
+	protected open fun initialKnownList() = ObjectKnownList(this)
 
 	/**
 	 * Initializes the Position class of the WorldObject,
@@ -374,13 +370,7 @@ abstract class WorldObject(objectId: Int) {
 	 *
 	 * Removes the need for instanceof checks.
 	 */
-	open fun initPosition() {
-		position = ObjectPosition(this)
-	}
-
-	fun setObjectPosition(value: ObjectPosition) {
-		position = value
-	}
+	protected open fun initialPosition() = ObjectPosition(this)
 
 	/**
 	 * Sends the Server->Client info packet for the object.<br></br><br></br>

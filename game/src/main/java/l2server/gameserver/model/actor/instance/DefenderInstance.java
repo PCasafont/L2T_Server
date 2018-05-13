@@ -55,8 +55,8 @@ public class DefenderInstance extends Attackable {
 	}
 	
 	@Override
-	public void initKnownList() {
-		setKnownList(new DefenderKnownList(this));
+	public DefenderKnownList initialKnownList() {
+		return new DefenderKnownList(this);
 	}
 	
 	@Override

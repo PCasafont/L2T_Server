@@ -109,8 +109,8 @@ public class DecoyInstance extends Attackable {
 	}
 	
 	@Override
-	public void initKnownList() {
-		setKnownList(new DecoyKnownList(this));
+	public DecoyKnownList initialKnownList() {
+		return new DecoyKnownList(this);
 	}
 	
 	@Override

@@ -259,8 +259,8 @@ public final class Item extends WorldObject implements ItemInstanceInfo {
 	}
 	
 	@Override
-	public void initKnownList() {
-		setKnownList(new NullKnownList(this));
+	public NullKnownList initialKnownList() {
+		return new NullKnownList(this);
 	}
 	
 	/**

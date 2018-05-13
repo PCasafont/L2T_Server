@@ -124,7 +124,7 @@ public abstract class Creature extends WorldObject {
 	private boolean refuseBuffs = false; // Tenkai custom - refuse buffs from out of party
 	protected boolean showSummonAnimation = false;
 	protected boolean isTeleporting = false;
-	protected boolean isInvul = false;
+	private boolean isInvul = false;
 	private boolean isMortal = true; // Char will die when HP decreased to 0
 	private boolean isFlying = false;
 	
@@ -2728,8 +2728,8 @@ public abstract class Creature extends WorldObject {
 	}
 	
 	@Override
-	public void initKnownList() {
-		setKnownList(new CharKnownList(this));
+	public CharKnownList initialKnownList() {
+		return new CharKnownList(this);
 	}
 	
 	public CharStat getStat() {
@@ -2774,8 +2774,8 @@ public abstract class Creature extends WorldObject {
 	}
 	
 	@Override
-	public void initPosition() {
-		setObjectPosition(new CharPosition(this));
+	public CharPosition initialPosition() {
+		return new CharPosition(this);
 	}
 	
 	public CreatureTemplate getTemplate() {

@@ -82,8 +82,8 @@ public class GuardInstance extends Attackable {
 	}
 	
 	@Override
-	public void initKnownList() {
-		setKnownList(new GuardKnownList(this));
+	public GuardKnownList initialKnownList() {
+		return new GuardKnownList(this);
 	}
 	
 	/**

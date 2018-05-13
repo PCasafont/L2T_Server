@@ -40,8 +40,8 @@ public class FriendlyMobInstance extends Attackable {
 	}
 	
 	@Override
-	public void initKnownList() {
-		setKnownList(new FriendlyMobKnownList(this));
+	public FriendlyMobKnownList initialKnownList() {
+		return new FriendlyMobKnownList(this);
 	}
 	
 	@Override

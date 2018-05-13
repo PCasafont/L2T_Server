@@ -75,8 +75,8 @@ public class MonsterInstance extends Attackable {
 	}
 	
 	@Override
-	public void initKnownList() {
-		setKnownList(new MonsterKnownList(this));
+	public MonsterKnownList initialKnownList() {
+		return new MonsterKnownList(this);
 	}
 	
 	/**
