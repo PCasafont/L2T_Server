@@ -19,7 +19,7 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.instancemanager.DuelManager;
 import l2server.gameserver.model.Abnormal;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
@@ -753,9 +753,9 @@ public class Duel {
 			}
 
 			// is one of the players in a Siege, Peace or PvP zone?
-			if (playerA.isInsideZone(Creature.ZONE_PEACE) || playerB.isInsideZone(Creature.ZONE_PEACE) ||
-					playerA.isInsideZone(Creature.ZONE_SIEGE) || playerB.isInsideZone(Creature.ZONE_SIEGE) ||
-					playerA.isInsideZone(Creature.ZONE_PVP) || playerB.isInsideZone(Creature.ZONE_PVP)) {
+			if (playerA.isInsideZone(CreatureZone.ZONE_PEACE) || playerB.isInsideZone(CreatureZone.ZONE_PEACE) ||
+					playerA.isInsideZone(CreatureZone.ZONE_SIEGE) || playerB.isInsideZone(CreatureZone.ZONE_SIEGE) ||
+					playerA.isInsideZone(CreatureZone.ZONE_PVP) || playerB.isInsideZone(CreatureZone.ZONE_PVP)) {
 				return DuelResultEnum.Canceled;
 			}
 		}

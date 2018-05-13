@@ -18,6 +18,7 @@ package l2server.gameserver.model.zone.type;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.MapRegionTable.TeleportWhereType;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.zone.ZoneType;
 
@@ -58,7 +59,7 @@ public class NoRestartZone extends ZoneType {
 		}
 
 		if (character instanceof Player) {
-			character.setInsideZone(Creature.ZONE_NORESTART, true);
+			character.setInsideZone(CreatureZone.ZONE_NORESTART, true);
 			Player player = (Player) character;
 
 			if (player.getZoneRestartLimitTime() > 0 && player.getZoneRestartLimitTime() < System.currentTimeMillis()) {
@@ -75,7 +76,7 @@ public class NoRestartZone extends ZoneType {
 		}
 
 		if (character instanceof Player) {
-			character.setInsideZone(Creature.ZONE_NORESTART, false);
+			character.setInsideZone(CreatureZone.ZONE_NORESTART, false);
 		}
 	}
 

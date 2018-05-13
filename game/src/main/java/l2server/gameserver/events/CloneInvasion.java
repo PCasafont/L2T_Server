@@ -3,7 +3,7 @@ package l2server.gameserver.events;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.*;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.templates.StatsSet;
@@ -121,7 +121,7 @@ public class CloneInvasion {
 				spawn.setZ(player.getPosition().getZ());
 
 				spawn.stopRespawn();
-				if (spawn.getNpc() != null && !spawn.getNpc().isInsideZone(Creature.ZONE_NOLANDING)) {
+				if (spawn.getNpc() != null && !spawn.getNpc().isInsideZone(CreatureZone.ZONE_NOLANDING)) {
 					spawn.getNpc().setClonedPlayer(player);
 					spawn.doSpawn();
 				}

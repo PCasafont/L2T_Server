@@ -16,6 +16,7 @@
 package l2server.gameserver.model.zone.type;
 
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.zone.SpawnZone;
 
@@ -45,10 +46,10 @@ public class ConditionZone extends SpawnZone {
 	protected void onEnter(Creature character) {
 		if (character instanceof Player) {
 			if (NO_BOOKMARK) {
-				character.setInsideZone(Creature.ZONE_NOBOOKMARK, true);
+				character.setInsideZone(CreatureZone.ZONE_NOBOOKMARK, true);
 			}
 			if (NO_ITEM_DROP) {
-				character.setInsideZone(Creature.ZONE_NOITEMDROP, true);
+				character.setInsideZone(CreatureZone.ZONE_NOITEMDROP, true);
 			}
 		}
 	}
@@ -58,10 +59,10 @@ public class ConditionZone extends SpawnZone {
 
 		if (character instanceof Player) {
 			if (NO_BOOKMARK) {
-				character.setInsideZone(Creature.ZONE_NOBOOKMARK, false);
+				character.setInsideZone(CreatureZone.ZONE_NOBOOKMARK, false);
 			}
 			if (NO_ITEM_DROP) {
-				character.setInsideZone(Creature.ZONE_NOITEMDROP, false);
+				character.setInsideZone(CreatureZone.ZONE_NOITEMDROP, false);
 			}
 		}
 	}

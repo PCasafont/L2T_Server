@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.templates.skills.EffectType;
 
@@ -40,7 +40,7 @@ public class EtcStatusUpdate extends L2GameServerPacket {
 		writeC(activeChar.getCharges()); // 1-7 increase force, lvl
 		writeC(activeChar.getWeightPenalty()); // 1-4 weight penalty, lvl (1=50%, 2=66.6%, 3=80%, 4=100%)
 		writeC(activeChar.getMessageRefusal() || activeChar.isChatBanned() || activeChar.isSilenceMode() ? 1 : 0); // 1 = block all chat
-		writeC(activeChar.isInsideZone(Creature.ZONE_DANGERAREA) ? 1 : 0); // 1 = danger area
+		writeC(activeChar.isInsideZone(CreatureZone.ZONE_DANGERAREA) ? 1 : 0); // 1 = danger area
 		writeC(activeChar.getExpertiseWeaponPenalty()); // Weapon Grade Penalty [1-4]
 		writeC(activeChar.getExpertiseArmorPenalty()); // Armor Grade Penalty [1-4]
 		writeC(activeChar.isAffected(EffectType.CHARMOFCOURAGE.getMask()) ? 1 :

@@ -18,7 +18,7 @@ package handlers.voicedcommandhandlers;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.handler.IVoicedCommandHandler;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.templates.item.EtcItemTemplate;
@@ -50,7 +50,7 @@ public class TryOn implements IVoicedCommandHandler {
 			return false;
 		}
 
-		if (!player.isGM() && !player.isInsideZone(Creature.ZONE_TOWN)) {
+		if (!player.isGM() && !player.isInsideZone(CreatureZone.ZONE_TOWN)) {
 			player.sendMessage("You can't try on apps outside of town!");
 			return false;
 		}

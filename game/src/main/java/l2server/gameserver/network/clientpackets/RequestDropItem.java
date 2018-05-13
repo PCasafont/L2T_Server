@@ -17,7 +17,7 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.gameserver.model.Item;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
@@ -66,7 +66,7 @@ public final class RequestDropItem extends L2GameClientPacket {
 		if (item == null || count == 0 || !activeChar.validateItemManipulation(objectId, "drop") || !Config.ALLOW_DISCARDITEM && !activeChar.isGM() ||
 				!item.isDropable() && !(activeChar.isGM() && Config.GM_TRADE_RESTRICTED_ITEMS) ||
 				item.getItemType() == EtcItemType.PET_COLLAR && activeChar.havePetInvItems() ||
-				activeChar.isInsideZone(Creature.ZONE_NOITEMDROP)) {
+				activeChar.isInsideZone(CreatureZone.ZONE_NOITEMDROP)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISCARD_THIS_ITEM));
 			return;
 		}

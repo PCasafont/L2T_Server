@@ -16,6 +16,7 @@
 package l2server.gameserver.model.zone.type;
 
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.zone.ZoneType;
 import l2server.gameserver.network.SystemMessageId;
@@ -36,7 +37,7 @@ public class NoLandingZone extends ZoneType {
 	@Override
 	protected void onEnter(Creature character) {
 		if (character instanceof Player) {
-			character.setInsideZone(Creature.ZONE_NOLANDING, true);
+			character.setInsideZone(CreatureZone.ZONE_NOLANDING, true);
 			if (((Player) character).getMountType() == 2) {
 				character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.AREA_CANNOT_BE_ENTERED_WHILE_MOUNTED_WYVERN));
 				((Player) character).enteredNoLanding(dismountDelay);
@@ -47,7 +48,7 @@ public class NoLandingZone extends ZoneType {
 	@Override
 	protected void onExit(Creature character) {
 		if (character instanceof Player) {
-			character.setInsideZone(Creature.ZONE_NOLANDING, false);
+			character.setInsideZone(CreatureZone.ZONE_NOLANDING, false);
 			if (((Player) character).getMountType() == 2) {
 				((Player) character).exitedNoLanding();
 			}

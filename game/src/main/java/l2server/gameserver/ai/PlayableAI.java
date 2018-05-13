@@ -18,6 +18,7 @@ package l2server.gameserver.ai;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.Playable;
 import l2server.gameserver.network.SystemMessageId;
 
@@ -43,7 +44,7 @@ public abstract class PlayableAI extends CreatureAI {
 	protected void onIntentionAttack(Creature target) {
 		if (target instanceof Playable) {
 			if (target.getActingPlayer().getProtectionBlessing() && actor.getActingPlayer().getLevel() - target.getActingPlayer().getLevel() >= 10 &&
-					actor.getActingPlayer().getReputation() < 0 && !target.isInsideZone(Creature.ZONE_PVP)) {
+					actor.getActingPlayer().getReputation() < 0 && !target.isInsideZone(CreatureZone.ZONE_PVP)) {
 				// If attacker have karma and have level >= 10 than his target and target have
 				// Newbie Protection Buff,
 				actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
@@ -52,7 +53,7 @@ public abstract class PlayableAI extends CreatureAI {
 			}
 
 			if (actor.getActingPlayer().getProtectionBlessing() && target.getActingPlayer().getLevel() - actor.getActingPlayer().getLevel() >= 10 &&
-					target.getActingPlayer().getReputation() < 0 && !target.isInsideZone(Creature.ZONE_PVP)) {
+					target.getActingPlayer().getReputation() < 0 && !target.isInsideZone(CreatureZone.ZONE_PVP)) {
 				// If target have karma and have level >= 10 than his target and actor have
 				// Newbie Protection Buff,
 				actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
@@ -83,7 +84,7 @@ public abstract class PlayableAI extends CreatureAI {
 	protected void onIntentionCast(Skill skill, WorldObject target) {
 		if (target instanceof Playable && skill.isOffensive()) {
 			if (target.getActingPlayer().getProtectionBlessing() && actor.getActingPlayer().getLevel() - target.getActingPlayer().getLevel() >= 10 &&
-					actor.getActingPlayer().getReputation() < 0 && !((Playable) target).isInsideZone(Creature.ZONE_PVP)) {
+					actor.getActingPlayer().getReputation() < 0 && !((Playable) target).isInsideZone(CreatureZone.ZONE_PVP)) {
 				// If attacker have karma and have level >= 10 than his target and target have
 				// Newbie Protection Buff,
 				actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
@@ -94,7 +95,7 @@ public abstract class PlayableAI extends CreatureAI {
 			}
 
 			if (actor.getActingPlayer().getProtectionBlessing() && target.getActingPlayer().getLevel() - actor.getActingPlayer().getLevel() >= 10 &&
-					target.getActingPlayer().getReputation() < 0 && !((Playable) target).isInsideZone(Creature.ZONE_PVP)) {
+					target.getActingPlayer().getReputation() < 0 && !((Playable) target).isInsideZone(CreatureZone.ZONE_PVP)) {
 				// If target have karma and have level >= 10 than his target and actor have
 				// Newbie Protection Buff,
 				actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);

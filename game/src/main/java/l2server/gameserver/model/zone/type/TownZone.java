@@ -18,6 +18,7 @@ package l2server.gameserver.model.zone.type;
 import l2server.Config;
 import l2server.gameserver.events.Curfew;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.zone.SpawnZone;
 import l2server.gameserver.network.serverpackets.PlaySound;
@@ -83,20 +84,20 @@ public class TownZone extends SpawnZone {
 
 		if (isPeaceZone && Config.ZONE_TOWN != 2 &&
 				(Curfew.getInstance().getOnlyPeaceTown() == -1 || Curfew.getInstance().getOnlyPeaceTown() == townId)) {
-			character.setInsideZone(Creature.ZONE_PEACE, true);
+			character.setInsideZone(CreatureZone.ZONE_PEACE, true);
 		}
 
-		character.setInsideZone(Creature.ZONE_TOWN, true);
+		character.setInsideZone(CreatureZone.ZONE_TOWN, true);
 	}
 
 	@Override
 	protected void onExit(Creature character) {
 		// TODO: there should be no exit if there was possibly no enter
 		if (isPeaceZone) {
-			character.setInsideZone(Creature.ZONE_PEACE, false);
+			character.setInsideZone(CreatureZone.ZONE_PEACE, false);
 		}
 
-		character.setInsideZone(Creature.ZONE_TOWN, false);
+		character.setInsideZone(CreatureZone.ZONE_TOWN, false);
 
 		// if (character instanceof Player)
 		//((Player)character).sendMessage("You left "+townName);

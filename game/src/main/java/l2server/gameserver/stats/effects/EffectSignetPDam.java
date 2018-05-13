@@ -25,10 +25,7 @@ import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.Attackable;
-import l2server.gameserver.model.actor.Creature;
-import l2server.gameserver.model.actor.Playable;
-import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.*;
 import l2server.gameserver.model.actor.instance.EffectPointInstance;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
@@ -122,7 +119,7 @@ public class EffectSignetPDam extends L2Effect {
 
 			if (cha instanceof Player) {
 				Player player = (Player) cha;
-				if (!player.isInsideZone(Creature.ZONE_PVP) && player.getPvpFlag() == 0) {
+				if (!player.isInsideZone(CreatureZone.ZONE_PVP) && player.getPvpFlag() == 0) {
 					continue;
 				}
 			}

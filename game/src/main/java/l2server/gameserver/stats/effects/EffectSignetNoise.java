@@ -18,6 +18,7 @@ package l2server.gameserver.stats.effects;
 import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.EffectPointInstance;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
@@ -70,7 +71,7 @@ public class EffectSignetNoise extends L2Effect {
 			
 			if (target instanceof Player) {
 				Player player = (Player) target;
-				if (!player.isInsideZone(Creature.ZONE_PVP) && player.getPvpFlag() == 0) {
+				if (!player.isInsideZone(CreatureZone.ZONE_PVP) && player.getPvpFlag() == 0) {
 					continue;
 				}
 			}

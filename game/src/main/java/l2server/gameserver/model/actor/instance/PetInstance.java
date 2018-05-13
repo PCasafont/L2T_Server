@@ -30,6 +30,7 @@ import l2server.gameserver.instancemanager.CursedWeaponsManager;
 import l2server.gameserver.instancemanager.ItemsOnGroundManager;
 import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.Summon;
 import l2server.gameserver.model.actor.stat.PetStat;
 import l2server.gameserver.model.itemcontainer.Inventory;
@@ -549,7 +550,7 @@ public class PetInstance extends Summon {
 		DecayTaskManager.getInstance().addDecayTask(this, PET_DECAY_DELAY);
 		// do not decrease exp if is in duel, arena
 		Player owner = getOwner();
-		if (owner != null && !owner.isInDuel() && (!isInsideZone(ZONE_PVP) || isInsideZone(ZONE_SIEGE))) {
+		if (owner != null && !owner.isInDuel() && (!isInsideZone(CreatureZone.ZONE_PVP) || isInsideZone(CreatureZone.ZONE_SIEGE))) {
 			deathPenalty();
 		}
 		return true;

@@ -27,7 +27,7 @@ import l2server.gameserver.datatables.*;
 import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.instancemanager.*;
 import l2server.gameserver.model.*;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.actor.stat.PcStat;
 import l2server.gameserver.model.base.PlayerClass;
@@ -468,7 +468,7 @@ public class EnterWorld extends L2GameClientPacket {
 		// Attacker or spectator logging in to a siege zone. Actually should be checked for inside castle only?
 		if (!activeChar.isGM()
 				// inside siege zone
-				&& activeChar.isInsideZone(Creature.ZONE_SIEGE)
+				&& activeChar.isInsideZone(CreatureZone.ZONE_SIEGE)
 				// but non-participant or attacker
 				&& (!activeChar.isInSiege() || activeChar.getSiegeState() < 2)) {
 			activeChar.teleToLocation(MapRegionTable.TeleportWhereType.Town);

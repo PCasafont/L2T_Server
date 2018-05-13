@@ -17,6 +17,7 @@ package l2server.gameserver.model.zone.type;
 
 import l2server.gameserver.instancemanager.GMEventManager;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.zone.ZoneType;
 
 /**
@@ -43,12 +44,12 @@ public class PeaceZone extends ZoneType {
 			return;
 		}
 
-		character.setInsideZone(Creature.ZONE_PEACE, true);
+		character.setInsideZone(CreatureZone.ZONE_PEACE, true);
 	}
 
 	@Override
 	protected void onExit(Creature character) {
-		character.setInsideZone(Creature.ZONE_PEACE, false);
+		character.setInsideZone(CreatureZone.ZONE_PEACE, false);
 	}
 
 	@Override

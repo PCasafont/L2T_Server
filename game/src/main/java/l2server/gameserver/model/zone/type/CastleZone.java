@@ -18,6 +18,7 @@ package l2server.gameserver.model.zone.type;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.zone.SpawnZone;
@@ -47,14 +48,14 @@ public class CastleZone extends SpawnZone {
 	@Override
 	protected void onEnter(Creature character) {
 		if (getCastle() != null) {
-			character.setInsideZone(Creature.ZONE_CASTLE, true);
+			character.setInsideZone(CreatureZone.ZONE_CASTLE, true);
 		}
 	}
 
 	@Override
 	protected void onExit(Creature character) {
 		if (getCastle() != null) {
-			character.setInsideZone(Creature.ZONE_CASTLE, false);
+			character.setInsideZone(CreatureZone.ZONE_CASTLE, false);
 		}
 	}
 

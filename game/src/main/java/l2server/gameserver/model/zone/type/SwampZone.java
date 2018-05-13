@@ -17,6 +17,7 @@ package l2server.gameserver.model.zone.type;
 
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.zone.ZoneType;
@@ -95,7 +96,7 @@ public class SwampZone extends ZoneType {
 			}
 		}
 
-		character.setInsideZone(Creature.ZONE_SWAMP, true);
+		character.setInsideZone(CreatureZone.ZONE_SWAMP, true);
 		if (character instanceof Player) {
 			((Player) character).broadcastUserInfo();
 		}
@@ -104,8 +105,8 @@ public class SwampZone extends ZoneType {
 	@Override
 	protected void onExit(Creature character) {
 		// don't broadcast info if not needed
-		if (character.isInsideZone(Creature.ZONE_SWAMP)) {
-			character.setInsideZone(Creature.ZONE_SWAMP, false);
+		if (character.isInsideZone(CreatureZone.ZONE_SWAMP)) {
+			character.setInsideZone(CreatureZone.ZONE_SWAMP, false);
 			if (character instanceof Player) {
 				((Player) character).broadcastUserInfo();
 			}

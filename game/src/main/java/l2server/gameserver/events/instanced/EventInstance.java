@@ -8,6 +8,7 @@ import l2server.gameserver.datatables.EventPrizesTable;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.model.L2Party;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.gameserver.network.clientpackets.Say2;
@@ -591,7 +592,7 @@ public abstract class EventInstance {
 			playerInstance.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		if (playerInstance.isInsideZone(Creature.ZONE_NOSUMMONFRIEND) || playerInstance.inObserverMode()) {
+		if (playerInstance.isInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND) || playerInstance.inObserverMode()) {
 			playerInstance.sendMessage("You cannot observe an event from here.");
 			playerInstance.sendPacket(ActionFailed.STATIC_PACKET);
 			return;

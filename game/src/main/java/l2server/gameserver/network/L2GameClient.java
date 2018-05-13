@@ -32,7 +32,7 @@ import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.CharSelectInfoPackage;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.World;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.network.serverpackets.ActionFailed;
@@ -843,11 +843,11 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 			canSetShop = true;
 		}
 		
-		if (Config.OFFLINE_MODE_IN_PEACE_ZONE && !player.isInsideZone(Creature.ZONE_PEACE)) {
+		if (Config.OFFLINE_MODE_IN_PEACE_ZONE && !player.isInsideZone(CreatureZone.ZONE_PEACE)) {
 			canSetShop = false;
 		}
 		
-		if (Config.OFFLINE_BUFFERS_ENABLE && !player.isInStoreMode() && player.isInsideZone(Creature.ZONE_PEACE) &&
+		if (Config.OFFLINE_BUFFERS_ENABLE && !player.isInStoreMode() && player.isInsideZone(CreatureZone.ZONE_PEACE) &&
 				CustomOfflineBuffersManager.getInstance().setUpOfflineBuffer(player)) {
 			canSetShop = true;
 		}

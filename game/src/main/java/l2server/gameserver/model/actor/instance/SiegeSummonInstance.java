@@ -17,7 +17,7 @@ package l2server.gameserver.model.actor.instance;
 
 import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.model.Skill;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.templates.chars.NpcTemplate;
 
 public class SiegeSummonInstance extends SummonInstance {
@@ -29,7 +29,7 @@ public class SiegeSummonInstance extends SummonInstance {
 	@Override
 	public void onSpawn() {
 		super.onSpawn();
-		if (!getOwner().isGM() && !isInsideZone(Creature.ZONE_SIEGE)) {
+		if (!getOwner().isGM() && !isInsideZone(CreatureZone.ZONE_SIEGE)) {
 			unSummon(getOwner());
 			getOwner().sendMessage("Summon was unsummoned because it exited siege zone");
 		}

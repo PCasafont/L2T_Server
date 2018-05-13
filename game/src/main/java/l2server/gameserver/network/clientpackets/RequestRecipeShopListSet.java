@@ -21,6 +21,7 @@ import l2server.gameserver.model.L2ManufactureItem;
 import l2server.gameserver.model.L2ManufactureList;
 import l2server.gameserver.model.L2RecipeList;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
@@ -85,7 +86,7 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket {
 			return;
 		}
 		
-		if (player.isInsideZone(Creature.ZONE_NOSTORE)) {
+		if (player.isInsideZone(CreatureZone.ZONE_NOSTORE)) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_PRIVATE_WORKSHOP_HERE));
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;

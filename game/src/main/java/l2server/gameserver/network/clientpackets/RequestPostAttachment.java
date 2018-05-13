@@ -28,7 +28,7 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Util;
 
-import static l2server.gameserver.model.actor.Creature.ZONE_PEACE;
+import static l2server.gameserver.model.actor.CreatureZone.ZONE_PEACE;
 import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
 
 /**

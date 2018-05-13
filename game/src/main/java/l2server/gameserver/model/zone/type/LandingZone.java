@@ -16,6 +16,7 @@
 package l2server.gameserver.model.zone.type;
 
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.zone.ZoneType;
 
@@ -32,14 +33,14 @@ public class LandingZone extends ZoneType {
 	@Override
 	protected void onEnter(Creature character) {
 		if (character instanceof Player) {
-			character.setInsideZone(Creature.ZONE_LANDING, true);
+			character.setInsideZone(CreatureZone.ZONE_LANDING, true);
 		}
 	}
 
 	@Override
 	protected void onExit(Creature character) {
 		if (character instanceof Player) {
-			character.setInsideZone(Creature.ZONE_LANDING, false);
+			character.setInsideZone(CreatureZone.ZONE_LANDING, false);
 		}
 	}
 

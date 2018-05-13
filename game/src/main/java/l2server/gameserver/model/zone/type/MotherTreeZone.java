@@ -16,6 +16,7 @@
 package l2server.gameserver.model.zone.type;
 
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.zone.ZoneType;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -61,7 +62,7 @@ public class MotherTreeZone extends ZoneType {
 	protected void onEnter(Creature character) {
 		if (character instanceof Player) {
 			Player player = (Player) character;
-			player.setInsideZone(Creature.ZONE_MOTHERTREE, true);
+			player.setInsideZone(CreatureZone.ZONE_MOTHERTREE, true);
 			if (enterMsg != 0) {
 				player.sendPacket(SystemMessage.getSystemMessage(enterMsg));
 			}
@@ -72,7 +73,7 @@ public class MotherTreeZone extends ZoneType {
 	protected void onExit(Creature character) {
 		if (character instanceof Player) {
 			Player player = (Player) character;
-			player.setInsideZone(Creature.ZONE_MOTHERTREE, false);
+			player.setInsideZone(CreatureZone.ZONE_MOTHERTREE, false);
 			if (leaveMsg != 0) {
 				player.sendPacket(SystemMessage.getSystemMessage(leaveMsg));
 			}

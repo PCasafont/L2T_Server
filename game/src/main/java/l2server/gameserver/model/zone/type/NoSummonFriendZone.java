@@ -16,6 +16,7 @@
 package l2server.gameserver.model.zone.type;
 
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.zone.ZoneType;
 
 /**
@@ -31,12 +32,12 @@ public class NoSummonFriendZone extends ZoneType {
 
 	@Override
 	protected void onEnter(Creature character) {
-		character.setInsideZone(Creature.ZONE_NOSUMMONFRIEND, true);
+		character.setInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND, true);
 	}
 
 	@Override
 	protected void onExit(Creature character) {
-		character.setInsideZone(Creature.ZONE_NOSUMMONFRIEND, false);
+		character.setInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND, false);
 	}
 
 	@Override

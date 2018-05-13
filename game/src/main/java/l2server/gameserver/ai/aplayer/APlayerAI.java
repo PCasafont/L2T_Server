@@ -27,6 +27,7 @@ import l2server.gameserver.handler.ItemHandler;
 import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.ApInstance;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.templates.item.ArmorType;
@@ -261,7 +262,7 @@ public abstract class APlayerAI extends PlayerAI implements Runnable {
 			
 			// If there's some nearby ally, wait
 			for (Player player : player.getKnownList().getKnownPlayers().values()) {
-				if (!player.isInsideZone(Creature.ZONE_TOWN) && player.isAlly(player) && !player.isDead() &&
+				if (!player.isInsideZone(CreatureZone.ZONE_TOWN) && player.isAlly(player) && !player.isDead() &&
 						player.isInsideRadius(player, 2000, true, false)) {
 					return;
 				}
@@ -337,7 +338,7 @@ public abstract class APlayerAI extends PlayerAI implements Runnable {
 		
 		// Artificially using the NPC heal whenever possible
 		if (getIntention() == CtrlIntention.AI_INTENTION_IDLE && !player.isInCombat() &&
-				(player.getPvpFlag() == 0 || player.isInsideZone(Creature.ZONE_PEACE))) {
+				(player.getPvpFlag() == 0 || player.isInsideZone(CreatureZone.ZONE_PEACE))) {
 			player.setCurrentHp(player.getMaxHp());
 			player.setCurrentMp(player.getMaxMp());
 			player.setCurrentCp(player.getMaxCp());

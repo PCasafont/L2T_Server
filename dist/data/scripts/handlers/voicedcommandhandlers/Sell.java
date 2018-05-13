@@ -22,6 +22,7 @@ import l2server.gameserver.model.Item;
 import l2server.gameserver.model.TradeList;
 import l2server.gameserver.model.TradeList.TradeItem;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
@@ -263,7 +264,7 @@ public class Sell implements IVoicedCommandHandler {
 						return false;
 					}
 
-					if (player.isInsideZone(Creature.ZONE_NOSTORE)) {
+					if (player.isInsideZone(CreatureZone.ZONE_NOSTORE)) {
 						player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_PRIVATE_STORE_HERE));
 						return false;
 					}

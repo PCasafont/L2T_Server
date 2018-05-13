@@ -24,6 +24,7 @@ import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.WorldRegion;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.Playable;
 import l2server.gameserver.model.actor.Summon;
 import l2server.gameserver.model.actor.instance.Player;
@@ -188,7 +189,7 @@ public class TargetSpecial implements ISkillTargetTypeHandler {
 			if (pTarget.isAvailableForCombat() || pTarget.isInsidePvpZone() || activeChar.isInSameClanWar(pTarget)) {
 				return false;
 			}
-			if (target.isInsideZone(Creature.ZONE_TOWN)) {
+			if (target.isInsideZone(CreatureZone.ZONE_TOWN)) {
 				return true;
 			}
 		} else {

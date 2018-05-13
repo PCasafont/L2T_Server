@@ -20,10 +20,7 @@ import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.WorldObject;
-import l2server.gameserver.model.actor.Attackable;
-import l2server.gameserver.model.actor.Creature;
-import l2server.gameserver.model.actor.Playable;
-import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.*;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -71,7 +68,7 @@ public class TargetBehindArea implements ISkillTargetTypeHandler {
 
 		int radius = skill.getSkillRadius();
 
-		boolean srcInArena = activeChar.isInsideZone(Creature.ZONE_PVP) && !activeChar.isInsideZone(Creature.ZONE_SIEGE);
+		boolean srcInArena = activeChar.isInsideZone(CreatureZone.ZONE_PVP) && !activeChar.isInsideZone(CreatureZone.ZONE_SIEGE);
 
 		Collection<WorldObject> objs = activeChar.getKnownList().getKnownObjects().values();
 		//synchronized (activeChar.getKnownList().getKnownObjects())
@@ -114,11 +111,11 @@ public class TargetBehindArea implements ISkillTargetTypeHandler {
 								continue;
 							}
 
-							if (trg.isInsideZone(Creature.ZONE_PEACE)) {
+							if (trg.isInsideZone(CreatureZone.ZONE_PEACE)) {
 								continue;
 							}
 
-							if (!srcInArena && !(trg.isInsideZone(Creature.ZONE_PVP) && !trg.isInsideZone(Creature.ZONE_SIEGE))) {
+							if (!srcInArena && !(trg.isInsideZone(CreatureZone.ZONE_PVP) && !trg.isInsideZone(CreatureZone.ZONE_SIEGE))) {
 								if (src.getAllyId() == trg.getAllyId() && src.getAllyId() != 0) {
 									continue;
 								}
@@ -146,7 +143,7 @@ public class TargetBehindArea implements ISkillTargetTypeHandler {
 								continue;
 							}
 
-							if (!srcInArena && !(trg.isInsideZone(Creature.ZONE_PVP) && !trg.isInsideZone(Creature.ZONE_SIEGE))) {
+							if (!srcInArena && !(trg.isInsideZone(CreatureZone.ZONE_PVP) && !trg.isInsideZone(CreatureZone.ZONE_SIEGE))) {
 								if (src.getAllyId() == trg.getAllyId() && src.getAllyId() != 0) {
 									continue;
 								}
@@ -162,7 +159,7 @@ public class TargetBehindArea implements ISkillTargetTypeHandler {
 								}
 							}
 
-							if (((Summon) obj).isInsideZone(Creature.ZONE_PEACE)) {
+							if (((Summon) obj).isInsideZone(CreatureZone.ZONE_PEACE)) {
 								continue;
 							}
 						}

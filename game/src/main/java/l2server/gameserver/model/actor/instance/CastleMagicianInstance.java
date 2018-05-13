@@ -15,14 +15,14 @@
 
 package l2server.gameserver.model.actor.instance;
 
-import l2server.gameserver.model.InstanceType;
 import l2server.Config;
 import l2server.gameserver.datatables.SubPledgeSkillTree;
 import l2server.gameserver.datatables.SubPledgeSkillTree.SubUnitSkill;
 import l2server.gameserver.instancemanager.InstanceManager;
+import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2SquadTrainer;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.ExAcquireSkillList;
@@ -395,7 +395,7 @@ public class CastleMagicianInstance extends NpcInstance implements L2SquadTraine
 			return false;
 		}
 		
-		if (clanLeader.isInsideZone(Creature.ZONE_NOSUMMONFRIEND)) {
+		if (clanLeader.isInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND)) {
 			// Need retail message if there's one.
 			player.sendMessage("Couldn't teleport to clan leader. The requirements was not meet.");
 			return false;

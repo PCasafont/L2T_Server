@@ -20,10 +20,7 @@ import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.model.Location;
 import l2server.gameserver.model.World;
-import l2server.gameserver.model.actor.Attackable;
-import l2server.gameserver.model.actor.Creature;
-import l2server.gameserver.model.actor.Playable;
-import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.*;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.zone.ZoneType;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
@@ -159,7 +156,7 @@ public class BossZone extends ZoneType {
 				return;
 			}
 
-			player.setInsideZone(Creature.ZONE_NOSUMMONFRIEND, true);
+			player.setInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND, true);
 		}
 	}
 
@@ -177,7 +174,7 @@ public class BossZone extends ZoneType {
 					return;
 				}
 
-				player.setInsideZone(Creature.ZONE_NOSUMMONFRIEND, false);
+				player.setInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND, false);
 
 				if (!player.isOnline()) {
 					playerEntry.setAllowedEntryTime(System.currentTimeMillis() + timeInvade);
@@ -331,7 +328,7 @@ public class BossZone extends ZoneType {
 			return;
 		}
 
-		chara.setInsideZone(Creature.ZONE_NOSUMMONFRIEND, false);
+		chara.setInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND, false);
 
 		if (exitLocation != null) {
 			chara.teleToLocation(exitLocation, true);

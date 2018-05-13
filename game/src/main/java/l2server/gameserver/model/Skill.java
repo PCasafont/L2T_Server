@@ -1921,7 +1921,7 @@ public abstract class Skill implements IChanceSkillTrigger {
 				
 				targetList.add(target);
 				
-				final boolean srcInArena = activeChar.isInsideZone(Creature.ZONE_PVP) && !activeChar.isInsideZone(Creature.ZONE_SIEGE);
+				final boolean srcInArena = activeChar.isInsideZone(CreatureZone.ZONE_PVP) && !activeChar.isInsideZone(CreatureZone.ZONE_SIEGE);
 				final int radius = getSkillRadius();
 				
 				// Calculate a normalized direction vector from the player to the target
@@ -2054,12 +2054,12 @@ public abstract class Skill implements IChanceSkillTrigger {
 					return false;
 				}
 				
-				if (skill.isOffensive() && player.getSiegeState() > 0 && player.isInsideZone(Creature.ZONE_SIEGE) &&
+				if (skill.isOffensive() && player.getSiegeState() > 0 && player.isInsideZone(CreatureZone.ZONE_SIEGE) &&
 						player.getSiegeState() == targetPlayer.getSiegeState() && player.getSiegeSide() == targetPlayer.getSiegeSide()) {
 					return false;
 				}
 				
-				if (target.isInsideZone(Creature.ZONE_PEACE)) {
+				if (target.isInsideZone(CreatureZone.ZONE_PEACE)) {
 					return false;
 				}
 				
@@ -2088,11 +2088,11 @@ public abstract class Skill implements IChanceSkillTrigger {
 					return false;
 				}
 				
-				if (player.getPvpFlag() == 0 && !player.isInsideZone(Creature.ZONE_PVP) && !player.isInsideZone(Creature.ZONE_SIEGE)) {
+				if (player.getPvpFlag() == 0 && !player.isInsideZone(CreatureZone.ZONE_PVP) && !player.isInsideZone(CreatureZone.ZONE_SIEGE)) {
 					return false;
 				}
 				
-				if (!sourceInArena && !(targetPlayer.isInsideZone(Creature.ZONE_PVP) && !targetPlayer.isInsideZone(Creature.ZONE_SIEGE))) {
+				if (!sourceInArena && !(targetPlayer.isInsideZone(CreatureZone.ZONE_PVP) && !targetPlayer.isInsideZone(CreatureZone.ZONE_SIEGE))) {
 					if (player.getAllyId() != 0 && player.getAllyId() == targetPlayer.getAllyId()) {
 						return false;
 					}

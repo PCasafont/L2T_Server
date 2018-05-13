@@ -5,7 +5,7 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.instancemanager.TownManager;
 import l2server.gameserver.model.World;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.util.Rnd;
@@ -45,13 +45,13 @@ public class Curfew {
 
 	public void start() {
 		for (Player player : World.getInstance().getAllPlayers().values()) {
-			if (!(player.isInsideZone(Creature.ZONE_PEACE) && TownManager.getClosestTown(player).getTownId() == eventTown)) {
-				player.setInsideZone(Creature.ZONE_PVP, true);
+			if (!(player.isInsideZone(CreatureZone.ZONE_PEACE) && TownManager.getClosestTown(player).getTownId() == eventTown)) {
+				player.setInsideZone(CreatureZone.ZONE_PVP, true);
 			}
 		}
 
 		for (Player player : World.getInstance().getAllPlayers().values()) {
-			if (player.isInsideZone(Creature.ZONE_PEACE)) {
+			if (player.isInsideZone(CreatureZone.ZONE_PEACE)) {
 				player.teleToLocation(player.getX(), player.getY(), player.getZ());
 			}
 		}
@@ -68,8 +68,8 @@ public class Curfew {
 	private void stop() {
 		eventTown = -1;
 		for (Player player : World.getInstance().getAllPlayers().values()) {
-			if (player != null && !player.isInsideZone(Creature.ZONE_PEACE) &&
-					!(player.isInsideZone(Creature.ZONE_NOSUMMONFRIEND) && player.isInsideZone(Creature.ZONE_NOLANDING))) {
+			if (player != null && !player.isInsideZone(CreatureZone.ZONE_PEACE) &&
+					!(player.isInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND) && player.isInsideZone(CreatureZone.ZONE_NOLANDING))) {
 				player.teleToLocation(player.getX(), player.getY(), player.getZ());
 			}
 		}

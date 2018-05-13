@@ -1124,7 +1124,7 @@ public final class Formulas {
 				hpRegenMultiplier *= siegeModifier;
 			}
 
-			if (player.isInsideZone(Creature.ZONE_CLANHALL) && player.getClan() != null && player.getClan().getHasHideout() > 0) {
+			if (player.isInsideZone(CreatureZone.ZONE_CLANHALL) && player.getClan() != null && player.getClan().getHasHideout() > 0) {
 				ClanHallZone zone = ZoneManager.getInstance().getZone(player, ClanHallZone.class);
 				int posChIndex = zone == null ? -1 : zone.getClanHallId();
 				int clanHallIndex = player.getClan().getHasHideout();
@@ -1138,7 +1138,7 @@ public final class Formulas {
 				}
 			}
 
-			if (player.isInsideZone(Creature.ZONE_CASTLE) && player.getClan() != null && player.getClan().getHasCastle() > 0) {
+			if (player.isInsideZone(CreatureZone.ZONE_CASTLE) && player.getClan() != null && player.getClan().getHasCastle() > 0) {
 				CastleZone zone = ZoneManager.getInstance().getZone(player, CastleZone.class);
 				int posCastleIndex = zone == null ? -1 : zone.getCastleId();
 				int castleIndex = player.getClan().getHasCastle();
@@ -1152,7 +1152,7 @@ public final class Formulas {
 				}
 			}
 
-			if (player.isInsideZone(Creature.ZONE_FORT) && player.getClan() != null && player.getClan().getHasFort() > 0) {
+			if (player.isInsideZone(CreatureZone.ZONE_FORT) && player.getClan() != null && player.getClan().getHasFort() > 0) {
 				FortZone zone = ZoneManager.getInstance().getZone(player, FortZone.class);
 				int posFortIndex = zone == null ? -1 : zone.getFortId();
 				int fortIndex = player.getClan().getHasFort();
@@ -1167,7 +1167,7 @@ public final class Formulas {
 			}
 
 			// Mother Tree effect is calculated at last
-			if (player.isInsideZone(Creature.ZONE_MOTHERTREE)) {
+			if (player.isInsideZone(CreatureZone.ZONE_MOTHERTREE)) {
 				MotherTreeZone zone = ZoneManager.getInstance().getZone(player, MotherTreeZone.class);
 				int hpBonus = zone == null ? 0 : zone.getHpRegenBonus();
 				hpRegenBonus += hpBonus;
@@ -1210,13 +1210,13 @@ public final class Formulas {
 			init += 0.3 * ((player.getLevel() - 1) / 10.0);
 
 			// Mother Tree effect is calculated at last'
-			if (player.isInsideZone(Creature.ZONE_MOTHERTREE)) {
+			if (player.isInsideZone(CreatureZone.ZONE_MOTHERTREE)) {
 				MotherTreeZone zone = ZoneManager.getInstance().getZone(player, MotherTreeZone.class);
 				int mpBonus = zone == null ? 0 : zone.getMpRegenBonus();
 				mpRegenBonus += mpBonus;
 			}
 
-			if (player.isInsideZone(Creature.ZONE_CLANHALL) && player.getClan() != null && player.getClan().getHasHideout() > 0) {
+			if (player.isInsideZone(CreatureZone.ZONE_CLANHALL) && player.getClan() != null && player.getClan().getHasHideout() > 0) {
 				ClanHallZone zone = ZoneManager.getInstance().getZone(player, ClanHallZone.class);
 				int posChIndex = zone == null ? -1 : zone.getClanHallId();
 				int clanHallIndex = player.getClan().getHasHideout();
@@ -1230,7 +1230,7 @@ public final class Formulas {
 				}
 			}
 
-			if (player.isInsideZone(Creature.ZONE_CASTLE) && player.getClan() != null && player.getClan().getHasCastle() > 0) {
+			if (player.isInsideZone(CreatureZone.ZONE_CASTLE) && player.getClan() != null && player.getClan().getHasCastle() > 0) {
 				CastleZone zone = ZoneManager.getInstance().getZone(player, CastleZone.class);
 				int posCastleIndex = zone == null ? -1 : zone.getCastleId();
 				int castleIndex = player.getClan().getHasCastle();
@@ -1244,7 +1244,7 @@ public final class Formulas {
 				}
 			}
 
-			if (player.isInsideZone(Creature.ZONE_FORT) && player.getClan() != null && player.getClan().getHasFort() > 0) {
+			if (player.isInsideZone(CreatureZone.ZONE_FORT) && player.getClan() != null && player.getClan().getHasFort() > 0) {
 				FortZone zone = ZoneManager.getInstance().getZone(player, FortZone.class);
 				int posFortIndex = zone == null ? -1 : zone.getFortId();
 				int fortIndex = player.getClan().getHasFort();
@@ -3941,7 +3941,7 @@ public final class Formulas {
 				//int targetClanId = target.getActingPlayer().getClanId();
 				//L2Party targetParty = attacker.getActingPlayer().getParty();
 				//if (attackerClanId > 0 && targetClanId > 0 && attackerClanId != targetClanId && attackerParty != null && targetParty != null &&
-				//		!attacker.isInsideZone(Creature.ZONE_PVP)) {
+				//		!attacker.isInsideZone(CreatureZone.ZONE_PVP)) {
 				//	int attackerClannies = 0;
 				//	int targetClannies = 0;
 				//	for (Player clanny : attacker.getKnownList().getKnownPlayers().values()) {

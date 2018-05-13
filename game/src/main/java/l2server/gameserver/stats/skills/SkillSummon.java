@@ -22,6 +22,7 @@ import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.*;
 import l2server.gameserver.model.base.Experience;
 import l2server.gameserver.network.SystemMessageId;
@@ -379,8 +380,8 @@ public class SkillSummon extends Skill {
 			}
 
 			if (activeChar.isPlayingEvent()) {
-				summon.setInsideZone(Creature.ZONE_PVP, true);
-				summon.setInsideZone(Creature.ZONE_PVP, true);
+				summon.setInsideZone(CreatureZone.ZONE_PVP, true);
+				summon.setInsideZone(CreatureZone.ZONE_PVP, true);
 			}
 
 			//for (Abnormal eff : activeChar.getAllEffects())

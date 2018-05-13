@@ -18,7 +18,7 @@ package l2server.gameserver.model.actor.stat;
 import l2server.Config;
 import l2server.gameserver.datatables.PetDataTable;
 import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.Playable;
 import l2server.gameserver.model.actor.instance.PetInstance;
 import l2server.gameserver.model.actor.instance.Player;
@@ -190,11 +190,11 @@ public class PlayableStat extends CharStat {
 	@Override
 	public int getRunSpeed() {
 		int val = super.getRunSpeed();
-		if (getActiveChar().isInsideZone(Creature.ZONE_WATER)) {
+		if (getActiveChar().isInsideZone(CreatureZone.ZONE_WATER)) {
 			val /= 2;
 		}
 
-		if (getActiveChar().isInsideZone(Creature.ZONE_SWAMP)) {
+		if (getActiveChar().isInsideZone(CreatureZone.ZONE_SWAMP)) {
 			SwampZone zone = ZoneManager.getInstance().getZone(getActiveChar(), SwampZone.class);
 			int bonus = zone == null ? 0 : zone.getMoveBonus();
 			double dbonus = bonus / 100.0; //%

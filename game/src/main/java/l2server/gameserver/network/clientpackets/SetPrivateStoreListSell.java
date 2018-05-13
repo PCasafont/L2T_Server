@@ -18,6 +18,7 @@ package l2server.gameserver.network.clientpackets;
 import l2server.Config;
 import l2server.gameserver.model.TradeList;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
@@ -86,7 +87,7 @@ public class SetPrivateStoreListSell extends L2GameClientPacket {
 			return;
 		}
 		
-		if (player.isInsideZone(Creature.ZONE_NOSTORE)) {
+		if (player.isInsideZone(CreatureZone.ZONE_NOSTORE)) {
 			player.sendPacket(new PrivateStoreManageListSell(player, packageSale));
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_PRIVATE_STORE_HERE));
 			player.sendPacket(ActionFailed.STATIC_PACKET);

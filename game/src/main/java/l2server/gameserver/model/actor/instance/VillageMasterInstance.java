@@ -15,7 +15,6 @@
 
 package l2server.gameserver.model.actor.instance;
 
-import l2server.gameserver.model.InstanceType;
 import l2server.Config;
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.datatables.PlayerClassTable;
@@ -25,10 +24,12 @@ import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.CastleSiegeManager;
 import l2server.gameserver.instancemanager.FortManager;
 import l2server.gameserver.instancemanager.FortSiegeManager;
+import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2Clan.SubPledge;
 import l2server.gameserver.model.L2ClanMember;
 import l2server.gameserver.model.L2PledgeSkillLearn;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.base.PlayerClass;
 import l2server.gameserver.model.base.Race;
 import l2server.gameserver.model.base.SubClass;
@@ -803,7 +804,7 @@ public class VillageMasterInstance extends NpcInstance {
 			}
 		}
 		
-		if (player.isInsideZone(Player.ZONE_SIEGE)) {
+		if (player.isInsideZone(CreatureZone.ZONE_SIEGE)) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISSOLVE_WHILE_IN_SIEGE));
 			return;
 		}

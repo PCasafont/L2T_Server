@@ -24,7 +24,7 @@ import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.model.Item;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.Playable;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.taskmanager.AttackStanceTaskManager;
@@ -43,8 +43,8 @@ public class MagicGem implements IItemHandler {
 		}
 
 		if (Config.isServer(Config.TENKAI)) {
-			if (!GrandBossManager.getInstance().checkIfInZone(player) && player.getInstanceId() == 0 && !player.isInsideZone(Creature.ZONE_PVP) &&
-					(!player.isInsideZone(Creature.ZONE_NOSUMMONFRIEND) || player.isInsideZone(Creature.ZONE_TOWN)) &&
+			if (!GrandBossManager.getInstance().checkIfInZone(player) && player.getInstanceId() == 0 && !player.isInsideZone(CreatureZone.ZONE_PVP) &&
+					(!player.isInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND) || player.isInsideZone(CreatureZone.ZONE_TOWN)) &&
 					player.getEvent() == null && !player.isInOlympiadMode() && !AttackStanceTaskManager.getInstance().getAttackStanceTask(player) &&
 					InstanceManager.getInstance().getInstance(player.getObjectId()) == null && player.getPvpFlag() == 0) {
 				player.spawnServitors();

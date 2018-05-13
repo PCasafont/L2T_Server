@@ -193,7 +193,7 @@ public class AttackableAI extends CreatureAI implements Runnable {
 				return false;
 			}
 
-			//if (selfAnalysis.cannotMoveOnLand && !target.isInsideZone(Creature.ZONE_WATER))
+			//if (selfAnalysis.cannotMoveOnLand && !target.isInsideZone(CreatureZone.ZONE_WATER))
 			//	return false;
 
 			if (((Player) target).isPlayingEvent()) {
@@ -297,7 +297,7 @@ public class AttackableAI extends CreatureAI implements Runnable {
 
 			// depending on config, do not allow mobs to attack _new_ players in peacezones,
 			// unless they are already following those players from outside the peacezone.
-			if (!Config.ALT_MOB_AGRO_IN_PEACEZONE && target.isInsideZone(Creature.ZONE_PEACE)) {
+			if (!Config.ALT_MOB_AGRO_IN_PEACEZONE && target.isInsideZone(CreatureZone.ZONE_PEACE)) {
 				return false;
 			}
 

@@ -27,7 +27,7 @@ import l2server.gameserver.events.instanced.types.SimonSays;
 import l2server.gameserver.instancemanager.AirShipManager;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.model.*;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.model.actor.Summon;
 import l2server.gameserver.model.actor.instance.*;
@@ -197,7 +197,7 @@ public final class RequestActionUse extends L2GameClientPacket {
 					return;
 				}
 				
-				if (target.getActingPlayer() != null && activeChar.getSiegeState() > 0 && activeChar.isInsideZone(Creature.ZONE_SIEGE) &&
+				if (target.getActingPlayer() != null && activeChar.getSiegeState() > 0 && activeChar.isInsideZone(CreatureZone.ZONE_SIEGE) &&
 						target.getActingPlayer().getSiegeState() == activeChar.getSiegeState() && target.getActingPlayer() != activeChar &&
 						target.getActingPlayer().getSiegeSide() == activeChar.getSiegeSide() && !Config.isServer(Config.TENKAI)) {
 					sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FORCED_ATTACK_IS_IMPOSSIBLE_AGAINST_SIEGE_SIDE_TEMPORARY_ALLIED_MEMBERS));

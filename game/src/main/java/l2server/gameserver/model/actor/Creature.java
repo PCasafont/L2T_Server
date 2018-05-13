@@ -158,34 +158,6 @@ public abstract class Creature extends WorldObject {
 	
 	protected Point3D skillCastPosition;
 	
-	/**
-	 * Zone system
-	 */
-	public static final byte ZONE_PVP = 0;
-	public static final byte ZONE_PEACE = 1;
-	public static final byte ZONE_SIEGE = 2;
-	public static final byte ZONE_MOTHERTREE = 3;
-	public static final byte ZONE_CLANHALL = 4;
-	public static final byte ZONE_LANDING = 5;
-	public static final byte ZONE_NOLANDING = 6;
-	public static final byte ZONE_WATER = 7;
-	public static final byte ZONE_JAIL = 8;
-	public static final byte ZONE_MONSTERTRACK = 9;
-	public static final byte ZONE_CASTLE = 10;
-	public static final byte ZONE_SWAMP = 11;
-	public static final byte ZONE_NOSUMMONFRIEND = 12;
-	public static final byte ZONE_FORT = 13;
-	public static final byte ZONE_NOSTORE = 14;
-	public static final byte ZONE_TOWN = 15;
-	public static final byte ZONE_SCRIPT = 16;
-	public static final byte ZONE_NOHQ = 17;
-	public static final byte ZONE_DANGERAREA = 18;
-	public static final byte ZONE_ALTERED = 19;
-	public static final byte ZONE_NOBOOKMARK = 20;
-	public static final byte ZONE_NOITEMDROP = 21;
-	public static final byte ZONE_NORESTART = 22;
-	public static final byte ZONE_FLY = 23;
-	
 	private final byte[] zones = new byte[25];
 	protected byte zoneValidateCounter = 4;
 	
@@ -249,13 +221,13 @@ public abstract class Creature extends WorldObject {
 	public final boolean isInsideZone(final byte zone) {
 		Instance instance = InstanceManager.getInstance().getInstance(getInstanceId());
 		switch (zone) {
-			case ZONE_PVP:
+			case CreatureZone.ZONE_PVP:
 				if (instance != null && instance.isPvPInstance() || Curfew.getInstance().getOnlyPeaceTown() != -1 ||
 						getActingPlayer() != null && getActingPlayer().isPlayingEvent()) {
 					return true; //zones[ZONE_PEACE] == 0;
 				}
-				return zones[ZONE_PVP] > 0 && zones[ZONE_PEACE] == 0;
-			case ZONE_PEACE:
+				return zones[CreatureZone.ZONE_PVP] > 0 && zones[CreatureZone.ZONE_PEACE] == 0;
+			case CreatureZone.ZONE_PEACE:
 				if (instance != null && instance.isPvPInstance() || getActingPlayer() != null && getActingPlayer().isPlayingEvent()) {
 					return false;
 				}
@@ -708,7 +680,7 @@ public abstract class Creature extends WorldObject {
 				return;
 			}
 			
-			if (target.getActingPlayer() != null && player.getSiegeState() > 0 && isInsideZone(Creature.ZONE_SIEGE) &&
+			if (target.getActingPlayer() != null && player.getSiegeState() > 0 && isInsideZone(CreatureZone.ZONE_SIEGE) &&
 					target.getActingPlayer().getSiegeState() == player.getSiegeState() && target.getActingPlayer() != this &&
 					target.getActingPlayer().getSiegeSide() == player.getSiegeSide() && !Config.isServer(Config.TENKAI)) {
 				sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FORCED_ATTACK_IS_IMPOSSIBLE_AGAINST_SIEGE_SIDE_TEMPORARY_ALLIED_MEMBERS));
@@ -4332,7 +4304,7 @@ public abstract class Creature extends WorldObject {
 			dy = m.yDestination - m.yAccurate;
 		}
 		
-		final boolean isFloating = isFlying() || isInsideZone(Creature.ZONE_WATER);
+		final boolean isFloating = isFlying() || isInsideZone(CreatureZone.ZONE_WATER);
 		
 		// Z coordinate will follow geodata or client values
 		if (Config.GEODATA > 0 && Config.COORD_SYNCHRONIZE == 2 && !isFloating && !m.disregardingGeodata && TimeController.getGameTicks() % 10 == 0 &&
@@ -4584,7 +4556,7 @@ public abstract class Creature extends WorldObject {
 		
 		// make water move short and use no geodata checks for swimming chars
 		// distance in a click can easily be over 3000
-		if (Config.GEODATA > 0 && isInsideZone(ZONE_WATER) && distance > 700) {
+		if (Config.GEODATA > 0 && isInsideZone(CreatureZone.ZONE_WATER) && distance > 700) {
 			double divider = 700 / distance;
 			x = curX + (int) (divider * dx);
 			y = curY + (int) (divider * dy);
@@ -4656,7 +4628,7 @@ public abstract class Creature extends WorldObject {
 		
 		if (Config.GEODATA > 0 && !isFlying() // flying chars not checked - even canSeeTarget doesn't work yet
 				&&
-				(!isInsideZone(ZONE_WATER) || isInsideZone(ZONE_SIEGE))) // swimming also not checked unless in siege zone - but distance is limited
+				(!isInsideZone(CreatureZone.ZONE_WATER) || isInsideZone(CreatureZone.ZONE_SIEGE))) // swimming also not checked unless in siege zone - but distance is limited
 		//&& !(this instanceof L2NpcWalkerInstance)) // npc walkers not checked
 		{
 			final boolean isInVehicle = this instanceof Player && ((Player) this).getVehicle() != null;
@@ -4791,7 +4763,7 @@ public abstract class Creature extends WorldObject {
 		}
 		
 		// Apply Z distance for flying or swimming for correct timing calculations
-		if ((isFlying() || isInsideZone(ZONE_WATER)) && !verticalMovementOnly) {
+		if ((isFlying() || isInsideZone(CreatureZone.ZONE_WATER)) && !verticalMovementOnly) {
 			distance = Math.sqrt(distance * distance + dz * dz);
 		}
 		
@@ -5721,18 +5693,18 @@ public abstract class Creature extends WorldObject {
 			}
 			
 			if (attacker instanceof Creature && target instanceof Creature) {
-				return ((Creature) target).isInsideZone(ZONE_PEACE) || ((Creature) attacker).isInsideZone(ZONE_PEACE);
+				return ((Creature) target).isInsideZone(CreatureZone.ZONE_PEACE) || ((Creature) attacker).isInsideZone(CreatureZone.ZONE_PEACE);
 			}
 			if (attacker instanceof Creature) {
-				return TownManager.getTown(target.getX(), target.getY(), target.getZ()) != null || ((Creature) attacker).isInsideZone(ZONE_PEACE);
+				return TownManager.getTown(target.getX(), target.getY(), target.getZ()) != null || ((Creature) attacker).isInsideZone(CreatureZone.ZONE_PEACE);
 			}
 		}
 		
 		if (attacker instanceof Creature && target instanceof Creature) {
-			return ((Creature) target).isInsideZone(ZONE_PEACE) || ((Creature) attacker).isInsideZone(ZONE_PEACE);
+			return ((Creature) target).isInsideZone(CreatureZone.ZONE_PEACE) || ((Creature) attacker).isInsideZone(CreatureZone.ZONE_PEACE);
 		}
 		if (attacker instanceof Creature) {
-			return TownManager.getTown(target.getX(), target.getY(), target.getZ()) != null || ((Creature) attacker).isInsideZone(ZONE_PEACE);
+			return TownManager.getTown(target.getX(), target.getY(), target.getZ()) != null || ((Creature) attacker).isInsideZone(CreatureZone.ZONE_PEACE);
 		}
 		return TownManager.getTown(target.getX(), target.getY(), target.getZ()) != null ||
 				TownManager.getTown(attacker.getX(), attacker.getY(), attacker.getZ()) != null;
@@ -7631,7 +7603,7 @@ public abstract class Creature extends WorldObject {
 				isPressingCtrl = true;
 			}
 			
-			final boolean isInsideSiegeZone = activeChar.isInsideZone(Creature.ZONE_SIEGE);
+			final boolean isInsideSiegeZone = activeChar.isInsideZone(CreatureZone.ZONE_SIEGE);
 			
 			if (obj instanceof Playable) {
 				final Player target = obj.getActingPlayer();
@@ -7698,7 +7670,7 @@ public abstract class Creature extends WorldObject {
 						if (isInsideSiegeZone) {
 							// Using resurrection skills is impossible, except in Fortress.
 							if (skill.getSkillType() == SkillType.RESURRECT) {
-								if (activeChar.isInsideZone(Creature.ZONE_CASTLE)) {
+								if (activeChar.isInsideZone(CreatureZone.ZONE_CASTLE)) {
 									if (activeChar.getSiegeState() == 2 && target.getSiegeState() == 2) {
 										final Siege s = CastleSiegeManager.getInstance().getSiege(getX(), getY(), getZ());
 										
@@ -7710,7 +7682,7 @@ public abstract class Creature extends WorldObject {
 									}
 									
 									return false;
-								} else if (!activeChar.isInsideZone(Creature.ZONE_FORT)) {
+								} else if (!activeChar.isInsideZone(CreatureZone.ZONE_FORT)) {
 									return false;
 								}
 							}
@@ -7747,7 +7719,7 @@ public abstract class Creature extends WorldObject {
 								}
 							}
 							// You can't use friendly skills without ctrl while in an arena or a duel...
-							if (target.isInsideZone(Creature.ZONE_PVP) || target.isInDuel() || target.isInOlympiadMode()) {
+							if (target.isInsideZone(CreatureZone.ZONE_PVP) || target.isInDuel() || target.isInOlympiadMode()) {
 								return false;
 							}
 							// You can't use friendly skills without ctrl on clan wars...
@@ -7827,7 +7799,7 @@ public abstract class Creature extends WorldObject {
 						}
 						
 						// You can debuff anyone except party members while in an arena...
-						if (!isInsideSiegeZone && isInsideZone(Creature.ZONE_PVP) && target.isInsideZone(Creature.ZONE_PVP)) {
+						if (!isInsideSiegeZone && isInsideZone(CreatureZone.ZONE_PVP) && target.isInsideZone(CreatureZone.ZONE_PVP)) {
 							return true;
 						}
 						
@@ -7847,11 +7819,11 @@ public abstract class Creature extends WorldObject {
 							}
 						}
 						
-						if (isInsideZone(Creature.ZONE_PVP) && target.isInsideZone(Creature.ZONE_PVP)) {
+						if (isInsideZone(CreatureZone.ZONE_PVP) && target.isInsideZone(CreatureZone.ZONE_PVP)) {
 							return true;
 						}
 						
-						if (target.isInsideZone(Creature.ZONE_PEACE)) {
+						if (target.isInsideZone(CreatureZone.ZONE_PEACE)) {
 							return false;
 						}
 						
@@ -7910,7 +7882,7 @@ public abstract class Creature extends WorldObject {
 								}
 							}
 							
-							if (target.isInsideZone(Creature.ZONE_PEACE)) {
+							if (target.isInsideZone(CreatureZone.ZONE_PEACE)) {
 								return false;
 							}
 							
@@ -7934,7 +7906,7 @@ public abstract class Creature extends WorldObject {
 								return false;
 							}
 							
-							if (!isInsideSiegeZone && isInsideZone(Creature.ZONE_PVP) && target.isInsideZone(Creature.ZONE_PVP)) {
+							if (!isInsideSiegeZone && isInsideZone(CreatureZone.ZONE_PVP) && target.isInsideZone(CreatureZone.ZONE_PVP)) {
 								return true;
 							}
 
@@ -7953,7 +7925,7 @@ public abstract class Creature extends WorldObject {
 								return false;
 							}
 							
-							if (isInsideZone(Creature.ZONE_PVP) && target.isInsideZone(Creature.ZONE_PVP)) {
+							if (isInsideZone(CreatureZone.ZONE_PVP) && target.isInsideZone(CreatureZone.ZONE_PVP)) {
 								return true;
 							}
 							
@@ -8001,7 +7973,7 @@ public abstract class Creature extends WorldObject {
 								}
 							}
 							
-							if (target.isInsideZone(Creature.ZONE_PEACE)) {
+							if (target.isInsideZone(CreatureZone.ZONE_PEACE)) {
 								return false;
 							}
 							
@@ -8015,7 +7987,7 @@ public abstract class Creature extends WorldObject {
 									activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FORCED_ATTACK_IS_IMPOSSIBLE_AGAINST_SIEGE_SIDE_TEMPORARY_ALLIED_MEMBERS));
 									return false;
 								}
-								if (target.isInsideZone(Creature.ZONE_PVP)) {
+								if (target.isInsideZone(CreatureZone.ZONE_PVP)) {
 									return true;
 								} else if (activeChar.isInSameClan(target) || activeChar.isInSameAlly(target)) {
 									return false;
@@ -8040,7 +8012,7 @@ public abstract class Creature extends WorldObject {
 					case UNFRIENDLY:
 						return false;
 					case ATTACK: {
-						if (door.isInsideZone(Creature.ZONE_PEACE)) {
+						if (door.isInsideZone(CreatureZone.ZONE_PEACE)) {
 							return false;
 						}
 						if (cDoor != null) {

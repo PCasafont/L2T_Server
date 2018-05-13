@@ -18,6 +18,7 @@ package l2server.gameserver.model.zone.type;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.Playable;
 import l2server.gameserver.model.actor.Summon;
 import l2server.gameserver.model.actor.instance.DoorInstance;
@@ -74,7 +75,7 @@ public class OlympiadStadiumZone extends SpawnZone {
 
 	@Override
 	protected final void onEnter(Creature character) {
-		character.setInsideZone(Creature.ZONE_NOSUMMONFRIEND, true);
+		character.setInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND, true);
 
 		int instanceIndex = (character.getInstanceId() - Olympiad.BASE_INSTANCE_ID) / 4;
 		if (instanceIndex < 0 || instanceIndex >= instances.size()) {
@@ -87,7 +88,7 @@ public class OlympiadStadiumZone extends SpawnZone {
 		}
 
 		if (task.isBattleStarted()) {
-			character.setInsideZone(Creature.ZONE_PVP, true);
+			character.setInsideZone(CreatureZone.ZONE_PVP, true);
 			if (character instanceof Player) {
 				character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE));
 				task.getGame().sendOlympiadInfo(character);
@@ -107,7 +108,7 @@ public class OlympiadStadiumZone extends SpawnZone {
 
 	@Override
 	protected final void onExit(Creature character) {
-		character.setInsideZone(Creature.ZONE_NOSUMMONFRIEND, false);
+		character.setInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND, false);
 
 		int instanceIndex = (character.getInstanceId() - Olympiad.BASE_INSTANCE_ID) / 4;
 		if (instanceIndex < 0 || instanceIndex >= instances.size()) {
@@ -116,7 +117,7 @@ public class OlympiadStadiumZone extends SpawnZone {
 
 		OlympiadGameTask task = instances.get(instanceIndex);
 		if (task.isBattleStarted()) {
-			character.setInsideZone(Creature.ZONE_PVP, false);
+			character.setInsideZone(CreatureZone.ZONE_PVP, false);
 			if (character instanceof Player) {
 				character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));
 				character.sendPacket(ExOlympiadMatchEnd.STATIC_PACKET);
@@ -153,12 +154,12 @@ public class OlympiadStadiumZone extends SpawnZone {
 			}
 
 			if (battleStarted) {
-				character.setInsideZone(Creature.ZONE_PVP, true);
+				character.setInsideZone(CreatureZone.ZONE_PVP, true);
 				if (character instanceof Player) {
 					character.sendPacket(sm);
 				}
 			} else {
-				character.setInsideZone(Creature.ZONE_PVP, false);
+				character.setInsideZone(CreatureZone.ZONE_PVP, false);
 				if (character instanceof Player) {
 					character.sendPacket(sm);
 					character.sendPacket(ExOlympiadMatchEnd.STATIC_PACKET);

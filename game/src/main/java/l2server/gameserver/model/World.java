@@ -19,7 +19,7 @@ import l2server.Config;
 import l2server.gameserver.GmListTable;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.instancemanager.GrandBossManager;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.Playable;
 import l2server.gameserver.model.actor.instance.ApInstance;
 import l2server.gameserver.model.actor.instance.PetInstance;
@@ -768,8 +768,8 @@ public final class World {
 		Player mostPvP = null;
 		int max = -1;
 		for (Player flagged : getAllPlayers().values()) {
-			if (flagged.getPvpFlag() == 0 || flagged.isGM() || flagged.isInsideZone(Creature.ZONE_PEACE) ||
-					flagged.isInsideZone(Creature.ZONE_SIEGE) || flagged.isInsideZone(Creature.ZONE_NOSUMMONFRIEND) ||
+			if (flagged.getPvpFlag() == 0 || flagged.isGM() || flagged.isInsideZone(CreatureZone.ZONE_PEACE) ||
+					flagged.isInsideZone(CreatureZone.ZONE_SIEGE) || flagged.isInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND) ||
 					flagged.getInstanceId() != 0 || GrandBossManager.getInstance().getZone(flagged) != null) {
 				continue;
 			}
@@ -778,7 +778,7 @@ public final class World {
 			
 			int count = 0;
 			for (Player pl : flagged.getKnownList().getKnownPlayers().values()) {
-				if (pl.getPvpFlag() > 0 && !pl.isInsideZone(Creature.ZONE_PEACE)) {
+				if (pl.getPvpFlag() > 0 && !pl.isInsideZone(CreatureZone.ZONE_PEACE)) {
 					if (!parties && pl.isInParty() || !artificial && pl instanceof ApInstance) {
 						valid = false;
 						break;

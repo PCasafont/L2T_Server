@@ -142,7 +142,7 @@ abstract class WorldObject(objectId: Int) {
 	/**
 	 * returns reference to region this object is in
 	 */
-	val worldRegion: WorldRegion
+	val worldRegion: WorldRegion?
 		get() = position.worldRegion
 
 	open val actingPlayer: Player?

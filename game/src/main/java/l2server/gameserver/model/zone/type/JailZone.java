@@ -18,6 +18,7 @@ package l2server.gameserver.model.zone.type;
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.zone.ZoneType;
 import l2server.gameserver.network.SystemMessageId;
@@ -36,14 +37,14 @@ public class JailZone extends ZoneType {
 	@Override
 	protected void onEnter(Creature character) {
 		if (character instanceof Player) {
-			character.setInsideZone(Creature.ZONE_JAIL, true);
-			character.setInsideZone(Creature.ZONE_NOSUMMONFRIEND, true);
+			character.setInsideZone(CreatureZone.ZONE_JAIL, true);
+			character.setInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND, true);
 			if (Config.JAIL_IS_PVP) {
-				character.setInsideZone(Creature.ZONE_PVP, true);
+				character.setInsideZone(CreatureZone.ZONE_PVP, true);
 				character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE));
 			}
 			if (Config.JAIL_DISABLE_TRANSACTION) {
-				character.setInsideZone(Creature.ZONE_NOSTORE, true);
+				character.setInsideZone(CreatureZone.ZONE_NOSTORE, true);
 			}
 		}
 	}
@@ -51,10 +52,10 @@ public class JailZone extends ZoneType {
 	@Override
 	protected void onExit(Creature character) {
 		if (character instanceof Player) {
-			character.setInsideZone(Creature.ZONE_JAIL, false);
-			character.setInsideZone(Creature.ZONE_NOSUMMONFRIEND, false);
+			character.setInsideZone(CreatureZone.ZONE_JAIL, false);
+			character.setInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND, false);
 			if (Config.JAIL_IS_PVP) {
-				character.setInsideZone(Creature.ZONE_PVP, false);
+				character.setInsideZone(CreatureZone.ZONE_PVP, false);
 				character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));
 			}
 			if (((Player) character).isInJail()) {
@@ -63,7 +64,7 @@ public class JailZone extends ZoneType {
 				character.sendMessage("You cannot cheat your way out of here. You must wait until your jail time is over.");
 			}
 			if (Config.JAIL_DISABLE_TRANSACTION) {
-				character.setInsideZone(Creature.ZONE_NOSTORE, false);
+				character.setInsideZone(CreatureZone.ZONE_NOSTORE, false);
 			}
 		}
 	}

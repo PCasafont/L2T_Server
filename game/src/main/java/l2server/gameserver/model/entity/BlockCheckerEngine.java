@@ -26,7 +26,7 @@ import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.World;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.BlockInstance;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.actor.instance.SummonInstance;
@@ -341,7 +341,7 @@ public final class BlockCheckerEngine {
 				}
 				// Set the current player arena
 				player.setBlockCheckerArena((byte) arena);
-				player.setInsideZone(Creature.ZONE_PVP, true);
+				player.setInsideZone(CreatureZone.ZONE_PVP, true);
 				// Send needed packets
 				player.sendPacket(initialPoints);
 				player.sendPacket(closeUserInterface);
@@ -663,7 +663,7 @@ public final class BlockCheckerEngine {
 				broadcastRelationChanged(player);
 				// Teleport Back
 				player.teleToLocation(-57478, -60367, -2370);
-				player.setInsideZone(Creature.ZONE_PVP, false);
+				player.setInsideZone(CreatureZone.ZONE_PVP, false);
 				// Send end packet
 				player.sendPacket(end);
 				player.broadcastUserInfo();

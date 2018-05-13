@@ -18,7 +18,7 @@ package l2server.gameserver.stats.effects;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -68,7 +68,7 @@ public class EffectTransformation extends L2Effect {
 		}
 		
 		//LasTravel: Avoiding use mounts for enter to castles
-		if (TransformationManager.getInstance().isMountable(getSkill().getTransformId()) && trg.isInsideZone(Creature.ZONE_CASTLE)) {
+		if (TransformationManager.getInstance().isMountable(getSkill().getTransformId()) && trg.isInsideZone(CreatureZone.ZONE_CASTLE)) {
 			trg.getFirstEffect(getSkill().getId()).exit();
 			return false;
 		}

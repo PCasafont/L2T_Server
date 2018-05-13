@@ -1,6 +1,5 @@
 package l2server.gameserver.model.actor.instance;
 
-import l2server.gameserver.model.InstanceType;
 import l2server.Config;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.cache.HtmCache;
@@ -9,6 +8,7 @@ import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.instancemanager.*;
 import l2server.gameserver.model.*;
 import l2server.gameserver.model.L2Clan.SubPledge;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.base.Experience;
 import l2server.gameserver.model.base.PlayerClass;
 import l2server.gameserver.model.base.Race;
@@ -1333,7 +1333,7 @@ public final class ServicesNpcInstance extends NpcInstance {
 				return;
 			}
 		}
-		if (player.isInsideZone(Player.ZONE_SIEGE)) {
+		if (player.isInsideZone(CreatureZone.ZONE_SIEGE)) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISSOLVE_WHILE_IN_SIEGE));
 			return;
 		}

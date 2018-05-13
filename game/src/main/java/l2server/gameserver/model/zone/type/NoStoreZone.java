@@ -16,6 +16,7 @@
 package l2server.gameserver.model.zone.type;
 
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.zone.ZoneType;
 
@@ -32,14 +33,14 @@ public class NoStoreZone extends ZoneType {
 	@Override
 	protected void onEnter(final Creature character) {
 		if (character instanceof Player) {
-			character.setInsideZone(Creature.ZONE_NOSTORE, true);
+			character.setInsideZone(CreatureZone.ZONE_NOSTORE, true);
 		}
 	}
 
 	@Override
 	protected void onExit(final Creature character) {
 		if (character instanceof Player) {
-			character.setInsideZone(Creature.ZONE_NOSTORE, false);
+			character.setInsideZone(CreatureZone.ZONE_NOSTORE, false);
 		}
 	}
 

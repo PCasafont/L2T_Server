@@ -23,6 +23,7 @@ import l2server.gameserver.model.Item;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.model.zone.ZoneType;
@@ -103,7 +104,7 @@ public class Fishing implements ISkillHandler {
 				return;
 			}
 		}
-		if (player.isInsideZone(Creature.ZONE_WATER)) {
+		if (player.isInsideZone(CreatureZone.ZONE_WATER)) {
 			// You can't fish in water
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_FISH_UNDER_WATER));
 			if (!player.isGM()) {

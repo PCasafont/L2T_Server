@@ -25,7 +25,7 @@ import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2Party;
 import l2server.gameserver.model.World;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.ApInstance;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.base.PlayerClass;
@@ -125,8 +125,8 @@ public class ArtificialPlayersManager {
 			int pvpers = 0;
 			Map<Integer, Integer> allies = new HashMap<>();
 			for (Player player : World.getInstance().getAllPlayers().values()) {
-				if (player.getPvpFlag() == 0 || player.isInsideZone(Creature.ZONE_PEACE) || player.isInsideZone(Creature.ZONE_SIEGE) ||
-						player.isInsideZone(Creature.ZONE_NOSUMMONFRIEND) || player.getInstanceId() != 0) {
+				if (player.getPvpFlag() == 0 || player.isInsideZone(CreatureZone.ZONE_PEACE) || player.isInsideZone(CreatureZone.ZONE_SIEGE) ||
+						player.isInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND) || player.getInstanceId() != 0) {
 					continue;
 				}
 

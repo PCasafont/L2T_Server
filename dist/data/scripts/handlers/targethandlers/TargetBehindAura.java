@@ -20,10 +20,7 @@ import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.WorldObject;
-import l2server.gameserver.model.actor.Attackable;
-import l2server.gameserver.model.actor.Creature;
-import l2server.gameserver.model.actor.Playable;
-import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.*;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.templates.skills.SkillTargetType;
 import l2server.gameserver.util.Util;
@@ -42,7 +39,7 @@ public class TargetBehindAura implements ISkillTargetTypeHandler {
 
 		int radius = skill.getSkillRadius();
 
-		boolean srcInArena = activeChar.isInsideZone(Creature.ZONE_PVP) && !activeChar.isInsideZone(Creature.ZONE_SIEGE);
+		boolean srcInArena = activeChar.isInsideZone(CreatureZone.ZONE_PVP) && !activeChar.isInsideZone(CreatureZone.ZONE_SIEGE);
 
 		Player src = activeChar.getActingPlayer();
 
@@ -81,8 +78,8 @@ public class TargetBehindAura implements ISkillTargetTypeHandler {
 								continue;
 							}
 
-							if (!srcInArena && !(((Creature) obj).isInsideZone(Creature.ZONE_PVP) &&
-									!((Creature) obj).isInsideZone(Creature.ZONE_SIEGE))) {
+							if (!srcInArena && !(((Creature) obj).isInsideZone(CreatureZone.ZONE_PVP) &&
+									!((Creature) obj).isInsideZone(CreatureZone.ZONE_SIEGE))) {
 								if (src.getAllyId() == ((Player) obj).getAllyId() && src.getAllyId() != 0) {
 									continue;
 								}
@@ -108,8 +105,8 @@ public class TargetBehindAura implements ISkillTargetTypeHandler {
 								continue;
 							}
 
-							if (!srcInArena && !(((Creature) obj).isInsideZone(Creature.ZONE_PVP) &&
-									!((Creature) obj).isInsideZone(Creature.ZONE_SIEGE))) {
+							if (!srcInArena && !(((Creature) obj).isInsideZone(CreatureZone.ZONE_PVP) &&
+									!((Creature) obj).isInsideZone(CreatureZone.ZONE_SIEGE))) {
 								if (src.getAllyId() == trg.getAllyId() && src.getAllyId() != 0) {
 									continue;
 								}

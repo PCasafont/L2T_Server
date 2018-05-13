@@ -21,6 +21,7 @@ import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.PetInstance;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
@@ -80,7 +81,7 @@ public class TargetCorpsePlayer implements ISkillTargetTypeHandler {
 								boolean isAttacker = castle.getSiege().checkIsAttacker(player.getClan());
 								boolean isDefender = castle.getSiege().checkIsDefender(player.getClan());
 								boolean none = !isAttacker && !isDefender;
-								if (none && targetPlayer.isInsideZone(Creature.ZONE_SIEGE)) {
+								if (none && targetPlayer.isInsideZone(CreatureZone.ZONE_SIEGE)) {
 									condGood = false;
 								} else if (isAttacker) {
 									condGood = false;

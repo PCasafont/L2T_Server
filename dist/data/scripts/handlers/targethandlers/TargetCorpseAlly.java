@@ -21,6 +21,7 @@ import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.templates.skills.SkillTargetType;
 import l2server.gameserver.templates.skills.SkillType;
@@ -73,7 +74,7 @@ public class TargetCorpseAlly implements ISkillTargetTypeHandler {
 						if (skill.getSkillType() == SkillType.RESURRECT) {
 							// check target is not in a active siege
 							// zone
-							if (((Player) newTarget).isInsideZone(Creature.ZONE_SIEGE) && ((Player) newTarget).getSiegeState() == 0) {
+							if (((Player) newTarget).isInsideZone(CreatureZone.ZONE_SIEGE) && ((Player) newTarget).getSiegeState() == 0) {
 								continue;
 							}
 						}

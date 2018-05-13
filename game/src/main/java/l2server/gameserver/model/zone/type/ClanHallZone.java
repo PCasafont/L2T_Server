@@ -19,6 +19,7 @@ import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.instancemanager.ClanHallManager;
 import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.ClanHall;
 import l2server.gameserver.model.zone.SpawnZone;
@@ -54,7 +55,7 @@ public class ClanHallZone extends SpawnZone {
 	protected void onEnter(Creature character) {
 		if (character instanceof Player) {
 			// Set as in clan hall
-			character.setInsideZone(Creature.ZONE_CLANHALL, true);
+			character.setInsideZone(CreatureZone.ZONE_CLANHALL, true);
 
 			ClanHall clanHall = ClanHallManager.getInstance().getClanHallById(clanHallId);
 			if (clanHall == null) {
@@ -74,7 +75,7 @@ public class ClanHallZone extends SpawnZone {
 	protected void onExit(Creature character) {
 		if (character instanceof Player) {
 			// Unset clanhall zone
-			character.setInsideZone(Creature.ZONE_CLANHALL, false);
+			character.setInsideZone(CreatureZone.ZONE_CLANHALL, false);
 		}
 	}
 

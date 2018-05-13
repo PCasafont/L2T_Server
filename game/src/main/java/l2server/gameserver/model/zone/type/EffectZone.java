@@ -17,9 +17,10 @@ package l2server.gameserver.model.zone.type;
 
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.InstanceType;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.zone.ZoneType;
 import l2server.gameserver.network.serverpackets.EtcStatusUpdate;
@@ -125,9 +126,9 @@ public class EffectZone extends ZoneType {
 			}
 		}
 		if (character instanceof Player) {
-			character.setInsideZone(Creature.ZONE_ALTERED, true);
+			character.setInsideZone(CreatureZone.ZONE_ALTERED, true);
 			if (isShowDangerIcon) {
-				character.setInsideZone(Creature.ZONE_DANGERAREA, true);
+				character.setInsideZone(CreatureZone.ZONE_DANGERAREA, true);
 				character.sendPacket(new EtcStatusUpdate((Player) character));
 			}
 		}
@@ -136,10 +137,10 @@ public class EffectZone extends ZoneType {
 	@Override
 	protected void onExit(Creature character) {
 		if (character instanceof Player) {
-			character.setInsideZone(Creature.ZONE_ALTERED, false);
+			character.setInsideZone(CreatureZone.ZONE_ALTERED, false);
 			if (isShowDangerIcon) {
-				character.setInsideZone(Creature.ZONE_DANGERAREA, false);
-				if (!character.isInsideZone(Creature.ZONE_DANGERAREA)) {
+				character.setInsideZone(CreatureZone.ZONE_DANGERAREA, false);
+				if (!character.isInsideZone(CreatureZone.ZONE_DANGERAREA)) {
 					character.sendPacket(new EtcStatusUpdate((Player) character));
 				}
 			}

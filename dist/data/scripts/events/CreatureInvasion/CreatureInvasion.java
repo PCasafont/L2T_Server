@@ -22,7 +22,7 @@ import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.World;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.model.actor.Summon;
 import l2server.gameserver.model.actor.instance.Player;
@@ -319,7 +319,7 @@ public class CreatureInvasion extends Quest {
 		}
 
 		if (!isValidAttack(player, skill, npc)) {
-			if (!player.isGM() && player.isInsideZone(Creature.ZONE_PEACE)) {
+			if (!player.isGM() && player.isInsideZone(CreatureZone.ZONE_PEACE)) {
 				player.doDie(null);
 			}
 

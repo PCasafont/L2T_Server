@@ -19,6 +19,7 @@ import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -50,7 +51,7 @@ public class TransformDispel implements ISkillHandler {
 		}
 
 		if (pc.isTransformed() || pc.isInStance()) {
-			if (pc.isFlyingMounted() && !pc.isInsideZone(Creature.ZONE_LANDING)) {
+			if (pc.isFlyingMounted() && !pc.isInsideZone(CreatureZone.ZONE_LANDING)) {
 				pc.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.BOARD_OR_CANCEL_NOT_POSSIBLE_HERE));
 			} else {
 				pc.stopTransformation(true);

@@ -27,7 +27,7 @@ import l2server.gameserver.instancemanager.CoupleManager;
 import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.World;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
@@ -244,7 +244,7 @@ public class Wedding implements IVoicedCommandHandler {
 		if (activeChar.getEvent() != null && !activeChar.getEvent().onEscapeUse(activeChar.getObjectId())) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
-		} else if (activeChar.isInsideZone(Creature.ZONE_NOSUMMONFRIEND)) {
+		} else if (activeChar.isInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND)) {
 			activeChar.sendMessage("You are in area which blocks summoning.");
 			return false;
 		}

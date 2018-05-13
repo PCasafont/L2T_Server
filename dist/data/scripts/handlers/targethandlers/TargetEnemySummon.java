@@ -20,6 +20,7 @@ import l2server.gameserver.handler.SkillTargetTypeHandler;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.Summon;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.templates.skills.SkillTargetType;
@@ -35,7 +36,7 @@ public class TargetEnemySummon implements ISkillTargetTypeHandler {
 			if (activeChar instanceof Player && ((Player) activeChar).getPet() != targetSummon && !targetSummon.isDead() &&
 					!((Player) activeChar).getSummons().contains(targetSummon) &&
 					(targetSummon.getOwner().getPvpFlag() != 0 || targetSummon.getOwner().getReputation() < 0) ||
-					targetSummon.getOwner().isInsideZone(Creature.ZONE_PVP) && ((Player) activeChar).isInsideZone(Creature.ZONE_PVP) ||
+					targetSummon.getOwner().isInsideZone(CreatureZone.ZONE_PVP) && ((Player) activeChar).isInsideZone(CreatureZone.ZONE_PVP) ||
 					targetSummon.getOwner().isInDuel() && ((Player) activeChar).isInDuel() &&
 							targetSummon.getOwner().getDuelId() == ((Player) activeChar).getDuelId()) {
 				return new Creature[]{targetSummon};

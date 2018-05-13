@@ -19,7 +19,7 @@ import gnu.trove.TIntIntHashMap;
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.events.instanced.EventsManager;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.BlockCheckerEngine;
 import l2server.gameserver.model.itemcontainer.PcInventory;
@@ -310,7 +310,7 @@ public final class HandysBlockCheckerManager {
 				long count = inv.getInventoryItemCount(13788, 0);
 				inv.destroyItemByItemId("Handys Block Checker", 13788, count, player, player);
 			}
-			player.setInsideZone(Creature.ZONE_PVP, false);
+			player.setInsideZone(CreatureZone.ZONE_PVP, false);
 			// Teleport Back
 			player.teleToLocation(-57478, -60367, -2370);
 		}

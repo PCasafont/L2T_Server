@@ -15,13 +15,13 @@
 
 package l2server.gameserver.model.actor.instance;
 
-import l2server.gameserver.model.InstanceType;
 import l2server.Config;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.CastleManager;
+import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.model.Item;
 import l2server.gameserver.model.Skill;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.Playable;
 import l2server.gameserver.model.actor.Summon;
 import l2server.gameserver.model.entity.Castle;
@@ -119,7 +119,7 @@ public class NpcBufferInstance extends NpcInstance {
 			
 			showChatWindow(player, chatPage);
 		} else if (command.startsWith("Heal")) {
-			if ((player.isInCombat() || player.getPvpFlag() > 0) && !player.isInsideZone(Creature.ZONE_PEACE)) {
+			if ((player.isInCombat() || player.getPvpFlag() > 0) && !player.isInsideZone(CreatureZone.ZONE_PEACE)) {
 				player.sendMessage("You cannot be healed while engaged in combat.");
 				return;
 			}

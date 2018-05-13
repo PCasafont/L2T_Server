@@ -15,15 +15,15 @@
 
 package l2server.gameserver.model.actor.instance;
 
-import l2server.gameserver.model.InstanceType;
 import l2server.Config;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.datatables.TeleportLocationTable;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.CastleSiegeManager;
 import l2server.gameserver.instancemanager.TownManager;
+import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.model.L2TeleportLocation;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.gameserver.network.SystemMessageId;
@@ -222,7 +222,7 @@ public class TeleporterInstance extends Npc {
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_PORT_THAT_IS_IN_SIGE));
 				return;
 			} else if (TownManager.townHasCastleInSiege(list.getLocX(), list.getLocY()) &&
-					(isInsideZone(Creature.ZONE_TOWN) || getNpcId() > 40000)) {
+					(isInsideZone(CreatureZone.ZONE_TOWN) || getNpcId() > 40000)) {
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_PORT_THAT_IS_IN_SIGE));
 				return;
 			} else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_GK && player.getReputation() < 0) //karma

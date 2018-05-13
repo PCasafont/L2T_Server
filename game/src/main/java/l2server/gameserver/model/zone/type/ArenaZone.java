@@ -17,6 +17,7 @@ package l2server.gameserver.model.zone.type;
 
 import l2server.gameserver.instancemanager.GMEventManager;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.zone.SpawnZone;
 import l2server.gameserver.network.SystemMessageId;
@@ -40,11 +41,11 @@ public class ArenaZone extends SpawnZone {
 			return;
 		}
 
-		character.setInsideZone(Creature.ZONE_PVP, true);
-		character.setInsideZone(Creature.ZONE_NOSUMMONFRIEND, true);
+		character.setInsideZone(CreatureZone.ZONE_PVP, true);
+		character.setInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND, true);
 
 		if (character instanceof Player) {
-			if (!character.isInsideZone(Creature.ZONE_PVP)) {
+			if (!character.isInsideZone(CreatureZone.ZONE_PVP)) {
 				character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE));
 			}
 		}
@@ -52,11 +53,11 @@ public class ArenaZone extends SpawnZone {
 
 	@Override
 	protected void onExit(Creature character) {
-		character.setInsideZone(Creature.ZONE_PVP, false);
-		character.setInsideZone(Creature.ZONE_NOSUMMONFRIEND, false);
+		character.setInsideZone(CreatureZone.ZONE_PVP, false);
+		character.setInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND, false);
 
 		if (character instanceof Player) {
-			if (!character.isInsideZone(Creature.ZONE_PVP)) {
+			if (!character.isInsideZone(CreatureZone.ZONE_PVP)) {
 				character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));
 			}
 		}

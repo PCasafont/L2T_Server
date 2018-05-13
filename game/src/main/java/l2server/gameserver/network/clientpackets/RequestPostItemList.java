@@ -21,7 +21,7 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExReplyPostItemList;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
-import static l2server.gameserver.model.actor.Creature.ZONE_PEACE;
+import static l2server.gameserver.model.actor.CreatureZone.ZONE_PEACE;
 
 /**
  * @author Pere, DS

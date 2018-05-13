@@ -24,6 +24,7 @@ import l2server.gameserver.instancemanager.FortManager;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.actor.instance.SiegeFlagInstance;
 import l2server.gameserver.model.entity.Castle;
@@ -129,7 +130,7 @@ public class SkillSiegeFlag extends Skill {
 			text = "You must be a clan leader to place a flag.";
 		} else if (castle.getSiege().getAttackerClan(player.getClan()).getNumFlags() >= CastleSiegeManager.getInstance().getFlagMaxCount()) {
 			text = "You have already placed the maximum number of flags possible.";
-		} else if (player.isInsideZone(Creature.ZONE_NOHQ)) {
+		} else if (player.isInsideZone(CreatureZone.ZONE_NOHQ)) {
 			text = "You cannot place flag here.";
 		} else {
 			return true;
@@ -159,7 +160,7 @@ public class SkillSiegeFlag extends Skill {
 			text = "You must be a clan leader to place a flag.";
 		} else if (fort.getSiege().getAttackerClan(player.getClan()).getNumFlags() >= Config.FS_MAX_FLAGS) {
 			text = "You have already placed the maximum number of flags possible.";
-		} else if (player.isInsideZone(Creature.ZONE_NOHQ)) {
+		} else if (player.isInsideZone(CreatureZone.ZONE_NOHQ)) {
 			text = "You cannot place flag here.";
 		} else {
 			return true;
@@ -195,7 +196,7 @@ public class SkillSiegeFlag extends Skill {
 			text = "You can only construct an outpost or flag on siege field.";
 		} else if (player.getClan() == null || !player.isClanLeader()) {
 			text = "You must be a clan leader to construct an outpost or flag.";
-		} else if (player.isInsideZone(Creature.ZONE_NOHQ)) {
+		} else if (player.isInsideZone(CreatureZone.ZONE_NOHQ)) {
 			text = "You cannot construct outpost or flag here.";
 		} else {
 			return true;

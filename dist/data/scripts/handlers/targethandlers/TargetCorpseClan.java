@@ -21,10 +21,7 @@ import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2ClanMember;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.WorldObject;
-import l2server.gameserver.model.actor.Creature;
-import l2server.gameserver.model.actor.Npc;
-import l2server.gameserver.model.actor.Playable;
-import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.*;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.templates.skills.SkillTargetType;
 import l2server.gameserver.templates.skills.SkillType;
@@ -84,7 +81,7 @@ public class TargetCorpseClan implements ISkillTargetTypeHandler {
 
 					if (skill.getSkillType() == SkillType.RESURRECT) {
 						// check target is not in a active siege zone
-						if (newTarget.isInsideZone(Creature.ZONE_SIEGE)) {
+						if (newTarget.isInsideZone(CreatureZone.ZONE_SIEGE)) {
 							continue;
 						}
 					}

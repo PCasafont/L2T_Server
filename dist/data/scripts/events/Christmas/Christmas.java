@@ -7,6 +7,7 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.World;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
@@ -359,7 +360,7 @@ public class Christmas extends Quest {
 
 			List<Player> playerList = new ArrayList<Player>();
 			for (Player pl : World.getInstance().getAllPlayersArray()) {
-				if (pl != null && pl.isOnline() && pl.isInCombat() && !pl.isInsideZone(Creature.ZONE_PEACE) && !pl.isFlyingMounted() &&
+				if (pl != null && pl.isOnline() && pl.isInCombat() && !pl.isInsideZone(CreatureZone.ZONE_PEACE) && !pl.isFlyingMounted() &&
 						pl.getClient() != null && !pl.getClient().isDetached()) {
 					if (rewardedPlayers.contains(pl.getExternalIP())) {
 						continue;

@@ -22,7 +22,7 @@ import l2server.gameserver.events.HiddenChests;
 import l2server.gameserver.handler.IVoicedCommandHandler;
 import l2server.gameserver.instancemanager.CustomOfflineBuffersManager;
 import l2server.gameserver.instancemanager.DiscussionManager;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.CharInfo;
 import l2server.gameserver.network.serverpackets.ExVoteSystemInfo;
@@ -105,7 +105,7 @@ public class CustomVoiced implements IVoicedCommandHandler {
 				CustomCommunityBoard.getInstance().parseCmd("_bbscustom;currentEvent", player);
 			}
 		} else if (command.equalsIgnoreCase("remember")) {
-			if (!player.isInsideZone(Creature.ZONE_TOWN)) {
+			if (!player.isInsideZone(CreatureZone.ZONE_TOWN)) {
 				player.sendMessage("You cannot use the remember mode outside of town!");
 				return true;
 			}

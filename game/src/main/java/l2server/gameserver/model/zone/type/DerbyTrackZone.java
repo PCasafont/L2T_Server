@@ -16,6 +16,7 @@
 package l2server.gameserver.model.zone.type;
 
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.Playable;
 import l2server.gameserver.model.zone.ZoneType;
 
@@ -32,18 +33,18 @@ public class DerbyTrackZone extends ZoneType {
 	@Override
 	protected void onEnter(Creature character) {
 		if (character instanceof Playable) {
-			character.setInsideZone(Creature.ZONE_MONSTERTRACK, true);
-			character.setInsideZone(Creature.ZONE_PEACE, true);
-			character.setInsideZone(Creature.ZONE_NOSUMMONFRIEND, true);
+			character.setInsideZone(CreatureZone.ZONE_MONSTERTRACK, true);
+			character.setInsideZone(CreatureZone.ZONE_PEACE, true);
+			character.setInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND, true);
 		}
 	}
 
 	@Override
 	protected void onExit(Creature character) {
 		if (character instanceof Playable) {
-			character.setInsideZone(Creature.ZONE_MONSTERTRACK, false);
-			character.setInsideZone(Creature.ZONE_PEACE, false);
-			character.setInsideZone(Creature.ZONE_NOSUMMONFRIEND, false);
+			character.setInsideZone(CreatureZone.ZONE_MONSTERTRACK, false);
+			character.setInsideZone(CreatureZone.ZONE_PEACE, false);
+			character.setInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND, false);
 		}
 	}
 

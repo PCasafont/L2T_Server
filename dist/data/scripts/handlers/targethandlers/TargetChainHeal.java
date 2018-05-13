@@ -21,6 +21,7 @@ import l2server.gameserver.handler.SkillTargetTypeHandler;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.Playable;
 import l2server.gameserver.model.actor.Summon;
 import l2server.gameserver.model.actor.instance.NpcInstance;
@@ -153,12 +154,12 @@ public class TargetChainHeal implements ISkillTargetTypeHandler {
 			if (pTarget.isAvailableForCombat() || pTarget.isInsidePvpZone()) {
 				return false;
 			}
-			if (target.isInsideZone(Creature.ZONE_TOWN)) {
+			if (target.isInsideZone(CreatureZone.ZONE_TOWN)) {
 				return true;
 			}
 		} else if (target instanceof NpcInstance) {
 			final NpcInstance npc = (NpcInstance) target;
-			if (!npc.isInsideZone(Creature.ZONE_TOWN)) {
+			if (!npc.isInsideZone(CreatureZone.ZONE_TOWN)) {
 				return false;
 			}
 		} else {

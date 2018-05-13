@@ -25,7 +25,7 @@ import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.CastleSiegeManager;
 import l2server.gameserver.instancemanager.ClanRecruitManager;
 import l2server.gameserver.instancemanager.FortManager;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.actor.instance.Player.TimeStamp;
 import l2server.gameserver.model.entity.Castle;
@@ -2110,7 +2110,7 @@ public class L2Clan {
 				return false;
 			}
 		}
-		if (activeChar.isInsideZone(Creature.ZONE_SIEGE) && target.isInsideZone(Creature.ZONE_SIEGE)) {
+		if (activeChar.isInsideZone(CreatureZone.ZONE_SIEGE) && target.isInsideZone(CreatureZone.ZONE_SIEGE)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.OPPOSING_CLAN_IS_PARTICIPATING_IN_SIEGE));
 			return false;
 		}
@@ -2227,7 +2227,7 @@ public class L2Clan {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FEATURE_ONLY_FOR_ALLIANCE_LEADER));
 			return;
 		}
-		if (player.isInsideZone(Creature.ZONE_SIEGE)) {
+		if (player.isInsideZone(CreatureZone.ZONE_SIEGE)) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISSOLVE_ALLY_WHILE_IN_SIEGE));
 			return;
 		}

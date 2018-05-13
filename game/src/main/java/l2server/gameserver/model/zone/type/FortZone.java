@@ -18,6 +18,7 @@ package l2server.gameserver.model.zone.type;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.zone.SpawnZone;
 
@@ -44,12 +45,12 @@ public class FortZone extends SpawnZone {
 
 	@Override
 	protected void onEnter(Creature character) {
-		character.setInsideZone(Creature.ZONE_FORT, true);
+		character.setInsideZone(CreatureZone.ZONE_FORT, true);
 	}
 
 	@Override
 	protected void onExit(Creature character) {
-		character.setInsideZone(Creature.ZONE_FORT, false);
+		character.setInsideZone(CreatureZone.ZONE_FORT, false);
 	}
 
 	@Override

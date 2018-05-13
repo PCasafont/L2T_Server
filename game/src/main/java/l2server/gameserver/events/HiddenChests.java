@@ -7,7 +7,7 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.MagicSkillLaunched;
@@ -55,8 +55,8 @@ public class HiddenChests {
 					L2Spawn randomSpawn = SpawnTable.getInstance().getRandomDistributedSpawn();
 					Npc randomNpc = randomSpawn.getNpc();
 					while (randomSpawn.getNpc().getX() < 150000 || randomSpawn.getNpc().getY() > 227000 ||
-							randomSpawn.getNpc().isInsideZone(Creature.ZONE_CASTLE) || randomSpawn.getNpc().isInsideZone(Creature.ZONE_CLANHALL) ||
-							randomSpawn.getNpc().isInsideZone(Creature.ZONE_FORT)) {
+							randomSpawn.getNpc().isInsideZone(CreatureZone.ZONE_CASTLE) || randomSpawn.getNpc().isInsideZone(CreatureZone.ZONE_CLANHALL) ||
+							randomSpawn.getNpc().isInsideZone(CreatureZone.ZONE_FORT)) {
 						randomSpawn = SpawnTable.getInstance().getRandomDistributedSpawn();
 					}
 					
@@ -159,8 +159,8 @@ public class HiddenChests {
 					L2Spawn randomSpawn = SpawnTable.getInstance().getRandomDistributedSpawn();
 					Npc randomNpc = randomSpawn.getNpc();
 					while (randomSpawn.getNpc().getX() < 150000 || randomSpawn.getNpc().getY() > 227000 ||
-							randomSpawn.getNpc().isInsideZone(Creature.ZONE_CASTLE) || randomSpawn.getNpc().isInsideZone(Creature.ZONE_CLANHALL) ||
-							randomSpawn.getNpc().isInsideZone(Creature.ZONE_FORT)) {
+							randomSpawn.getNpc().isInsideZone(CreatureZone.ZONE_CASTLE) || randomSpawn.getNpc().isInsideZone(CreatureZone.ZONE_CLANHALL) ||
+							randomSpawn.getNpc().isInsideZone(CreatureZone.ZONE_FORT)) {
 						randomSpawn = SpawnTable.getInstance().getRandomDistributedSpawn();
 					}
 					

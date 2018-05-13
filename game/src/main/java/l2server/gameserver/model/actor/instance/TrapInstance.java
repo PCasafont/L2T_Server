@@ -19,6 +19,7 @@ import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.Trap;
 import l2server.gameserver.model.olympiad.OlympiadGameManager;
 import l2server.gameserver.model.quest.Quest;
@@ -78,7 +79,7 @@ public class TrapInstance extends Trap {
 	@Override
 	public void onSpawn() {
 		super.onSpawn();
-		isInArena = isInsideZone(ZONE_PVP) && !isInsideZone(ZONE_SIEGE);
+		isInArena = isInsideZone(CreatureZone.ZONE_PVP) && !isInsideZone(CreatureZone.ZONE_SIEGE);
 		playersWhoDetectedMe.clear();
 	}
 

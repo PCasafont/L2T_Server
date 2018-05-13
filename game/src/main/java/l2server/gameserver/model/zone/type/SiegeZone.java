@@ -25,6 +25,7 @@ import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.actor.instance.SiegeSummonInstance;
 import l2server.gameserver.model.entity.Fort;
@@ -82,9 +83,9 @@ public class SiegeZone extends ZoneType {
 	@Override
 	protected void onEnter(Creature character) {
 		if (isActiveSiege) {
-			character.setInsideZone(Creature.ZONE_PVP, true);
-			character.setInsideZone(Creature.ZONE_SIEGE, true);
-			character.setInsideZone(Creature.ZONE_NOSUMMONFRIEND, true);
+			character.setInsideZone(CreatureZone.ZONE_PVP, true);
+			character.setInsideZone(CreatureZone.ZONE_SIEGE, true);
+			character.setInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND, true);
 
 			if (character instanceof Player) {
 				if (((Player) character).isRegisteredOnThisSiegeField(siegableId) || character.isGM()) {
@@ -107,9 +108,9 @@ public class SiegeZone extends ZoneType {
 
 	@Override
 	protected void onExit(Creature character) {
-		character.setInsideZone(Creature.ZONE_PVP, false);
-		character.setInsideZone(Creature.ZONE_SIEGE, false);
-		character.setInsideZone(Creature.ZONE_NOSUMMONFRIEND, false);
+		character.setInsideZone(CreatureZone.ZONE_PVP, false);
+		character.setInsideZone(CreatureZone.ZONE_SIEGE, false);
+		character.setInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND, false);
 		if (isActiveSiege) {
 			if (character instanceof Player) {
 				character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));
@@ -182,9 +183,9 @@ public class SiegeZone extends ZoneType {
 				if (character == null) {
 					continue;
 				}
-				character.setInsideZone(Creature.ZONE_PVP, false);
-				character.setInsideZone(Creature.ZONE_SIEGE, false);
-				character.setInsideZone(Creature.ZONE_NOSUMMONFRIEND, false);
+				character.setInsideZone(CreatureZone.ZONE_PVP, false);
+				character.setInsideZone(CreatureZone.ZONE_SIEGE, false);
+				character.setInsideZone(CreatureZone.ZONE_NOSUMMONFRIEND, false);
 
 				if (character instanceof Player) {
 					character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));

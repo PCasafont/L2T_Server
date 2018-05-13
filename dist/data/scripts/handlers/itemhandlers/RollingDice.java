@@ -17,7 +17,7 @@ package handlers.itemhandlers;
 
 import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.model.Item;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.Playable;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
@@ -65,7 +65,7 @@ public class RollingDice implements IItemHandler {
 			sm.addNumber(number);
 
 			activeChar.sendPacket(sm);
-			if (activeChar.isInsideZone(Creature.ZONE_PEACE)) {
+			if (activeChar.isInsideZone(CreatureZone.ZONE_PEACE)) {
 				Broadcast.toKnownPlayers(activeChar, sm);
 			} else if (activeChar.isInParty()) {
 				activeChar.getParty().broadcastToPartyMembers(activeChar, sm);

@@ -17,7 +17,7 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.gameserver.TaskPriority;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.GetOnVehicle;
 import l2server.gameserver.network.serverpackets.ValidateLocation;
@@ -121,7 +121,7 @@ public class ValidatePosition extends L2GameClientPacket {
 			party.broadcastToPartyMembers(activeChar,new PartyMemberPosition(activeChar));
 		}*/
 
-		if (activeChar.isFlying() || activeChar.isInsideZone(Creature.ZONE_WATER)) {
+		if (activeChar.isFlying() || activeChar.isInsideZone(CreatureZone.ZONE_WATER)) {
 			activeChar.setXYZ(realX, realY, z);
 			if (diffSq > 90000) // validate packet, may also cause z bounce if close to land
 			{

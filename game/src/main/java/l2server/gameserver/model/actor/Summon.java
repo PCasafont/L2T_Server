@@ -666,7 +666,7 @@ public abstract class Summon extends Playable {
 				return false;
 			}
 
-			if (target.getActingPlayer() != null && getOwner().getSiegeState() > 0 && getOwner().isInsideZone(Creature.ZONE_SIEGE) &&
+			if (target.getActingPlayer() != null && getOwner().getSiegeState() > 0 && getOwner().isInsideZone(CreatureZone.ZONE_SIEGE) &&
 					target.getActingPlayer().getSiegeState() == getOwner().getSiegeState() && target.getActingPlayer() != getOwner() &&
 					target.getActingPlayer().getSiegeSide() == getOwner().getSiegeSide()) {
 				sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FORCED_ATTACK_IS_IMPOSSIBLE_AGAINST_SIEGE_SIDE_TEMPORARY_ALLIED_MEMBERS));

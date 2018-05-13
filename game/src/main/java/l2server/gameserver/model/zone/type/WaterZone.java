@@ -16,6 +16,7 @@
 package l2server.gameserver.model.zone.type;
 
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.zone.ZoneType;
@@ -31,7 +32,7 @@ public class WaterZone extends ZoneType {
 
 	@Override
 	protected void onEnter(Creature character) {
-		character.setInsideZone(Creature.ZONE_WATER, true);
+		character.setInsideZone(CreatureZone.ZONE_WATER, true);
 
 		if (character instanceof Player) {
 			if (character.isTransformed() && !((Player) character).isCursedWeaponEquipped()) {
@@ -64,7 +65,7 @@ public class WaterZone extends ZoneType {
 
 	@Override
 	protected void onExit(Creature character) {
-		character.setInsideZone(Creature.ZONE_WATER, false);
+		character.setInsideZone(CreatureZone.ZONE_WATER, false);
 
 		/*if (character instanceof Player)
 		{

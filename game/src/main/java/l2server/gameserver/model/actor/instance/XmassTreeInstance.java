@@ -15,12 +15,13 @@
 
 package l2server.gameserver.model.actor.instance;
 
-import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
+import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.templates.chars.NpcTemplate;
@@ -47,7 +48,7 @@ public class XmassTreeInstance extends Npc {
 		
 		@Override
 		public void run() {
-			if (skill == null || caster.isInsideZone(ZONE_PEACE)) {
+			if (skill == null || caster.isInsideZone(CreatureZone.ZONE_PEACE)) {
 				caster.aiTask.cancel(false);
 				caster.aiTask = null;
 				return;

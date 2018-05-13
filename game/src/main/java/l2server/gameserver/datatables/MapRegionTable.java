@@ -20,6 +20,7 @@ import l2server.gameserver.events.MonsterInvasion;
 import l2server.gameserver.instancemanager.*;
 import l2server.gameserver.model.Location;
 import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.CreatureZone;
 import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
@@ -455,7 +456,7 @@ public class MapRegionTable {
 			Player player = (Player) activeChar;
 
 			// If in Monster Derby Track
-			if (player.isInsideZone(Creature.ZONE_MONSTERTRACK)) {
+			if (player.isInsideZone(CreatureZone.ZONE_MONSTERTRACK)) {
 				return new Location(12661, 181687, -3560);
 			}
 
