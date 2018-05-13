@@ -43,7 +43,7 @@ public class GraciaSeedsManager {
 	
 	@Load
 	public void initialize() {
-		log.info(getClass().getSimpleName() + ": Initializing");
+		log.debug("Initializing");
 		SoDLastStateChangeDate = Calendar.getInstance();
 		loadData();
 		handleSodStages();

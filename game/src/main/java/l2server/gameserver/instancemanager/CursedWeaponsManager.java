@@ -62,7 +62,7 @@ public class CursedWeaponsManager {
 
 	@Load
 	public void init() {
-		log.info("Initializing CursedWeaponsManager");
+		log.debug("Initializing CursedWeaponsManager");
 		cursedWeapons = new HashMap<>();
 
 		if (!Config.ALLOW_CURSED_WEAPONS) {
@@ -72,7 +72,7 @@ public class CursedWeaponsManager {
 		load();
 		restore();
 		controlPlayers();
-		log.info("Loaded : " + cursedWeapons.size() + " cursed weapon(s).");
+		log.info("Loaded " + cursedWeapons.size() + " cursed weapon(s).");
 	}
 
 	// =========================================================

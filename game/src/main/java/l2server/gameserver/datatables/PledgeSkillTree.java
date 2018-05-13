@@ -93,7 +93,7 @@ public class PledgeSkillTree {
 				}
 			}
 		}
-		log.info(getClass().getSimpleName() + ": Loaded " + skillTree.size() + " Pledge Skills");
+		log.info("Loaded " + skillTree.size() + " Pledge Skills");
 	}
 
 	public L2PledgeSkillLearn[] getAvailableSkills(Player cha) {

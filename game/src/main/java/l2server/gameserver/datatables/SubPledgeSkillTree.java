@@ -142,7 +142,7 @@ public class SubPledgeSkillTree {
 				}
 			}
 		}
-		log.info(getClass().getSimpleName() + ": Loaded " + skilltree.size() + " SubUnit Skills");
+		log.info("Loaded " + skilltree.size() + " SubUnit Skills");
 	}
 
 	public SubUnitSkill getSkill(long skillhash) {

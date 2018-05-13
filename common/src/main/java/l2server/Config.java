@@ -1037,7 +1037,7 @@ public final class Config {
 		}
 		
 		if (ServerMode.serverMode == ServerMode.MODE_GAMESERVER) {
-			log.info("Loading GameServer[" + CONFIG_FILE + "] Configuration Files...");
+			log.debug("Loading GameServer[" + CONFIG_FILE + "] Configuration Files...");
 			InputStream is = null;
 			try {
 				loadConfigVars("./config/game.xml");
@@ -1119,7 +1119,7 @@ public final class Config {
 				}
 			}
 		} else if (ServerMode.serverMode == ServerMode.MODE_LOGINSERVER) {
-			log.info("loading login config");
+			log.debug("Loading login config");
 			InputStream is = null;
 			try {
 				loadConfigVars("./config/login.xml");

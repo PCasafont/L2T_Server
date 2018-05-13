@@ -52,13 +52,13 @@ public class NpcWalkersTable {
 	private NpcWalkersTable() {
 	}
 	
-	@Load(dependencies = NpcTable.class)
+	@Load(dependencies = {NpcTable.class, SpawnTable.class})
 	public void load() {
 		if (!Config.ALLOW_NPC_WALKERS) {
 			return;
 		}
 		
-		log.info("Initializing Walkers Routes Table.");
+		log.debug("Initializing Walkers Routes Table.");
 		routes.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "WalkerRoutes.xml");
 		if (file.exists()) {

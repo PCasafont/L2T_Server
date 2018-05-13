@@ -602,7 +602,7 @@ public class TenkaiAuctionManager {
 			}
 		}
 		
-		log.info("ItemAuction: Loaded: " + auctionTemplates.size() + " auctions!");
+		log.info("Loaded " + auctionTemplates.size() + " auctions!");
 	}
 	
 	/**

@@ -384,7 +384,7 @@ public class ClanTable {
 					clan.setAllyName(null);
 					clan.changeAllyCrest(0, true);
 					clan.updateClanInDB();
-					log.info(getClass().getSimpleName() + ": Removed alliance from clan: " + clan);
+					log.info("Removed alliance from clan: " + clan);
 				}
 			}
 		}

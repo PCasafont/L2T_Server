@@ -368,8 +368,9 @@ public class L2Manor {
 					}
 				}
 			}
-			log.info(getClass().getSimpleName() + ": Loaded " + seeds.size() + " Seeds.");
 		}
+
+		log.info("Loaded " + seeds.size() + " Seeds.");
 	}
 
 	@SuppressWarnings("synthetic-access")

@@ -141,13 +141,13 @@ public final class ItemAuctionInstance {
 				}
 			}
 		} catch (final SQLException e) {
-			log.error("L2ItemAuctionInstance: Failed loading auctions.", e);
+			log.error("Failed loading auctions.", e);
 			return;
 		} finally {
 			DatabasePool.close(con);
 		}
 
-		log.info("L2ItemAuctionInstance: Loaded " + items.size() + " item(s) and registered " + auctions.size() + " auction(s) for instance " +
+		log.info("Loaded " + items.size() + " item(s) and registered " + auctions.size() + " auction(s) for instance " +
 				instanceId + ".");
 		checkAndSetCurrentAndNextAuction();
 	}
@@ -265,11 +265,11 @@ public final class ItemAuctionInstance {
 						.scheduleGeneral(new ScheduleAuctionTask(currentAuction),
 								Math.max(currentAuction.getStartingTime() - System.currentTimeMillis(), 0L)));
 			}
-			log.info("L2ItemAuctionInstance: Schedule current auction " + currentAuction.getAuctionId() + " for instance " + instanceId);
+			log.debug("Schedule current auction " + currentAuction.getAuctionId() + " for instance " + instanceId);
 		} else {
 			setStateTask(ThreadPoolManager.getInstance()
 					.scheduleGeneral(new ScheduleAuctionTask(nextAuction), Math.max(nextAuction.getStartingTime() - System.currentTimeMillis(), 0L)));
-			log.info("L2ItemAuctionInstance: Schedule next auction " + nextAuction.getAuctionId() + " on " +
+			log.debug("Schedule next auction " + nextAuction.getAuctionId() + " on " +
 					DATE_FORMAT.format(new Date(nextAuction.getStartingTime())) + " for instance " + instanceId);
 		}
 	}
@@ -314,7 +314,7 @@ public final class ItemAuctionInstance {
 			try {
 				runImpl();
 			} catch (final Exception e) {
-				log.error("L2ItemAuctionInstance: Failed scheduling auction " + auction.getAuctionId(), e);
+				log.error("Failed scheduling auction " + auction.getAuctionId(), e);
 			}
 		}
 
@@ -327,7 +327,7 @@ public final class ItemAuctionInstance {
 								"Could not set auction state: " + ItemAuctionState.STARTED.toString() + ", expected: " + state.toString());
 					}
 
-					log.debug("L2ItemAuctionInstance: Auction " + auction.getAuctionId() + " has started for instance " + auction.getInstanceId());
+					log.debug("Auction " + auction.getAuctionId() + " has started for instance " + auction.getInstanceId());
 					checkAndSetCurrentAndNextAuction();
 					break;
 				}
@@ -401,7 +401,7 @@ public final class ItemAuctionInstance {
 				player.getWarehouse().addItem("ItemAuction", item, null, null);
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WON_BID_ITEM_CAN_BE_FOUND_IN_WAREHOUSE));
 
-				log.debug("L2ItemAuctionInstance: Auction " + auction.getAuctionId() + " has finished. Highest bid by " + player.getName() +
+				log.debug("Auction " + auction.getAuctionId() + " has finished. Highest bid by " + player.getName() +
 						" for instance " + instanceId);
 			} else {
 				item.setOwnerId(bid.getPlayerObjId());
@@ -409,14 +409,14 @@ public final class ItemAuctionInstance {
 				item.updateDatabase();
 				World.getInstance().removeObject(item);
 
-				log.debug("L2ItemAuctionInstance: Auction " + auction.getAuctionId() + " has finished. Highest bid by " +
+				log.debug("Auction " + auction.getAuctionId() + " has finished. Highest bid by " +
 						CharNameTable.getInstance().getNameById(bid.getPlayerObjId()) + " for instance " + instanceId);
 			}
 
 			// Clean all canceled bids
 			auction.clearCanceledBids();
 		} else {
-			log.debug("L2ItemAuctionInstance: Auction " + auction.getAuctionId() + " has finished. There have not been any bid for instance " +
+			log.debug("Auction " + auction.getAuctionId() + " has finished. There have not been any bid for instance " +
 					instanceId);
 		}
 	}

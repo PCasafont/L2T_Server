@@ -46,7 +46,7 @@ public class ResidentialSkillTable {
 
 				Skill sk = SkillTable.getInstance().getInfo(skillId, skillLvl);
 				if (sk == null) {
-					log.warn("ResidentialSkillTable: SkillTable has returned null for ID/level: " + skillId + "/" + skillLvl);
+					log.warn("SkillTable has returned null for ID/level: " + skillId + "/" + skillLvl);
 					continue;
 				}
 
@@ -60,7 +60,7 @@ public class ResidentialSkillTable {
 			}
 		}
 
-		log.info("ResidentialSkillTable: Loaded " + list.size() + " entities with associated skills.");
+		log.info("Loaded " + list.size() + " entities with associated skills.");
 	}
 
 	public ArrayList<Skill> getSkills(int entityId) {

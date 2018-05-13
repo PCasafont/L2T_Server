@@ -90,7 +90,7 @@ public class ZoneManager {
 	
 	@Load(dependencies = {ClanHallManager.class, GrandBossManager.class, World.class})
 	public void load() {
-		log.info("Loading zones...");
+		log.debug("Loading zones...");
 		classZones.clear();
 		
 		// Get the world regions

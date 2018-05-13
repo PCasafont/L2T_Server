@@ -147,7 +147,7 @@ public class CastleSiegeManager {
 	
 	@Load(dependencies = CastleManager.class)
 	public void load() {
-		log.info("Initializing CastleSiegeManager");
+		log.debug("Initializing CastleSiegeManager");
 		InputStream is = null;
 		try {
 			is = new FileInputStream(new File(Config.CONFIG_DIRECTORY + Config.CONFIG_FILE));

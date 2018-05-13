@@ -133,7 +133,7 @@ public class ItemsOnGroundManager {
 			if (count > 0) {
 				log.info("ItemsOnGroundManager: restored " + count + " items.");
 			} else {
-				log.info("Initializing ItemsOnGroundManager.");
+				log.debug("Initializing ItemsOnGroundManager.");
 			}
 		} catch (Exception e) {
 			log.error("Error while loading ItemsOnGround " + e.getMessage(), e);

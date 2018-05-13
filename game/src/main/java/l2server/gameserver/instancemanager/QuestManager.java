@@ -98,7 +98,7 @@ public class QuestManager extends ScriptManager<Quest> {
 	}
 	
 	public final void report() {
-		log.info("Loaded: " + quests.size() + " quests");
+		log.info("Loaded " + quests.size() + " quests");
 	}
 	
 	public final void save() {

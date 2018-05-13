@@ -67,7 +67,7 @@ public class ClanHallManager {
 	 */
 	@Load(dependencies = {ClanTable.class, ClanHallAuctionManager.class})
 	public void load() {
-		log.info("Initializing ClanHallManager");
+		log.debug("Initializing ClanHallManager");
 		Connection con = null;
 		try {
 			int id, ownerId, grade = 0;
@@ -112,8 +112,8 @@ public class ClanHallManager {
 			}
 
 			statement.close();
-			log.info("Loaded: " + getClanHalls().size() + " clan halls");
-			log.info("Loaded: " + getFreeClanHalls().size() + " free clan halls");
+			log.info("Loaded " + (getFreeClanHalls().size() + getClanHalls().size()) + " clan halls" +
+					" (" + getFreeClanHalls().size() + " of them are free).");
 			loaded = true;
 		} catch (Exception e) {
 			log.warn("Exception: ClanHallManager.load(): " + e.getMessage(), e);

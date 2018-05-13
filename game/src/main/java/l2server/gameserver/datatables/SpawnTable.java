@@ -152,10 +152,10 @@ public class SpawnTable {
 			}
 		}
 		
-		log.info("Template spawns: Loaded " + count + " Npc Spawn Locations.");
+		log.info("Loaded " + count + " Npc Spawn Locations.");
 		
 		if (Config.DEBUG) {
-			log.debug("SpawnTable: Spawning completed, total number of NPCs in the world: " + (spawnTable.size() + customSpawnCount + count));
+			log.debug("Spawning completed, total number of NPCs in the world: " + (spawnTable.size() + customSpawnCount + count));
 		}
 		
 		File dir = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "spawns");
@@ -189,8 +189,8 @@ public class SpawnTable {
 			}
 		}
 		
-		log.info("SpawnTable: Loaded " + count + " global spawns!");
-		log.info("SpawnTable: Loaded " + specificSpawnTable.size() + " specific spawn tables!");
+		log.info("Loaded " + count + " global spawns!");
+		log.info("Loaded " + specificSpawnTable.size() + " specific spawn tables!");
 	}
 	
 	private List<L2Spawn> loadSpawns(XmlNode node, boolean isRoot) {

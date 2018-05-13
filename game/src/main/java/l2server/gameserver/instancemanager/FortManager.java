@@ -49,7 +49,7 @@ public class FortManager implements InstanceListManager {
 	@Load(dependencies = {ResidentialSkillTable.class, SpawnTable.class})
 	@Override
 	public void load() {
-		log.info("Initializing FortManager");
+		log.debug("Initializing FortManager");
 
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "forts.xml");
 		XmlDocument doc = new XmlDocument(file);
@@ -84,7 +84,7 @@ public class FortManager implements InstanceListManager {
 
 			forts.add(fort);
 		}
-		log.info("Loaded: " + forts.size() + " forts");
+		log.info("Loaded " + forts.size() + " forts");
 	}
 
 	public final int findNearestFortIndex(WorldObject obj) {

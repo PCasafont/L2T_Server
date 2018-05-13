@@ -83,7 +83,7 @@ public class GrandBossManager {
 	
 	@Load(dependencies = {NpcTable.class})
 	public void load() {
-		log.info("Initializing GrandBossManager");
+		log.debug("Initializing GrandBossManager");
 		zones = new ArrayList<>();
 		
 		bosses = new HashMap<>();
@@ -120,20 +120,20 @@ public class GrandBossManager {
 				int status = rset.getInt("status");
 				bossStatus.put(bossId, status);
 				storedInfo.put(bossId, info);
-				log.debug("GrandBossManager: " + boss.getName() + " (" + bossId + ") status is " + status + ".");
+				log.debug("" + boss.getName() + " (" + bossId + ") status is " + status + ".");
 				if (status > 0) {
-					log.debug("GrandBossManager: Next spawn date of " + boss.getName() + " is " + new Date(info.getLong("respawn_time")) + ".");
+					log.debug("Next spawn date of " + boss.getName() + " is " + new Date(info.getLong("respawn_time")) + ".");
 				}
 				
 				info = null;
 			}
 			
-			log.info("GrandBossManager: Loaded " + storedInfo.size() + " Instances");
+			log.info("Loaded " + storedInfo.size() + " Instances");
 			
 			rset.close();
 			statement.close();
 		} catch (SQLException e) {
-			log.warn("GrandBossManager: Could not load grandboss_data table: " + e.getMessage(), e);
+			log.warn("Could not load grandboss_data table: " + e.getMessage(), e);
 		} catch (Exception e) {
 			log.warn("Error while initializing GrandBossManager: " + e.getMessage(), e);
 		} finally {
@@ -173,9 +173,9 @@ public class GrandBossManager {
 			rset.close();
 			statement.close();
 			
-			log.info("GrandBossManager: Initialized " + zones.size() + " Grand Boss Zones");
+			log.info("Initialized " + zones.size() + " Grand Boss Zones");
 		} catch (SQLException e) {
-			log.warn("GrandBossManager: Could not load grandboss_list table: " + e.getMessage(), e);
+			log.warn("Could not load grandboss_list table: " + e.getMessage(), e);
 		} catch (Exception e) {
 			log.warn("Error while initializing GrandBoss zones: " + e.getMessage(), e);
 		} finally {
@@ -247,8 +247,7 @@ public class GrandBossManager {
 	
 	public void setBossStatus(int bossId, int status) {
 		bossStatus.put(bossId, status);
-		log.info(getClass().getSimpleName() + ": Updated " + NpcTable.getInstance().getTemplate(bossId).getName() + "(" + bossId + ") status to " +
-				status);
+		log.debug("Updated " + NpcTable.getInstance().getTemplate(bossId).getName() + "(" + bossId + ") status to " + status);
 		updateDb(bossId, true);
 	}
 	
@@ -335,7 +334,7 @@ public class GrandBossManager {
 			updateStatement1.close();
 			updateStatement2.close();
 		} catch (SQLException e) {
-			log.warn("GrandBossManager: Couldn't store grandbosses to database:" + e.getMessage(), e);
+			log.warn("Couldn't store grandbosses to database:" + e.getMessage(), e);
 		} finally {
 			DatabasePool.close(con);
 		}
@@ -374,7 +373,7 @@ public class GrandBossManager {
 			statement.executeUpdate();
 			statement.close();
 		} catch (SQLException e) {
-			log.warn("GrandBossManager: Couldn't update grandbosses to database:" + e.getMessage(), e);
+			log.warn("Couldn't update grandbosses to database:" + e.getMessage(), e);
 		} finally {
 			DatabasePool.close(con);
 		}

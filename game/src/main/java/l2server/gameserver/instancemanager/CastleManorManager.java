@@ -171,7 +171,7 @@ public class CastleManorManager {
 	
 	@Load(dependencies = CastleManager.class)
 	public void initialize() {
-		log.info("Initializing CastleManorManager");
+		log.debug("Initializing CastleManorManager");
 		load(); // load data from database
 		init(); // schedule all manor related events
 		underMaintenance = false;
@@ -277,15 +277,15 @@ public class CastleManorManager {
 	}
 
 	public void updateManorRefresh() {
-		log.info("Manor System: Manor refresh updated");
+		log.info("Manor refresh updated");
 
 		scheduledManorRefresh = ThreadPoolManager.getInstance().scheduleGeneral(() -> {
 			if (!isDisabled()) {
 				setUnderMaintenance(true);
-				log.info("Manor System: Under maintenance mode started");
+				log.info("Under maintenance mode started");
 
 				scheduledMaintenanceEnd = ThreadPoolManager.getInstance().scheduleGeneral(() -> {
-					log.info("Manor System: Next period started");
+					log.info("Next period started");
 					setNextPeriod();
 					try {
 						save();
@@ -300,12 +300,12 @@ public class CastleManorManager {
 	}
 
 	public void updatePeriodApprove() {
-		log.info("Manor System: Manor period approve updated");
+		log.info("Manor period approve updated");
 
 		scheduledNextPeriodapprove = ThreadPoolManager.getInstance().scheduleGeneral(() -> {
 			if (!isDisabled()) {
 				approveNextPeriod();
-				log.info("Manor System: Next period approved");
+				log.info("Next period approved");
 			}
 			updatePeriodApprove();
 		}, getMillisToNextPeriodApprove());
@@ -317,7 +317,7 @@ public class CastleManorManager {
 			setNewManorRefresh();
 		}
 
-		log.info("Manor System: New Schedule for manor refresh @ " + manorRefresh.getTime());
+		log.info("New Schedule for manor refresh @ " + manorRefresh.getTime());
 
 		return manorRefresh.getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
 	}
@@ -336,7 +336,7 @@ public class CastleManorManager {
 			setNewPeriodApprove();
 		}
 
-		log.info("Manor System: New Schedule for period approve @ " + periodApprove.getTime());
+		log.info("New Schedule for period approve @ " + periodApprove.getTime());
 
 		return periodApprove.getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
 	}

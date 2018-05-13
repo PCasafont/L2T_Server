@@ -16,6 +16,7 @@ import org.slf4j.LoggerFactory
 import java.io.File
 
 fun main(args: Array<String>) {
+	val serverLoadStart = System.currentTimeMillis()
     val log = LoggerFactory.getLogger("GameApplication")
 
     ServerMode.serverMode = ServerMode.MODE_GAMESERVER
@@ -43,13 +44,16 @@ fun main(args: Array<String>) {
 	// FIXME I'M DIRTY!
 	Server()
 
+	val serverLoadEnd = System.currentTimeMillis()
+	log.info("Server Loaded in " + (serverLoadEnd - serverLoadStart) / 1000 + " seconds")
+
 	// Run ktor application
-	val server = embeddedServer(Netty, port = 8087) {
-		routing {
-			get("/") {
-				call.respondText("Ktor UP!")
-			}
-		}
-	}
-	server.start(wait = true)
+	//val server = embeddedServer(Netty, port = 8087) {
+	//	routing {
+	//		get("/") {
+	//			call.respondText("Ktor UP!")
+	//		}
+	//	}
+	//}
+	//server.start(wait = true)
 }

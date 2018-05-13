@@ -307,9 +307,9 @@ public class NpcTable {
 			}
 			
 			if (!overrideDrops) {
-				log.info("Npc Table: Loaded " + loadedNpcs + " npcs.");
+				log.info("Loaded " + loadedNpcs + " npcs.");
 			} else {
-				log.info("Npc Table: Overridden " + loadedNpcs + " npcs with custom data.");
+				log.info("Overridden " + loadedNpcs + " npcs with custom data.");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

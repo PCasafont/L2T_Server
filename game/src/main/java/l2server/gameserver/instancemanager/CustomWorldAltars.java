@@ -362,7 +362,7 @@ public class CustomWorldAltars {
 			}
 		}
 		
-		log.info("WorldAltars: Loaded: " + spawnInfo.size() + " altar spawns, " + altarsList.size() + " altars and " + bosssIds.size() + " bosses!");
+		log.info("Loaded " + spawnInfo.size() + " altar spawns, " + altarsList.size() + " altars and " + bosssIds.size() + " bosses!");
 	}
 	
 	private CustomWorldAltars() {

@@ -198,7 +198,7 @@ public final class PetitionManager {
 	}
 
 	private PetitionManager() {
-		log.info("Initializing PetitionManager");
+		log.debug("Initializing PetitionManager");
 		pendingPetitions = new HashMap<>();
 		completedPetitions = new HashMap<>();
 	}

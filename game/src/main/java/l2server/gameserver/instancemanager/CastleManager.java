@@ -255,7 +255,7 @@ public class CastleManager implements InstanceListManager {
 	@Load(dependencies = {ResidentialSkillTable.class, ZoneManager.class})
 	@Override
 	public void load() {
-		log.info("Initializing CastleManager");
+		log.debug("Initializing CastleManager");
 		Connection con = null;
 		try {
 			PreparedStatement statement;
@@ -273,7 +273,7 @@ public class CastleManager implements InstanceListManager {
 			
 			statement.close();
 			
-			log.info("Loaded: " + getCastles().size() + " castles");
+			log.info("Loaded " + getCastles().size() + " castles");
 		} catch (Exception e) {
 			log.warn("Exception: loadCastleData(): " + e.getMessage(), e);
 		} finally {

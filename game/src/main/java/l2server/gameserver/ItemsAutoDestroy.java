@@ -41,7 +41,7 @@ public class ItemsAutoDestroy {
 		if (Config.AUTODESTROY_ITEM_AFTER * 1000 <= 0 && Config.HERB_AUTO_DESTROY_TIME * 1000 <= 0) {
 			return;
 		}
-		log.info("Initializing ItemsAutoDestroy.");
+		log.debug("Initializing ItemsAutoDestroy.");
 		items = new CopyOnWriteArrayList<>();
 		sleep = Config.AUTODESTROY_ITEM_AFTER * 1000;
 		if (sleep == 0) // it should not happend as it is not called when AUTODESTROY_ITEM_AFTER = 0 but we never know..

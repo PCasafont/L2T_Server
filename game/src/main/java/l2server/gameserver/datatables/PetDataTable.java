@@ -137,7 +137,7 @@ public class PetDataTable {
 			log.warn("Not found PetData.xml");
 		}
 
-		log.info(getClass().getSimpleName() + ": Loaded " + petTable.size() + " Pets.");
+		log.info("Loaded " + petTable.size() + " Pets.");
 	}
 
 	public L2PetLevelData getPetLevelData(int petID, int petLevel) {

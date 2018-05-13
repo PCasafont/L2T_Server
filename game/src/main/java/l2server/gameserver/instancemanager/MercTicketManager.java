@@ -218,7 +218,7 @@ public class MercTicketManager {
 	
 	@Load(dependencies = CastleManager.class)
 	private void load() {
-		log.info("Initializing MercTicketManager");
+		log.debug("Initializing MercTicketManager");
 		Connection con = null;
 		// load merc tickets into the world
 		try {
@@ -274,7 +274,7 @@ public class MercTicketManager {
 			}
 			statement.close();
 			
-			log.info("Loaded: " + getDroppedTickets().size() + " Mercenary Tickets");
+			log.info("Loaded " + getDroppedTickets().size() + " Mercenary Tickets");
 		} catch (Exception e) {
 			log.warn("Exception: loadMercenaryData(): " + e.getMessage(), e);
 		} finally {

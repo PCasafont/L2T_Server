@@ -259,7 +259,7 @@ public class AirShipManager {
 			DatabasePool.close(con);
 		}
 
-		log.info(getClass().getSimpleName() + ": Loaded " + airShipsInfo.size() + " private airships");
+		log.info("Loaded " + airShipsInfo.size() + " private airships");
 	}
 
 	private void storeInDb(int ownerId) {

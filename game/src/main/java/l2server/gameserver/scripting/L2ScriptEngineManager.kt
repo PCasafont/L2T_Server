@@ -89,7 +89,7 @@ object L2ScriptEngineManager {
         } else {
             cache = null
         }
-        log.info("Initializing Script Engine Manager")
+        log.debug("Initializing Script Engine Manager")
 
         for (factory in factories) {
             try {
@@ -130,7 +130,7 @@ object L2ScriptEngineManager {
         preConfigure()
 
         try {
-            log.info("Loading Server Scripts")
+            log.debug("Loading Server Scripts")
             var scripts = File(Config.DATAPACK_ROOT.toString() + "/" + Config.DATA_FOLDER + "scripts.cfg")
             if (!Config.ALT_DEV_NO_HANDLERS || !Config.ALT_DEV_NO_QUESTS) {
                 L2ScriptEngineManager.executeScriptList(scripts)
@@ -364,7 +364,7 @@ object L2ScriptEngineManager {
         val reader = BufferedReader(InputStreamReader(FileInputStream(file)))
 
         if (VERBOSE_LOADING) {
-            log.info("Loading Script: " + file.absolutePath)
+            log.debug("Loading Script: " + file.absolutePath)
         }
 
         if (PURGE_ERROR_LOG) {

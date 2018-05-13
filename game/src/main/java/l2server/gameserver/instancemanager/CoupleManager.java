@@ -78,7 +78,7 @@ public class CoupleManager {
 
 			statement.close();
 
-			log.info("Loaded: " + getCouples().size() + " couples(s)");
+			log.info("Loaded " + getCouples().size() + " couples(s)");
 		} catch (Exception e) {
 			log.error("Exception: CoupleManager.load(): " + e.getMessage(), e);
 		} finally {

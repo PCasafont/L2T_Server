@@ -48,7 +48,7 @@ public class TaskOlympiadSave extends Task {
 	public void onTimeElapsed(ExecutedTask task) {
 		if (Olympiad.getInstance().inCompPeriod()) {
 			Olympiad.getInstance().saveOlympiadStatus();
-			log.info("Olympiad System: Data updated.");
+			log.info("Data updated.");
 		}
 	}
 

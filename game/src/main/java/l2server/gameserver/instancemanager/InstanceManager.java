@@ -214,7 +214,7 @@ public class InstanceManager {
 	
 	@Load
 	private void load() {
-		log.info("Initializing InstanceManager");
+		log.debug("Initializing InstanceManager");
 		loadInstanceNames();
 		log.info("Loaded " + instanceIdNames.size() + " instance names");
 		createWorld();

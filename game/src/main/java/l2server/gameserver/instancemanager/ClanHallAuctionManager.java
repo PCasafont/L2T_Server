@@ -94,7 +94,7 @@ public class ClanHallAuctionManager {
 
 	@Load
 	public void load() {
-		log.info("Initializing AuctionManager");
+		log.debug("Initializing AuctionManager");
 		Connection con = null;
 		try {
 			PreparedStatement statement;
@@ -106,7 +106,7 @@ public class ClanHallAuctionManager {
 				auctions.add(new Auction(rs.getInt("id")));
 			}
 			statement.close();
-			log.info("Loaded: " + getAuctions().size() + " auction(s)");
+			log.info("Loaded " + getAuctions().size() + " auction(s)");
 		} catch (Exception e) {
 			log.warn("Exception: AuctionManager.load(): " + e.getMessage(), e);
 		} finally {

@@ -81,7 +81,7 @@ public class EnsoulDataTable {
 			effects.put(id, effect);
 		}
 
-		log.info("EnsoulDataTable: Loaded " + effects.size() + " ensoul effects.");
+		log.info("Loaded " + effects.size() + " ensoul effects.");
 
 		file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "ensoul/crystals.xml");
 		if (!file.exists()) {
@@ -107,7 +107,7 @@ public class EnsoulDataTable {
 			crystals.put(id, sc);
 		}
 
-		log.info("EnsoulDataTable: Loaded " + crystals.size() + " soul crystals.");
+		log.info("Loaded " + crystals.size() + " soul crystals.");
 	}
 
 	public final EnsoulEffect getEffect(int id) {

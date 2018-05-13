@@ -39,7 +39,7 @@ public class TransformationManager {
 	}
 
 	public void report() {
-		log.info("Loaded: " + transformations.size() + " transformations.");
+		log.info("Loaded " + transformations.size() + " transformations.");
 	}
 
 	public boolean transformPlayer(int id, Player player) {

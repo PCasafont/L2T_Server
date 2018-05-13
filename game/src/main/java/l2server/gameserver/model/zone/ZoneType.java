@@ -158,7 +158,7 @@ public abstract class ZoneType {
 				target = Enum.valueOf(InstanceType.class, value);
 				break;
 			default:
-				log.info(getClass().getSimpleName() + ": Unknown parameter - " + name + " in zone: " + getId());
+				log.warn("Unknown parameter - " + name + " in zone: " + getId());
 				break;
 		}
 	}

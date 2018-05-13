@@ -170,7 +170,7 @@ object OfflineTradersTable {
             return
         }
 
-        log.info("Loading offline traders...")
+        log.debug("Loading offline traders...")
 
         val restoreThread = Thread {
             var con: Connection? = null

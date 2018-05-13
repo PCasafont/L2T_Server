@@ -47,7 +47,7 @@ object AutoAnnounceTaskManager {
                 count++
             }
         }
-        log.info("AutoAnnouncements: Loaded: $count auto announcements!")
+        log.info("Loaded $count auto announcements!")
     }
 
     private class AutoAnnouncement private constructor(private val text: String) : Runnable {

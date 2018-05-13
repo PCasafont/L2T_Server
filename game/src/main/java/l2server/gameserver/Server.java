@@ -65,8 +65,6 @@ public class Server {
 	
 	public Server() throws Exception {
 		
-		long serverLoadStart = System.currentTimeMillis();
-		
 		gameServer = this;
 		
 		UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -131,8 +129,6 @@ public class Server {
 		}
 		selectorThread.start();
 		log.info("Maximum Numbers of Connected Players: " + Config.MAXIMUM_ONLINE_USERS);
-		long serverLoadEnd = System.currentTimeMillis();
-		log.info("Server Loaded in " + (serverLoadEnd - serverLoadStart) / 1000 + " seconds");
 		
 		Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
 		gameServer = this;

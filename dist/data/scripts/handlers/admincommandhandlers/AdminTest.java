@@ -243,7 +243,7 @@ public class AdminTest implements IAdminCommandHandler {
 					}
 					statement.close();
 				} catch (SQLException e) {
-					log.warn("Olympiad System: Couldnt load heros from DB");
+					log.warn("Couldn't load heros from DB");
 				} finally {
 					DatabasePool.close(con);
 				}

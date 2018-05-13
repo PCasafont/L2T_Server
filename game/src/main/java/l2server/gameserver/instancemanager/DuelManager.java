@@ -39,7 +39,7 @@ public class DuelManager {
 	// =========================================================
 	// Constructor
 	private DuelManager() {
-		log.info("Initializing DuelManager");
+		log.debug("Initializing DuelManager");
 		duels = new ArrayList<>();
 	}
 

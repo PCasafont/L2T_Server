@@ -57,7 +57,7 @@ public class OlympiadGameManager implements Runnable {
 			i++;
 		}
 		
-		log.info("Olympiad System: Loaded " + tasks.length + " stadium instances.");
+		log.info("Loaded " + tasks.length + " stadium instances.");
 	}
 	
 	public static OlympiadGameManager getInstance() {
@@ -136,7 +136,7 @@ public class OlympiadGameManager implements Runnable {
 		} else if (isAllTasksFinished() && battleStarted) {
 			OlympiadManager.getInstance().clearRegistered();
 			battleStarted = false;
-			log.info("Olympiad System: All current games finished.");
+			log.info("All current games finished.");
 		}
 	}
 

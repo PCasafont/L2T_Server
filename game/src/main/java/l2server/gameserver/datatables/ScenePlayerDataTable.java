@@ -53,7 +53,7 @@ public class ScenePlayerDataTable {
 			}
 		}
 
-		log.info("ScenePlayerTable: Loaded: " + sceneDataTable.size() + " scenes!");
+		log.info("Loaded " + sceneDataTable.size() + " scenes!");
 
 		return false;
 	}

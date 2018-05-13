@@ -101,10 +101,12 @@ object ThreadPool {
         }
 
         scheduleAtFixedRate({ purge() }, 1, 1, TimeUnit.MINUTES)
-
-        LOGGER.info("Initialized with")
-        LOGGER.info("\t... " + scheduledThreadPoolExecutor.poolSize + "/" + scheduledThreadPoolExecutor.poolSize + " scheduled thread(s).") // ScheduledThreadPoolExecutor has a fixed number of threads and maximumPoolSize has no effect
-        LOGGER.info("\t... " + threadPoolExecutor.poolSize + "/" + threadPoolExecutor.maximumPoolSize + " thread(s).")
+        // ScheduledThreadPoolExecutor has a fixed number of threads and maximumPoolSize has no effect
+        LOGGER.info("Initialized with  "
+                + scheduledThreadPoolExecutor.poolSize + "/" + scheduledThreadPoolExecutor.poolSize
+                + " scheduled thread(s) and "
+                + threadPoolExecutor.poolSize + "/" + threadPoolExecutor.maximumPoolSize
+                + " thread(s).")
     }
 
     /**

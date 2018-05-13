@@ -244,7 +244,7 @@ public class CharNameTable {
 		} finally {
 			DatabasePool.close(con);
 		}
-		log.info(getClass().getSimpleName() + ": Loaded " + chars.size() + " char names.");
+		log.info("Loaded " + chars.size() + " char names.");
 	}
 	
 	public boolean setCharNameConditions(Player player, String name) {

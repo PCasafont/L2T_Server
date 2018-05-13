@@ -111,7 +111,7 @@ public class CrestCache {
 			}
 		}
 
-		log.info("Cache[Crest]: " + String.format("%.3f", getMemoryUsage()) + "MB on " + getLoadedFiles() + " files loaded.");
+		log.info(String.format("%.3f", getMemoryUsage()) + "MB on " + getLoadedFiles() + " files loaded.");
 	}
 
 	public void convertOldPedgeFiles() {

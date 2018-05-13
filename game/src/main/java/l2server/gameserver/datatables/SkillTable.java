@@ -105,7 +105,7 @@ public class SkillTable {
 			sk.skill = getInfo(sk.id, sk.level);
 		}
 		
-		log.info("SkillTable: Loaded " + skills.size() + " skills.");
+		log.info("Loaded " + skills.size() + " skills.");
 	}
 	
 	/**

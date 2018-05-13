@@ -122,7 +122,7 @@ public class HelperBuffTable {
 				helperBuff.add(template);
 			}
 		}
-		log.info("HelperBuffTable: Loaded: " + helperBuff.size() + " buffs!");
+		log.info("Loaded " + helperBuff.size() + " buffs.");
 	}
 
 	/**

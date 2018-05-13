@@ -142,7 +142,7 @@ public class OlympiadManagerLink implements IBypassHandler {
 						}
 						break;
 					default:
-						log.warn("Olympiad System: Couldnt send packet for request " + val);
+						log.warn("Couldnt send packet for request " + val);
 						break;
 				}
 			} else if (command.toLowerCase().startsWith(COMMANDS[2])) // buff
@@ -240,7 +240,7 @@ public class OlympiadManagerLink implements IBypassHandler {
 						activeChar.sendPacket(new ExHeroList());
 						break;
 					default:
-						log.warn("Olympiad System: Couldnt send packet for request " + val);
+						log.warn("Couldnt send packet for request " + val);
 						break;
 				}
 			}

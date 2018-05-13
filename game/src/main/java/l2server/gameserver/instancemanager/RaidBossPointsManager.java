@@ -71,7 +71,7 @@ public class RaidBossPointsManager {
 			}
 			rset.close();
 			statement.close();
-			log.info(getClass().getSimpleName() + ": Loaded " + list.size() + " Characters Raid Points.");
+			log.info("Loaded " + list.size() + " Characters Raid Points.");
 		} catch (SQLException e) {
 			log.warn("RaidPointsManager: Couldnt load raid points ", e);
 		} finally {

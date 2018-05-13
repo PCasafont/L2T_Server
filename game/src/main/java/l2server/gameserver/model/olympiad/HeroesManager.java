@@ -210,7 +210,7 @@ public class HeroesManager {
 			rset.close();
 			statement.close();
 		} catch (SQLException e) {
-			log.warn("Hero System: Couldnt load Heroes");
+			log.warn("Couldnt load Heroes");
 			if (Config.DEBUG) {
 				log.warn("", e);
 			}
@@ -218,8 +218,8 @@ public class HeroesManager {
 			DatabasePool.close(con);
 		}
 
-		log.info("Hero System: Loaded " + heroes.size() + " Heroes.");
-		log.info("Hero System: Loaded " + pastAndCurrentHeroes.size() + " all time Heroes.");
+		log.info("Loaded " + heroes.size() + " Heroes.");
+		log.info("Loaded " + pastAndCurrentHeroes.size() + " all time Heroes.");
 	}
 
 	private String calcFightDuration(long FightTime) {
@@ -246,7 +246,7 @@ public class HeroesManager {
 			rset.close();
 			statement.close();
 		} catch (SQLException e) {
-			log.warn("Hero System: Couldn't load Hero Message for hero: " + hero.getName(), e);
+			log.warn("Couldn't load Hero Message for hero: " + hero.getName(), e);
 		} finally {
 			DatabasePool.close(con);
 		}
@@ -292,9 +292,9 @@ public class HeroesManager {
 			rset.close();
 			statement.close();
 
-			log.debug("Hero System: Loaded " + diaryentries + " diary entries for hero: " + hero.getName());
+			log.debug("Loaded " + diaryentries + " diary entries for hero: " + hero.getName());
 		} catch (Exception e) {
-			log.warn("Hero System: Couldnt load Hero Diary for hero: " + hero.getName());
+			log.warn("Couldnt load Hero Diary for hero: " + hero.getName());
 			if (Config.DEBUG) {
 				log.warn("", e);
 			}
@@ -400,9 +400,9 @@ public class HeroesManager {
 			hero.setDefeats(defeats);
 			hero.setDraws(draws);
 
-			log.debug("Hero System: Loaded " + numberOfFights + " fights for hero: " + hero.getName());
+			log.debug("Loaded " + numberOfFights + " fights for hero: " + hero.getName());
 		} catch (SQLException e) {
-			log.warn("Hero System: Couldnt load Hero fights history for hero: " + hero.getName());
+			log.warn("Couldnt load Hero fights history for hero: " + hero.getName());
 			if (Config.DEBUG) {
 				log.warn("", e);
 			}
@@ -768,7 +768,7 @@ public class HeroesManager {
 				}
 			}
 		} catch (SQLException e) {
-			log.warn("Hero System: Couldnt update Heroes");
+			log.warn("Couldnt update Heroes");
 			if (Config.DEBUG) {
 				log.warn("", e);
 			}
