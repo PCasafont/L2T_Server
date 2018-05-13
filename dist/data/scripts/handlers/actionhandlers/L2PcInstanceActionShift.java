@@ -19,7 +19,7 @@ import l2server.gameserver.handler.AdminCommandHandler;
 import l2server.gameserver.handler.IActionHandler;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.WorldObject;
-import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.AbnormalStatusUpdateFromTarget;

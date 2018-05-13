@@ -20,7 +20,7 @@ import l2server.gameserver.GeoData;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.handler.IActionHandler;
 import l2server.gameserver.model.WorldObject;
-import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.instance.PetInstance;
 import l2server.gameserver.model.actor.instance.Player;

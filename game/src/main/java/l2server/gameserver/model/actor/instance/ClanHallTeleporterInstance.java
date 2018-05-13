@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model.actor.instance;
 
+import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.instancemanager.ClanHallManager;

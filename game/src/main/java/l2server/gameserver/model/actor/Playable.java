@@ -17,6 +17,7 @@ package l2server.gameserver.model.actor;
 
 import l2server.gameserver.ai.CtrlEvent;
 import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.actor.instance.MobSummonInstance;
 import l2server.gameserver.model.actor.instance.Player;

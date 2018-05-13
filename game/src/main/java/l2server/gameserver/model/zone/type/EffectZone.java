@@ -18,7 +18,7 @@ package l2server.gameserver.model.zone.type;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.Skill;
-import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.zone.ZoneType;

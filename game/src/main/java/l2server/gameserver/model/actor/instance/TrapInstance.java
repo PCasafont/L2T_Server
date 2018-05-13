@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model.actor.instance;
 
+import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.model.actor.Creature;

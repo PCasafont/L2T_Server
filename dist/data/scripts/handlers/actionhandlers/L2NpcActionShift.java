@@ -22,7 +22,7 @@ import l2server.gameserver.model.Elementals;
 import l2server.gameserver.model.L2DropCategory;
 import l2server.gameserver.model.L2DropData;
 import l2server.gameserver.model.WorldObject;
-import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.model.actor.Attackable.AggroInfo;
 import l2server.gameserver.model.actor.Creature;

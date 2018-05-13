@@ -17,7 +17,7 @@ package l2server.gameserver.model.zone.type;
 
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.instancemanager.CastleManager;
-import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;

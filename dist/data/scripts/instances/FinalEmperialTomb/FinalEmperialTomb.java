@@ -25,7 +25,7 @@ import l2server.gameserver.model.L2CharPosition;
 import l2server.gameserver.model.L2Territory;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.World;
-import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Npc;

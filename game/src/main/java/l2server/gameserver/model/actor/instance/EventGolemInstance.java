@@ -1,5 +1,6 @@
 package l2server.gameserver.model.actor.instance;
 
+import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.events.instanced.EventTeam;
 import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.events.instanced.types.DestroyTheGolem;

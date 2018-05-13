@@ -20,7 +20,7 @@ import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.MapRegionTable.TeleportWhereType;
 import l2server.gameserver.datatables.ScenePlayerDataTable;
 import l2server.gameserver.model.WorldObject;
-import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Npc;

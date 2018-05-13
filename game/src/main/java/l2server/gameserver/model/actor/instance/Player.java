@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model.actor.instance;
 
+import l2server.gameserver.model.InstanceType;
 import gnu.trove.TIntIntHashMap;
 import gnu.trove.TIntLongHashMap;
 import gov.nasa.worldwind.formats.dds.DDSConverter;

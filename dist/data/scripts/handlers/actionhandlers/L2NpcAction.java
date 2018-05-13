@@ -23,7 +23,7 @@ import l2server.gameserver.handler.IActionHandler;
 import l2server.gameserver.instancemanager.GMEventManager;
 import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.WorldObject;
-import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.model.actor.instance.Player;

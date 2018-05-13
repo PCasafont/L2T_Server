@@ -16,6 +16,7 @@
 package l2server.gameserver.model.actor;
 
 import l2server.gameserver.ThreadPoolManager;
+import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.model.Item;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.actor.instance.Player;

@@ -20,7 +20,7 @@ import l2server.gameserver.handler.IActionHandler;
 import l2server.gameserver.instancemanager.MercTicketManager;
 import l2server.gameserver.model.Item;
 import l2server.gameserver.model.WorldObject;
-import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.model.actor.instance.Player;
 
 public class L2ItemInstanceAction implements IActionHandler {

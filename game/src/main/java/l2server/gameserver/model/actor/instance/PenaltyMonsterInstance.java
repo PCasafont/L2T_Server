@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model.actor.instance;
 
+import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.ai.CtrlEvent;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.network.clientpackets.Say2;

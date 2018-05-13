@@ -17,7 +17,7 @@ package l2server.gameserver.stats;
 
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.model.Skill;
-import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.InstanceType;
 import l2server.gameserver.model.base.PlayerState;
 import l2server.gameserver.model.base.Race;
 import l2server.gameserver.stats.conditions.*;
