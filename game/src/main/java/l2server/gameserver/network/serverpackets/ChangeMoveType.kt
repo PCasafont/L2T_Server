@@ -13,35 +13,39 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package l2server.gameserver.network.serverpackets;
+package l2server.gameserver.network.serverpackets
 
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Creature
 
 /**
  * sample
- * <p>
+ *
+ *
  * 0000: 3e 2a 89 00 4c 01 00 00 00						 .|...
- * <p>
+ *
+ *
  * format   dd
  *
  * @version $Revision: 1.3.2.1.2.4 $ $Date: 2005/03/27 15:29:57 $
  */
-public class ChangeMoveType extends L2GameServerPacket {
-	public static final int WALK = 0;
-	public static final int RUN = 1;
-	
-	private int charObjId;
-	private boolean running;
-	
-	public ChangeMoveType(Creature character) {
-		charObjId = character.getObjectId();
-		running = character.isRunning();
+class ChangeMoveType(character: Creature) : L2GameServerPacket() {
+
+	private val charObjId: Int
+	private val running: Boolean
+
+	init {
+		charObjId = character.objectId
+		running = character.isRunning
 	}
-	
-	@Override
-	protected final void writeImpl() {
-		writeD(charObjId);
-		writeD(running ? RUN : WALK);
-		writeD(0); //c2
+
+	override fun writeImpl() {
+		writeD(charObjId)
+		writeD(if (running) RUN else WALK)
+		writeD(0) //c2
+	}
+
+	companion object {
+		val WALK = 0
+		val RUN = 1
 	}
 }

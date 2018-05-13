@@ -838,7 +838,7 @@ public class CreatureAI extends AbstractAI {
 			return false; // skill radius -1
 		}
 
-		if (!actor.isInsideRadius(worldPosition.getX(), worldPosition.getY(), offset + actor.getTemplate().collisionRadius, false)) {
+		if (!actor.isInsideRadius(worldPosition.getX(), worldPosition.getY(), offset + actor.getTemplate().getCollisionRadius(), false)) {
 			if (actor.isMovementDisabled()) {
 				return true;
 			}
@@ -901,9 +901,9 @@ public class CreatureAI extends AbstractAI {
 			return false; // skill radius -1
 		}
 
-		offset += actor.getTemplate().collisionRadius;
+		offset += actor.getTemplate().getCollisionRadius();
 		if (target instanceof Creature) {
-			offset += ((Creature) target).getTemplate().collisionRadius;
+			offset += ((Creature) target).getTemplate().getCollisionRadius();
 		}
 
 		if (!actor.isInsideRadius(target, offset, false, false)) {

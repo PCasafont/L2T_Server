@@ -13,45 +13,49 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package l2server.gameserver.network.serverpackets;
+package l2server.gameserver.network.serverpackets
 
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Creature
 
 /**
  * sample
- * <p>
+ *
+ *
  * 0000: 3f 2a 89 00 4c 01 00 00 00 0a 15 00 00 66 fe 00	?*..L........f..
  * 0010: 00 7c f1 ff ff									 .|...
- * <p>
+ *
+ *
  * format   dd ddd
  *
  * @version $Revision: 1.3.2.1.2.4 $ $Date: 2005/03/27 15:29:57 $
  */
-public class ChangeWaitType extends L2GameServerPacket {
-	private int charObjId;
-	private int moveType;
-	private int x, y, z;
-	
-	public static final int WT_SITTING = 0;
-	public static final int WT_STANDING = 1;
-	public static final int WT_START_FAKEDEATH = 2;
-	public static final int WT_STOP_FAKEDEATH = 3;
-	
-	public ChangeWaitType(Creature character, int newMoveType) {
-		charObjId = character.getObjectId();
-		moveType = newMoveType;
-		
-		x = character.getX();
-		y = character.getY();
-		z = character.getZ();
+class ChangeWaitType(character: Creature, private val moveType: Int) : L2GameServerPacket() {
+	private val charObjId: Int
+	private val x: Int
+	private val y: Int
+	private val z: Int
+
+	init {
+		charObjId = character.objectId
+
+		x = character.x
+		y = character.y
+		z = character.z
 	}
-	
-	@Override
-	protected final void writeImpl() {
-		writeD(charObjId);
-		writeD(moveType);
-		writeD(x);
-		writeD(y);
-		writeD(z);
+
+	override fun writeImpl() {
+		writeD(charObjId)
+		writeD(moveType)
+		writeD(x)
+		writeD(y)
+		writeD(z)
+	}
+
+	companion object {
+
+		val WT_SITTING = 0
+		val WT_STANDING = 1
+		val WT_START_FAKEDEATH = 2
+		val WT_STOP_FAKEDEATH = 3
 	}
 }

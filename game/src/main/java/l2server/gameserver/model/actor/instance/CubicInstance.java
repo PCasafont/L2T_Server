@@ -317,7 +317,7 @@ public class CubicInstance {
 	
 	public final int getMCriticalHit(Creature target, Skill skill) {
 		// TODO: Temporary now mcrit for cubics is the baseMCritRate of its owner
-		return owner.getTemplate().baseMCritRate;
+		return owner.getTemplate().getBaseMCritRate();
 	}
 	
 	public int getMAtk() {

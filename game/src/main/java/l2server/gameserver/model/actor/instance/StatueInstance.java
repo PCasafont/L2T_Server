@@ -147,8 +147,8 @@ public class StatueInstance extends Npc {
 			setXYZ(x, y, z);
 			setHeading(heading);
 			
-			getTemplate().baseWalkSpd = 0;
-			getTemplate().baseRunSpd = 0;
+			getTemplate().setBaseWalkSpd(0);
+			getTemplate().setBaseRunSpd(0);
 			
 			spawnMe();
 		}

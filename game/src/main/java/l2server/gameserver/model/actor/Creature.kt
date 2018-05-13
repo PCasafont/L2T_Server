@@ -142,9 +142,9 @@ abstract class Creature(objectId: Int, template: CreatureTemplate?): WorldObject
 			}
 
 			if (this is Player) {
-				this.broadcastUserInfo()
+				broadcastUserInfo()
 			} else if (this is Summon) {
-				this.broadcastStatusUpdate()
+				broadcastStatusUpdate()
 			} else if (this is Npc) {
 				val plrs = knownList.knownPlayers.values
 				run {
@@ -2681,7 +2681,7 @@ abstract class Creature(objectId: Int, template: CreatureTemplate?): WorldObject
 			var canCast = true
 			if (skill.targetType === SkillTargetType.TARGET_GROUND && this is Player) {
 				val wp = skillCastPosition!!
-				if (!region.checkEffectRangeInsidePeaceZone(skill, wp.getX(), wp.getY(), wp.getZ())) {
+				if (!region.checkEffectRangeInsidePeaceZone(skill, wp.x, wp.y, wp.z)) {
 					canCast = false
 				}
 			} else if (!region.checkEffectRangeInsidePeaceZone(skill, x, y, z)) {

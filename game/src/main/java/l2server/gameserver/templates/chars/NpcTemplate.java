@@ -24,6 +24,7 @@ import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.Quest.QuestEventType;
 import l2server.gameserver.templates.SpawnData;
 import l2server.gameserver.templates.StatsSet;
+import l2server.gameserver.templates.skills.AISkillType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -49,27 +50,6 @@ import java.util.*;
  */
 public final class NpcTemplate extends CreatureTemplate {
 	private static Logger log = LoggerFactory.getLogger(NpcTemplate.class.getName());
-	public static final int AIST_BUFF = 0;
-	public static final int AIST_NEGATIVE = 1;
-	public static final int AIST_DEBUFF = 2;
-	public static final int AIST_ATK = 3;
-	public static final int AIST_ROOT = 4;
-	public static final int AIST_STUN = 5;
-	public static final int AIST_SLEEP = 6;
-	public static final int AIST_PARALYZE = 7;
-	public static final int AIST_FOSSIL = 8;
-	public static final int AIST_FLOAT = 9;
-	public static final int AIST_IMMOBILIZE = 10;
-	public static final int AIST_HEAL = 11;
-	public static final int AIST_RES = 12;
-	public static final int AIST_DOT = 13;
-	public static final int AIST_COT = 14;
-	public static final int AIST_UNIVERSAL = 15;
-	public static final int AIST_MANA = 16;
-	public static final int AIST_LONG_RANGE = 17;
-	public static final int AIST_SHORT_RANGE = 18;
-	public static final int AIST_GENERAL = 19;
-	public static final int AIST_COUNT = 20;
 	
 	public int NpcId;
 	public int TemplateId;
@@ -108,8 +88,8 @@ public final class NpcTemplate extends CreatureTemplate {
 	
 	//Skill AI
 	@SuppressWarnings("unchecked")
-	public List<Skill>[] aiSkills = new List[AIST_COUNT];
-	public boolean[] aiSkillChecks = new boolean[AIST_COUNT];
+	public List<Skill>[] aiSkills = new List[AISkillType.AIST_COUNT];
+	public boolean[] aiSkillChecks = new boolean[AISkillType.AIST_COUNT];
 	
 	private L2NpcAIData aiData = new L2NpcAIData();
 	
@@ -211,7 +191,7 @@ public final class NpcTemplate extends CreatureTemplate {
 		ShowName = set.getBool("showName", true);
 		
 		// can be loaded from db
-		BaseVitalityDivider = Level > 0 && RewardExp > 0 ? (float) baseHpMax * 9 / (100 * RewardExp / (Level * Level)) : 0;
+		BaseVitalityDivider = Level > 0 && RewardExp > 0 ? (float) getBaseHpMax() * 9 / (100 * RewardExp / (Level * Level)) : 0;
 		
 		InteractionDistance = set.getInteger("interactionDistance", Npc.DEFAULT_INTERACTION_DISTANCE);
 		
@@ -272,22 +252,22 @@ public final class NpcTemplate extends CreatureTemplate {
 		HatersDamageMultiplier = set.getFloat("hatersDamageMultiplier", baseTemplate.HatersDamageMultiplier);
 		
 		// can be loaded from db
-		BaseVitalityDivider = Level > 0 && RewardExp > 0 ? (float) baseHpMax * 9 / (100 * RewardExp / (Level * Level)) : 0;
+		BaseVitalityDivider = Level > 0 && RewardExp > 0 ? (float) getBaseHpMax() * 9 / (100 * RewardExp / (Level * Level)) : 0;
 		
 		InteractionDistance = set.getInteger("interactionDistance", baseTemplate.InteractionDistance);
 		
-		baseFire = baseTemplate.baseFire;
-		baseWater = baseTemplate.baseWater;
-		baseEarth = baseTemplate.baseEarth;
-		baseWind = baseTemplate.baseWind;
-		baseHoly = baseTemplate.baseHoly;
-		baseDark = baseTemplate.baseDark;
-		baseFireRes = baseTemplate.baseFireRes;
-		baseWaterRes = baseTemplate.baseWaterRes;
-		baseEarthRes = baseTemplate.baseEarthRes;
-		baseWindRes = baseTemplate.baseWindRes;
-		baseHolyRes = baseTemplate.baseHolyRes;
-		baseDarkRes = baseTemplate.baseDarkRes;
+		setBaseFire(baseTemplate.getBaseFire());
+		setBaseWater(baseTemplate.getBaseWater());
+		setBaseEarth(baseTemplate.getBaseEarth());
+		setBaseWind(baseTemplate.getBaseWind());
+		setBaseHoly(baseTemplate.getBaseHoly());
+		setBaseDark(baseTemplate.getBaseDark());
+		setBaseFireRes(baseTemplate.getBaseFireRes());
+		setBaseWaterRes(baseTemplate.getBaseWaterRes());
+		setBaseEarthRes(baseTemplate.getBaseEarthRes());
+		setBaseWindRes(baseTemplate.getBaseWindRes());
+		setBaseHolyRes(baseTemplate.getBaseHolyRes());
+		setBaseDarkRes(baseTemplate.getBaseDarkRes());
 		
 		aiData = baseTemplate.aiData;
 		
@@ -683,244 +663,244 @@ public final class NpcTemplate extends CreatureTemplate {
 	}
 	
 	public void addBuffSkill(Skill skill) {
-		if (aiSkills[AIST_BUFF] == null) {
-			aiSkills[AIST_BUFF] = new ArrayList<>();
+		if (aiSkills[AISkillType.AIST_BUFF] == null) {
+			aiSkills[AISkillType.AIST_BUFF] = new ArrayList<>();
 		}
-		aiSkills[AIST_BUFF].add(skill);
-		aiSkillChecks[AIST_BUFF] = true;
+		aiSkills[AISkillType.AIST_BUFF].add(skill);
+		aiSkillChecks[AISkillType.AIST_BUFF] = true;
 	}
 	
 	public void addHealSkill(Skill skill) {
-		if (aiSkills[AIST_HEAL] == null) {
-			aiSkills[AIST_HEAL] = new ArrayList<>();
+		if (aiSkills[AISkillType.AIST_HEAL] == null) {
+			aiSkills[AISkillType.AIST_HEAL] = new ArrayList<>();
 		}
-		aiSkills[AIST_HEAL].add(skill);
-		aiSkillChecks[AIST_HEAL] = true;
+		aiSkills[AISkillType.AIST_HEAL].add(skill);
+		aiSkillChecks[AISkillType.AIST_HEAL] = true;
 	}
 	
 	public void addResSkill(Skill skill) {
-		if (aiSkills[AIST_RES] == null) {
-			aiSkills[AIST_RES] = new ArrayList<>();
+		if (aiSkills[AISkillType.AIST_RES] == null) {
+			aiSkills[AISkillType.AIST_RES] = new ArrayList<>();
 		}
-		aiSkills[AIST_RES].add(skill);
-		aiSkillChecks[AIST_RES] = true;
+		aiSkills[AISkillType.AIST_RES].add(skill);
+		aiSkillChecks[AISkillType.AIST_RES] = true;
 	}
 	
 	public void addAtkSkill(Skill skill) {
-		if (aiSkills[AIST_ATK] == null) {
-			aiSkills[AIST_ATK] = new ArrayList<>();
+		if (aiSkills[AISkillType.AIST_ATK] == null) {
+			aiSkills[AISkillType.AIST_ATK] = new ArrayList<>();
 		}
-		aiSkills[AIST_ATK].add(skill);
-		aiSkillChecks[AIST_ATK] = true;
+		aiSkills[AISkillType.AIST_ATK].add(skill);
+		aiSkillChecks[AISkillType.AIST_ATK] = true;
 	}
 	
 	public void addDebuffSkill(Skill skill) {
-		if (aiSkills[AIST_DEBUFF] == null) {
-			aiSkills[AIST_DEBUFF] = new ArrayList<>();
+		if (aiSkills[AISkillType.AIST_DEBUFF] == null) {
+			aiSkills[AISkillType.AIST_DEBUFF] = new ArrayList<>();
 		}
-		aiSkills[AIST_DEBUFF].add(skill);
-		aiSkillChecks[AIST_DEBUFF] = true;
+		aiSkills[AISkillType.AIST_DEBUFF].add(skill);
+		aiSkillChecks[AISkillType.AIST_DEBUFF] = true;
 	}
 	
 	public void addRootSkill(Skill skill) {
-		if (aiSkills[AIST_ROOT] == null) {
-			aiSkills[AIST_ROOT] = new ArrayList<>();
+		if (aiSkills[AISkillType.AIST_ROOT] == null) {
+			aiSkills[AISkillType.AIST_ROOT] = new ArrayList<>();
 		}
-		aiSkills[AIST_ROOT].add(skill);
-		aiSkillChecks[AIST_ROOT] = true;
+		aiSkills[AISkillType.AIST_ROOT].add(skill);
+		aiSkillChecks[AISkillType.AIST_ROOT] = true;
 	}
 	
 	public void addSleepSkill(Skill skill) {
-		if (aiSkills[AIST_SLEEP] == null) {
-			aiSkills[AIST_SLEEP] = new ArrayList<>();
+		if (aiSkills[AISkillType.AIST_SLEEP] == null) {
+			aiSkills[AISkillType.AIST_SLEEP] = new ArrayList<>();
 		}
-		aiSkills[AIST_SLEEP].add(skill);
-		aiSkillChecks[AIST_SLEEP] = true;
+		aiSkills[AISkillType.AIST_SLEEP].add(skill);
+		aiSkillChecks[AISkillType.AIST_SLEEP] = true;
 	}
 	
 	public void addStunSkill(Skill skill) {
-		if (aiSkills[AIST_STUN] == null) {
-			aiSkills[AIST_STUN] = new ArrayList<>();
+		if (aiSkills[AISkillType.AIST_STUN] == null) {
+			aiSkills[AISkillType.AIST_STUN] = new ArrayList<>();
 		}
-		aiSkills[AIST_STUN].add(skill);
-		aiSkillChecks[AIST_STUN] = true;
+		aiSkills[AISkillType.AIST_STUN].add(skill);
+		aiSkillChecks[AISkillType.AIST_STUN] = true;
 	}
 	
 	public void addParalyzeSkill(Skill skill) {
-		if (aiSkills[AIST_PARALYZE] == null) {
-			aiSkills[AIST_PARALYZE] = new ArrayList<>();
+		if (aiSkills[AISkillType.AIST_PARALYZE] == null) {
+			aiSkills[AISkillType.AIST_PARALYZE] = new ArrayList<>();
 		}
-		aiSkills[AIST_PARALYZE].add(skill);
-		aiSkillChecks[AIST_PARALYZE] = true;
+		aiSkills[AISkillType.AIST_PARALYZE].add(skill);
+		aiSkillChecks[AISkillType.AIST_PARALYZE] = true;
 	}
 	
 	public void addFloatSkill(Skill skill) {
-		if (aiSkills[AIST_FLOAT] == null) {
-			aiSkills[AIST_FLOAT] = new ArrayList<>();
+		if (aiSkills[AISkillType.AIST_FLOAT] == null) {
+			aiSkills[AISkillType.AIST_FLOAT] = new ArrayList<>();
 		}
-		aiSkills[AIST_FLOAT].add(skill);
-		aiSkillChecks[AIST_FLOAT] = true;
+		aiSkills[AISkillType.AIST_FLOAT].add(skill);
+		aiSkillChecks[AISkillType.AIST_FLOAT] = true;
 	}
 	
 	public void addFossilSkill(Skill skill) {
-		if (aiSkills[AIST_FOSSIL] == null) {
-			aiSkills[AIST_FOSSIL] = new ArrayList<>();
+		if (aiSkills[AISkillType.AIST_FOSSIL] == null) {
+			aiSkills[AISkillType.AIST_FOSSIL] = new ArrayList<>();
 		}
-		aiSkills[AIST_FOSSIL].add(skill);
-		aiSkillChecks[AIST_FOSSIL] = true;
+		aiSkills[AISkillType.AIST_FOSSIL].add(skill);
+		aiSkillChecks[AISkillType.AIST_FOSSIL] = true;
 	}
 	
 	public void addNegativeSkill(Skill skill) {
-		if (aiSkills[AIST_NEGATIVE] == null) {
-			aiSkills[AIST_NEGATIVE] = new ArrayList<>();
+		if (aiSkills[AISkillType.AIST_NEGATIVE] == null) {
+			aiSkills[AISkillType.AIST_NEGATIVE] = new ArrayList<>();
 		}
-		aiSkills[AIST_NEGATIVE].add(skill);
-		aiSkillChecks[AIST_NEGATIVE] = true;
+		aiSkills[AISkillType.AIST_NEGATIVE].add(skill);
+		aiSkillChecks[AISkillType.AIST_NEGATIVE] = true;
 	}
 	
 	public void addImmobilizeSkill(Skill skill) {
-		if (aiSkills[AIST_IMMOBILIZE] == null) {
-			aiSkills[AIST_IMMOBILIZE] = new ArrayList<>();
+		if (aiSkills[AISkillType.AIST_IMMOBILIZE] == null) {
+			aiSkills[AISkillType.AIST_IMMOBILIZE] = new ArrayList<>();
 		}
-		aiSkills[AIST_IMMOBILIZE].add(skill);
-		aiSkillChecks[AIST_IMMOBILIZE] = true;
+		aiSkills[AISkillType.AIST_IMMOBILIZE].add(skill);
+		aiSkillChecks[AISkillType.AIST_IMMOBILIZE] = true;
 	}
 	
 	public void addDOTSkill(Skill skill) {
-		if (aiSkills[AIST_DOT] == null) {
-			aiSkills[AIST_DOT] = new ArrayList<>();
+		if (aiSkills[AISkillType.AIST_DOT] == null) {
+			aiSkills[AISkillType.AIST_DOT] = new ArrayList<>();
 		}
-		aiSkills[AIST_DOT].add(skill);
-		aiSkillChecks[AIST_DOT] = true;
+		aiSkills[AISkillType.AIST_DOT].add(skill);
+		aiSkillChecks[AISkillType.AIST_DOT] = true;
 	}
 	
 	public void addUniversalSkill(Skill skill) {
-		if (aiSkills[AIST_UNIVERSAL] == null) {
-			aiSkills[AIST_UNIVERSAL] = new ArrayList<>();
+		if (aiSkills[AISkillType.AIST_UNIVERSAL] == null) {
+			aiSkills[AISkillType.AIST_UNIVERSAL] = new ArrayList<>();
 		}
-		aiSkills[AIST_UNIVERSAL].add(skill);
-		aiSkillChecks[AIST_UNIVERSAL] = true;
+		aiSkills[AISkillType.AIST_UNIVERSAL].add(skill);
+		aiSkillChecks[AISkillType.AIST_UNIVERSAL] = true;
 	}
 	
 	public void addCOTSkill(Skill skill) {
-		if (aiSkills[AIST_COT] == null) {
-			aiSkills[AIST_COT] = new ArrayList<>();
+		if (aiSkills[AISkillType.AIST_COT] == null) {
+			aiSkills[AISkillType.AIST_COT] = new ArrayList<>();
 		}
-		aiSkills[AIST_COT].add(skill);
-		aiSkillChecks[AIST_COT] = true;
+		aiSkills[AISkillType.AIST_COT].add(skill);
+		aiSkillChecks[AISkillType.AIST_COT] = true;
 	}
 	
 	public void addManaHealSkill(Skill skill) {
-		if (aiSkills[AIST_MANA] == null) {
-			aiSkills[AIST_MANA] = new ArrayList<>();
+		if (aiSkills[AISkillType.AIST_MANA] == null) {
+			aiSkills[AISkillType.AIST_MANA] = new ArrayList<>();
 		}
-		aiSkills[AIST_MANA].add(skill);
-		aiSkillChecks[AIST_MANA] = true;
+		aiSkills[AISkillType.AIST_MANA].add(skill);
+		aiSkillChecks[AISkillType.AIST_MANA] = true;
 	}
 	
 	public void addGeneralSkill(Skill skill) {
-		if (aiSkills[AIST_GENERAL] == null) {
-			aiSkills[AIST_GENERAL] = new ArrayList<>();
+		if (aiSkills[AISkillType.AIST_GENERAL] == null) {
+			aiSkills[AISkillType.AIST_GENERAL] = new ArrayList<>();
 		}
-		aiSkills[AIST_GENERAL].add(skill);
-		aiSkillChecks[AIST_GENERAL] = true;
+		aiSkills[AISkillType.AIST_GENERAL].add(skill);
+		aiSkillChecks[AISkillType.AIST_GENERAL] = true;
 	}
 	
 	public void addRangeSkill(Skill skill) {
 		if (skill.getCastRange() <= 150 && skill.getCastRange() > 0) {
-			if (aiSkills[AIST_SHORT_RANGE] == null) {
-				aiSkills[AIST_SHORT_RANGE] = new ArrayList<>();
+			if (aiSkills[AISkillType.AIST_SHORT_RANGE] == null) {
+				aiSkills[AISkillType.AIST_SHORT_RANGE] = new ArrayList<>();
 			}
-			aiSkills[AIST_SHORT_RANGE].add(skill);
-			aiSkillChecks[AIST_SHORT_RANGE] = true;
+			aiSkills[AISkillType.AIST_SHORT_RANGE].add(skill);
+			aiSkillChecks[AISkillType.AIST_SHORT_RANGE] = true;
 		} else if (skill.getCastRange() > 150) {
-			if (aiSkills[AIST_LONG_RANGE] == null) {
-				aiSkills[AIST_LONG_RANGE] = new ArrayList<>();
+			if (aiSkills[AISkillType.AIST_LONG_RANGE] == null) {
+				aiSkills[AISkillType.AIST_LONG_RANGE] = new ArrayList<>();
 			}
-			aiSkills[AIST_LONG_RANGE].add(skill);
-			aiSkillChecks[AIST_LONG_RANGE] = true;
+			aiSkills[AISkillType.AIST_LONG_RANGE].add(skill);
+			aiSkillChecks[AISkillType.AIST_LONG_RANGE] = true;
 		}
 	}
 	
 	//--------------------------------------------------------------------
 	public boolean hasBuffSkill() {
-		return aiSkillChecks[AIST_BUFF];
+		return aiSkillChecks[AISkillType.AIST_BUFF];
 	}
 	
 	public boolean hasHealSkill() {
-		return aiSkillChecks[AIST_HEAL];
+		return aiSkillChecks[AISkillType.AIST_HEAL];
 	}
 	
 	public boolean hasResSkill() {
-		return aiSkillChecks[AIST_RES];
+		return aiSkillChecks[AISkillType.AIST_RES];
 	}
 	
 	public boolean hasAtkSkill() {
-		return aiSkillChecks[AIST_ATK];
+		return aiSkillChecks[AISkillType.AIST_ATK];
 	}
 	
 	public boolean hasDebuffSkill() {
-		return aiSkillChecks[AIST_DEBUFF];
+		return aiSkillChecks[AISkillType.AIST_DEBUFF];
 	}
 	
 	public boolean hasRootSkill() {
-		return aiSkillChecks[AIST_ROOT];
+		return aiSkillChecks[AISkillType.AIST_ROOT];
 	}
 	
 	public boolean hasSleepSkill() {
-		return aiSkillChecks[AIST_SLEEP];
+		return aiSkillChecks[AISkillType.AIST_SLEEP];
 	}
 	
 	public boolean hasStunSkill() {
-		return aiSkillChecks[AIST_STUN];
+		return aiSkillChecks[AISkillType.AIST_STUN];
 	}
 	
 	public boolean hasParalyzeSkill() {
-		return aiSkillChecks[AIST_PARALYZE];
+		return aiSkillChecks[AISkillType.AIST_PARALYZE];
 	}
 	
 	public boolean hasFloatSkill() {
-		return aiSkillChecks[AIST_FLOAT];
+		return aiSkillChecks[AISkillType.AIST_FLOAT];
 	}
 	
 	public boolean hasFossilSkill() {
-		return aiSkillChecks[AIST_FOSSIL];
+		return aiSkillChecks[AISkillType.AIST_FOSSIL];
 	}
 	
 	public boolean hasNegativeSkill() {
-		return aiSkillChecks[AIST_NEGATIVE];
+		return aiSkillChecks[AISkillType.AIST_NEGATIVE];
 	}
 	
 	public boolean hasImmobiliseSkill() {
-		return aiSkillChecks[AIST_IMMOBILIZE];
+		return aiSkillChecks[AISkillType.AIST_IMMOBILIZE];
 	}
 	
 	public boolean hasDOTSkill() {
-		return aiSkillChecks[AIST_DOT];
+		return aiSkillChecks[AISkillType.AIST_DOT];
 	}
 	
 	public boolean hasUniversalSkill() {
-		return aiSkillChecks[AIST_UNIVERSAL];
+		return aiSkillChecks[AISkillType.AIST_UNIVERSAL];
 	}
 	
 	public boolean hasCOTSkill() {
-		return aiSkillChecks[AIST_COT];
+		return aiSkillChecks[AISkillType.AIST_COT];
 	}
 	
 	public boolean hasManaHealSkill() {
-		return aiSkillChecks[AIST_MANA];
+		return aiSkillChecks[AISkillType.AIST_MANA];
 	}
 	
 	public boolean hasAutoLrangeSkill() {
-		return aiSkillChecks[AIST_LONG_RANGE];
+		return aiSkillChecks[AISkillType.AIST_LONG_RANGE];
 	}
 	
 	public boolean hasAutoSrangeSkill() {
-		return aiSkillChecks[AIST_SHORT_RANGE];
+		return aiSkillChecks[AISkillType.AIST_SHORT_RANGE];
 	}
 	
 	public boolean hasSkill() {
-		return aiSkillChecks[AIST_GENERAL];
+		return aiSkillChecks[AISkillType.AIST_GENERAL];
 	}
 	
 	public L2NpcRace getRace() {
@@ -1010,47 +990,47 @@ public final class NpcTemplate extends CreatureTemplate {
 	}
 	
 	public String getXmlAttackRange() {
-		return " atkRange=\"" + baseAtkRange + "\"";
+		return " atkRange=\"" + getBaseAtkRange() + "\"";
 	}
 	
 	public String getXmlMaxHp() {
-		return " hpMax=\"" + Math.round(baseHpMax) + "\"";
+		return " hpMax=\"" + Math.round(getBaseHpMax()) + "\"";
 	}
 	
 	public String getXmlMaxMp() {
-		return " mpMax=\"" + Math.round(baseMpMax) + "\"";
+		return " mpMax=\"" + Math.round(getBaseMpMax()) + "\"";
 	}
 	
 	public String getXmlHpReg() {
-		return " hpReg=\"" + baseHpReg + "\"";
+		return " hpReg=\"" + getBaseHpReg() + "\"";
 	}
 	
 	public String getXmlMpReg() {
-		return " mpReg=\"" + baseMpReg + "\"";
+		return " mpReg=\"" + getBaseMpReg() + "\"";
 	}
 	
 	public String getXmlSTR() {
-		return " STR=\"" + baseSTR + "\"";
+		return " STR=\"" + getBaseSTR() + "\"";
 	}
 	
 	public String getXmlCON() {
-		return " CON=\"" + baseCON + "\"";
+		return " CON=\"" + getBaseCON() + "\"";
 	}
 	
 	public String getXmlDEX() {
-		return " DEX=\"" + baseDEX + "\"";
+		return " DEX=\"" + getBaseDEX() + "\"";
 	}
 	
 	public String getXmlINT() {
-		return " INT=\"" + baseINT + "\"";
+		return " INT=\"" + getBaseINT() + "\"";
 	}
 	
 	public String getXmlWIT() {
-		return " WIT=\"" + baseWIT + "\"";
+		return " WIT=\"" + getBaseWIT() + "\"";
 	}
 	
 	public String getXmlMEN() {
-		return " MEN=\"" + baseMEN + "\"";
+		return " MEN=\"" + getBaseMEN() + "\"";
 	}
 	
 	public String getXmlExp() {
@@ -1068,35 +1048,35 @@ public final class NpcTemplate extends CreatureTemplate {
 	}
 	
 	public String getXmlPAtk() {
-		return " pAtk=\"" + Math.round(basePAtk) + "\"";
+		return " pAtk=\"" + Math.round(getBasePAtk()) + "\"";
 	}
 	
 	public String getXmlPDef() {
-		return " pDef=\"" + Math.round(basePDef) + "\"";
+		return " pDef=\"" + Math.round(getBasePDef()) + "\"";
 	}
 	
 	public String getXmlMAtk() {
-		return " mAtk=\"" + Math.round(baseMAtk) + "\"";
+		return " mAtk=\"" + Math.round(getBaseMAtk()) + "\"";
 	}
 	
 	public String getXmlMDef() {
-		return " mDef=\"" + Math.round(baseMDef) + "\"";
+		return " mDef=\"" + Math.round(getBaseMDef()) + "\"";
 	}
 	
 	public String getXmlPAtkSpd() {
-		return " pAtkSpd=\"" + basePAtkSpd + "\"";
+		return " pAtkSpd=\"" + getBasePAtkSpd() + "\"";
 	}
 	
 	public String getXmlMAtkSpd() {
-		return " mAtkSpd=\"" + baseMAtkSpd + "\"";
+		return " mAtkSpd=\"" + getBaseMAtkSpd() + "\"";
 	}
 	
 	public String getXmlCritical() {
-		return " pCritRate=\"" + baseCritRate + "\"";
+		return " pCritRate=\"" + getBaseCritRate() + "\"";
 	}
 	
 	public String getXmlMCritical() {
-		return " mCritRate=\"" + baseMCritRate + "\"";
+		return " mCritRate=\"" + getBaseMCritRate() + "\"";
 	}
 	
 	public String getXmlCanSeeThroughSilentMove() {
@@ -1156,11 +1136,11 @@ public final class NpcTemplate extends CreatureTemplate {
 	}
 	
 	public String getXmlWalkSpd() {
-		return " walkSpd=\"" + Math.round(baseWalkSpd) + "\"";
+		return " walkSpd=\"" + Math.round(getBaseWalkSpd()) + "\"";
 	}
 	
 	public String getXmlRunSpd() {
-		return " runSpd=\"" + Math.round(baseRunSpd) + "\"";
+		return " runSpd=\"" + Math.round(getBaseRunSpd()) + "\"";
 	}
 	
 	public String getXmlRandomWalk() {
@@ -1199,39 +1179,39 @@ public final class NpcTemplate extends CreatureTemplate {
 	}
 	
 	public String getXmlCollisionRadius() {
-		return " collisionRadius=\"" + new DecimalFormat("#.##").format(fCollisionRadius) + "\"";
+		return " collisionRadius=\"" + new DecimalFormat("#.##").format(getFCollisionRadius()) + "\"";
 	}
 	
 	public String getXmlCollisionHeight() {
-		return " collisionHeight=\"" + new DecimalFormat("#.##").format(fCollisionHeight) + "\"";
+		return " collisionHeight=\"" + new DecimalFormat("#.##").format(getFCollisionHeight()) + "\"";
 	}
 	
 	public String getXmlElemAtk() {
 		int elem = -1;
 		int val = 0;
-		if (baseFire > val) {
+		if (getBaseFire() > val) {
 			elem = Elementals.FIRE;
-			val = baseFire;
+			val = getBaseFire();
 		}
-		if (baseWater > val) {
+		if (getBaseWater() > val) {
 			elem = Elementals.WATER;
-			val = baseWater;
+			val = getBaseWater();
 		}
-		if (baseWind > val) {
+		if (getBaseWind() > val) {
 			elem = Elementals.WIND;
-			val = baseWind;
+			val = getBaseWind();
 		}
-		if (baseEarth > val) {
+		if (getBaseEarth() > val) {
 			elem = Elementals.EARTH;
-			val = baseEarth;
+			val = getBaseEarth();
 		}
-		if (baseHoly > val) {
+		if (getBaseHoly() > val) {
 			elem = Elementals.HOLY;
-			val = baseHoly;
+			val = getBaseHoly();
 		}
-		if (baseDark > val) {
+		if (getBaseDark() > val) {
 			elem = Elementals.DARK;
-			val = baseDark;
+			val = getBaseDark();
 		}
 		if (elem == -1) {
 			return "";
@@ -1240,9 +1220,10 @@ public final class NpcTemplate extends CreatureTemplate {
 	}
 	
 	public String getXmlElemRes() {
-		return " fireRes=\"" + Math.round(baseFireRes) + "\" waterRes=\"" + Math.round(baseWaterRes) + "\" windRes=\"" + Math.round(baseWindRes) +
-				"\"" + " earthRes=\"" + Math.round(baseEarthRes) + "\" holyRes=\"" + Math.round(baseHolyRes) + "\" darkRes=\"" +
-				Math.round(baseDarkRes) + "\"";
+		return " fireRes=\"" + Math.round(getBaseFireRes()) + "\" waterRes=\"" + Math.round(getBaseWaterRes()) + "\" windRes=\"" + Math.round(
+				getBaseWindRes()) +
+				"\"" + " earthRes=\"" + Math.round(getBaseEarthRes()) + "\" holyRes=\"" + Math.round(getBaseHolyRes()) + "\" darkRes=\"" +
+				Math.round(getBaseDarkRes()) + "\"";
 	}
 	
 	public String getXmlAIType() {

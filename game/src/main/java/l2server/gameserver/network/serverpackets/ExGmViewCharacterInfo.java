@@ -156,8 +156,8 @@ public final class ExGmViewCharacterInfo extends L2GameServerPacket {
 		
 		// Speeds
 		float moveMultiplier = player.getMovementSpeedMultiplier();
-		short runSpd = (short) player.getTemplate().baseRunSpd;
-		short walkSpd = (short) player.getTemplate().baseWalkSpd;
+		short runSpd = (short) player.getTemplate().getBaseRunSpd();
+		short walkSpd = (short) player.getTemplate().getBaseWalkSpd();
 		buffer.putShort((short) 18);
 		buffer.putShort(runSpd);
 		buffer.putShort(walkSpd);
@@ -182,8 +182,8 @@ public final class ExGmViewCharacterInfo extends L2GameServerPacket {
 			buffer.putDouble(trans.getCollisionHeight());
 		} else if (player.getMountType() != 0 && mountNpcId != 0) {
 			NpcTemplate mountTemplate = NpcTable.getInstance().getTemplate(mountNpcId);
-			buffer.putDouble(mountTemplate.fCollisionRadius);
-			buffer.putDouble(mountTemplate.fCollisionHeight);
+			buffer.putDouble(mountTemplate.getFCollisionRadius());
+			buffer.putDouble(mountTemplate.getFCollisionHeight());
 		} else {
 			buffer.putDouble(player.getCollisionRadius());
 			buffer.putDouble(player.getCollisionHeight());

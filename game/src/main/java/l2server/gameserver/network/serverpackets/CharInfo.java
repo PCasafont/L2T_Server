@@ -98,8 +98,8 @@ public class CharInfo extends L2GameServerPacket {
 		pAtkSpd = activeChar.getPAtkSpd();
 		moveMultiplier = activeChar.getMovementSpeedMultiplier();
 		attackSpeedMultiplier = activeChar.getAttackSpeedMultiplier();
-		runSpd = (int) activeChar.getTemplate().baseRunSpd;
-		walkSpd = (int) activeChar.getTemplate().baseWalkSpd;
+		runSpd = (int) activeChar.getTemplate().getBaseRunSpd();
+		walkSpd = (int) activeChar.getTemplate().getBaseWalkSpd();
 		invisibleCharacter = cha.getAppearance().getInvisible() ? cha.getObjectId() : 0;
 		//territoryId = TerritoryWarManager.getInstance().getRegisteredTerritoryId(cha);
 		//isDisguised = TerritoryWarManager.getInstance().isDisguised(cha.getObjectId());
@@ -151,8 +151,8 @@ public class CharInfo extends L2GameServerPacket {
 				writeD(walkSpd); // fly walk speed ?
 				writeF(moveMultiplier);
 				writeF(attackSpeedMultiplier);
-				writeF(template.fCollisionRadius);
-				writeF(template.fCollisionHeight);
+				writeF(template.getFCollisionRadius());
+				writeF(template.getFCollisionHeight());
 				writeD(inv.getPaperdollItemId(Inventory.PAPERDOLL_RHAND)); // right hand weapon
 				writeD(0);
 				writeD(inv.getPaperdollItemId(Inventory.PAPERDOLL_LHAND)); // left hand weapon
@@ -185,8 +185,8 @@ public class CharInfo extends L2GameServerPacket {
 				writeD(0); // C2
 				writeC(0); // C2
 				writeC(0x00); // C3  team circle 1-blue, 2-red
-				writeF(template.fCollisionRadius);
-				writeF(template.fCollisionHeight);
+				writeF(template.getFCollisionRadius());
+				writeF(template.getFCollisionHeight());
 				writeD(0x00); // C4
 				writeD(0x00); // C6
 				writeD(0x00);
@@ -316,8 +316,8 @@ public class CharInfo extends L2GameServerPacket {
 			L2Transformation transform = activeChar.getTransformation();
 
 			if (activeChar.getMountType() != 0) {
-				writeF(NpcTable.getInstance().getTemplate(activeChar.getMountNpcId()).fCollisionRadius);
-				writeF(NpcTable.getInstance().getTemplate(activeChar.getMountNpcId()).fCollisionHeight);
+				writeF(NpcTable.getInstance().getTemplate(activeChar.getMountNpcId()).getFCollisionRadius());
+				writeF(NpcTable.getInstance().getTemplate(activeChar.getMountNpcId()).getFCollisionHeight());
 			} else if (transform != null) {
 				writeF(transform.getCollisionRadius());
 				writeF(transform.getCollisionHeight());

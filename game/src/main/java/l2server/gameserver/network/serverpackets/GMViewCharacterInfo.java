@@ -39,8 +39,8 @@ public class GMViewCharacterInfo extends L2GameServerPacket {
 	@Override
 	protected final void writeImpl() {
 		float moveMultiplier = activeChar.getMovementSpeedMultiplier();
-		int runSpd = (int) activeChar.getTemplate().baseRunSpd;
-		int walkSpd = (int) activeChar.getTemplate().baseWalkSpd;
+		int runSpd = (int) activeChar.getTemplate().getBaseRunSpd();
+		int walkSpd = (int) activeChar.getTemplate().getBaseWalkSpd();
 		
 		writeD(activeChar.getX());
 		writeD(activeChar.getY());

@@ -53,8 +53,8 @@ public class PetInfo extends L2GameServerPacket {
 		mAtkSpd = summon.getMAtkSpd();
 		pAtkSpd = summon.getPAtkSpd();
 		multiplier = summon.getMovementSpeedMultiplier();
-		runSpd = Math.round(summon.getTemplate().baseRunSpd);
-		walkSpd = Math.round(summon.getTemplate().baseWalkSpd);
+		runSpd = Math.round(summon.getTemplate().getBaseRunSpd());
+		walkSpd = Math.round(summon.getTemplate().getBaseWalkSpd());
 		swimRunSpd = flRunSpd = flyRunSpd = runSpd;
 		swimWalkSpd = flWalkSpd = flyWalkSpd = walkSpd;
 		maxHp = summon.getMaxVisibleHp();
@@ -94,8 +94,8 @@ public class PetInfo extends L2GameServerPacket {
 
 		writeF(multiplier); // movement multiplier
 		writeF(summon.getAttackSpeedMultiplier()); // attack speed multiplier
-		writeF(summon.getTemplate().fCollisionRadius);
-		writeF(summon.getTemplate().fCollisionHeight);
+		writeF(summon.getTemplate().getFCollisionRadius());
+		writeF(summon.getTemplate().getFCollisionHeight());
 		writeD(summon.getWeapon()); // right hand weapon
 		writeD(summon.getArmor()); // body armor
 		writeD(0); // left hand weapon

@@ -3453,7 +3453,7 @@ public class Player extends Playable {
 		if (!waitTypeSitting && !isAttackingDisabled() && !isOutOfControl() && !isImmobilized()) {
 			breakAttack();
 			setIsSitting(true);
-			broadcastPacket(new ChangeWaitType(this, ChangeWaitType.WT_SITTING));
+			broadcastPacket(new ChangeWaitType(this, ChangeWaitType.Companion.getWT_SITTING()));
 			// Schedule a sit down task to wait for the animation to finish
 			ThreadPoolManager.getInstance().scheduleGeneral(new SitDownTask(), 2500);
 			setParalyzed(true);
@@ -3491,7 +3491,7 @@ public class Player extends Playable {
 				stopEffects(EffectType.RELAXING);
 			}
 			
-			broadcastPacket(new ChangeWaitType(this, ChangeWaitType.WT_STANDING));
+			broadcastPacket(new ChangeWaitType(this, ChangeWaitType.Companion.getWT_STANDING()));
 			// Schedule a stand up task to wait for the animation to finish
 			ThreadPoolManager.getInstance().scheduleGeneral(new StandUpTask(), 2500);
 		}
@@ -9472,7 +9472,7 @@ public class Player extends Playable {
 					if (!isInsideRadius(worldPosition.getX(),
 							worldPosition.getY(),
 							worldPosition.getZ(),
-							skill.getCastRange() + getTemplate().collisionRadius,
+							skill.getCastRange() + getTemplate().getCollisionRadius(),
 							false,
 							false)) {
 						// Send a System Message to the caster
@@ -9482,7 +9482,7 @@ public class Player extends Playable {
 						sendPacket(ActionFailed.STATIC_PACKET);
 						return false;
 					}
-				} else if (skill.getCastRange() > 0 && !isInsideRadius(target, skill.getCastRange() + getTemplate().collisionRadius, false, false)) {
+				} else if (skill.getCastRange() > 0 && !isInsideRadius(target, skill.getCastRange() + getTemplate().getCollisionRadius(), false, false)) {
 					// Send a System Message to the caster
 					sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_TOO_FAR));
 					
@@ -14787,7 +14787,7 @@ public class Player extends Playable {
 		if (getAppearance().getSex()) {
 			return getVisibleTemplate().fCollisionRadiusFemale;
 		} else {
-			return getVisibleTemplate().fCollisionRadius;
+			return getVisibleTemplate().getFCollisionRadius();
 		}
 	}
 	
@@ -14795,7 +14795,7 @@ public class Player extends Playable {
 		if (getAppearance().getSex()) {
 			return getVisibleTemplate().fCollisionHeightFemale;
 		} else {
-			return getVisibleTemplate().fCollisionHeight;
+			return getVisibleTemplate().getFCollisionHeight();
 		}
 	}
 	

@@ -40,6 +40,7 @@ import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.taskmanager.DecayTaskManager;
+import l2server.gameserver.templates.skills.AISkillType;
 import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.gameserver.templates.chars.NpcTemplate.AIType;
 import l2server.gameserver.templates.item.ItemTemplate;
@@ -322,8 +323,8 @@ public class Npc extends Creature {
 				break;
 			}
 			case 1: {
-				if (getTemplate().aiSkills[NpcTemplate.AIST_UNIVERSAL] != null) {
-					for (Skill sk : getTemplate().aiSkills[NpcTemplate.AIST_UNIVERSAL]) {
+				if (getTemplate().aiSkills[AISkillType.AIST_UNIVERSAL] != null) {
+					for (Skill sk : getTemplate().aiSkills[AISkillType.AIST_UNIVERSAL]) {
 						if (sk.getCastRange() >= 200) {
 							skilldata.add(sk);
 							hasLrange = true;
@@ -373,8 +374,8 @@ public class Npc extends Creature {
 				break;
 			}
 			case 1: {
-				if (getTemplate().aiSkills[NpcTemplate.AIST_UNIVERSAL] != null) {
-					for (Skill sk : getTemplate().aiSkills[NpcTemplate.AIST_UNIVERSAL]) {
+				if (getTemplate().aiSkills[AISkillType.AIST_UNIVERSAL] != null) {
+					for (Skill sk : getTemplate().aiSkills[AISkillType.AIST_UNIVERSAL]) {
 						if (sk.getCastRange() <= 200) {
 							skilldata.add(sk);
 							hasSrange = true;
@@ -509,8 +510,8 @@ public class Npc extends Creature {
 		currentRHandId = getTemplate().RHand;
 		currentEnchant = Config.ENABLE_RANDOM_ENCHANT_EFFECT ? Rnd.get(4, 21) : getTemplate().EnchantEffect;
 		// initialize the "current" collisions
-		currentCollisionHeight = getTemplate().fCollisionHeight;
-		currentCollisionRadius = getTemplate().fCollisionRadius;
+		currentCollisionHeight = getTemplate().getFCollisionHeight();
+		currentCollisionRadius = getTemplate().getFCollisionRadius();
 		isRndWalk = getTemplate().RandomWalk;
 		
 		if (template == null) {
@@ -1385,8 +1386,8 @@ public class Npc extends Creature {
 		// we do need to reset the weapons back to the initial templated weapon.
 		currentLHandId = getTemplate().LHand;
 		currentRHandId = getTemplate().RHand;
-		currentCollisionHeight = getTemplate().fCollisionHeight;
-		currentCollisionRadius = getTemplate().fCollisionRadius;
+		currentCollisionHeight = getTemplate().getFCollisionHeight();
+		currentCollisionRadius = getTemplate().getFCollisionRadius();
 		DecayTaskManager.getInstance().addDecayTask(this);
 		return true;
 	}

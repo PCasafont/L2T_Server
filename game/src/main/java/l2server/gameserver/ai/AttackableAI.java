@@ -27,6 +27,7 @@ import l2server.gameserver.model.actor.*;
 import l2server.gameserver.model.actor.Attackable.AggroInfo;
 import l2server.gameserver.model.actor.instance.*;
 import l2server.gameserver.model.quest.Quest;
+import l2server.gameserver.templates.skills.AISkillType;
 import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.gameserver.templates.chars.NpcTemplate.AIType;
 import l2server.gameserver.templates.skills.AbnormalType;
@@ -392,7 +393,7 @@ public class AttackableAI extends CreatureAI implements Runnable {
 
 		if (lastBuffTick + 30 < TimeController.getGameTicks()) {
 			if (skillrender.hasBuffSkill()) {
-				for (Skill sk : skillrender.aiSkills[NpcTemplate.AIST_BUFF]) {
+				for (Skill sk : skillrender.aiSkills[AISkillType.AIST_BUFF]) {
 					if (cast(sk)) {
 						break;
 					}
@@ -558,7 +559,7 @@ public class AttackableAI extends CreatureAI implements Runnable {
 				moveTo(x1, y1, z1);
 			} else if (Rnd.nextInt(RANDOM_WALK_RATE) == 0) {
 				if (skillrender.hasBuffSkill()) {
-					for (Skill sk : skillrender.aiSkills[NpcTemplate.AIST_BUFF]) {
+					for (Skill sk : skillrender.aiSkills[AISkillType.AIST_BUFF]) {
 						if (cast(sk)) {
 							return;
 						}
@@ -572,7 +573,7 @@ public class AttackableAI extends CreatureAI implements Runnable {
 			final int range = Config.MAX_DRIFT_RANGE;
 
 			if (skillrender != null && skillrender.hasBuffSkill()) {
-				for (Skill sk : skillrender.aiSkills[NpcTemplate.AIST_BUFF]) {
+				for (Skill sk : skillrender.aiSkills[AISkillType.AIST_BUFF]) {
 					if (cast(sk)) {
 						return;
 					}
@@ -664,7 +665,7 @@ public class AttackableAI extends CreatureAI implements Runnable {
 			return;
 		}
 
-		final int collision = npc.getTemplate().collisionRadius;
+		final int collision = npc.getTemplate().getCollisionRadius();
 
 		// Handle all WorldObject of its Faction inside the Faction Range
 
@@ -748,7 +749,7 @@ public class AttackableAI extends CreatureAI implements Runnable {
 		setAttackTarget(mostHate);
 		npc.setTarget(mostHate);
 
-		final int combinedCollision = collision + mostHate.getTemplate().collisionRadius;
+		final int combinedCollision = collision + mostHate.getTemplate().getCollisionRadius();
 
 		//------------------------------------------------------
 		// In case many mobs are trying to hit from same place, move a bit,
@@ -861,12 +862,12 @@ public class AttackableAI extends CreatureAI implements Runnable {
 		if (skillrender.hasSkill()) {
 			//-------------------------------------------------------------------------------
 			//Heal Condition
-			if (skillrender.hasHealSkill() && skillrender.aiSkills[NpcTemplate.AIST_HEAL] != null) {
+			if (skillrender.hasHealSkill() && skillrender.aiSkills[AISkillType.AIST_HEAL] != null) {
 				double percentage = npc.getCurrentHp() / npc.getMaxHp() * 100;
 				if (npc.isMinion()) {
 					Creature leader = npc.getLeader();
 					if (leader != null && !leader.isDead() && Rnd.get(100) > leader.getCurrentHp() / leader.getMaxHp() * 100) {
-						for (Skill sk : skillrender.aiSkills[NpcTemplate.AIST_HEAL]) {
+						for (Skill sk : skillrender.aiSkills[AISkillType.AIST_HEAL]) {
 							if (sk.getTargetType() == SkillTargetType.TARGET_SELF) {
 								continue;
 							}
@@ -874,9 +875,9 @@ public class AttackableAI extends CreatureAI implements Runnable {
 									!sk.isMagic() && npc.isPhysicalMuted()) {
 								continue;
 							}
-							if (!Util.checkIfInRange(sk.getCastRange() + collision + leader.getTemplate().collisionRadius, npc, leader, false) &&
+							if (!Util.checkIfInRange(sk.getCastRange() + collision + leader.getTemplate().getCollisionRadius(), npc, leader, false) &&
 									!isParty(sk) && !npc.isMovementDisabled()) {
-								moveToPawn(leader, sk.getCastRange() + collision + leader.getTemplate().collisionRadius);
+								moveToPawn(leader, sk.getCastRange() + collision + leader.getTemplate().getCollisionRadius());
 								return;
 							}
 							if (GeoData.getInstance().canSeeTarget(npc, leader)) {
@@ -890,7 +891,7 @@ public class AttackableAI extends CreatureAI implements Runnable {
 					}
 				}
 				if (percentage < 60) {
-					for (Skill sk : skillrender.aiSkills[NpcTemplate.AIST_HEAL]) {
+					for (Skill sk : skillrender.aiSkills[AISkillType.AIST_HEAL]) {
 						if (sk.getMpConsume() >= npc.getCurrentMp() || npc.isSkillDisabled(sk) || sk.isMagic() && npc.isMuted() ||
 								!sk.isMagic() && npc.isPhysicalMuted()) {
 							continue;
@@ -901,7 +902,7 @@ public class AttackableAI extends CreatureAI implements Runnable {
 						return;
 					}
 				}
-				for (Skill sk : skillrender.aiSkills[NpcTemplate.AIST_HEAL]) {
+				for (Skill sk : skillrender.aiSkills[AISkillType.AIST_HEAL]) {
 					if (sk.getMpConsume() >= npc.getCurrentMp() || npc.isSkillDisabled(sk) || sk.isMagic() && npc.isMuted() ||
 							!sk.isMagic() && npc.isPhysicalMuted()) {
 						continue;
@@ -943,7 +944,7 @@ public class AttackableAI extends CreatureAI implements Runnable {
 				if (npc.isMinion()) {
 					Creature leader = npc.getLeader();
 					if (leader != null && leader.isDead()) {
-						for (Skill sk : skillrender.aiSkills[NpcTemplate.AIST_RES]) {
+						for (Skill sk : skillrender.aiSkills[AISkillType.AIST_RES]) {
 							if (sk.getTargetType() == SkillTargetType.TARGET_SELF) {
 								continue;
 							}
@@ -951,9 +952,9 @@ public class AttackableAI extends CreatureAI implements Runnable {
 									!sk.isMagic() && npc.isPhysicalMuted()) {
 								continue;
 							}
-							if (!Util.checkIfInRange(sk.getCastRange() + collision + leader.getTemplate().collisionRadius, npc, leader, false) &&
+							if (!Util.checkIfInRange(sk.getCastRange() + collision + leader.getTemplate().getCollisionRadius(), npc, leader, false) &&
 									!isParty(sk) && !npc.isMovementDisabled()) {
-								moveToPawn(leader, sk.getCastRange() + collision + leader.getTemplate().collisionRadius);
+								moveToPawn(leader, sk.getCastRange() + collision + leader.getTemplate().getCollisionRadius());
 								return;
 							}
 							if (GeoData.getInstance().canSeeTarget(npc, leader)) {
@@ -965,8 +966,8 @@ public class AttackableAI extends CreatureAI implements Runnable {
 						}
 					}
 				}
-				if (skillrender.aiSkills[NpcTemplate.AIST_RES] != null) {
-					for (Skill sk : skillrender.aiSkills[NpcTemplate.AIST_RES]) {
+				if (skillrender.aiSkills[AISkillType.AIST_RES] != null) {
+					for (Skill sk : skillrender.aiSkills[AISkillType.AIST_RES]) {
 						if (sk.getMpConsume() >= npc.getCurrentMp() || npc.isSkillDisabled(sk) || sk.isMagic() && npc.isMuted() ||
 								!sk.isMagic() && npc.isPhysicalMuted()) {
 							continue;
@@ -1026,11 +1027,11 @@ public class AttackableAI extends CreatureAI implements Runnable {
 		if (skillrender.hasSkill()) {
 			if (Rnd.get(100) <= npc.getSkillChance()) {
 				Skill skills =
-						skillrender.aiSkills[NpcTemplate.AIST_GENERAL].get(Rnd.nextInt(skillrender.aiSkills[NpcTemplate.AIST_GENERAL].size()));
+						skillrender.aiSkills[AISkillType.AIST_GENERAL].get(Rnd.nextInt(skillrender.aiSkills[AISkillType.AIST_GENERAL].size()));
 				if (cast(skills)) {
 					return;
 				}
-				for (Skill sk : skillrender.aiSkills[NpcTemplate.AIST_GENERAL]) {
+				for (Skill sk : skillrender.aiSkills[AISkillType.AIST_GENERAL]) {
 					if (cast(sk)) {
 						return;
 					}
@@ -1042,14 +1043,14 @@ public class AttackableAI extends CreatureAI implements Runnable {
 			if (npc.hasLSkill() || npc.hasSSkill()) {
 				if (npc.hasSSkill() && dist2 <= 150 && Rnd.get(100) <= npc.getSSkillChance()) {
 					sSkillRender();
-					if (skillrender.aiSkills[NpcTemplate.AIST_SHORT_RANGE] != null) {
+					if (skillrender.aiSkills[AISkillType.AIST_SHORT_RANGE] != null) {
 						Skill skills =
-								skillrender.aiSkills[NpcTemplate.AIST_SHORT_RANGE].get(Rnd.nextInt(skillrender.aiSkills[NpcTemplate.AIST_SHORT_RANGE]
+								skillrender.aiSkills[AISkillType.AIST_SHORT_RANGE].get(Rnd.nextInt(skillrender.aiSkills[AISkillType.AIST_SHORT_RANGE]
 										.size()));
 						if (cast(skills)) {
 							return;
 						}
-						for (Skill sk : skillrender.aiSkills[NpcTemplate.AIST_SHORT_RANGE]) {
+						for (Skill sk : skillrender.aiSkills[AISkillType.AIST_SHORT_RANGE]) {
 							if (cast(sk)) {
 								return;
 							}
@@ -1058,14 +1059,14 @@ public class AttackableAI extends CreatureAI implements Runnable {
 				}
 				if (npc.hasLSkill() && dist2 > 150 && Rnd.get(100) <= npc.getLSkillChance()) {
 					lSkillRender();
-					if (skillrender.aiSkills[NpcTemplate.AIST_LONG_RANGE] != null) {
+					if (skillrender.aiSkills[AISkillType.AIST_LONG_RANGE] != null) {
 						Skill skills =
-								skillrender.aiSkills[NpcTemplate.AIST_LONG_RANGE].get(Rnd.nextInt(skillrender.aiSkills[NpcTemplate.AIST_LONG_RANGE]
+								skillrender.aiSkills[AISkillType.AIST_LONG_RANGE].get(Rnd.nextInt(skillrender.aiSkills[AISkillType.AIST_LONG_RANGE]
 										.size()));
 						if (cast(skills)) {
 							return;
 						}
-						for (Skill sk : skillrender.aiSkills[NpcTemplate.AIST_LONG_RANGE]) {
+						for (Skill sk : skillrender.aiSkills[AISkillType.AIST_LONG_RANGE]) {
 							if (cast(sk)) {
 								return;
 							}
@@ -1101,13 +1102,13 @@ public class AttackableAI extends CreatureAI implements Runnable {
 		if (type != 0) {
 			switch (type) {
 				case -1: {
-					if (skillrender.aiSkills[NpcTemplate.AIST_GENERAL] != null) {
+					if (skillrender.aiSkills[AISkillType.AIST_GENERAL] != null) {
 						Skill s =
-								skillrender.aiSkills[NpcTemplate.AIST_GENERAL].get(Rnd.nextInt(skillrender.aiSkills[NpcTemplate.AIST_GENERAL].size()));
+								skillrender.aiSkills[AISkillType.AIST_GENERAL].get(Rnd.nextInt(skillrender.aiSkills[AISkillType.AIST_GENERAL].size()));
 						if (cast(s)) {
 							return;
 						}
-						for (Skill sk : skillrender.aiSkills[NpcTemplate.AIST_GENERAL]) {
+						for (Skill sk : skillrender.aiSkills[AISkillType.AIST_GENERAL]) {
 							if (cast(sk)) {
 								return;
 							}
@@ -1118,11 +1119,11 @@ public class AttackableAI extends CreatureAI implements Runnable {
 				case 1: {
 					if (skillrender.hasAtkSkill()) {
 						Skill s =
-								skillrender.aiSkills[NpcTemplate.AIST_ATK].get(Rnd.nextInt(skillrender.aiSkills[NpcTemplate.AIST_ATK].size()));
+								skillrender.aiSkills[AISkillType.AIST_ATK].get(Rnd.nextInt(skillrender.aiSkills[AISkillType.AIST_ATK].size()));
 						if (cast(s)) {
 							return;
 						}
-						for (Skill sk : skillrender.aiSkills[NpcTemplate.AIST_ATK]) {
+						for (Skill sk : skillrender.aiSkills[AISkillType.AIST_ATK]) {
 							if (cast(sk)) {
 								return;
 							}
@@ -1131,8 +1132,8 @@ public class AttackableAI extends CreatureAI implements Runnable {
 					break;
 				}
 				default: {
-					if (skillrender.aiSkills[NpcTemplate.AIST_GENERAL] != null) {
-						for (Skill sk : skillrender.aiSkills[NpcTemplate.AIST_GENERAL]) {
+					if (skillrender.aiSkills[AISkillType.AIST_GENERAL] != null) {
+						for (Skill sk : skillrender.aiSkills[AISkillType.AIST_GENERAL]) {
 							if (sk.getId() == getActiveChar().getPrimaryAttack() && cast(sk)) {
 								return;
 							}
@@ -1169,8 +1170,8 @@ public class AttackableAI extends CreatureAI implements Runnable {
 			return false;
 		}
 		double dist = Math.sqrt(caster.getPlanDistanceSq(attackTarget.getX(), attackTarget.getY()));
-		double dist2 = dist - attackTarget.getTemplate().collisionRadius;
-		double srange = sk.getCastRange() + caster.getTemplate().collisionRadius;
+		double dist2 = dist - attackTarget.getTemplate().getCollisionRadius();
+		double srange = sk.getCastRange() + caster.getTemplate().getCollisionRadius();
 		if (attackTarget.isMoving()) {
 			dist2 = dist2 - 30;
 		}
@@ -1218,11 +1219,13 @@ public class AttackableAI extends CreatureAI implements Runnable {
 				if (caster.isMinion() && sk.getTargetType() != SkillTargetType.TARGET_SELF) {
 					Creature leader = caster.getLeader();
 					if (leader != null && !leader.isDead() && Rnd.get(100) > leader.getCurrentHp() / leader.getMaxHp() * 100) {
-						if (!Util.checkIfInRange(sk.getCastRange() + caster.getTemplate().collisionRadius + leader.getTemplate().collisionRadius,
+						if (!Util.checkIfInRange(sk.getCastRange() + caster.getTemplate().getCollisionRadius() +
+										leader.getTemplate().getCollisionRadius(),
 								caster,
 								leader,
 								false) && !isParty(sk) && !caster.isMovementDisabled()) {
-							moveToPawn(leader, sk.getCastRange() + caster.getTemplate().collisionRadius + leader.getTemplate().collisionRadius);
+							moveToPawn(leader, sk.getCastRange() + caster.getTemplate().getCollisionRadius() +
+									leader.getTemplate().getCollisionRadius());
 						}
 						if (GeoData.getInstance().canSeeTarget(caster, leader)) {
 							clientStopMoving(null);
@@ -1241,7 +1244,7 @@ public class AttackableAI extends CreatureAI implements Runnable {
 
 				if (sk.getTargetType() == SkillTargetType.TARGET_ONE) {
 					for (Creature obj : caster.getKnownList()
-							.getKnownCharactersInRadius(sk.getCastRange() + caster.getTemplate().collisionRadius)) {
+							.getKnownCharactersInRadius(sk.getCastRange() + caster.getTemplate().getCollisionRadius())) {
 						if (!(obj instanceof Attackable) || obj.isDead()) {
 							continue;
 						}
@@ -1263,7 +1266,7 @@ public class AttackableAI extends CreatureAI implements Runnable {
 				}
 				if (isParty(sk)) {
 					for (Creature obj : caster.getKnownList()
-							.getKnownCharactersInRadius(sk.getSkillRadius() + caster.getTemplate().collisionRadius)) {
+							.getKnownCharactersInRadius(sk.getSkillRadius() + caster.getTemplate().getCollisionRadius())) {
 						if (!(obj instanceof Attackable)) {
 							continue;
 						}
@@ -1285,11 +1288,13 @@ public class AttackableAI extends CreatureAI implements Runnable {
 					if (caster.isMinion() && sk.getTargetType() != SkillTargetType.TARGET_SELF) {
 						Creature leader = caster.getLeader();
 						if (leader != null && leader.isDead()) {
-							if (!Util.checkIfInRange(sk.getCastRange() + caster.getTemplate().collisionRadius + leader.getTemplate().collisionRadius,
+							if (!Util.checkIfInRange(sk.getCastRange() + caster.getTemplate().getCollisionRadius() +
+											leader.getTemplate().getCollisionRadius(),
 									caster,
 									leader,
 									false) && !isParty(sk) && !caster.isMovementDisabled()) {
-								moveToPawn(leader, sk.getCastRange() + caster.getTemplate().collisionRadius + leader.getTemplate().collisionRadius);
+								moveToPawn(leader, sk.getCastRange() + caster.getTemplate().getCollisionRadius() +
+										leader.getTemplate().getCollisionRadius());
 							}
 						}
 						if (GeoData.getInstance().canSeeTarget(caster, leader)) {
@@ -1301,7 +1306,7 @@ public class AttackableAI extends CreatureAI implements Runnable {
 					}
 
 					for (Creature obj : caster.getKnownList()
-							.getKnownCharactersInRadius(sk.getCastRange() + caster.getTemplate().collisionRadius)) {
+							.getKnownCharactersInRadius(sk.getCastRange() + caster.getTemplate().getCollisionRadius())) {
 						if (!(obj instanceof Attackable) || !obj.isDead()) {
 							continue;
 						}
@@ -1321,7 +1326,7 @@ public class AttackableAI extends CreatureAI implements Runnable {
 					}
 				} else if (isParty(sk)) {
 					for (Creature obj : caster.getKnownList()
-							.getKnownCharactersInRadius(sk.getSkillRadius() + caster.getTemplate().collisionRadius)) {
+							.getKnownCharactersInRadius(sk.getSkillRadius() + caster.getTemplate().getCollisionRadius())) {
 						if (!(obj instanceof Attackable)) {
 							continue;
 						}
@@ -1501,8 +1506,8 @@ public class AttackableAI extends CreatureAI implements Runnable {
 				npc.setTarget(attackTarget);
 			}
 			dist = Math.sqrt(npc.getPlanDistanceSq(attackTarget.getX(), attackTarget.getY()));
-			dist2 = dist - npc.getTemplate().collisionRadius;
-			range = npc.getPhysicalAttackRange() + npc.getTemplate().collisionRadius + attackTarget.getTemplate().collisionRadius;
+			dist2 = dist - npc.getTemplate().getCollisionRadius();
+			range = npc.getPhysicalAttackRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius();
 			if (attackTarget.isMoving()) {
 				dist = dist - 30;
 				if (npc.isMoving()) {
@@ -1516,9 +1521,9 @@ public class AttackableAI extends CreatureAI implements Runnable {
 				//Try to stop the target or disable the target as priority
 				int random = Rnd.get(100);
 				if (skillrender.hasImmobiliseSkill() && !attackTarget.isImmobilized() && random < 2) {
-					for (Skill sk : skillrender.aiSkills[NpcTemplate.AIST_IMMOBILIZE]) {
+					for (Skill sk : skillrender.aiSkills[AISkillType.AIST_IMMOBILIZE]) {
 						if (sk.getMpConsume() >= npc.getCurrentMp() || npc.isSkillDisabled(sk) ||
-								sk.getCastRange() + npc.getTemplate().collisionRadius + attackTarget.getTemplate().collisionRadius <= dist2 &&
+								sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius() <= dist2 &&
 										!canAura(sk) || sk.isMagic() && npc.isMuted() || !sk.isMagic() && npc.isPhysicalMuted()) {
 							continue;
 						}
@@ -1538,9 +1543,9 @@ public class AttackableAI extends CreatureAI implements Runnable {
 				//-------------------------------------------------------------
 				//Same as Above, but with Mute/FEAR etc....
 				if (skillrender.hasCOTSkill() && random < 5) {
-					for (Skill sk : skillrender.aiSkills[NpcTemplate.AIST_COT]) {
+					for (Skill sk : skillrender.aiSkills[AISkillType.AIST_COT]) {
 						if (sk.getMpConsume() >= npc.getCurrentMp() || npc.isSkillDisabled(sk) ||
-								sk.getCastRange() + npc.getTemplate().collisionRadius + attackTarget.getTemplate().collisionRadius <= dist2 &&
+								sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius() <= dist2 &&
 										!canAura(sk) || sk.isMagic() && npc.isMuted() || !sk.isMagic() && npc.isPhysicalMuted()) {
 							continue;
 						}
@@ -1559,9 +1564,9 @@ public class AttackableAI extends CreatureAI implements Runnable {
 				}
 				//-------------------------------------------------------------
 				if (skillrender.hasDebuffSkill() && random < 8) {
-					for (Skill sk : skillrender.aiSkills[NpcTemplate.AIST_DEBUFF]) {
+					for (Skill sk : skillrender.aiSkills[AISkillType.AIST_DEBUFF]) {
 						if (sk.getMpConsume() >= npc.getCurrentMp() || npc.isSkillDisabled(sk) ||
-								sk.getCastRange() + npc.getTemplate().collisionRadius + attackTarget.getTemplate().collisionRadius <= dist2 &&
+								sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius() <= dist2 &&
 										!canAura(sk) || sk.isMagic() && npc.isMuted() || !sk.isMagic() && npc.isPhysicalMuted()) {
 							continue;
 						}
@@ -1581,9 +1586,9 @@ public class AttackableAI extends CreatureAI implements Runnable {
 				//-------------------------------------------------------------
 				//Some side effect skill like CANCEL or NEGATE
 				if (skillrender.hasNegativeSkill() && random < 9) {
-					for (Skill sk : skillrender.aiSkills[NpcTemplate.AIST_NEGATIVE]) {
+					for (Skill sk : skillrender.aiSkills[AISkillType.AIST_NEGATIVE]) {
 						if (sk.getMpConsume() >= npc.getCurrentMp() || npc.isSkillDisabled(sk) ||
-								sk.getCastRange() + npc.getTemplate().collisionRadius + attackTarget.getTemplate().collisionRadius <= dist2 &&
+								sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius() <= dist2 &&
 										!canAura(sk) || sk.isMagic() && npc.isMuted() || !sk.isMagic() && npc.isPhysicalMuted()) {
 							continue;
 						}
@@ -1603,9 +1608,9 @@ public class AttackableAI extends CreatureAI implements Runnable {
 				//-------------------------------------------------------------
 				//Start ATK SKILL when nothing can be done
 				if (skillrender.hasAtkSkill() && (npc.isMovementDisabled() || npc.getAiType() == AIType.MAGE || npc.getAiType() == AIType.HEALER)) {
-					for (Skill sk : skillrender.aiSkills[NpcTemplate.AIST_ATK]) {
+					for (Skill sk : skillrender.aiSkills[AISkillType.AIST_ATK]) {
 						if (sk.getMpConsume() >= npc.getCurrentMp() || npc.isSkillDisabled(sk) ||
-								sk.getCastRange() + npc.getTemplate().collisionRadius + attackTarget.getTemplate().collisionRadius <= dist2 &&
+								sk.getCastRange() + npc.getTemplate().getCollisionRadius() + attackTarget.getTemplate().getCollisionRadius() <= dist2 &&
 										!canAura(sk) || sk.isMagic() && npc.isMuted() || !sk.isMagic() && npc.isPhysicalMuted()) {
 							continue;
 						}
@@ -1698,8 +1703,8 @@ public class AttackableAI extends CreatureAI implements Runnable {
 					try {
 						actor.setTarget(getAttackTarget());
 						dist = Math.sqrt(actor.getPlanDistanceSq(obj.getX(), obj.getY()));
-						dist2 = dist - actor.getTemplate().collisionRadius;
-						range = sk.getCastRange() + actor.getTemplate().collisionRadius + obj.getTemplate().collisionRadius;
+						dist2 = dist - actor.getTemplate().getCollisionRadius();
+						range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + obj.getTemplate().getCollisionRadius();
 						if (obj.isMoving()) {
 							dist2 = dist2 - 70;
 						}
@@ -1723,7 +1728,7 @@ public class AttackableAI extends CreatureAI implements Runnable {
 						actor.setTarget(getAttackTarget());
 						dist = Math.sqrt(actor.getPlanDistanceSq(obj.getX(), obj.getY()));
 						dist2 = dist;
-						range = sk.getCastRange() + actor.getTemplate().collisionRadius + obj.getTemplate().collisionRadius;
+						range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + obj.getTemplate().getCollisionRadius();
 						if (obj.isMoving()) {
 							dist2 = dist2 - 70;
 						}
@@ -1764,8 +1769,8 @@ public class AttackableAI extends CreatureAI implements Runnable {
 					try {
 						actor.setTarget(getAttackTarget());
 						dist = Math.sqrt(actor.getPlanDistanceSq(obj.getX(), obj.getY()));
-						dist2 = dist - actor.getTemplate().collisionRadius;
-						range = sk.getCastRange() + actor.getTemplate().collisionRadius + obj.getTemplate().collisionRadius;
+						dist2 = dist - actor.getTemplate().getCollisionRadius();
+						range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + obj.getTemplate().getCollisionRadius();
 						if (obj.isMoving()) {
 							dist2 = dist2 - 70;
 						}
@@ -1784,7 +1789,7 @@ public class AttackableAI extends CreatureAI implements Runnable {
 			double dist = 0;
 			double dist2 = 0;
 			int range = 0;
-			range = sk.getCastRange() + actor.getTemplate().collisionRadius + getAttackTarget().getTemplate().collisionRadius;
+			range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + getAttackTarget().getTemplate().getCollisionRadius();
 			for (Creature obj : actor.getKnownList().getKnownCharactersInRadius(range)) {
 				if (obj == null || obj.isDead() || !GeoData.getInstance().canSeeTarget(actor, obj)) {
 					continue;
@@ -1792,8 +1797,8 @@ public class AttackableAI extends CreatureAI implements Runnable {
 				try {
 					actor.setTarget(getAttackTarget());
 					dist = Math.sqrt(actor.getPlanDistanceSq(obj.getX(), obj.getY()));
-					dist2 = dist - actor.getTemplate().collisionRadius;
-					range = sk.getCastRange() + actor.getTemplate().collisionRadius + obj.getTemplate().collisionRadius;
+					dist2 = dist - actor.getTemplate().getCollisionRadius();
+					range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + obj.getTemplate().getCollisionRadius();
 					if (obj.isMoving()) {
 						dist2 = dist2 - 70;
 					}
@@ -1836,8 +1841,8 @@ public class AttackableAI extends CreatureAI implements Runnable {
 				try {
 					actor.setTarget(getAttackTarget());
 					dist = Math.sqrt(actor.getPlanDistanceSq(obj.getX(), obj.getY()));
-					dist2 = dist - actor.getTemplate().collisionRadius;
-					range = sk.getCastRange() + actor.getTemplate().collisionRadius + getAttackTarget().getTemplate().collisionRadius;
+					dist2 = dist - actor.getTemplate().getCollisionRadius();
+					range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + getAttackTarget().getTemplate().getCollisionRadius();
 					//if (obj.isMoving())
 					//	dist2 = dist2 - 40;
 				} catch (NullPointerException e) {
@@ -1856,7 +1861,7 @@ public class AttackableAI extends CreatureAI implements Runnable {
 					actor.setTarget(getAttackTarget());
 					dist = Math.sqrt(actor.getPlanDistanceSq(target.getX(), target.getY()));
 					dist2 = dist;
-					range = sk.getCastRange() + actor.getTemplate().collisionRadius + getAttackTarget().getTemplate().collisionRadius;
+					range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + getAttackTarget().getTemplate().getCollisionRadius();
 					//if (obj.isMoving())
 					//	dist2 = dist2 - 40;
 				} catch (NullPointerException e) {
@@ -1906,8 +1911,8 @@ public class AttackableAI extends CreatureAI implements Runnable {
 				}
 				try {
 					dist = Math.sqrt(actor.getPlanDistanceSq(obj.getX(), obj.getY()));
-					dist2 = dist - actor.getTemplate().collisionRadius;
-					range = actor.getPhysicalAttackRange() + actor.getTemplate().collisionRadius + obj.getTemplate().collisionRadius;
+					dist2 = dist - actor.getTemplate().getCollisionRadius();
+					range = actor.getPhysicalAttackRange() + actor.getTemplate().getCollisionRadius() + obj.getTemplate().getCollisionRadius();
 					if (obj.isMoving()) {
 						dist2 = dist2 - 70;
 					}
@@ -2088,14 +2093,14 @@ public class AttackableAI extends CreatureAI implements Runnable {
 	}
 
 	private void lSkillRender() {
-		if (skillrender.aiSkills[NpcTemplate.AIST_LONG_RANGE] == null) {
-			skillrender.aiSkills[NpcTemplate.AIST_LONG_RANGE] = getActiveChar().getLrangeSkill();
+		if (skillrender.aiSkills[AISkillType.AIST_LONG_RANGE] == null) {
+			skillrender.aiSkills[AISkillType.AIST_LONG_RANGE] = getActiveChar().getLrangeSkill();
 		}
 	}
 
 	private void sSkillRender() {
-		if (skillrender.aiSkills[NpcTemplate.AIST_SHORT_RANGE] == null) {
-			skillrender.aiSkills[NpcTemplate.AIST_SHORT_RANGE] = getActiveChar().getSrangeSkill();
+		if (skillrender.aiSkills[AISkillType.AIST_SHORT_RANGE] == null) {
+			skillrender.aiSkills[AISkillType.AIST_SHORT_RANGE] = getActiveChar().getSrangeSkill();
 		}
 	}
 

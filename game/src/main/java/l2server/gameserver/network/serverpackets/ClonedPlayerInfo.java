@@ -78,8 +78,8 @@ public class ClonedPlayerInfo extends L2GameServerPacket {
 		heading = npc.getHeading();
 		mAtkSpd = activeChar.getMAtkSpd();
 		pAtkSpd = activeChar.getPAtkSpd();
-		runSpd = (int) activeChar.getTemplate().baseRunSpd;
-		walkSpd = (int) activeChar.getTemplate().baseWalkSpd;
+		runSpd = (int) activeChar.getTemplate().getBaseRunSpd();
+		walkSpd = (int) activeChar.getTemplate().getBaseWalkSpd();
 	}
 
 	@Override
@@ -146,8 +146,8 @@ public class ClonedPlayerInfo extends L2GameServerPacket {
 		L2Transformation transform = activeChar.getTransformation();
 
 		if (activeChar.getMountType() != 0) {
-			writeF(NpcTable.getInstance().getTemplate(activeChar.getMountNpcId()).fCollisionRadius);
-			writeF(NpcTable.getInstance().getTemplate(activeChar.getMountNpcId()).fCollisionHeight);
+			writeF(NpcTable.getInstance().getTemplate(activeChar.getMountNpcId()).getFCollisionRadius());
+			writeF(NpcTable.getInstance().getTemplate(activeChar.getMountNpcId()).getFCollisionHeight());
 		} else if (transform != null) {
 			writeF(transform.getCollisionRadius());
 			writeF(transform.getCollisionHeight());

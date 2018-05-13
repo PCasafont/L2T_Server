@@ -277,11 +277,11 @@ public class FarmZoneManager {
 						}
 					}
 
-					mob.baseHpMax *= hpMultiplier;
-					mob.basePAtk *= atkMultiplier;
-					mob.baseMAtk *= atkMultiplier;
-					mob.basePDef *= defMultiplier;
-					mob.baseMDef *= mdefMultiplier;
+					mob.setBaseHpMax(mob.getBaseHpMax() * hpMultiplier);
+					mob.setBasePAtk(mob.getBasePAtk() * atkMultiplier);
+					mob.setBaseMAtk(mob.getBaseMAtk() * atkMultiplier);
+					mob.setBasePDef(mob.getBasePDef() * defMultiplier);
+					mob.setBaseMDef(mob.getBaseMDef() * mdefMultiplier);
 					mob.RewardExp = (long) (mob.RewardExp * expMultiplier);
 
 					if (level > 0) {

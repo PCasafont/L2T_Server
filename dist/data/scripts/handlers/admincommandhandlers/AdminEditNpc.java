@@ -521,35 +521,35 @@ public class AdminEditNpc implements IAdminCommandHandler {
 			adminReply.replace("%serverSideName%", npc.ServerSideName == true ? "1" : "0");
 			adminReply.replace("%title%", npc.Title);
 			adminReply.replace("%serverSideTitle%", npc.ServerSideTitle == true ? "1" : "0");
-			adminReply.replace("%collisionRadius%", String.valueOf(npc.fCollisionRadius));
-			adminReply.replace("%collisionHeight%", String.valueOf(npc.fCollisionHeight));
+			adminReply.replace("%collisionRadius%", String.valueOf(npc.getFCollisionRadius()));
+			adminReply.replace("%collisionHeight%", String.valueOf(npc.getFCollisionHeight()));
 			adminReply.replace("%level%", String.valueOf(npc.Level));
 			adminReply.replace("%type%", String.valueOf(npc.Type));
-			adminReply.replace("%attackRange%", String.valueOf(npc.baseAtkRange));
-			adminReply.replace("%hp%", String.valueOf(npc.baseHpMax));
-			adminReply.replace("%mp%", String.valueOf(npc.baseMpMax));
-			adminReply.replace("%hpRegen%", String.valueOf(npc.baseHpReg));
-			adminReply.replace("%mpRegen%", String.valueOf(npc.baseMpReg));
-			adminReply.replace("%str%", String.valueOf(npc.baseSTR));
-			adminReply.replace("%con%", String.valueOf(npc.baseCON));
-			adminReply.replace("%dex%", String.valueOf(npc.baseDEX));
-			adminReply.replace("%int%", String.valueOf(npc.baseINT));
-			adminReply.replace("%wit%", String.valueOf(npc.baseWIT));
-			adminReply.replace("%men%", String.valueOf(npc.baseMEN));
+			adminReply.replace("%attackRange%", String.valueOf(npc.getBaseAtkRange()));
+			adminReply.replace("%hp%", String.valueOf(npc.getBaseHpMax()));
+			adminReply.replace("%mp%", String.valueOf(npc.getBaseMpMax()));
+			adminReply.replace("%hpRegen%", String.valueOf(npc.getBaseHpReg()));
+			adminReply.replace("%mpRegen%", String.valueOf(npc.getBaseMpReg()));
+			adminReply.replace("%str%", String.valueOf(npc.getBaseSTR()));
+			adminReply.replace("%con%", String.valueOf(npc.getBaseCON()));
+			adminReply.replace("%dex%", String.valueOf(npc.getBaseDEX()));
+			adminReply.replace("%int%", String.valueOf(npc.getBaseINT()));
+			adminReply.replace("%wit%", String.valueOf(npc.getBaseWIT()));
+			adminReply.replace("%men%", String.valueOf(npc.getBaseMEN()));
 			adminReply.replace("%exp%", String.valueOf(npc.RewardExp));
 			adminReply.replace("%sp%", String.valueOf(npc.RewardSp));
-			adminReply.replace("%pAtk%", String.valueOf(npc.basePAtk));
-			adminReply.replace("%pDef%", String.valueOf(npc.basePDef));
-			adminReply.replace("%mAtk%", String.valueOf(npc.baseMAtk));
-			adminReply.replace("%mDef%", String.valueOf(npc.baseMDef));
-			adminReply.replace("%pAtkSpd%", String.valueOf(npc.basePAtkSpd));
+			adminReply.replace("%pAtk%", String.valueOf(npc.getBasePAtk()));
+			adminReply.replace("%pDef%", String.valueOf(npc.getBasePDef()));
+			adminReply.replace("%mAtk%", String.valueOf(npc.getBaseMAtk()));
+			adminReply.replace("%mDef%", String.valueOf(npc.getBaseMDef()));
+			adminReply.replace("%pAtkSpd%", String.valueOf(npc.getBasePAtkSpd()));
 			adminReply.replace("%aggro%", String.valueOf(npc.AggroRange));
-			adminReply.replace("%mAtkSpd%", String.valueOf(npc.baseMAtkSpd));
+			adminReply.replace("%mAtkSpd%", String.valueOf(npc.getBaseMAtkSpd()));
 			adminReply.replace("%rHand%", String.valueOf(npc.RHand));
 			adminReply.replace("%lHand%", String.valueOf(npc.LHand));
 			adminReply.replace("%enchant%", String.valueOf(npc.EnchantEffect));
-			adminReply.replace("%walkSpd%", String.valueOf(npc.baseWalkSpd));
-			adminReply.replace("%runSpd%", String.valueOf(npc.baseRunSpd));
+			adminReply.replace("%walkSpd%", String.valueOf(npc.getBaseWalkSpd()));
+			adminReply.replace("%runSpd%", String.valueOf(npc.getBaseRunSpd()));
 			adminReply.replace("%factionId%", npc.getAIData().getClan() == null ? "" : npc.getAIData().getClan());
 			adminReply.replace("%factionRange%", String.valueOf(npc.getAIData().getClanRange()));
 		} else {
@@ -589,63 +589,63 @@ public class AdminEditNpc implements IAdminCommandHandler {
 			} else if (statToSet.equals("serverSideTitle")) {
 				npc.ServerSideTitle = Boolean.parseBoolean(value);
 			} else if (statToSet.equals("collisionRadius")) {
-				npc.fCollisionRadius = Float.parseFloat(value);
+				npc.setFCollisionRadius(Float.parseFloat(value));
 			} else if (statToSet.equals("collisionHeight")) {
-				npc.fCollisionHeight = Float.parseFloat(value);
+				npc.setFCollisionHeight(Float.parseFloat(value));
 			} else if (statToSet.equals("level")) {
 				npc.Level = Byte.parseByte(value);
 			} else if (statToSet.equals("type")) {
 				Class.forName("l2server.gameserver.model.actor.instance." + value + "Instance");
 				npc.Type = value;
 			} else if (statToSet.equals("attackRange")) {
-				npc.baseAtkRange = Integer.valueOf(value);
+				npc.setBaseAtkRange(Integer.valueOf(value));
 			} else if (statToSet.equals("hp")) {
-				npc.baseHpMax = Integer.valueOf(value);
+				npc.setBaseHpMax(Integer.valueOf(value));
 			} else if (statToSet.equals("mp")) {
-				npc.baseMpMax = Integer.valueOf(value);
+				npc.setBaseMpMax(Integer.valueOf(value));
 			} else if (statToSet.equals("hpRegen")) {
-				npc.baseHpReg = Integer.valueOf(value);
+				npc.setBaseHpReg(Integer.valueOf(value));
 			} else if (statToSet.equals("mpRegen")) {
-				npc.baseMpReg = Integer.valueOf(value);
+				npc.setBaseMpReg(Integer.valueOf(value));
 			} else if (statToSet.equals("str")) {
-				npc.baseSTR = Integer.valueOf(value);
+				npc.setBaseSTR(Integer.valueOf(value));
 			} else if (statToSet.equals("con")) {
-				npc.baseCON = Integer.valueOf(value);
+				npc.setBaseCON(Integer.valueOf(value));
 			} else if (statToSet.equals("dex")) {
-				npc.baseDEX = Integer.valueOf(value);
+				npc.setBaseDEX(Integer.valueOf(value));
 			} else if (statToSet.equals("int")) {
-				npc.baseINT = Integer.valueOf(value);
+				npc.setBaseINT(Integer.valueOf(value));
 			} else if (statToSet.equals("wit")) {
-				npc.baseWIT = Integer.valueOf(value);
+				npc.setBaseWIT(Integer.valueOf(value));
 			} else if (statToSet.equals("men")) {
-				npc.baseMEN = Integer.valueOf(value);
+				npc.setBaseMEN(Integer.valueOf(value));
 			} else if (statToSet.equals("exp")) {
 				npc.RewardExp = Long.valueOf(value);
 			} else if (statToSet.equals("sp")) {
 				npc.RewardSp = Long.valueOf(value);
 			} else if (statToSet.equals("pAtk")) {
-				npc.basePAtk = Integer.valueOf(value);
+				npc.setBasePAtk(Integer.valueOf(value));
 			} else if (statToSet.equals("pDef")) {
-				npc.basePDef = Integer.valueOf(value);
+				npc.setBasePDef(Integer.valueOf(value));
 			} else if (statToSet.equals("mAtk")) {
-				npc.baseMAtk = Integer.valueOf(value);
+				npc.setBaseMAtk(Integer.valueOf(value));
 			} else if (statToSet.equals("mDef")) {
-				npc.baseMDef = Integer.valueOf(value);
+				npc.setBaseMDef(Integer.valueOf(value));
 			} else if (statToSet.equals("pAtkSpd")) {
-				npc.basePAtkSpd = Integer.valueOf(value);
+				npc.setBasePAtkSpd(Integer.valueOf(value));
 			} else if (statToSet.equals("aggro")) {
 				npc.AggroRange = Integer.valueOf(value);
 				npc.Aggressive = npc.AggroRange > 0;
 			} else if (statToSet.equals("mAtkSpd")) {
-				npc.baseMAtkSpd = Integer.valueOf(value);
+				npc.setBaseMAtkSpd(Integer.valueOf(value));
 			} else if (statToSet.equals("rHand")) {
 				npc.RHand = Integer.valueOf(value);
 			} else if (statToSet.equals("lHand")) {
 				npc.LHand = Integer.valueOf(value);
 			} else if (statToSet.equals("walkSpd")) {
-				npc.baseWalkSpd = Integer.valueOf(value);
+				npc.setBaseWalkSpd(Integer.valueOf(value));
 			} else if (statToSet.equals("runSpd")) {
-				npc.baseRunSpd = Integer.valueOf(value);
+				npc.setBaseRunSpd(Integer.valueOf(value));
 			}
 
 			showNpcProperty(activeChar, NpcTable.getInstance().getTemplate(npcId));

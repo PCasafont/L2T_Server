@@ -64,8 +64,8 @@ public class MonRaceInfo extends L2GameServerPacket {
 			writeD(12080); //end X
 			writeD(181875 + 58 * (7 - i)); //end Y
 			writeD(-3566); //end Z
-			writeF(monsters[i].getTemplate().fCollisionHeight); //coll. height
-			writeF(monsters[i].getTemplate().fCollisionRadius); //coll. radius
+			writeF(monsters[i].getTemplate().getFCollisionHeight()); //coll. height
+			writeF(monsters[i].getTemplate().getFCollisionRadius()); //coll. radius
 			writeD(120); // ?? unknown
 			for (int j = 0; j < 20; j++) {
 				if (unknown1 == 0) {

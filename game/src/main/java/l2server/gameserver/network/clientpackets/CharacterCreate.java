@@ -260,8 +260,8 @@ public final class CharacterCreate extends L2GameClientPacket {
 		}
 		else
 		{
-			newChar.setXYZInvisible(template.startX + Rnd.get(-template.startRandom, template.startRandom),
-					template.startY + Rnd.get(-template.startRandom, template.startRandom), template.startZ);
+			newChar.setXYZInvisible(template.getStartX() + Rnd.get(-template.getStartRandom(), template.getStartRandom()),
+					template.getStartY() + Rnd.get(-template.getStartRandom(), template.getStartRandom()), template.getStartZ());
 		}
 		newChar.setTitle("L2Legacy");
 

@@ -525,7 +525,7 @@ public class PcStat extends PlayableStat {
 		}
 
 		if (player.isMounted()) {
-			float baseRunSpd = NpcTable.getInstance().getTemplate(getActiveChar().getMountNpcId()).baseRunSpd;
+			float baseRunSpd = NpcTable.getInstance().getTemplate(getActiveChar().getMountNpcId()).getBaseRunSpd();
 			val = (int) Math.round(calcStat(Stats.RUN_SPEED, baseRunSpd, null, null));
 		} else {
 			val = super.getRunSpeed();
@@ -595,7 +595,7 @@ public class PcStat extends PlayableStat {
 		}
 
 		if (getActiveChar().isMounted()) {
-			return getRunSpeed() * 1f / NpcTable.getInstance().getTemplate(getActiveChar().getMountNpcId()).baseRunSpd;
+			return getRunSpeed() * 1f / NpcTable.getInstance().getTemplate(getActiveChar().getMountNpcId()).getBaseRunSpd();
 		}
 
 		return super.getMovementSpeedMultiplier();
