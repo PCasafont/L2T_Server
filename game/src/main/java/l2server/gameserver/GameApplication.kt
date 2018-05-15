@@ -1,6 +1,14 @@
 package l2server.gameserver
 
+import com.fasterxml.jackson.databind.SerializationFeature
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import io.ktor.application.call
+import io.ktor.application.install
+import io.ktor.features.CallLogging
+import io.ktor.features.Compression
+import io.ktor.features.ContentNegotiation
+import io.ktor.features.DefaultHeaders
+import io.ktor.jackson.jackson
 import io.ktor.response.respond
 import io.ktor.routing.get
 import io.ktor.routing.routing
@@ -50,6 +58,15 @@ fun main(args: Array<String>) {
 
 	// Run ktor application
 	val server = embeddedServer(Netty, port = 8087) {
+		install(DefaultHeaders)
+		install(Compression)
+		install(CallLogging)
+		install(ContentNegotiation) {
+			jackson {
+				configure(SerializationFeature.INDENT_OUTPUT, true)
+				registerModule(JavaTimeModule())
+			}
+		}
 		routing {
 			get("/population") {
 				data class PlayerClassDto(val classId: Int, val className: String, val count: Int)

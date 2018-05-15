@@ -32,6 +32,8 @@ dependencies {
 
 	// Ktor
 	compile("io.ktor:ktor-server-netty:$ktorVersion")
+	compile("io.ktor:ktor-jackson:$ktorVersion")
+	compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.2")
 
 	// Logging
 	compile "ch.qos.logback:logback-classic:1.2.1"
