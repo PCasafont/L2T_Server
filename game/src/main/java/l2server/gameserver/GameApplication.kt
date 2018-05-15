@@ -4,10 +4,7 @@ import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import io.ktor.application.call
 import io.ktor.application.install
-import io.ktor.features.CallLogging
-import io.ktor.features.Compression
-import io.ktor.features.ContentNegotiation
-import io.ktor.features.DefaultHeaders
+import io.ktor.features.*
 import io.ktor.jackson.jackson
 import io.ktor.response.respond
 import io.ktor.routing.get
@@ -61,6 +58,9 @@ fun main(args: Array<String>) {
 		install(DefaultHeaders)
 		install(Compression)
 		install(CallLogging)
+		install(CORS) {
+			anyHost()
+		}
 		install(ContentNegotiation) {
 			jackson {
 				configure(SerializationFeature.INDENT_OUTPUT, true)
@@ -69,10 +69,10 @@ fun main(args: Array<String>) {
 		}
 		routing {
 			get("/population") {
-				data class PlayerClassDto(val classId: Int, val className: String, val count: Int)
+				data class PlayerClassPopulationDto(val classId: Int, val className: String, val count: Int)
 				val classDtos = World.getInstance().allPlayers.values.groupBy { it.currentClass }.map {
 					val playerClass = it.key
-					PlayerClassDto(playerClass.id, playerClass.name, it.value.size)
+					PlayerClassPopulationDto(playerClass.id, playerClass.name, it.value.size)
 				}
 				call.respond(classDtos)
 			}
