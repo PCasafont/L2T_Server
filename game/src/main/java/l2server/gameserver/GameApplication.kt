@@ -1,7 +1,7 @@
 package l2server.gameserver
 
 import io.ktor.application.call
-import io.ktor.response.respondText
+import io.ktor.response.respond
 import io.ktor.routing.get
 import io.ktor.routing.routing
 import io.ktor.server.engine.embeddedServer
@@ -10,6 +10,7 @@ import l2server.Config
 import l2server.DatabasePool
 import l2server.ServerMode
 import l2server.gameserver.idfactory.IdFactory
+import l2server.gameserver.model.World
 import l2server.util.concurrent.ThreadPool
 import l2server.util.loader.Loader
 import org.slf4j.LoggerFactory
@@ -48,12 +49,17 @@ fun main(args: Array<String>) {
 	log.info("Server Loaded in " + (serverLoadEnd - serverLoadStart) / 1000 + " seconds")
 
 	// Run ktor application
-	//val server = embeddedServer(Netty, port = 8087) {
-	//	routing {
-	//		get("/") {
-	//			call.respondText("Ktor UP!")
-	//		}
-	//	}
-	//}
-	//server.start(wait = true)
+	val server = embeddedServer(Netty, port = 8087) {
+		routing {
+			get("/population") {
+				data class PlayerClassDto(val classId: Int, val className: String, val count: Int)
+				val classDtos = World.getInstance().allPlayers.values.groupBy { it.currentClass }.map {
+					val playerClass = it.key
+					PlayerClassDto(playerClass.id, playerClass.name, it.value.size)
+				}
+				call.respond(classDtos)
+			}
+		}
+	}
+	server.start(wait = true)
 }
