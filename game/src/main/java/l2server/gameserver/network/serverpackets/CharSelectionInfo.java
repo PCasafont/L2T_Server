@@ -187,11 +187,11 @@ public class CharSelectionInfo extends L2GameServerPacket {
 			writeH(0x00);
 			
 			// Salvation unknown
-			writeD(0x00);
-			writeD(0x00);
-			writeD(0x00);
-			writeD(0x00);
-			writeD(0x00);
+			//writeD(0x00);
+			//writeD(0x00);
+			//writeD(0x00);
+			//writeD(0x00);
+			//writeD(0x00);
 			
 			writeD(charInfoPackage.getHairStyle());
 			writeD(charInfoPackage.getHairColor());

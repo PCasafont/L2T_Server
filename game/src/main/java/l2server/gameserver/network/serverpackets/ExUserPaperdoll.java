@@ -302,35 +302,35 @@ public final class ExUserPaperdoll extends L2GameServerPacket {
 		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_JEWELRY6));
 		
 		// Salvation (still unknown)
-		buffer.putShort((short) 22);
-		buffer.putInt(0);
-		buffer.putInt(0);
-		buffer.putLong(0);
-		buffer.putInt(0);
-		
-		buffer.putShort((short) 22);
-		buffer.putInt(0);
-		buffer.putInt(0);
-		buffer.putLong(0);
-		buffer.putInt(0);
-		
-		buffer.putShort((short) 22);
-		buffer.putInt(0);
-		buffer.putInt(0);
-		buffer.putLong(0);
-		buffer.putInt(0);
-		
-		buffer.putShort((short) 22);
-		buffer.putInt(0);
-		buffer.putInt(0);
-		buffer.putLong(0);
-		buffer.putInt(0);
-		
-		buffer.putShort((short) 22);
-		buffer.putInt(0);
-		buffer.putInt(0);
-		buffer.putLong(0);
-		buffer.putInt(0);
+		//buffer.putShort((short) 22);
+		//buffer.putInt(0);
+		//buffer.putInt(0);
+		//buffer.putLong(0);
+		//buffer.putInt(0);
+		//
+		//buffer.putShort((short) 22);
+		//buffer.putInt(0);
+		//buffer.putInt(0);
+		//buffer.putLong(0);
+		//buffer.putInt(0);
+		//
+		//buffer.putShort((short) 22);
+		//buffer.putInt(0);
+		//buffer.putInt(0);
+		//buffer.putLong(0);
+		//buffer.putInt(0);
+		//
+		//buffer.putShort((short) 22);
+		//buffer.putInt(0);
+		//buffer.putInt(0);
+		//buffer.putLong(0);
+		//buffer.putInt(0);
+		//
+		//buffer.putShort((short) 22);
+		//buffer.putInt(0);
+		//buffer.putInt(0);
+		//buffer.putLong(0);
+		//buffer.putInt(0);
 		
 		int size = buffer.position();
 		buffer.position(0);

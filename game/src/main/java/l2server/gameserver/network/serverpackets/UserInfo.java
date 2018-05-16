@@ -247,9 +247,10 @@ public final class UserInfo extends L2GameServerPacket {
 		buffer.put((byte) 0);
 		buffer.put((byte) 0);
 		buffer.put((byte) 0);
+
 		//Salvation
-		buffer.put((byte) 0);
-		buffer.put((byte) 0);
+		//buffer.put((byte) 0);
+		//buffer.put((byte) 0);
 		
 		// Movement flags
 		buffer.putShort((short) 4);

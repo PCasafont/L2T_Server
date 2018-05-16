@@ -13,7 +13,8 @@ import java.util.*
 /**
  * @author Pere
  */
-object PacketOpcodes {
+object PacketOpcodes
+{
 
     private val log = LoggerFactory.getLogger(PacketOpcodes::class.java)
 

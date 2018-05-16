@@ -35,12 +35,21 @@ public class ProtocolVersion extends L2GameClientPacket {
 		} else if (version == -3L) {
 			client.closeNow();
 			return;
-		} else if (version == 140) {
-			client.setProtocolOk(true);
-			KeyPacket pk = new KeyPacket(client.enableCrypt(), 1);
-			client.sendPacket(pk);
-			return;
 		}
+        else if (version == 64) //Helios
+        {
+            client.setProtocolOk(true);
+            KeyPacket pk = new KeyPacket(client.enableCrypt(), 1);
+            client.sendPacket(pk);
+            return;
+        }
+		//else if (version == 140) //Salvation
+		//{
+		//	client.setProtocolOk(true);
+		//	KeyPacket pk = new KeyPacket(client.enableCrypt(), 1);
+		//	client.sendPacket(pk);
+		//	return;
+		//}
 
 		client.setProtocolOk(false);
 		client.close(new KeyPacket(null));
