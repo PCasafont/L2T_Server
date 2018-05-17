@@ -1377,7 +1377,8 @@ public class Npc extends Creature {
 	 * @param killer The Creature who killed it
 	 */
 	@Override
-	public boolean doDie(Creature killer) {
+	public boolean doDie(Creature killer)
+	{
 		if (!super.doDie(killer)) {
 			return false;
 		}

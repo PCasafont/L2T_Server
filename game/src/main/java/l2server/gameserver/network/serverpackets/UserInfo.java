@@ -239,7 +239,8 @@ public final class UserInfo extends L2GameServerPacket {
 		buffer.putInt(RaidBossPointsManager.getInstance().getPointsByOwnerId(player.getObjectId())); // Raid points
 		
 		// Unknown
-		buffer.putShort((short) 11);
+		buffer.putShort((short) 11);//salvation
+		buffer.putShort((short) 9);
 		buffer.put((byte) player.getInventory().getMaxTalismanCount());
 		buffer.put((byte) player.getInventory().getMaxJewelryCount());
 		buffer.put((byte) player.getTeam());

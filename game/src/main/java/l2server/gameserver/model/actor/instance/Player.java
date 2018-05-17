@@ -12041,7 +12041,8 @@ public class Player extends Playable {
 	 * <li>Close the connection with the client </li><BR><BR>
 	 */
 	@Override
-	public void deleteMe() {
+	public void deleteMe()
+	{
 		cleanup();
 		store();
 		super.deleteMe();
@@ -12049,12 +12050,15 @@ public class Player extends Playable {
 	
 	private synchronized void cleanup() {
 		// Set the online Flag to True or False and update the characters table of the database with online status and lastAccess (called when login and logout)
-		try {
-			if (!isOnline()) {
+		try
+            {
+			if (!isOnline())
+			{
 				log.error("deleteMe() called on offline character " + this, new RuntimeException());
 			}
 			setOnlineStatus(false, true);
-		} catch (Exception e) {
+		} catch (Exception e)
+		{
 			log.error("deleteMe()", e);
 		}
 		
