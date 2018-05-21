@@ -2969,7 +2969,7 @@ abstract class Creature(objectId: Int, template: CreatureTemplate?): WorldObject
 
 	open fun setAI(newAI: CreatureAI?) {
 		val oldAI = ai
-		if (oldAI != null && oldAI !== newAI && oldAI is AttackableAI) {
+		if (oldAI !== newAI && oldAI is AttackableAI) {
 			oldAI.stopAITask()
 		}
 		ai = newAI
