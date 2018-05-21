@@ -44,7 +44,7 @@ public class SupportMagic implements IBypassHandler {
 	}
 	
 	/**
-	 * Add Newbie helper buffs to L2Player according to its level.<BR><BR>
+	 * Add Newbie helper buffs to player according to its level.<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Get the range level in wich player must be to obtain buff </li>

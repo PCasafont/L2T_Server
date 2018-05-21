@@ -2787,7 +2787,7 @@ abstract class Creature(objectId: Int, template: CreatureTemplate?): WorldObject
 	 *
 	 * @param killer The Creature who killed it
 	 */
-	open fun doDie(killer: Creature): Boolean
+	open fun doDie(killer: Creature?): Boolean
 	{
 		// killing is only possible one time
 		synchronized(this) {
@@ -2893,7 +2893,7 @@ abstract class Creature(objectId: Int, template: CreatureTemplate?): WorldObject
 		}
 	}
 
-	protected open fun calculateRewards(killer: Creature) {}
+	protected open fun calculateRewards(killer: Creature?) {}
 
 	/**
 	 * Sets HP, MP and CP and revives the Creature.

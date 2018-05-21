@@ -885,7 +885,7 @@ public class CreatureAI extends AbstractAI {
 	 * <li>If the distance <= offset+20, Stop the actor movement server side AND client side by sending Server->Client packet StopMove/StopRotation (broadcast)</li><BR><BR>
 	 * <p>
 	 * <B><U> Example of use </U> :</B><BR><BR>
-	 * <li> L2PLayerAI, SummonAI</li><BR><BR>
+	 * <li> playerAI, SummonAI</li><BR><BR>
 	 *
 	 * @param target The targeted WorldObject
 	 * @param offset The Interact area radius
@@ -978,7 +978,7 @@ public class CreatureAI extends AbstractAI {
 	 * <li>Set the Intention of this AbstractAI to AI_INTENTION_ACTIVE</li><BR><BR>
 	 * <p>
 	 * <B><U> Example of use </U> :</B><BR><BR>
-	 * <li> L2PLayerAI, SummonAI</li><BR><BR>
+	 * <li> playerAI, SummonAI</li><BR><BR>
 	 *
 	 * @param target The targeted WorldObject
 	 * @return True if the target is lost or dead (false if fakedeath)
@@ -1007,7 +1007,7 @@ public class CreatureAI extends AbstractAI {
 	 * <li>Set the Intention of this AbstractAI to AI_INTENTION_ACTIVE</li><BR><BR>
 	 * <p>
 	 * <B><U> Example of use </U> :</B><BR><BR>
-	 * <li> L2PLayerAI, SummonAI</li><BR><BR>
+	 * <li> playerAI, SummonAI</li><BR><BR>
 	 *
 	 * @param target The targeted WorldObject
 	 * @return True if the target is lost

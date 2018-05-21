@@ -7,7 +7,7 @@
 *.class
 
 # Logs
-/log/
+log/
 *.log
 
 # Package Files #
@@ -22,7 +22,7 @@
 hs_err_pid*
 
 # Other
-/bin
-/dist/log
+bin/
+dist/log/
 *.l2j
 *.cache

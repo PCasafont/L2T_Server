@@ -360,7 +360,8 @@ public class GameServerTable {
 					return a.getServerAddress();
 				}
 			}
-			return null; // should not happens
+			log.warn("Could not find a server address for {}", addr);
+			return null; // should never happen
 		}
 		
 		public String[] getServerAddresses() {

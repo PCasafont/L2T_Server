@@ -31,12 +31,6 @@ import l2server.gameserver.model.actor.Playable;
 
 import java.util.Iterator;
 
-/**
- * This class ...
- *
- * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
- */
-
 public abstract class L2ObjectSet<T extends WorldObject> implements Iterable<T> {
 	public static L2ObjectSet<WorldObject> createL2ObjectSet() {
 		switch (Config.SET_TYPE) {
@@ -46,8 +40,8 @@ public abstract class L2ObjectSet<T extends WorldObject> implements Iterable<T> 
 				return new L2ObjectHashSet<>();
 		}
 	}
-
-	public static L2ObjectSet<Playable> createL2PlayerSet() {
+	
+	public static L2ObjectSet<Playable> createplayerSet() {
 		switch (Config.SET_TYPE) {
 			case WorldObjectSet:
 				return new WorldObjectSet<>();

@@ -56,8 +56,8 @@ public class IPSubnet {
 	public boolean applyMask(byte[] addr) {
 		// V4 vs V4 or V6 vs V6 checks
 		if (isIPv4 == (addr.length == 4)) {
-			for (int i = 0; i < addr.length; i++) {
-				if ((addr[i] & mask[i]) != addr[i]) {
+			for (int i = 0; i < this.addr.length; i++) {
+				if ((addr[i] & mask[i]) != this.addr[i]) {
 					return false;
 				}
 			}
@@ -65,15 +65,15 @@ public class IPSubnet {
 			// check for embedded v4 in v6 addr (not done !)
 			if (isIPv4) {
 				// my V4 vs V6
-				for (int i = 0; i < addr.length; i++) {
-					if ((addr[i + 12] & mask[i]) != addr[i]) {
+				for (int i = 0; i < this.addr.length; i++) {
+					if ((addr[i + 12] & mask[i]) != this.addr[i]) {
 						return false;
 					}
 				}
 			} else {
 				// my V6 vs V4
-				for (int i = 0; i < addr.length; i++) {
-					if ((addr[i] & mask[i + 12]) != addr[i + 12]) {
+				for (int i = 0; i < this.addr.length; i++) {
+					if ((addr[i] & mask[i + 12]) != this.addr[i + 12]) {
 						return false;
 					}
 				}
