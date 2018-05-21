@@ -4,7 +4,6 @@ import gnu.trove.TIntHashSet;
 import gnu.trove.TIntProcedure;
 import l2server.Config;
 import l2server.gameserver.Announcements;
-import l2server.gameserver.Server;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.DoorTable;
 import l2server.gameserver.datatables.MapRegionTable;
@@ -41,7 +40,7 @@ import java.util.concurrent.ScheduledFuture;
  * @author evill33t, GodKratos
  */
 public class Instance {
-	private static Logger log = LoggerFactory.getLogger(Server.class.getName());
+	private static Logger log = LoggerFactory.getLogger(Instance.class.getName());
 	
 	private int id;
 	private String name;

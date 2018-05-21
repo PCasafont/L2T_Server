@@ -20,7 +20,6 @@
 package l2server.gameserver.communitybbs.Manager;
 
 import l2server.Config;
-import l2server.gameserver.Server;
 import l2server.gameserver.model.BlockList;
 import l2server.gameserver.model.World;
 import l2server.gameserver.model.actor.instance.Player;
@@ -37,6 +36,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
+
+import static l2server.gameserver.GameApplicationKt.getDateTimeServerStarted;
 
 public class RegionBBSManager extends BaseBBSManager {
 	private static Logger logChat = Logger.getLogger("chat");
@@ -329,7 +330,7 @@ public class RegionBBSManager extends BaseBBSManager {
 			htmlCode.setLength(0);
 			StringUtil.append(htmlCode,
 					"<html><body><br><table>" + trOpen + "<td align=left valign=top>Server Restarted: ",
-					String.valueOf(Server.dateTimeServerStarted.getTime()),
+					String.valueOf(getDateTimeServerStarted().getTime()),
 					tdClose + trClose + "</table><table>" + trOpen + tdOpen + "XP Rate: x",
 					String.valueOf(Config.RATE_XP),
 					tdClose + colSpacer + tdOpen + "Party XP Rate: x",
@@ -433,7 +434,7 @@ public class RegionBBSManager extends BaseBBSManager {
 			htmlCode.setLength(0);
 			StringUtil.append(htmlCode,
 					"<html><body><br><table>" + trOpen + "<td align=left valign=top>Server Restarted: ",
-					String.valueOf(Server.dateTimeServerStarted.getTime()),
+					String.valueOf(getDateTimeServerStarted().getTime()),
 					tdClose + trClose + "</table><table>" + trOpen + tdOpen + "XP Rate: ",
 					String.valueOf(Config.RATE_XP),
 					tdClose + colSpacer + tdOpen + "Party XP Rate: ",

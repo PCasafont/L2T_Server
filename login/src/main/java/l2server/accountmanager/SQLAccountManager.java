@@ -19,11 +19,11 @@ import l2server.Base64;
 import l2server.Config;
 import l2server.DatabasePool;
 import l2server.ServerMode;
+import l2server.util.crypt.PasswordCrypt;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.LineNumberReader;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -166,10 +166,7 @@ public class SQLAccountManager {
 	
 	private static void addOrUpdateAccount(String account, String password, String level) throws IOException, SQLException, NoSuchAlgorithmException {
 		// Encode Password
-		MessageDigest md = MessageDigest.getInstance("SHA-512");
-		byte[] newpass;
-		newpass = (password.toLowerCase() + "XjCSl+n/mpc4" + account.toLowerCase()).getBytes("UTF-8");
-		newpass = md.digest(newpass);
+		byte[] newpass = PasswordCrypt.INSTANCE.encryptPassword(account, password);
 		
 		// Add to Base
 		Connection con = null;

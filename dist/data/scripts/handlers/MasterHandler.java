@@ -104,7 +104,6 @@ public class MasterHandler {
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMonsterRace());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminPathNode());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminPetition());
-		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminPForge());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminPledge());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminPolymorph());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminQuest());

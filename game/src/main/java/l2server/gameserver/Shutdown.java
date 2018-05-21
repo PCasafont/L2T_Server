@@ -38,6 +38,8 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Collection;
 
+import static l2server.gameserver.GameApplicationKt.getSelectorThread;
+
 /**
  * This class provides the functions for shutting down and restarting the server
  * It closes all open clientconnections and saves all data.
@@ -215,7 +217,7 @@ public class Shutdown extends Thread {
 
 		// saveData sends messages to exit players, so shutdown selector after it
 		try {
-			Server.gameServer.getSelectorThread().shutdown();
+			getSelectorThread().shutdown();
 		} catch (Throwable t) {
 			log.warn("Something went wrong while shutting down selector thread: " + t.getMessage());
 			t.printStackTrace();

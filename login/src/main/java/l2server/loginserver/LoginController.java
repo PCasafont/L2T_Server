@@ -23,6 +23,7 @@ import l2server.loginserver.network.L2LoginClient;
 import l2server.loginserver.network.gameserverpackets.ServerStatus;
 import l2server.loginserver.network.serverpackets.LoginFail.LoginFailReason;
 import l2server.util.Rnd;
+import l2server.util.crypt.PasswordCrypt;
 import l2server.util.crypt.ScrambledKeyPair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,7 +33,6 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.security.GeneralSecurityException;
 import java.security.KeyPairGenerator;
-import java.security.MessageDigest;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.spec.RSAKeyGenParameterSpec;
 import java.sql.Connection;
@@ -517,10 +517,7 @@ public class LoginController {
 
 		Connection con = null;
 		try {
-			MessageDigest md = MessageDigest.getInstance("SHA-512");
-			byte[] raw = (password.toLowerCase() + "XjCSl+n/mpc4" + user.toLowerCase()).getBytes("UTF-8");
-			byte[] hash = md.digest(raw);
-
+			byte[] hash = PasswordCrypt.INSTANCE.encryptPassword(user, password);
 			byte[] expected = null;
 			int access = 0;
 			int lastServer = 1;

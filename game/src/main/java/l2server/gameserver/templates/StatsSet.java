@@ -15,7 +15,6 @@
 
 package l2server.gameserver.templates;
 
-import l2server.gameserver.Server;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,7 +29,7 @@ import java.util.Map.Entry;
  * Methods deployed are accessors to the set (add/get value from its key) and addition of a whole set in the current one.
  */
 public final class StatsSet {
-	private static Logger log = LoggerFactory.getLogger(Server.class.getName());
+	private static Logger log = LoggerFactory.getLogger(StatsSet.class.getName());
 	
 	private final Map<String, Object> set = new HashMap<>();
 	

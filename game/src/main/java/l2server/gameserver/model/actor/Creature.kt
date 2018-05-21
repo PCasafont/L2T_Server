@@ -3162,7 +3162,7 @@ abstract class Creature(objectId: Int, template: CreatureTemplate?): WorldObject
 	/**
 	 * Task of AI notification
 	 */
-	inner class NotifyAITask internal constructor(private val evt: CtrlEvent) : Runnable {
+	inner class NotifyAITask(private val evt: CtrlEvent) : Runnable {
 
 		override fun run() {
 			try {
@@ -3177,7 +3177,7 @@ abstract class Creature(objectId: Int, template: CreatureTemplate?): WorldObject
 	/**
 	 * Task lauching the magic skill phases
 	 */
-	internal inner class FlyToLocationTask(private val actor: Creature, private val x: Int, private val y: Int, private val z: Int) : Runnable {
+	inner class FlyToLocationTask(private val actor: Creature, private val x: Int, private val y: Int, private val z: Int) : Runnable {
 
 		override fun run() {
 			try {
@@ -3195,8 +3195,6 @@ abstract class Creature(objectId: Int, template: CreatureTemplate?): WorldObject
 
 		}
 	}
-
-	// Method - Public
 
 	/**
 	 * Launch and add L2Effect (including Stack Group management) to Creature and update client magic icon.<BR></BR><BR></BR>

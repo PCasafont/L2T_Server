@@ -16,7 +16,6 @@
 package l2server.gameserver.util;
 
 import l2server.Config;
-import l2server.gameserver.Server;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.idfactory.IdFactory;
@@ -36,7 +35,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * @author luisantonioa, DS
  */
 public class MinionList {
-	private static Logger log = LoggerFactory.getLogger(Server.class.getName());
+	private static Logger log = LoggerFactory.getLogger(MinionList.class.getName());
 
 	private final MonsterInstance master;
 	/**

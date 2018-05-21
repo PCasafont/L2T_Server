@@ -18,7 +18,7 @@ package l2server.gameserver.datatables
 import l2server.Config
 import l2server.DatabasePool
 import l2server.gameserver.LoginServerThread
-import l2server.gameserver.Server
+import l2server.gameserver.dateTimeServerStarted
 import l2server.gameserver.model.L2ManufactureItem
 import l2server.gameserver.model.L2ManufactureList
 import l2server.gameserver.model.World
@@ -64,7 +64,7 @@ object OfflineTradersTable {
             val stm_prices = con.prepareStatement(SAVE_PRICES)
 
             //StringBuilder items = StringBuilder.newInstance();
-            val checkInactiveStores = Config.isServer(Config.TENKAI) && System.currentTimeMillis() - Server.dateTimeServerStarted.timeInMillis > 36000000
+            val checkInactiveStores = Config.isServer(Config.TENKAI) && System.currentTimeMillis() - dateTimeServerStarted.timeInMillis > 36000000
             loop@for (pc in World.getInstance().allPlayers.values) {
                 try {
                     if (pc.privateStoreType != Player.STORE_PRIVATE_NONE && (pc.client == null || pc.client.isDetached) &&

@@ -24,20 +24,13 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class DatabasePool {
-	private static Logger log = LoggerFactory.getLogger(DatabasePool.class.getName());
 	
-	public enum ProviderType {
-		MySql,
-		MsSql
-	}
+	private static Logger log = LoggerFactory.getLogger(DatabasePool.class.getName());
 	
 	private static class SingletonHolder {
 		private static final DatabasePool INSTANCE = new DatabasePool();
 	}
 	
-	// =========================================================
-	// Data Field
-	private ProviderType providerType;
 	private BoneCP database;
 	
 	private final int PARTITION_COUNT = 4;
@@ -45,7 +38,7 @@ public class DatabasePool {
 	// =========================================================
 	// Constructor
 	private DatabasePool() {
-		BoneCPConfig config = null;
+		BoneCPConfig config;
 		
 		try {
 			if (Config.DATABASE_MAX_CONNECTIONS < 2) {
@@ -87,11 +80,6 @@ public class DatabasePool {
 				log.debug("Database Connection Working");
 			}
 			
-			if (Config.DATABASE_DRIVER.toLowerCase().contains("microsoft")) {
-				providerType = ProviderType.MsSql;
-			} else {
-				providerType = ProviderType.MySql;
-			}
 		} catch (Exception e) {
 			if (Config.DEBUG) {
 				log.debug("Database Connection FAILED");
@@ -102,17 +90,11 @@ public class DatabasePool {
 	// =========================================================
 	// Method - Public
 	public final String prepQuerySelect(String[] fields, String tableName, String whereClause, boolean returnOnlyTopRecord) {
-		String msSqlTop1 = "";
 		String mySqlTop1 = "";
 		if (returnOnlyTopRecord) {
-			if (getProviderType() == ProviderType.MsSql) {
-				msSqlTop1 = " Top 1 ";
-			}
-			if (getProviderType() == ProviderType.MySql) {
-				mySqlTop1 = " Limit 1 ";
-			}
+			mySqlTop1 = " Limit 1 ";
 		}
-		return "SELECT " + msSqlTop1 + safetyString(fields) + " FROM " + tableName + " WHERE " + whereClause + mySqlTop1;
+		return "SELECT " + safetyString(fields) + " FROM " + tableName + " WHERE " + whereClause + mySqlTop1;
 	}
 	
 	public void shutdown() {
@@ -133,16 +115,8 @@ public class DatabasePool {
 	
 	public final String safetyString(String... whatToCheck) {
 		// NOTE: Use brace as a safety precaution just in case name is a reserved word
-		final char braceLeft;
-		final char braceRight;
-		
-		if (getProviderType() == ProviderType.MsSql) {
-			braceLeft = '[';
-			braceRight = ']';
-		} else {
-			braceLeft = '`';
-			braceRight = '`';
-		}
+		final char braceLeft = '`';
+		final char braceRight = '`';
 		
 		int length = 0;
 		
@@ -202,9 +176,5 @@ public class DatabasePool {
 	
 	public int getIdleConnectionCount() {
 		return database.getTotalFree();
-	}
-	
-	public final ProviderType getProviderType() {
-		return providerType;
 	}
 }
