@@ -20,26 +20,21 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package l2server.gameserver;
+package l2server.gameserver
 
-import l2server.gameserver.templates.StatsSet;
-import l2server.gameserver.templates.item.ItemTemplate;
+import l2server.gameserver.templates.StatsSet
+import l2server.gameserver.templates.item.ItemTemplate
 
-/**
- * This class ...
- *
- * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
- */
-public class Item {
-	public int id;
+class Item {
+	var id: Int = 0
 
-	public String type;
+	var type: String? = null
 
-	public String name;
+	var name: String? = null
 
-	public StatsSet set;
+	var set: StatsSet? = null
 
-	public int currentLevel;
+	var currentLevel: Int = 0
 
-	public ItemTemplate item;
+	var item: ItemTemplate? = null
 }
