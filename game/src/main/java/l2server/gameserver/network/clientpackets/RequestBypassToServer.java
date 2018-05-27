@@ -101,18 +101,17 @@ public final class RequestBypassToServer extends L2GameClientPacket {
 				}
 				
 				if (AdminCommandAccessRights.getInstance().requireConfirm(command)) {
-					activeChar.setAdminConfirmCmd(command);
+					activeChar.setAdminConfirmCmd(this.command);
 					ConfirmDlg dlg = new ConfirmDlg(SystemMessageId.S1);
-					dlg.addString("Are you sure you want execute command " + command.substring(6) + " ?");
+					dlg.addString("Are you sure you want execute command " + this.command.substring(6) + " ?");
 					activeChar.sendPacket(dlg);
 				} else {
 					if (Config.GMAUDIT) {
-						GMAudit.auditGMAction(activeChar.getName(),
-								command,
+						GMAudit.auditGMAction(activeChar.getName(), this.command,
 								activeChar.getTarget() != null ? activeChar.getTarget().getName() : "no-target");
 					}
 					
-					ach.useAdminCommand(command, activeChar);
+					ach.useAdminCommand(this.command, activeChar);
 				}
 			} else if (command.equals("come_here") && activeChar.isGM()) {
 				comeHere(activeChar);

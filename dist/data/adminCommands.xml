@@ -17,7 +17,7 @@
 	<command name="admin_add_level" accessLevels="6" />
 	<command name="admin_add_skill" accessLevels="6" />
 	<command name="admin_add_skill_npc" accessLevels="3" />
-	<command name="admin_admin" accessLevels="6" />
+	<command name="admin_admin" accessLevels="1" />
 	<command name="admin_admin1" accessLevels="6" />
 	<command name="admin_admin2" accessLevels="6" />
 	<command name="admin_admin3" accessLevels="6" />

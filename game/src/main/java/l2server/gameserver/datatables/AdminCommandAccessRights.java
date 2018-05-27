@@ -63,7 +63,7 @@ public class AdminCommandAccessRights {
 	public void load() {
 		adminCommandAccessRights = new HashMap<>();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "adminCommands.xml");
-
+		
 		XmlDocument doc = new XmlDocument(file);
 		doc.getChildren().stream().filter(d -> d.getName().equalsIgnoreCase("command")).forEachOrdered(d -> {
 			String adminCommand = d.getString("name");
@@ -71,8 +71,8 @@ public class AdminCommandAccessRights {
 			boolean confirm = d.getBool("configmDlg", false);
 			adminCommandAccessRights.put(adminCommand, new L2AdminCommandAccessRight(adminCommand, accessLevels, confirm));
 		});
-
-		log.info("AdminCommandAccessRights: Loaded " + adminCommandAccessRights.size() + " from xml.");
+		
+		log.info("AdminCommandAccessRights: Loaded " + adminCommandAccessRights.size() + " from xml");
 	}
 
 	public boolean hasAccess(String adminCommand, L2AccessLevel accessLevel) {

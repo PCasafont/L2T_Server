@@ -377,7 +377,7 @@ public class AdminEditChar implements IAdminCommandHandler {
 					player.getClan().broadcastClanStatus();
 				}
 			} catch (StringIndexOutOfBoundsException e) { //Case of empty character name
-				activeChar.sendMessage("Usage: //setname new_name_for_target");
+				activeChar.sendMessage("Usage: //changename new_name_for_target");
 			}
 		} else if (command.startsWith("admin_setsex")) {
 			WorldObject target = activeChar.getTarget();

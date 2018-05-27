@@ -282,7 +282,7 @@ public final class CharacterCreate extends L2GameClientPacket {
 		// add sit shortcut
 		shortcut = new L2ShortCut(10, 0, 3, 0, 0, 1);
 		newChar.registerShortCut(shortcut);
-
+		
 		for (PcTemplateItem ia : template.getItems()) {
 			Item item = newChar.getInventory().addItem("Init", ia.getItemId(), ia.getAmount(), newChar, null);
 

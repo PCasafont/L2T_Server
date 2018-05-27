@@ -16,6 +16,7 @@ class XmlDocument {
 
 	constructor(file: File) {
 		if (!file.exists()) {
+			System.out.println(file.absolutePath);
 			throw FileNotFoundException("The following XML could not be loaded: " + file.absolutePath)
 		}
 

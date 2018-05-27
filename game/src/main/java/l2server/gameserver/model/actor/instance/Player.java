@@ -15,7 +15,6 @@
 
 package l2server.gameserver.model.actor.instance;
 
-import l2server.gameserver.model.InstanceType;
 import gnu.trove.TIntIntHashMap;
 import gnu.trove.TIntLongHashMap;
 import gov.nasa.worldwind.formats.dds.DDSConverter;
@@ -15945,6 +15944,7 @@ public class Player extends Playable {
 		L2Spawn servitor;
 		float angle = Rnd.get(1000);
 		int sCount = 4;
+		/*
 		if (Config.isServer(Config.TENKAI_LEGACY)) {
 			MainTownInfo currentTown = MainTownManager.getInstance().getCurrentMainTown();
 			TownZone townZone = TownManager.getTown(currentTown.getTownId());
@@ -15952,6 +15952,7 @@ public class Player extends Playable {
 				sCount = 4;
 			}
 		}
+		*/
 		for (int i = 0; i < sCount; i++) {
 			servitor = getNpcServitor(i);
 			if (servitor != null) {
